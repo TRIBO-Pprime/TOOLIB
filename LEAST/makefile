@@ -57,7 +57,7 @@ clean:
 	rm -f prg
 
 debug:
-	make "DEBUG=TRUE"
+	(make clean ; make "DEBUG=TRUE")
 
 gprof:
 	make "GPROF=TRUE"

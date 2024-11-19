@@ -1,12 +1,15 @@
 !< author: Arthur Francisco
-!  version: 1.0.0
-!  date: april, 9 2023
-!
-!  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
-!     **A fortran api to FFTW3:** <br/>
-!       + a FFT distributed on **multiple threads**
-!       + **multiple FFT** simultaneously computed.
-!  </span>
+!<  version: 1.0.0
+!<  date: april, 9 2023
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!< **A fortran api to FFTW3**
+!< </span>
+!<
+!< + FFT distributed on **multiple threads**
+!< + **multiple FFT** simultaneously computed.
+!<
+
 
 module fftw3
 use, intrinsic :: iso_c_binding
@@ -18,26 +21,26 @@ private
 
    integer(kind=I4) :: NB_THREADS_FFT = 4
 
-   integer(kind=I4), parameter :: FORWARD  = +1 !! *just as suggested, it means  forward transformation required*
-   integer(kind=I4), parameter :: BACKWARD = -1 !! *just as suggested, it means backward transformation required*
+   integer(kind=I4), parameter :: FORWARD  = +1       !! *just as suggested, it means  forward transformation required*
+   integer(kind=I4), parameter :: BACKWARD = -1       !! *just as suggested, it means backward transformation required*
 
-   integer(kind=I4), dimension(2) :: FFT_DIM = [0, 0]
+   integer(kind=I4), dimension(2) :: FFT_DIM = [0, 0] !! *Sizes currently allocated*
 
-   real(kind=R8), parameter :: PAD_FFT = 1.50_R8 !! *dimension multiplier for 0-padding*
+   real(kind=R8), parameter :: PAD_FFT = 1.50_R8      !! *dimension multiplier for 0-padding*
 
    logical(kind=I4) :: MULTI_FFTW_ALLOCATED = .false. !! *the fftw arrays are allocated and the plans are defined*
    logical(kind=I4) :: SINGL_FFTW_ALLOCATED = .false. !! *the fftw arrays are allocated and the plans are defined*
 
    !------------------      classical way of using FFT   -----------------------------------------------------------------------------------------
    !------------------ 1 FFT computed on several threads -----------------------------------------------------------------------------------------
-   complex(C_DOUBLE_COMPLEX), dimension(:,:), pointer :: cmp_f_i !! *memory address of the input array for a ```FORWARD``` transformation*
-   complex(C_DOUBLE_COMPLEX), dimension(:,:), pointer :: cmp_f_o !! *memory address of the input array for a ```FORWARD``` transformation*
+   complex(C_DOUBLE_COMPLEX), dimension(:,:), pointer :: cmp_f_i  !! *memory address of the input  array for a ```FORWARD``` transformation*
+   complex(C_DOUBLE_COMPLEX), dimension(:,:), pointer :: cmp_f_o  !! *memory address of the output array for a ```FORWARD``` transformation*
 
-   complex(C_DOUBLE_COMPLEX), dimension(:,:), pointer :: cmp_b_i !! *memory address of the input array for a ```BACKWARD``` transformation*
-   complex(C_DOUBLE_COMPLEX), dimension(:,:), pointer :: cmp_b_o !! *memory address of the input array for a ```BACKWARD``` transformation*
+   complex(C_DOUBLE_COMPLEX), dimension(:,:), pointer :: cmp_b_i  !! *memory address of the input  array for a ```BACKWARD``` transformation*
+   complex(C_DOUBLE_COMPLEX), dimension(:,:), pointer :: cmp_b_o  !! *memory address of the output array for a ```BACKWARD``` transformation*
 
-   real(C_DOUBLE), dimension(:,:), pointer :: rea_f_i !! *memory address of the input array for a ```FORWARD``` transformation*
-   real(C_DOUBLE), dimension(:,:), pointer :: rea_b_o !! *memory address of the input array for a ```BACKWARD``` transformation*
+   real(C_DOUBLE), dimension(:,:), pointer :: rea_f_i             !! *memory address of the input  array for a ```FORWARD``` transformation*
+   real(C_DOUBLE), dimension(:,:), pointer :: rea_b_o             !! *memory address of the output array for a ```BACKWARD``` transformation*
 
    type(C_PTR) :: p_f_i    !! *memory address for a plan ```FORWARD``` in  input*
    type(C_PTR) :: p_f_o    !! *memory address for a plan ```FORWARD``` in output*
@@ -52,34 +55,38 @@ private
   !------------------      parallel FFTs   -----------------------------------------------------------------------------------------------------
   !------------------ several FFT treated on 1 thread each -------------------------------------------------------------------------------------
    !< @note
-   !   Because FFTW3 is built so that it works on the same memory zone, for concurrent executions,
-   !   a zone per thread is created.
-   ! @endnote
+   !<   Because FFTW3 is built so that it works on the same memory zone, for concurrent executions,
+   !<   a zone per thread is created.
+   !< @endnote
    type tab_fftw
       complex(C_DOUBLE_COMPLEX), dimension(:,:), pointer :: tab
    endtype tab_fftw
 
+   !< @note
+   !<   Because FFTW3 is built so that it works on the same memory zone, for concurrent executions,
+   !<   a zone per thread is created.
+   !< @endnote
    type tab_fftw_real
       real(C_DOUBLE), dimension(:,:), pointer :: tab
    endtype tab_fftw_real
 
-   type(tab_fftw), dimension(:), allocatable :: tab_cmp_f_i !! *memory address of the input array for a ```FORWARD``` transformation*
-   type(tab_fftw), dimension(:), allocatable :: tab_cmp_f_o !! *memory address of the input array for a ```FORWARD``` transformation*
+   type(tab_fftw), dimension(:), allocatable :: tab_cmp_f_i       !! *array of memory addresses of the  input arrays for a ```FORWARD``` transformation*
+   type(tab_fftw), dimension(:), allocatable :: tab_cmp_f_o       !! *array of memory addresses of the output arrays for a ```FORWARD``` transformation*
 
-   type(tab_fftw), dimension(:), allocatable :: tab_cmp_b_i !! *memory address of the input array for a ```BACKWARD``` transformation*
-   type(tab_fftw), dimension(:), allocatable :: tab_cmp_b_o !! *memory address of the input array for a ```BACKWARD``` transformation*
+   type(tab_fftw), dimension(:), allocatable :: tab_cmp_b_i       !! *array of memory addresses of the  input arrays for a ```BACKWARD``` transformation*
+   type(tab_fftw), dimension(:), allocatable :: tab_cmp_b_o       !! *array of memory addresses of the output arrays for a ```BACKWARD``` transformation*
 
-   type(tab_fftw_real), dimension(:), allocatable :: tab_rea_f_i !! *memory address of the input array for a ```FORWARD``` transformation*
-   type(tab_fftw_real), dimension(:), allocatable :: tab_rea_f_o !! *memory address of the input array for a ```FORWARD``` transformation*
+   type(tab_fftw_real), dimension(:), allocatable :: tab_rea_f_i !! *array of memory addresses of the  input arrays for a ```FORWARD``` transformation*
+   type(tab_fftw_real), dimension(:), allocatable :: tab_rea_f_o !! *array of memory addresses of the output arrays for a ```FORWARD``` transformation*
 
-   type(tab_fftw_real), dimension(:), allocatable :: tab_rea_b_i !! *memory address of the input array for a ```BACKWARD``` transformation*
-   type(tab_fftw_real), dimension(:), allocatable :: tab_rea_b_o !! *memory address of the input array for a ```BACKWARD``` transformation*
+   type(tab_fftw_real), dimension(:), allocatable :: tab_rea_b_i !! *array of memory addresses of the  input arrays for a ```BACKWARD``` transformation*
+   type(tab_fftw_real), dimension(:), allocatable :: tab_rea_b_o !! *array of memory addresses of the output arrays for a ```BACKWARD``` transformation*
 
-   type(C_PTR), dimension(:), allocatable :: tab_p_f_i      !! *memory address for a plan ```FORWARD``` in  input*
-   type(C_PTR), dimension(:), allocatable :: tab_p_f_o      !! *memory address for a plan ```FORWARD``` in output*
+   type(C_PTR), dimension(:), allocatable :: tab_p_f_i      !! *array of memory addresses for a plan ```FORWARD``` in  input*
+   type(C_PTR), dimension(:), allocatable :: tab_p_f_o      !! *array of memory addresses for a plan ```FORWARD``` in output*
 
-   type(C_PTR), dimension(:), allocatable :: tab_p_b_i      !! *memory address for a plan ```BACKWARD``` in  input*
-   type(C_PTR), dimension(:), allocatable :: tab_p_b_o      !! *memory address for a plan ```BACKWARD``` in output*
+   type(C_PTR), dimension(:), allocatable :: tab_p_b_i      !! *array of memory addresses for a plan ```BACKWARD``` in  input*
+   type(C_PTR), dimension(:), allocatable :: tab_p_b_o      !! *array of memory addresses for a plan ```BACKWARD``` in output*
 
    type(C_PTR), dimension(:), allocatable :: tab_plan_f     !! *plan  ```FORWARD```*
    type(C_PTR), dimension(:), allocatable :: tab_plan_b     !! *plan ```BACKWARD```*
@@ -96,11 +103,9 @@ public :: tab_init_fftw3, tab_calc_fftw3, tab_end_fftw3, fftw_plan_with_nthreads
 contains
 
    !=========================================================================================
-   !< @note
-   !   Subroutine to initialize the FFTW3 process *1 FFT distributed on several threads*
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    subroutine init_fftw3(long, larg)
+   !! Subroutine to initialize the FFTW3 process *1 FFT distributed on several threads*.
+   !! Complex case.
    implicit none
    integer(kind=I4), intent(in) :: long  !! *first  2D array dimension*
    integer(kind=I4), intent(in) :: larg  !! *second 2D array dimension*
@@ -114,11 +119,15 @@ contains
    return
    endsubroutine init_fftw3
 
+
+   !=========================================================================================
    subroutine init_fftw3_real(long, larg, plan_flag)
+   !! Subroutine to initialize the FFTW3 process *1 FFT distributed on several threads*
+   !! Real case.
    implicit none
    integer(kind=I4), intent(in) :: long      !! *first  2D array dimension*
    integer(kind=I4), intent(in) :: larg      !! *second 2D array dimension*
-   integer(kind=I4), intent(in) :: plan_flag !!
+   integer(kind=I4), intent(in) :: plan_flag !! *planning option, [[fftw3(module):FFTW_ESTIMATE]] for example*
 
       call alloc_fftw3_real(long, larg)
       call make_plan_fftw3_real(long, larg, plan_flag)
@@ -129,16 +138,15 @@ contains
    return
    endsubroutine init_fftw3_real
 
+
    !=========================================================================================
-   !< @note
-   !   Subroutine to initialize the FFTW3 process *several FFT on single thread each*
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    subroutine tab_init_fftw3(long, larg, plan_flag)
+   !! Subroutine to initialize the FFTW3 process *several FFT on single thread each*
+   !! Complex case.
    implicit none
-   integer(kind=I4), intent(in) :: long  !! *first  2D array dimension*
-   integer(kind=I4), intent(in) :: larg  !! *second 2D array dimension*
-   integer(kind=I4), intent(in) :: plan_flag !!
+   integer(kind=I4), intent(in) :: long      !! *first  2D array dimension*
+   integer(kind=I4), intent(in) :: larg      !! *second 2D array dimension*
+   integer(kind=I4), intent(in) :: plan_flag !! *planning option, [[fftw3(module):FFTW_ESTIMATE]] for example*
 
       allocate( tab_cmp_f_i( 0:NB_THREADS_FFT -1) )
       allocate( tab_cmp_f_o( 0:NB_THREADS_FFT -1) )
@@ -164,11 +172,14 @@ contains
    endsubroutine tab_init_fftw3
 
 
+   !=========================================================================================
    subroutine tab_init_fftw3_real(long, larg, plan_flag)
+   !! Subroutine to initialize the FFTW3 process *several FFT on single thread each*
+   !! Real case.
    implicit none
    integer(kind=I4), intent(in) :: long      !! *first  2D array dimension*
    integer(kind=I4), intent(in) :: larg      !! *second 2D array dimension*
-   integer(kind=I4), intent(in) :: plan_flag !!
+   integer(kind=I4), intent(in) :: plan_flag !! *planning option, [[fftw3(module):FFTW_ESTIMATE]] for example*
 
       allocate( tab_rea_f_i( 0:NB_THREADS_FFT -1) )
       allocate( tab_cmp_f_o( 0:NB_THREADS_FFT -1) )
@@ -196,18 +207,18 @@ contains
 
    !=========================================================================================
    !< @note
-   !   Subroutine that transforms forward or bacward a double complex array. For speed reasons
-   !   FFTW will always work on the same memory area, until the plans are destroyed of course.
-   !    *1 FFT distributed on several threads*
-   ! @endnote
+   !<   Subroutine that transforms forward or backward a double complex array. For speed reasons
+   !<   FFTW will always work on the same memory area, until the plans are destroyed of course.
+   !<    *1 FFT distributed on several threads*
+   !< @endnote
    !-----------------------------------------------------------------------------------------
    subroutine calc_fftw3(sens, tab_in, tab_ou, long, larg)
    implicit none
-   integer(kind=I4), intent(in )                            :: sens  !! *```=FORWARD``` or ```=BACKWARD```*
-   integer(kind=I4), intent(in )                            :: long  !! *first  2D array dimension*
-   integer(kind=I4), intent(in )                            :: larg  !! *second 2D array dimension*
-   complex(kind=R8), dimension(1:long, 1:larg), intent(in ) :: tab_in  !! *array to transform*
-   complex(kind=R8), dimension(1:long, 1:larg), intent(out) :: tab_ou  !! *transformed array*
+   integer(kind=I4), intent(in )                            :: sens     !! *```=FORWARD``` or ```=BACKWARD```*
+   integer(kind=I4), intent(in )                            :: long     !! *first  2D array dimension*
+   integer(kind=I4), intent(in )                            :: larg     !! *second 2D array dimension*
+   complex(kind=R8), dimension(1:long, 1:larg), intent(in ) :: tab_in   !! *array to transform*
+   complex(kind=R8), dimension(1:long, 1:larg), intent(out) :: tab_ou   !! *transformed array*
 
       if ( any( FFT_DIM(1:2) /= [long, larg] ) ) then
 
@@ -236,13 +247,20 @@ contains
    endsubroutine calc_fftw3
 
 
+   !=========================================================================================
+   !< @note
+   !<   Subroutine that transforms forward a double real array. For speed reasons
+   !<   FFTW will always work on the same memory area, until the plans are destroyed of course.
+   !<    *1 FFT distributed on several threads*
+   !< @endnote
+   !-----------------------------------------------------------------------------------------
    subroutine calc_fftw3_real_fwd(tab_in, tab_ou, long, larg, planner_flag)
    implicit none
    integer(kind=I4), intent(in )                            :: long           !! *first  2D array dimension*
    integer(kind=I4), intent(in )                            :: larg           !! *second 2D array dimension*
    real   (kind=R8), dimension(1:long, 1:larg), intent(in ) :: tab_in         !! *array to transform*
    complex(kind=R8), dimension(1:long, 1:larg), intent(out) :: tab_ou         !! *transformed array*
-   integer(kind=I4), intent(in),                optional    :: planner_flag   !!
+   integer(kind=I4), intent(in),                optional    :: planner_flag   !! *planning option, [[fftw3(module):FFTW_ESTIMATE]] for example*
 
       integer(kind=I4) :: plan_flag
 
@@ -274,13 +292,21 @@ contains
    return
    endsubroutine calc_fftw3_real_fwd
 
+
+   !=========================================================================================
+   !< @note
+   !<   Subroutine that transforms backward a double real array. For speed reasons
+   !<   FFTW will always work on the same memory area, until the plans are destroyed of course.
+   !<    *1 FFT distributed on several threads*
+   !< @endnote
+   !-----------------------------------------------------------------------------------------
    subroutine calc_fftw3_real_bwd(tab_in, tab_ou, long, larg, planner_flag)
    implicit none
-   integer(kind=I4), intent(in )                            :: long  !! *first  2D array dimension*
-   integer(kind=I4), intent(in )                            :: larg  !! *second 2D array dimension*
-   complex(kind=R8), dimension(1:long, 1:larg), intent(in ) :: tab_in  !! *array to transform*
-   real   (kind=R8), dimension(1:long, 1:larg), intent(out) :: tab_ou  !! *transformed array*
-   integer(kind=I4), intent(in),                optional    :: planner_flag   !!
+   integer(kind=I4), intent(in )                            :: long           !! *first  2D array dimension*
+   integer(kind=I4), intent(in )                            :: larg           !! *second 2D array dimension*
+   complex(kind=R8), dimension(1:long, 1:larg), intent(in ) :: tab_in         !! *array to transform*
+   real   (kind=R8), dimension(1:long, 1:larg), intent(out) :: tab_ou         !! *transformed array*
+   integer(kind=I4), intent(in),                optional    :: planner_flag   !! *planning option, [[fftw3(module):FFTW_ESTIMATE]] for example*
 
       integer(kind=I4) :: plan_flag
 
@@ -315,18 +341,18 @@ contains
 
    !=========================================================================================
    !< @note
-   !   Subroutine that transforms forward or bacward a double complex array. For speed reasons
-   !   FFTW will always work on the same memory area, until the plans are destroyed of course.
-   !    *several FFT on single thread each*
-   ! @endnote
+   !<   Subroutine that transforms forward or bacward a double complex array. For speed reasons
+   !<   FFTW will always work on the same memory area, until the plans are destroyed of course.
+   !<    *several FFT on single thread each*
+   !< @endnote
    !-----------------------------------------------------------------------------------------
    subroutine tab_calc_fftw3(sens, tab_in, tab_ou, long, larg)
    implicit none
-   integer(kind=I4), intent(in ) :: sens  !! *```=FORWARD``` or ```=BACKWARD```*
-   integer(kind=I4), intent(in ) :: long  !! *first  2D array dimension*
-   integer(kind=I4), intent(in ) :: larg  !! *second 2D array dimension*
-   complex(kind=R8), dimension(1:long, 1:larg), intent(in ) :: tab_in  !! *array to transform*
-   complex(kind=R8), dimension(1:long, 1:larg), intent(out) :: tab_ou  !! *transformed array*
+   integer(kind=I4), intent(in ) :: sens                                !! *```=FORWARD``` or ```=BACKWARD```*
+   integer(kind=I4), intent(in ) :: long                                !! *first  2D array dimension*
+   integer(kind=I4), intent(in ) :: larg                                !! *second 2D array dimension*
+   complex(kind=R8), dimension(1:long, 1:larg), intent(in ) :: tab_in   !! *array to transform*
+   complex(kind=R8), dimension(1:long, 1:larg), intent(out) :: tab_ou   !! *transformed array*
 
       integer(kind=I4) :: ithread
 
@@ -353,12 +379,19 @@ contains
    endsubroutine tab_calc_fftw3
 
 
+   !=========================================================================================
+   !< @note
+   !<   Subroutine that transforms forward a real array. For speed reasons
+   !<   FFTW will always work on the same memory area, until the plans are destroyed of course.
+   !<    *several FFT on single thread each*
+   !< @endnote
+   !-----------------------------------------------------------------------------------------
    subroutine tab_calc_fftw3_real_fwd(tab_in, tab_ou, long, larg)
    implicit none
-   integer(kind=I4), intent(in ) :: long  !! *first  2D array dimension*
-   integer(kind=I4), intent(in ) :: larg  !! *second 2D array dimension*
-   real   (kind=R8), dimension(1:long, 1:larg), intent(in ) :: tab_in  !! *array to transform*
-   complex(kind=R8), dimension(1:long, 1:larg), intent(out) :: tab_ou  !! *transformed array*
+   integer(kind=I4), intent(in ) :: long                                !! *first  2D array dimension*
+   integer(kind=I4), intent(in ) :: larg                                !! *second 2D array dimension*
+   real   (kind=R8), dimension(1:long, 1:larg), intent(in ) :: tab_in   !! *array to transform*
+   complex(kind=R8), dimension(1:long, 1:larg), intent(out) :: tab_ou   !! *transformed array*
 
       integer(kind=I4) :: ithread
 
@@ -375,12 +408,19 @@ contains
    endsubroutine tab_calc_fftw3_real_fwd
 
 
+   !=========================================================================================
+   !< @note
+   !<   Subroutine that transforms backward a real array. For speed reasons
+   !<   FFTW will always work on the same memory area, until the plans are destroyed of course.
+   !<    *several FFT on single thread each*
+   !< @endnote
+   !-----------------------------------------------------------------------------------------
    subroutine tab_calc_fftw3_real_bwd(tab_in, tab_ou, long, larg)
    implicit none
-   integer(kind=I4), intent(in ) :: long  !! *first  2D array dimension*
-   integer(kind=I4), intent(in ) :: larg  !! *second 2D array dimension*
-   complex(kind=R8), dimension(1:long, 1:larg), intent(in ) :: tab_in  !! *array to transform*
-   real   (kind=R8), dimension(1:long, 1:larg), intent(out) :: tab_ou  !! *transformed array*
+   integer(kind=I4), intent(in ) :: long                                !! *first  2D array dimension*
+   integer(kind=I4), intent(in ) :: larg                                !! *second 2D array dimension*
+   complex(kind=R8), dimension(1:long, 1:larg), intent(in ) :: tab_in   !! *array to transform*
+   real   (kind=R8), dimension(1:long, 1:larg), intent(out) :: tab_ou   !! *transformed array*
 
       integer(kind=I4) :: ithread
 
@@ -398,11 +438,8 @@ contains
 
 
    !=========================================================================================
-   !< @note
-   !   FFTW3 is no more useful from here. *1 FFT distributed on several threads*
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    subroutine end_fftw3()
+   !! FFTW3 is no more useful from here. *1 FFT distributed on several threads*
    implicit none
 
       if ( SINGL_FFTW_ALLOCATED ) then
@@ -421,11 +458,8 @@ contains
 
 
    !=========================================================================================
-   !< @note
-   !   FFTW3 is no more useful from here. *several FFT on single thread each*
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    subroutine tab_end_fftw3()
+   !! FFTW3 is no more useful from here. *several FFT on single thread each*
    implicit none
 
       if ( MULTI_FFTW_ALLOCATED ) then
@@ -447,7 +481,9 @@ contains
    endsubroutine tab_end_fftw3
 
 
+   !=========================================================================================
    subroutine tab_end_fftw3_real()
+   !! FFTW3 is no more useful from here. *several FFT on single thread each*
    implicit none
 
       call tab_destroy_plan_fftw3()
@@ -467,16 +503,16 @@ contains
 
    !=========================================================================================
    !< @note
-   !   Allocation of the memory needed by the transformations, forward and backward.
-   !    *1 FFT distributed on several threads*
-   !
-   !   The space remains allocated as long as transformations are needed.
-   ! @endnote
+   !<   Allocation of the memory needed by the transformations, forward and backward.
+   !<    *1 FFT distributed on several threads*
+   !<
+   !<   The space remains allocated as long as transformations are needed.
+   !< @endnote
    !-----------------------------------------------------------------------------------------
    subroutine alloc_fftw3(long, larg)
    implicit none
-   integer(kind=I4), intent(in) :: long
-   integer(kind=I4), intent(in) :: larg
+   integer(kind=I4), intent(in) :: long   !! *first  2D array dimension*
+   integer(kind=I4), intent(in) :: larg   !! *second 2D array dimension*
 
       ! forward
       p_f_i = fftw_alloc_complex(int(long*larg, C_SIZE_T))
@@ -493,10 +529,19 @@ contains
    return
    endsubroutine alloc_fftw3
 
+
+   !=========================================================================================
+   !< @note
+   !<   Allocation of the memory needed by the transformations, forward and backward, for the
+   !<   real case. *1 FFT distributed on several threads*
+   !<
+   !<   The space remains allocated as long as transformations are needed.
+   !< @endnote
+   !-----------------------------------------------------------------------------------------
    subroutine alloc_fftw3_real(long, larg)
    implicit none
-   integer(kind=I4), intent(in) :: long
-   integer(kind=I4), intent(in) :: larg
+   integer(kind=I4), intent(in) :: long   !! *first  2D array dimension*
+   integer(kind=I4), intent(in) :: larg   !! *second 2D array dimension*
 
       ! forward
       p_f_i = fftw_alloc_real(int(long*larg, C_SIZE_T))
@@ -516,16 +561,16 @@ contains
 
    !=========================================================================================
    !< @note
-   !   Allocation of the memory needed by the transformations, forward and backward.
-   !    *several FFT on single thread each*
-   !
-   !   The space remains allocated as long as transformations are needed.
-   ! @endnote
+   !<   Allocation of the memory needed by the transformations, forward and backward.
+   !<    *several FFT on single thread each*
+   !<
+   !<   The space remains allocated as long as transformations are needed.
+   !< @endnote
    !-----------------------------------------------------------------------------------------
    subroutine tab_alloc_fftw3(long, larg)
    implicit none
-   integer(kind=I4), intent(in) :: long
-   integer(kind=I4), intent(in) :: larg
+   integer(kind=I4), intent(in) :: long   !! *first  2D array dimension*
+   integer(kind=I4), intent(in) :: larg   !! *second 2D array dimension*
 
       integer(kind=I4) :: ithread
 
@@ -553,10 +598,18 @@ contains
    endsubroutine tab_alloc_fftw3
 
 
+   !=========================================================================================
+   !< @note
+   !<   Allocation of the memory needed by the transformations, forward and backward, for the
+   !<   real case. *several FFT on single thread each*
+   !<
+   !<   The space remains allocated as long as transformations are needed.
+   !< @endnote
+   !-----------------------------------------------------------------------------------------
    subroutine tab_alloc_fftw3_real(long, larg)
    implicit none
-   integer(kind=I4), intent(in) :: long
-   integer(kind=I4), intent(in) :: larg
+   integer(kind=I4), intent(in) :: long   !! *first  2D array dimension*
+   integer(kind=I4), intent(in) :: larg   !! *second 2D array dimension*
 
       integer(kind=I4) :: ithread
 
@@ -586,8 +639,9 @@ contains
 
    !=========================================================================================
    !< @note
-   !   When no more transformation is needed, the memory is released. *1 FFT distributed on several threads*
-   ! @endnote
+   !<   When no more transformation is needed, the memory is released.
+   !<    *1 FFT distributed on several threads*
+   !< @endnote
    !-----------------------------------------------------------------------------------------
    subroutine desalloc_fftw3()
    implicit none
@@ -606,8 +660,9 @@ contains
 
    !=========================================================================================
    !< @note
-   !   When no more transformation is needed, the memory is released. *several FFT on single thread each*
-   ! @endnote
+   !<   When no more transformation is needed, the memory is released.
+   !<     *several FFT on single thread each*
+   !< @endnote
    !-----------------------------------------------------------------------------------------
    subroutine tab_desalloc_fftw3()
    implicit none
@@ -631,21 +686,22 @@ contains
 
    !=========================================================================================
    !< @note
-   !   Creates forward and backward plans. *1 FFT distributed on several threads*
-   !
-   !   Until no more transformation is needed, the plans remain as they are.
-   ! @endnote
-   ! @warning
-   !    In C, the order line/column is reversed, so the 2nd dimension ```larg``` of the array
-   !    is first provided in ```fftw_plan_dft_2d```
-   !
-   !    [calling from fortran](http://www.fftw.org/doc/Calling-FFTW-from-Modern-Fortran.html#Calling-FFTW-from-Modern-Fortran)
-   ! @endwarning
+   !<   Creates forward and backward plans. *1 FFT distributed on several threads*
+   !<
+   !<   Until no more transformation is needed, the plans remain as they are.
+   !< @endnote
+   !<
+   !< @warning
+   !<    In C, the order line/column is reversed, so the 2nd dimension ```larg``` of the array
+   !<    is first provided in ```fftw_plan_dft_2d```
+   !<
+   !<    [calling from fortran](http://www.fftw.org/doc/Calling-FFTW-from-Modern-Fortran.html#Calling-FFTW-from-Modern-Fortran)
+   !< @endwarning
    !-----------------------------------------------------------------------------------------
    subroutine make_plan_fftw3(long, larg)
    implicit none
-   integer(kind=I4), intent(in) :: long
-   integer(kind=I4), intent(in) :: larg
+   integer(kind=I4), intent(in) :: long   !! *first  2D array dimension*
+   integer(kind=I4), intent(in) :: larg   !! *second 2D array dimension*
 
       ! forward
       plan_f = fftw_plan_dft_2d(larg, long, cmp_f_i, cmp_f_o, FFTW_FORWARD,  flags=FFTW_ESTIMATE)
@@ -656,12 +712,26 @@ contains
    return
    endsubroutine make_plan_fftw3
 
-   ! real version
+
+   !=========================================================================================
+   !< @note
+   !<   Creates forward and backward plans. *1 FFT distributed on several threads*
+   !<
+   !<   Until no more transformation is needed, the plans remain as they are.
+   !< @endnote
+   !<
+   !< @warning
+   !<    In C, the order line/column is reversed, so the 2nd dimension ```larg``` of the array
+   !<    is first provided in ```fftw_plan_dft_2d```
+   !<
+   !<    [calling from fortran](http://www.fftw.org/doc/Calling-FFTW-from-Modern-Fortran.html#Calling-FFTW-from-Modern-Fortran)
+   !< @endwarning
+   !-----------------------------------------------------------------------------------------
    subroutine make_plan_fftw3_real(long, larg, plan_flag)
    implicit none
-   integer(kind=I4), intent(in) :: long
-   integer(kind=I4), intent(in) :: larg
-   integer(kind=I4), intent(in) :: plan_flag
+   integer(kind=I4), intent(in) :: long         !! *first  2D array dimension*
+   integer(kind=I4), intent(in) :: larg         !! *second 2D array dimension*
+   integer(kind=I4), intent(in) :: plan_flag    !! *planning option, [[fftw3(module):FFTW_ESTIMATE]] for example*
 
       ! forward
       plan_f = fftw_plan_dft_r2c_2d(n0 = larg, n1 = long, in = rea_f_i, out = cmp_f_o, flags = plan_flag)
@@ -675,22 +745,23 @@ contains
 
    !=========================================================================================
    !< @note
-   !   Creates forward and backward plans. *several FFT on single thread each*
-   !
-   !   Until no more transformation is needed, the plans remain as they are.
-   ! @endnote
-   ! @warning
-   !    In C, the order line/column is reversed, so the 2nd dimension ```larg``` of the array
-   !    is first provided in ```fftw_plan_dft_2d```
-   !
-   !    [calling from fortran](http://www.fftw.org/doc/Calling-FFTW-from-Modern-Fortran.html#Calling-FFTW-from-Modern-Fortran)
-   ! @endwarning
+   !<   Creates forward and backward plans. *several FFT on single thread each*
+   !<
+   !<   Until no more transformation is needed, the plans remain as they are.
+   !< @endnote
+   !<
+   !< @warning
+   !<    In C, the order line/column is reversed, so the 2nd dimension ```larg``` of the array
+   !<    is first provided in ```fftw_plan_dft_2d```
+   !<
+   !<    [calling from fortran](http://www.fftw.org/doc/Calling-FFTW-from-Modern-Fortran.html#Calling-FFTW-from-Modern-Fortran)
+   !< @endwarning
    !-----------------------------------------------------------------------------------------
    subroutine tab_make_plan_fftw3(long, larg, plan_flag)
    implicit none
-   integer(kind=I4), intent(in) :: long
-   integer(kind=I4), intent(in) :: larg
-   integer(kind=I4), intent(in) :: plan_flag !!
+   integer(kind=I4), intent(in) :: long         !! *first  2D array dimension*
+   integer(kind=I4), intent(in) :: larg         !! *second 2D array dimension*
+   integer(kind=I4), intent(in) :: plan_flag    !! *planning option, [[fftw3(module):FFTW_ESTIMATE]] for example*
 
       integer(kind=I4) :: ithread
 
@@ -711,11 +782,26 @@ contains
    return
    endsubroutine tab_make_plan_fftw3
 
+
+   !=========================================================================================
+   !< @note
+   !<   Creates forward and backward plans. *several FFT on single thread each*
+   !<
+   !<   Until no more transformation is needed, the plans remain as they are.
+   !< @endnote
+   !<
+   !< @warning
+   !<    In C, the order line/column is reversed, so the 2nd dimension ```larg``` of the array
+   !<    is first provided in ```fftw_plan_dft_2d```
+   !<
+   !<    [calling from fortran](http://www.fftw.org/doc/Calling-FFTW-from-Modern-Fortran.html#Calling-FFTW-from-Modern-Fortran)
+   !< @endwarning
+   !-----------------------------------------------------------------------------------------
    subroutine tab_make_plan_fftw3_real(long, larg, plan_flag)
    implicit none
-   integer(kind=I4), intent(in) :: long
-   integer(kind=I4), intent(in) :: larg
-   integer(kind=I4), intent(in) :: plan_flag !!
+   integer(kind=I4), intent(in) :: long         !! *first  2D array dimension*
+   integer(kind=I4), intent(in) :: larg         !! *second 2D array dimension*
+   integer(kind=I4), intent(in) :: plan_flag    !! *planning option, [[fftw3(module):FFTW_ESTIMATE]] for example*
 
       integer(kind=I4) :: ithread
 
@@ -738,11 +824,8 @@ contains
 
 
    !=========================================================================================
-   !< @note
-   !   Plans are no more needed as no additional transformation will occur. *1 FFT distributed on several threads*
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    subroutine destroy_plan_fftw3()
+   !! Plans are no more needed as no additional transformation will occur. *1 FFT distributed on several threads*
    implicit none
 
       ! forward
@@ -756,11 +839,8 @@ contains
 
 
    !=========================================================================================
-   !< @note
-   !   Plans are no more needed as no additional transformation will occur. *several FFT on single thread each*
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    subroutine tab_destroy_plan_fftw3()
+   !! Plans are no more needed as no additional transformation will occur. *several FFT on single thread each*
    implicit none
 
       integer(kind=I4) :: ithread
@@ -779,13 +859,15 @@ contains
    endsubroutine tab_destroy_plan_fftw3
 
 
+   !=========================================================================================
+   !< @note Function that extends an array for FFT processing.
+   !<
+   !< + nx2 = 2 * ( nint(PAD_FFT_FILTER * nx)/2 )
+   !< + ny2 = 2 * ( nint(PAD_FFT_FILTER * ny)/2 )
+   !<
+   !<  @endnote
+   !----------------------------------------------------------------------------------------
    subroutine extend(tab_in, tab_out, nx, ny, nx2, ny2, ext, type_apo)
-   !================================================================================================
-   !< @note Function that extends an array for FFT processing.<\br>
-   !         nx2 = 2 * ( nint(PAD_FFT_FILTER * nx)/2 )
-   !         ny2 = 2 * ( nint(PAD_FFT_FILTER * ny)/2 )
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
    implicit none
    integer(kind=I4), intent(in )                          :: nx       !! *2D input array length*
    integer(kind=I4), intent(in )                          :: ny       !! *2D input array width*
@@ -871,15 +953,15 @@ contains
    endsubroutine extend
 
 
-
-
+   !=========================================================================================
+   !< @note Function that returns an apodized array.
+   !<
+   !<   To prevent gaps from appearing after FFT (because of non periodic waves), the surface must
+   !<   be transformed, but not too much ...
+   !<
+   !<  @endnote
+   !-----------------------------------------------------------------------------------------
    subroutine apod(tab_in, tab_out, long, larg, type_apo, param)
-   !================================================================================================
-   !< @note Function that returns an apodized array.<br/>
-   !        To prevent gaps from appearing after FFT (because of non periodic waves), the surface must
-   !        be transformed, but not too much ...
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
    implicit none
    integer(kind=I4), intent(in )                            :: long     !! *2D array length*
    integer(kind=I4), intent(in )                            :: larg     !! *2D array width*
@@ -979,52 +1061,47 @@ contains
    return
    endsubroutine apod
 
-   subroutine sample_grid(w, h, wf, hf, tab_in, tab_ou)
-   !================================================================================================
-   !< @note
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
-   implicit none
-   integer(kind=I4), intent(in) :: w   !! *input surface width*
-   integer(kind=I4), intent(in) :: h   !! *input surface height*
-   integer(kind=I4), intent(in) :: wf  !! *output surface width*
-   integer(kind=I4), intent(in) :: hf  !! *output surface height*
-   real   (kind=R8), dimension(1:wf, 1:hf), intent( in) :: tab_in  !! *input surface*
-   real   (kind=R8), dimension(1:w , 1:hf), intent(out) :: tab_ou  !! *output surface*
+!~    subroutine sample_grid(w, h, wf, hf, tab_in, tab_ou)
+!~    implicit none
+!~    integer(kind=I4), intent(in) :: w   !! *input surface width*
+!~    integer(kind=I4), intent(in) :: h   !! *input surface height*
+!~    integer(kind=I4), intent(in) :: wf  !! *output surface width*
+!~    integer(kind=I4), intent(in) :: hf  !! *output surface height*
+!~    real   (kind=R8), dimension(1:wf, 1:hf), intent( in) :: tab_in  !! *input surface*
+!~    real   (kind=R8), dimension(1:w , 1:hf), intent(out) :: tab_ou  !! *output surface*
 
-      integer(kind=I4) :: iw, ih, iwf, ihf
-      real   (kind=R8) :: dw, udw, dh, udh, h1, h2, h3, h4, hh
+!~       integer(kind=I4) :: iw, ih, iwf, ihf
+!~       real   (kind=R8) :: dw, udw, dh, udh, h1, h2, h3, h4, hh
 
-      do iw = 1, w
+!~       do iw = 1, w
 
-         iwf = floor( real( wf * (iw-1), kind = R8) / w ) + 1
-         dw  =        real( wf * (iw-1), kind = R8) / w   + 1 - iwf
-         udw = 1._R8 - dw
+!~          iwf = floor( real( wf * (iw-1), kind = R8) / w ) + 1
+!~          dw  =        real( wf * (iw-1), kind = R8) / w   + 1 - iwf
+!~          udw = 1._R8 - dw
 
-         do ih = 1, h
+!~          do ih = 1, h
 
-            ihf = floor( real( hf * (ih-1), kind = R8) / h ) + 1
-            dh  =        real( hf * (ih-1), kind = R8) / h   + 1 - ihf
-            udh = 1._R8 - dh
+!~             ihf = floor( real( hf * (ih-1), kind = R8) / h ) + 1
+!~             dh  =        real( hf * (ih-1), kind = R8) / h   + 1 - ihf
+!~             udh = 1._R8 - dh
 
-            h1 = tab_in(iwf    , ihf    )
-            h2 = tab_in(iwf + 1, ihf    )
-            h3 = tab_in(iwf + 1, ihf + 1)
-            h4 = tab_in(iwf    , ihf + 1)
+!~             h1 = tab_in(iwf    , ihf    )
+!~             h2 = tab_in(iwf + 1, ihf    )
+!~             h3 = tab_in(iwf + 1, ihf + 1)
+!~             h4 = tab_in(iwf    , ihf + 1)
 
-            hh = h1 * udw * udh + &  !
-                 h2 *  dw * udh + &  !
-                 h3 *  dw *  dh + &  !
-                 h4 * udw *  dh
+!~             hh = h1 * udw * udh + &  !
+!~                  h2 *  dw * udh + &  !
+!~                  h3 *  dw *  dh + &  !
+!~                  h4 * udw *  dh
 
-            tab_ou(iw, ih) = hh
+!~             tab_ou(iw, ih) = hh
 
-         enddo
+!~          enddo
 
-      enddo
+!~       enddo
 
-   return
-   endsubroutine sample_grid
+!~    return
+!~    endsubroutine sample_grid
 
 endmodule fftw3

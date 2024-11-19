@@ -1,3 +1,11 @@
+!< author: Arthur Francisco
+!<  version: 1.0.1
+!<  date: feb, 24 2023
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!<     **Various routines to sort real/integer arrays. Example of use.**
+!<  </span>
+
 program main
 use data_arch,     only : I4, R8
 use miscellaneous, only : get_unit

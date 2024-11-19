@@ -1,22 +1,17 @@
-!------------------------------------------------------------------------------------------
-!-!> @file       mod_interp_pond.f90
-!-!> @authors    Arthur Francisco
-!-!> @version    1.0
-!-!> @date       15 mai 2012
-!-!> @brief      Module d'interpolation et restriction
-!-!> @details    Ce module implémente des interpolations/pondérations sur des points régulièrement espacés                         \n
-!-!>             La technique utilisées est celle de Lagrange qui présente l'inconvénient d'être instable pour les ordres élevés   \n
-!-!>             (instabilité de Runge) Des polynômes de Tchebychev auraient été plus efficaces mais ils nécessitent des points    \n
-!-!>             localisés différemment.
-!------------------------------------------------------------------------------------------
+!< author: Arthur Francisco
+!< version: 1.0
+!< date: 15 mai 2012
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!< **Interpolation/weighting functions**
+!< </span>
 module intpl
 use data_arch, only : I4, R8
 implicit none
 
 private
 
-!-!< coefficient d'interpolation des ordres 1, 3, 5, 7 obtenus par les polynômes de Lagrange
-!-!< "c" pour coefficient, "i" interpolation, "1" "3" "5" "7" pour l'ordre
+! coefficient d'interpolation des ordres 1, 3, 5, 7 obtenus par les polynômes de Lagrange
+! "c" pour coefficient, "i" interpolation, "1" "3" "5" "7" pour l'ordre
 real(kind=R8), parameter ::   ci1_00 = +1.0_R8/2.0_R8
 real(kind=R8), parameter ::   ci1_01 = +1.0_R8/2.0_R8
 
@@ -41,8 +36,8 @@ real(kind=R8), parameter ::   ci7_05 = - 245.0_R8/2048.0_R8
 real(kind=R8), parameter ::   ci7_06 = +  49.0_R8/2048.0_R8
 real(kind=R8), parameter ::   ci7_07 = -   5.0_R8/2048.0_R8
 
-!-!< coefficient de pondération des ordres 0, 1, 3, 5, 7 obtenus par les polynômes de Lagrange
-!-!< -> transposée des coeff précédents, divisée par 2
+! coefficient de pondération des ordres 0, 1, 3, 5, 7 obtenus par les polynômes de Lagrange
+! -> transposée des coeff précédents, divisée par 2
 
 real(kind=R8), parameter ::   cp0_00 = +1.0_R8
 
@@ -97,16 +92,14 @@ public :: interp1D, restrict1D, interp2D, restrict2D, tborne
 
 contains
 
-!-!< -------------------------------------------------------------   \n
-!-!< Fonction interpolant des points régulièrement espacés 1D        \n
-!-!< -------------------------------------------------------------
 function interp(tab, lb, ind, ordre)
+!! Interpolate evenly spaced points
 implicit none
-real(kind=R8)                                :: interp    !-!< valeur particulière interpolée
-integer(kind=I4), intent(in)                 :: lb        !-!< borne inférieure
-integer(kind=4),  intent(in)                 :: ind       !-!< position de l'élément "milieu"
-integer(kind=4),  intent(in)                 :: ordre     !-!< ordre de l'interp 1, 3, 5 ou 7
-real(kind=R8),    intent(in), dimension(lb:) :: tab       !-!< tableau 1D à interpoler
+real(kind=R8)                                :: interp    !! *valeur particulière interpolée*
+integer(kind=I4), intent(in)                 :: lb        !! *borne inférieure*
+integer(kind=4),  intent(in)                 :: ind       !! *position de l'élément "milieu"*
+integer(kind=4),  intent(in)                 :: ordre     !! *ordre de l'interp 1, 3, 5 ou 7*
+real(kind=R8),    intent(in), dimension(lb:) :: tab       !! *tableau 1D à interpoler*
 
    select case (ordre)
 
@@ -147,17 +140,15 @@ return
 endfunction interp
 
 
-!-!< ---------------------------------------------------------------------------------    \n
-!-!< Interpolation des points régulièrement espacés 1D avec prise en compte des bords     \n
-!-!< ---------------------------------------------------------------------------------
 subroutine interp1D(tabgros, lb_gros, tabfin, lb_fin, ub_gros, ordre)
+!! Interpolate evenly spaced points, taking into account the borders
 implicit none
-integer(kind=I4), intent(in)                       :: lb_gros  !-!< indice inférieur
-integer(kind=I4), intent(in)                       :: lb_fin   !-!< indice inférieur de tab_fin
-integer(kind=I4), intent(in)                       :: ub_gros  !-!< taille de tabgros
-integer(kind=I4), intent(in)                       :: ordre    !-!< ordre de l'interpolation
-real(kind=R8),    intent(in), dimension(lb_gros:)  :: tabgros  !-!< tableau grossier à interpoler
-real(kind=R8),   intent(out), dimension(lb_fin :)  :: tabfin   !-!< tableau résultant, 2 fois plus fin
+integer(kind=I4), intent(in)                       :: lb_gros  !! *indice inférieur*
+integer(kind=I4), intent(in)                       :: lb_fin   !! *indice inférieur de tab_fin*
+integer(kind=I4), intent(in)                       :: ub_gros  !! *taille de tabgros*
+integer(kind=I4), intent(in)                       :: ordre    !! *ordre de l'interpolation*
+real(kind=R8),    intent(in), dimension(lb_gros:)  :: tabgros  !! *tableau grossier à interpoler*
+real(kind=R8),   intent(out), dimension(lb_fin :)  :: tabfin   !! *tableau résultant, 2 fois plus fin*
 
    integer(kind=I4) :: l_inf, l_sup, i, ii
    real(kind=R8)    :: tmp0, dtmp
@@ -165,11 +156,11 @@ real(kind=R8),   intent(out), dimension(lb_fin :)  :: tabfin   !-!< tableau rés
    real(kind=R8), dimension(       -ordre/2:        ordre  ) :: tab_inf
    real(kind=R8), dimension(ub_gros-ordre  :ub_gros+ordre/2) :: tab_sup
 
-   !-!< bornes pour déterminer les limites d'utilisation de la fonction interp
+   ! bornes pour déterminer les limites d'utilisation de la fonction interp
    l_inf = ordre/2
    l_sup = ub_gros -l_inf
 
-   !-!< extension du tableau par prolongement de la dérivée
+   ! extension du tableau par prolongement de la dérivée
    tab_inf(0:ordre) = tabgros(0:ordre)
    tmp0 = tab_inf(0)
    dtmp = tab_inf(0)-tab_inf(1)
@@ -187,7 +178,7 @@ real(kind=R8),   intent(out), dimension(lb_fin :)  :: tabfin   !-!< tableau rés
                             ordre = ordre )        !
    enddo
 
-   !-!< utilisation d'interp dans les limites normales
+   ! utilisation d'interp dans les limites normales
    do ii = l_inf+1, l_sup-1
       i = 2*ii
       tabfin(i  ) = tabgros(ii)
@@ -197,7 +188,7 @@ real(kind=R8),   intent(out), dimension(lb_fin :)  :: tabfin   !-!< tableau rés
                             ordre = ordre )        !
    enddo
 
-   !-!< extension du tableau par prolongement de la dérivée
+   ! extension du tableau par prolongement de la dérivée
    tab_sup(ub_gros-ordre:ub_gros) = tabgros(ub_gros-ordre:ub_gros)
    tmp0 = tab_sup(ub_gros)
    dtmp = tab_sup(ub_gros)-tab_sup(ub_gros-1)
@@ -220,16 +211,13 @@ return
 endsubroutine interp1D
 
 
-!-!<----------------------------------------------------------------------------       \n
-!-!< Routine d'interpolation sur grille 2D utilisant "interp1D" suivant les lignes
-!-!< et les colonnes.                                                                  \n
-!-!<----------------------------------------------------------------------------
 subroutine interp2D(tabgro, bgro, tabfin, bfin, ordre)
+!! Interpolate 2D evenly spaced points, taking into account the borders
 implicit none
-type(tborne),     intent(in )                                                  :: bfin, bgro  !-!< indices des tableaux
-integer(kind=I4), intent(in )                                                  :: ordre       !-!< ordre de l'interpolation
-real(kind=R8),    intent(in ), dimension(bgro%lb1:bgro%ub1, bgro%lb2:bgro%ub2) :: tabgro      !-!< tableau grossier départ
-real(kind=R8),    intent(out), dimension(bfin%lb1:bfin%ub1, bfin%lb2:bfin%ub2) :: tabfin      !-!< tableau résultant fin
+type(tborne),     intent(in )                                                  :: bfin, bgro  !! *indices des tableaux*
+integer(kind=I4), intent(in )                                                  :: ordre       !! *ordre de l'interpolation*
+real(kind=R8),    intent(in ), dimension(bgro%lb1:bgro%ub1, bgro%lb2:bgro%ub2) :: tabgro      !! *tableau grossier départ*
+real(kind=R8),    intent(out), dimension(bfin%lb1:bfin%ub1, bfin%lb2:bfin%ub2) :: tabfin      !! *tableau résultant fin*
 
    integer(kind=I4) :: ii, j
 
@@ -259,19 +247,14 @@ return
 endsubroutine interp2D
 
 
-!-!<------------------------------------------------------------------------------------------------------------
-!-!<                          RESTRICTION
-!-!<------------------------------------------------------------------------------------------------------------
-!-!< ----------------------------------------------------------------------------      \n
-!-!< Fonction retournant la valeur pondérée en UN endroit donné d'UN tableau 1D        \n
-!-!< ----------------------------------------------------------------------------
 function restrict(tab, lb, ind, ordre)
+!! Restrict evenly spaced points
 implicit none
-real(kind=R8)                               :: restrict  !-!< valeur particulière pondérée
-integer(kind=4), intent(in)                 :: lb        !-!< borne inférieure
-integer(kind=4), intent(in)                 :: ind       !-!< position de l'élément "milieu"
-integer(kind=4), intent(in)                 :: ordre     !-!< ordre de la restriction 1, 3, 5 ou 7
-real(kind=R8),   intent(in), dimension(lb:) :: tab       !-!< tableau 1D à réduire
+real(kind=R8)                               :: restrict  !! *valeur particulière pondérée*
+integer(kind=4), intent(in)                 :: lb        !! *borne inférieure*
+integer(kind=4), intent(in)                 :: ind       !! *position de l'élément "milieu"*
+integer(kind=4), intent(in)                 :: ordre     !! *ordre de la restriction 1, 3, 5 ou 7*
+real(kind=R8),   intent(in), dimension(lb:) :: tab       !! *tableau 1D à réduire*
 
    select case (ordre)
 
@@ -331,17 +314,15 @@ return
 endfunction restrict
 
 
-!-!<----------------------------------------------------------------------------    \n
-!-!< subroutine pondérant UN tableau 1D entier en prenant les bords en compte       \n
-!-!<----------------------------------------------------------------------------
 subroutine restrict1D(tabfin, lb_fin, tabgros, lb_gros, ub_gros, ordre)
+!! Restrict evenly spaced points, taking into account the borders
 implicit none
-integer(kind=I4), intent(in )                      :: lb_fin      !-!< indice inférieur de tab_fin
-integer(kind=I4), intent(in )                      :: lb_gros     !-!< indice inférieur
-integer(kind=I4), intent(in )                      :: ub_gros     !-!< taille de tabgros
-integer(kind=I4), intent(in )                      :: ordre       !-!< ordre de la restriction
-real(kind=R8),    intent(in ), dimension(lb_fin:)  :: tabfin      !-!< tableau de départ
-real(kind=R8),    intent(out), dimension(lb_gros:) :: tabgros     !-!< tableau grossier résultant
+integer(kind=I4), intent(in )                      :: lb_fin      !! *indice inférieur de tab_fin*
+integer(kind=I4), intent(in )                      :: lb_gros     !! *indice inférieur*
+integer(kind=I4), intent(in )                      :: ub_gros     !! *taille de tabgros*
+integer(kind=I4), intent(in )                      :: ordre       !! *ordre de la restriction*
+real(kind=R8),    intent(in ), dimension(lb_fin:)  :: tabfin      !! *tableau de départ*
+real(kind=R8),    intent(out), dimension(lb_gros:) :: tabgros     !! *tableau grossier résultant*
 
    integer(kind=I4) :: l_inf, l_sup, i, ii
    real(kind=R8)    :: tmp0, dtmp
@@ -349,11 +330,11 @@ real(kind=R8),    intent(out), dimension(lb_gros:) :: tabgros     !-!< tableau g
    real(kind=R8), dimension(          -   ordre:          2*ordre) :: tab_inf
    real(kind=R8), dimension(2*ub_gros - 2*ordre:2*ub_gros + ordre) :: tab_sup
 
-   !-!< bornes pour déterminer les limites d'utilisation de la fonction restrict
+   ! bornes pour déterminer les limites d'utilisation de la fonction restrict
    l_inf = ordre/2
    l_sup = ub_gros -l_inf
 
-   !-!< extension du tableau par prolongement de la dérivée
+   ! extension du tableau par prolongement de la dérivée
    tab_inf(0:2*ordre) = tabfin(0:2*ordre)
    tmp0 = tab_inf(0)
    dtmp = tab_inf(0)-tab_inf(1)
@@ -370,7 +351,7 @@ real(kind=R8),    intent(out), dimension(lb_gros:) :: tabgros     !-!< tableau g
                               ordre = ordre )      !
    enddo
 
-   !-!< utilisation d'interp dans les limites normales
+   ! utilisation d'interp dans les limites normales
    do ii = l_inf+1, l_sup-1
       i = 2*ii
       tabgros(ii) = restrict( tab   = tabfin,   &  !
@@ -379,7 +360,7 @@ real(kind=R8),    intent(out), dimension(lb_gros:) :: tabgros     !-!< tableau g
                               ordre = ordre )      !
    enddo
 
-   !-!< extension du tableau par prolongement de la dérivée
+   ! extension du tableau par prolongement de la dérivée
    tab_sup(2*ub_gros-2*ordre:2*ub_gros) = tabfin(2*ub_gros-2*ordre:2*ub_gros)
    tmp0 = tab_sup(2*ub_gros)
    dtmp = tab_sup(2*ub_gros)-tab_sup(2*ub_gros-1)
@@ -400,16 +381,13 @@ return
 endsubroutine restrict1D
 
 
-!-!<----------------------------------------------------------------------------       \n
-!-!< Routine de restriction sur grille 2D utilisant "restrict1D" suivant les lignes
-!-!< et les colonnes.                                                                  \n
-!-!<----------------------------------------------------------------------------
 subroutine restrict2D(tabfin, bfin, tabgros, bgros, ordre)
+!! Interpolate 2D evenly spaced points, taking into account the borders
 implicit none
-type(tborne),     intent(in )                                                      :: bfin, bgros     !-!< indices des tableaux
-integer(kind=I4), intent(in )                                                      :: ordre           !-!< ordre de l'interpolation
-real(kind=R8),    intent(in ), dimension( bfin%lb1: bfin%ub1,  bfin%lb2: bfin%ub2) :: tabfin          !-!< tableau de départ fin
-real(kind=R8),    intent(out), dimension(bgros%lb1:bgros%ub1, bgros%lb2:bgros%ub2) :: tabgros         !-!< tableau grossier résultant
+type(tborne),     intent(in )                                                      :: bfin, bgros     !! *indices des tableaux*
+integer(kind=I4), intent(in )                                                      :: ordre           !! *ordre de l'interpolation*
+real(kind=R8),    intent(in ), dimension( bfin%lb1: bfin%ub1,  bfin%lb2: bfin%ub2) :: tabfin          !! *tableau de départ fin*
+real(kind=R8),    intent(out), dimension(bgros%lb1:bgros%ub1, bgros%lb2:bgros%ub2) :: tabgros         !! *tableau grossier résultant*
 
    integer(kind=I4) :: ii, j
 
@@ -439,10 +417,8 @@ return
 endsubroutine restrict2D
 
 
-!-!< --------------------------------------------------------------------     \n
-!-!< subroutine générant les coefficients pour l'interpolation d'ordre k      \n
-!-!< --------------------------------------------------------------------
 subroutine genere_coeff_lagrange()
+!! subroutine generating coefficients for kth-order interpolation
 implicit none
 
    integer(kind=I4) :: i, j, k, n, c

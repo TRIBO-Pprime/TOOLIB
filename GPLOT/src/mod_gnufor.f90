@@ -1,3 +1,23 @@
+!< author: John Burkardt
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!< **A fortran api to GNUPLOT**
+!< </span>
+!<
+!< @note
+!< GNUFOR makes it possible, while running a FORTRAN90 program on a UNIX system, to generate some data and request an immediate plot.
+!< This is done by issuing a SYSTEM command that starts up GNUPLOT, and feeding it the appropriate commands and data.
+!< The FORTRAN90 program pauses while the graph is displayed in an X window, and the user can admire the plots for a while,
+!< before hitting return and giving control back to the FORTRAN90 program.
+!<
+!< [link](https://people.math.sc.edu/Burkardt/f_src/gnufor/gnufor.html)
+!<
+!< @endnote
+!<
+!< @warning
+!< To use this program, the command "gnuplot" must be in your path.
+!< @endwarning
+
 module gnufor
 implicit none
 

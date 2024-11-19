@@ -1,10 +1,10 @@
 !< author: Arthur Francisco
-!  version: 1.0.0
-!  date: july, 23 2018
-!
-!  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
-!     **Least squares, linear and non linear**
-!  </span>
+!< version: 1.0.0
+!< date: july, 23 2018
+!<
+!< <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!<    **Least squares, linear and non linear**
+!< </span>
 
 module least_squares
 use data_arch, only : I4, R8
@@ -22,9 +22,9 @@ contains
    subroutine moindres_carres(nb_var, nb_pts, hij, vec_xy, beta, f, df, typ, eps, relax, nb_var_der, info)
    !================================================================================================
    !< @note Function that returns the parameters of a function that approximates a data set. The parameters
-   !        determination is achieved by non linear least squares approximation.
-   !
-   !  @endnote
+   !<        determination is achieved by non linear least squares approximation.
+   !<
+   !<  @endnote
    !------------------------------------------------------------------------------------------------
    implicit none
    integer(kind=I4), intent(in   )                             :: nb_var      !! *number of parameters to be determined*
@@ -148,9 +148,9 @@ w:    do
    subroutine moindres_carres_lineaire(nb_var, nb_pts, hij, beta, Jf)
    !================================================================================================
    !< @note Function that returns the parameters of a function that approximates a data set. The parameters
-   !        determination is achieved by linear least squares approximation.
-   !
-   !  @endnote
+   !<        determination is achieved by linear least squares approximation.
+   !<
+   !<  @endnote
    !------------------------------------------------------------------------------------------------
    implicit none
    integer(kind=I4), intent(in )                                  :: nb_var   !! *number of parameters to be determined*

@@ -659,8 +659,8 @@
     real(wp)            :: t(*)
     real(wp)            :: bcoef(nf,n)
     real(wp)            :: work(*)
-    integer,intent(out) :: iflag  !!   0: no errors
-                                  !! 301: n should be >0
+    integer,intent(out) :: iflag  !! if   0: no errors
+                                  !! if 301: n should be >0
 
     integer :: i, j, m1, m2, iq, iw
 
@@ -767,13 +767,13 @@
                                                 !! yy into bcoef and then executing
                                                 !! call dbnslv(q,2k-1,n,k-1,k-1,bcoef)
     real(wp),dimension(*),intent(out) :: work   !! work vector of length 2*k
-    integer,intent(out)               :: iflag  !!   0: no errors.
-                                                !! 100: k does not satisfy k>=1.
-                                                !! 101: n does not satisfy n>=k.
-                                                !! 102: x(i) does not satisfy x(i)<x(i+1) for some i.
-                                                !! 103: some abscissa was not in the support of the.
+    integer,intent(out)               :: iflag  !! if   0: no errors.
+                                                !! if 100: k does not satisfy k>=1.
+                                                !! if 101: n does not satisfy n>=k.
+                                                !! if 102: x(i) does not satisfy x(i)<x(i+1) for some i.
+                                                !! if 103: some abscissa was not in the support of the.
                                                 !! corresponding basis function and the system is singular.
-                                                !! 104: the system of solver detects a singular system.
+                                                !! if 104: the system of solver detects a singular system.
                                                 !! although the theoretical conditions for a solution were satisfied.
 
     integer :: iwork, i, ilp1mx, j, jj, km1, kpkm2, left,lenq, np1
@@ -1157,11 +1157,11 @@
                                      !! information necessary to continue for index = 2.
                                      !! when index = 1 exclusively, these are scratch
                                      !! variables and can be used for other purposes.
-    integer,intent(out) :: iflag     !!   0: no errors
-                                     !! 201: k does not satisfy k>=1
-                                     !! 202: jhigh does not satisfy 1<=jhigh<=k
-                                     !! 203: index is not 1 or 2
-                                     !! 204: x does not satisfy t(ileft)<=x<=t(ileft+1)
+    integer,intent(out) :: iflag     !! if   0: no errors
+                                     !! if 201: k does not satisfy k>=1
+                                     !! if 202: jhigh does not satisfy 1<=jhigh<=k
+                                     !! if 203: index is not 1 or 2
+                                     !! if 204: x does not satisfy t(ileft)<=x<=t(ileft+1)
 
     integer :: imjp1, ipj, jp1, jp1ml, l
     real(wp) :: vm, vmprev
@@ -1263,13 +1263,13 @@
                                                 !! be changed by the user.  distinct splines require
                                                 !! distinct inbv parameters.
     real(wp),dimension(:)            :: work    !! work vector of length 3*k
-    integer,intent(out)              :: iflag   !!   0: no errors
-                                                !! 401: k does not satisfy k>=1
-                                                !! 402: n does not satisfy n>=k
-                                                !! 403: ideriv does not satisfy 0<=ideriv<k
-                                                !! 404: x is not greater than or equal to t(k)
-                                                !! 405: x is not less than or equal to t(n+1)
-                                                !! 406: a left limiting value cannot be obtained at t(k)
+    integer,intent(out)              :: iflag   !! if   0: no errors
+                                                !! if 401: k does not satisfy k>=1
+                                                !! if 402: n does not satisfy n>=k
+                                                !! if 403: ideriv does not satisfy 0<=ideriv<k
+                                                !! if 404: x is not greater than or equal to t(k)
+                                                !! if 405: x is not less than or equal to t(n+1)
+                                                !! if 406: a left limiting value cannot be obtained at t(k)
 
     integer :: i,iderp1,ihi,ihmkmj,ilo,imk,imkpj,ipj,&
                ip1,ip1mj,j,jj,j1,j2,kmider,kmj,km1,kpk,mflag

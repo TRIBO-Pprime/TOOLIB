@@ -1,3 +1,9 @@
+!< author: Arthur Francisco
+!< version: 1.0
+!< date: 15 mai 2012
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!< **Interpolation/weighting functions. Example of use.**
+!< </span>
 program test_intpl
 use data_arch, only : I4, R8, PI_R8
 use intpl
@@ -13,12 +19,10 @@ integer(kind=I4), parameter :: n1 = 1024, n2 = 2*n1
 stop
 contains
 
-   !-!< --------------------------------------------------------------------     \n
-   !-!< subroutine de test de l'interpolation/restriction                        \n
-   !-!< --------------------------------------------------------------------
    subroutine test_interp_pond( ordre )
+   !! Test interpolation/weighting function for a particular order
    implicit none
-   integer(kind=I4), intent(in) :: ordre
+   integer(kind=I4), intent(in) :: ordre !! order
 
       integer(kind=I4) :: i, ii, j, jj, istat1, istat2
 
@@ -37,10 +41,10 @@ contains
 
       if ( istat1 + istat2 /=0 ) stop '"test_interp_pond" problem of allocation'
 
-      !-!<.............................................................
+      !.............................................................
       do ii = 0, n1
          i = 2*ii
-         tableau1D(ii) = def_tab1D(i) !-!< initialisation à une fonction ressemblant à UN noyau élastique
+         tableau1D(ii) = def_tab1D(i) ! initialisation à une fonction ressemblant à UN noyau élastique
       enddo
 
       call interp1D( tabgros = tableau1D(0:n1),    &  !
@@ -48,18 +52,18 @@ contains
                      tabfin  = tab_f1D(0:n2),      &  !
                      lb_fin  = 0,                  &  !
                      ub_gros = n1,                 &  !
-                     ordre   = ordre )                !-!< interpolation de ce tableau
+                     ordre   = ordre )                ! interpolation de ce tableau
 
       do i = 0, n2
          erreur1D(i) = 200*abs( ( def_tab1D(i) - tab_f1D(i) ) / &  !
-                                ( def_tab1D(i) + tab_f1D(i) ) )    !-!< comparaison théorique/interpolé
+                                ( def_tab1D(i) + tab_f1D(i) ) )    ! comparaison théorique/interpolé
       enddo
       write(*,*) 'interp 1D - max err, mean err: :         ', maxval( erreur1D(0:n2) ), sum( erreur1D(0:n2) ) / (n2 + 1)
 
       !-!<.............................................................
 
       do i = 0, n2
-         tableau1D(i) = def_tab1D(i) !-!< initialisation à une fonction ressemblant à UN noyau élastique
+         tableau1D(i) = def_tab1D(i) ! initialisation à une fonction ressemblant à UN noyau élastique
       enddo
 
       call restrict1D( tabfin  = tableau1D(0:n2),     &  !
@@ -67,18 +71,18 @@ contains
                        tabgros = tab_g1D(0:n1),       &  !
                        lb_gros = 0,                   &  !
                        ub_gros = n1,                  &  !
-                       ordre   = ordre )                 !-!< restriction de ce tableau
+                       ordre   = ordre )                 ! restriction de ce tableau
 
       do ii = 0, n1
          erreur1D(ii) = 200*abs( ( def_tab1D(2*ii) - tab_g1D(ii) ) / &  !
-                                 ( def_tab1D(2*ii) + tab_g1D(ii) ) )    !-!< comparaison théorique/interpolé
+                                 ( def_tab1D(2*ii) + tab_g1D(ii) ) )    ! comparaison théorique/interpolé
       enddo
       write(*,*) 'weight 1D - max err, mean err:           ',  maxval( erreur1D(0:n1) ), sum( erreur1D(0:n1) ) / (n1 + 1)
 
       !-!<.............................................................
 
       do i = 0, n2
-         tableau1D(i) = def_tab1D(i) !-!< initialisation à une fonction ressemblant à UN noyau élastique
+         tableau1D(i) = def_tab1D(i) ! initialisation à une fonction ressemblant à UN noyau élastique
       enddo
 
       call restrict1D( tabfin  = tableau1D(0:n2),  &  !
@@ -86,24 +90,24 @@ contains
                        tabgros = tab_g1D(0:n1),    &  !
                        lb_gros = 0,                &  !
                        ub_gros = n1,               &  !
-                       ordre   = ordre )              !-!< restriction de ce tableau
+                       ordre   = ordre )              ! restriction de ce tableau
 
       call interp1D( tabgros = tab_g1D(0:n1),      &  !
                      lb_gros = 0,                  &  !
                      tabfin  = tab_f1D(0:n2),      &  !
                      lb_fin  = 0,                  &  !
                      ub_gros = n1,                 &  !
-                     ordre   = ordre )                !-!< interpolation de ce tableau
+                     ordre   = ordre )                ! interpolation de ce tableau
 
       do i = 0, n2
          erreur1D(i) = 200*abs( ( tableau1D(i) - tab_f1D(i) ) / &  !
-                                ( tableau1D(i) + tab_f1D(i) ) )    !-!< comparaison avant/après
+                                ( tableau1D(i) + tab_f1D(i) ) )    ! comparaison avant/après
       enddo
       write(*,*) 'weight + interp 1D - max err, mean err:  ', maxval( erreur1D(0:n2) ), sum( erreur1D(0:n2) ) / (n2 + 1)
 
-      !-!<.............................................................
-      !-!< Idem 2D
-      !-!<.............................................................
+      !.............................................................
+      ! Idem 2D
+      !.............................................................
 
       do jj = 0, n1
       do ii = 0, n1
@@ -130,7 +134,7 @@ contains
       enddo
       write(*,*) 'interp 2D - max err, mean err:           ',  maxval( erreur2D(0:n2, 0:n2) ), sum( erreur2D(0:n2, 0:n2) ) / (n2 + 1)**2
 
-      !-!<.............................................................
+      !.............................................................
 
       do j = 0, n2
       do i = 0, n2
@@ -156,7 +160,7 @@ contains
 
       write(*,*) 'weight 2D - max err, mean err:           ', maxval( erreur2D(0:n1, 0:n1) ), sum( erreur2D(0:n1, 0:n1) ) / (n1 + 1)**2
 
-      !-!<.............................................................
+      !.............................................................
 
       do j = 0, n2
       do i = 0, n2

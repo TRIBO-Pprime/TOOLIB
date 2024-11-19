@@ -874,11 +874,11 @@ contains
 
 
    !=========================================================================================
-   !> @note **Subroutine to prepare the [[SULU_ENV]] components**
-   !-----------------------------------------------------------------------------------------
    subroutine prep_superlu(sulu)
+   !! Subroutine to prepare the [[SULU_ENV]] components
    implicit none
    type(sulu_env), intent(inout) :: sulu
+
       integer(kind=I4) :: nn, nz, nb
 
       nn = sulu%n
@@ -940,14 +940,14 @@ contains
 
    !=========================================================================================
    !< @note
-   ! **Subroutine to factorize the system**
-   !
-   ! note the directives:
-   !
-   ! + sulu%options%Fact = ```DOFACT```
-   ! + sulu%SMB%ncol     = ```0```
-   !
-   ! @endnote
+   !< Subroutine to factorize the system
+   !<
+   !< note the directives:
+   !<
+   !< + sulu%options%Fact = ```DOFACT```
+   !< + sulu%SMB%ncol     = ```0```
+   !<
+   !< @endnote
    !-----------------------------------------------------------------------------------------
    subroutine fact_superlu(sulu, verbose)
    implicit none
@@ -993,29 +993,29 @@ contains
 
    !=========================================================================================
    !< @note
-   ! **Subroutine to solve the system**
-   !
-   ! + If no resolution has yet occured, sulu%first=```true```
-   !     * sulu%options%Fact = ```FACTORED```
-   !     * sulu%SMB%ncol     = sulu%nrhs (usually ```1```)
-   ! + otherwise
-   !     * sulu%options%Fact = ```SAMEPATTERN```
-   !     * sma, smb and smx are recreated but do not forget that we still have:
-   !         - mat%matsulu%irow   => mat%irow
-   !         - mat%matsulu%jptr   => mat%jptr
-   !         - mat%matsulu%a_elt  => mat%a_elt
-   !         - mat%matsulu%b      => mat%b
-   !
-   ! @endnote
-   !
-   ! @note
-   ! The solution is retrieved with the pointer *store* of type [[NCFORMAT]] which
-   ! gives access to [[NCFORMAT:nzval]]
-   ! @endnote
-   !
-   ! @warning
-   ! At the end, the memory is released with the dstruction of *sml* and *smu*
-   ! @endwarning
+   !< Subroutine to solve the system
+   !<
+   !< + If no resolution has yet occured, sulu%first=```true```
+   !<     * sulu%options%Fact = ```FACTORED```
+   !<     * sulu%SMB%ncol     = sulu%nrhs (usually ```1```)
+   !< + otherwise
+   !<     * sulu%options%Fact = ```SAMEPATTERN```
+   !<     * sma, smb and smx are recreated but do not forget that we still have:
+   !<         - mat%matsulu%irow   => mat%irow
+   !<         - mat%matsulu%jptr   => mat%jptr
+   !<         - mat%matsulu%a_elt  => mat%a_elt
+   !<         - mat%matsulu%b      => mat%b
+   !<
+   !< @endnote
+   !<
+   !< @note
+   !< The solution is retrieved with the pointer *store* of type [[NCFORMAT]] which
+   !< gives access to [[NCFORMAT:nzval]]
+   !< @endnote
+   !<
+   !< @warning
+   !< At the end, the memory is released with the dstruction of *sml* and *smu*
+   !< @endwarning
    !-----------------------------------------------------------------------------------------
    subroutine solv_superlu(sol_x, sulu, verbose)
    implicit none
@@ -1078,20 +1078,17 @@ contains
 
 
    !=========================================================================================
-   !< @note Subroutine that actually does nothing yet. Maybe, there will be extra memory that
-   ! could be released here?
-   !-----------------------------------------------------------------------------------------
    subroutine free_superlu()
+   !! Subroutine that actually does nothing yet. Maybe, there will be extra memory that
+   !! could be released here?
    implicit none
-   !type(SULU_ENV), intent(inout) :: sulu
    return
    endsubroutine free_superlu
 
 
    !=========================================================================================
-   !> @note **Subroutine to close the SuperLU process, with memory release**
-   !-----------------------------------------------------------------------------------------
    subroutine close_superlu(sulu)
+   !! Subroutine to close the SuperLU process, with memory release
    implicit none
    type(SULU_ENV), intent(inout) :: sulu
 

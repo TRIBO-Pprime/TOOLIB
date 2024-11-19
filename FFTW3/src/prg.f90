@@ -1,5 +1,10 @@
-!~ make all "FORT=gfortran-7" "DEBUG=yes"
-!~ ./prg
+!< author: Arthur Francisco
+!<  version: 1.0.0
+!<  date: November, 18 2024
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!<     **Routines to work with FFTs. Example of use**
+!<  </span>
 
 program test_fftw3
 !$ use omp_lib
@@ -16,11 +21,11 @@ integer(kind=I4) :: nb_iter
 real(kind=R8)    :: error
 real(kind=R4)    :: t1, t2
 
-real(kind=R8),    dimension(:,:), allocatable :: tab  !! real array containing the information to process
-real(kind=R8),    dimension(:,:), allocatable :: tabr1  !! real array containing the information to process
-real(kind=R8),    dimension(:,:), allocatable :: tabr2  !! real array containing the information to process
-complex(kind=R8), dimension(:,:), allocatable :: tab1 !! input array ```FORWARD```,  output array ```BACKWARD```
-complex(kind=R8), dimension(:,:), allocatable :: tab2 !! input array ```BACKWARD```, output array ```FORWARD```
+real(kind=R8),    dimension(:,:), allocatable :: tab     !! real array containing the information to process
+real(kind=R8),    dimension(:,:), allocatable :: tabr1   !! real array containing the information to process
+real(kind=R8),    dimension(:,:), allocatable :: tabr2   !! real array containing the information to process
+complex(kind=R8), dimension(:,:), allocatable :: tab1    !! input array ```FORWARD```,  output array ```BACKWARD```
+complex(kind=R8), dimension(:,:), allocatable :: tab2    !! input array ```BACKWARD```, output array ```FORWARD```
 
    ! COMPLEX -> COMPLEX -> COMPLEX
 
@@ -244,11 +249,8 @@ stop
 contains
 
    !=========================================================================================
-   !< @note
-   !   Subroutine that opens a surface file ```.dat```
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    subroutine read_surf(nom_fic, tab_s, nx, ny)
+   !! Subroutine that opens a surface file ```.dat```
    implicit none
    character(len=*), intent(in )                               :: nom_fic  !! *file name*
    integer(kind=I4), intent(in )                               :: nx       !! *number of pixels along x*
@@ -277,11 +279,8 @@ contains
 
 
    !=========================================================================================
-   !< @note
-   !   Subroutine that opens a surface file ```.dat```
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    subroutine save_surf(nom_fic, tab_s, nx, ny)
+   !! Subroutine that saves a surface file ```.dat```
    implicit none
    character(len=*), intent(in)                          :: nom_fic  !! *file name*
    integer(kind=I4), intent(in)                          :: nx       !! *number of pixels along x*

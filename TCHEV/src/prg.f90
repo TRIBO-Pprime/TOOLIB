@@ -72,16 +72,15 @@ character(len=128) :: str
 contains
 
    !==================================================================================================
-   !> @brief         Génération d'une surface polynômiale pour vérification des procédures d'approximation
-   !==================================================================================================
    subroutine convert_to_poly(long1, long2, deg1, deg2, tab_coef, tab_out)
+   !! Génération d'une surface polynômiale pour vérification des procédures d'approximation
    implicit none
-   integer(kind=I4), intent(in )                                     :: long1    !! taille x
-   integer(kind=I4), intent(in )                                     :: long2    !! taille y
-   integer(kind=I4), intent(in )                                     :: deg1     !!
-   integer(kind=I4), intent(in )                                     :: deg2     !!
-   real   (kind=R8), intent(in ), dimension(1:(deg1+1) * (deg2+1))   :: tab_coef !! tableau résultant : surface
-   real   (kind=R8), intent(out), dimension(1:long1, 1:long2)        :: tab_out  !! tableau résultant : surface
+   integer(kind=I4), intent(in )                                     :: long1    !! *taille x*
+   integer(kind=I4), intent(in )                                     :: long2    !! *taille y*
+   integer(kind=I4), intent(in )                                     :: deg1     !! *degré selon x*
+   integer(kind=I4), intent(in )                                     :: deg2     !! *degré selon y*
+   real   (kind=R8), intent(in ), dimension(1:(deg1+1) * (deg2+1))   :: tab_coef !! *tableau des coefficients*
+   real   (kind=R8), intent(out), dimension(1:long1, 1:long2)        :: tab_out  !! *tableau résultant : surface*
 
       real(kind=R8)    :: xi, xj
       integer(kind=I4) :: i, j, k1, k2, k1k2
@@ -105,18 +104,20 @@ contains
          enddo
 
       enddo
+
    return
    endsubroutine convert_to_poly
 
 
    subroutine genere_surf_poly(long1, long2, deg1, deg2, tab_out, tab_coef)
+   !! génère une surface
    implicit none
-   integer(kind=I4), intent(in )                                     :: long1    !! taille x
-   integer(kind=I4), intent(in )                                     :: long2    !! taille y
-   integer(kind=I4), intent(in )                                     :: deg1     !!
-   integer(kind=I4), intent(in )                                     :: deg2     !!
-   real   (kind=R8), intent(out), dimension(1:long1, 1:long2)        :: tab_out  !! tableau résultant : surface
-   real   (kind=R8), intent(out), dimension(1:(deg1+1) * (deg2+1))   :: tab_coef !! tableau résultant : surface
+   integer(kind=I4), intent(in )                                     :: long1    !! *taille x*
+   integer(kind=I4), intent(in )                                     :: long2    !! *taille y*
+   integer(kind=I4), intent(in )                                     :: deg1     !! *degré selon x*
+   integer(kind=I4), intent(in )                                     :: deg2     !! *degré selon y*
+   real   (kind=R8), intent(out), dimension(1:long1, 1:long2)        :: tab_out  !! *tableau résultant : surface*
+   real   (kind=R8), intent(out), dimension(1:(deg1+1) * (deg2+1))   :: tab_coef !! *tableau des coefficients*
 
       real(kind=R8)    :: xi, xj
       integer(kind=I4) :: i, j, ij, k1, k2, k1k2
@@ -194,6 +195,7 @@ contains
          enddo
 
       enddo
+
    return
    endsubroutine genere_surf_poly
 

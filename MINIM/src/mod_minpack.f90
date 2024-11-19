@@ -1,10 +1,23 @@
+!< author: John Burkardt
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!< **A fortran collection of functions for minimization problems**
+!< </span>
+!<
+!< @note
+!< MINPACK is a FORTRAN90 library which solves systems of nonlinear equations,
+!< or carries out the least squares minimization of the residual of a set of linear or nonlinear equations,
+!< by Jorge More, Danny Sorenson, Burton Garbow, Kenneth Hillstrom.
+!<
+!< [link](https://people.math.sc.edu/Burkardt/f_src/minpack/minpack.html)
+!<
+!< @endnote
+!<
+
 module minpack
 implicit none
 
 public
-
-!~ public :: lmder1
-!~ public :: r8_uniform_01, r8mat_print, qrfac, qform, lmstr1, lmdif1, lmder1, hybrd1, chkder, timestamp, enorm
 
 contains
 

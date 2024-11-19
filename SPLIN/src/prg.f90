@@ -1,3 +1,10 @@
+!< author: Arthur Francisco
+!<  version: 1.0.1
+!<  date: feb, 24 2023
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!<     **Jacob Williams SPLIN. Example of use.**
+!<  </span>
 program test_bspline
 use bspline
 use data_arch, only : I4, R8, PI_R8

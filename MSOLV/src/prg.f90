@@ -1,57 +1,58 @@
 !< author: Arthur Francisco
-!  version: 1.0.0
-!  date: july, 12 2018
-!
-!  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
-!     **MSOLV example of use**
-!  </span>
-!
-! @note
-!
-! The program asks first for the matrix size: ```1``` for a very small matrix, and ```0```
-! for a bigger one.The systems are CC HB format systems with elemental matrices.
-!
-! <h3>Small system -- nnz=18</h3>
-!
-! The system is (example provided by MUMP):
-! $$ A1 = \begin{pmatrix}
-!           -1 & 2 & 3 \\
-!            2 & 1 & 1 \\
-!            1 & 1 & 1
-!          \end{pmatrix} ~
-!    A2 = \begin{pmatrix}
-!            2 & -1 &  3 \\
-!            1 &  2 & -1 \\
-!            3 &  2 &  1
-!         \end{pmatrix}  \\ \text{ } \\
-! \rightarrow a\_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 1, 2, 1, 3, -1, 2, 2, 3, -1, 1) \\ \text{ } \\
-!  A = \begin{pmatrix}
-!           -1 & 2 & 3 & 0 & 0 \\
-!            2 & 1 & 1 & 0 & 0 \\
-!            1 & 1 & 3 &-1 & 3 \\
-!            0 & 0 & 1 & 2 &-1 \\
-!            0 & 0 & 3 & 2 & 1
-!      \end{pmatrix}  \\ \text{ } \\
-! \rightarrow eltvar = (1, 2, 3, 3, 4, 5) \text{ and } eltptr = (1, 4, 7)
-! $$
-!
-! + *eltvar* locates the elemental matrix line in the assembled matrix
-! + *eltptr* gives the elemental matrix first entry position in *eltvar*
-!          (last position being size(*eltvar*)+1) <br/><br/>
-!
-! The rhs is (12, 7, 23, 6, 22), and the solution (1, 2, 3, 4, 5)
-!
-! <h3>Big (well, in fact, medium) system -- nnz=2,097,152</h3>
-!
-! The system results from a *MUSST* study case and there is of course no theoretical solution to compare with
-!
-! @endnote
-!
-! @warning
-!
-! Some solver implementation are C written, so the arrays may begin at 0. It explains the variable ```dec``` in [[prod_a_x]]
-!
-! @endwarning
+!<  version: 1.0.0
+!<  date: july, 12 2018
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!<     **MSOLV example of use**
+!<  </span>
+!<
+!< @note
+!<
+!<
+!< The program asks first for the matrix size: ```1``` for a very small matrix, and ```0```
+!< for a bigger one.The systems are CC HB format systems with elemental matrices.
+!<
+!< <h3>Small system -- nnz=18</h3>
+!<
+!< The system is (example provided by MUMP):
+!< $$ A1 = \begin{pmatrix}
+!<           -1 & 2 & 3 \\
+!<            2 & 1 & 1 \\
+!<            1 & 1 & 1
+!<          \end{pmatrix} ~
+!<    A2 = \begin{pmatrix}
+!<            2 & -1 &  3 \\
+!<            1 &  2 & -1 \\
+!<            3 &  2 &  1
+!<         \end{pmatrix}  \\ \text{ } \\
+!< \rightarrow a\_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 1, 2, 1, 3, -1, 2, 2, 3, -1, 1) \\ \text{ } \\
+!<  A = \begin{pmatrix}
+!<           -1 & 2 & 3 & 0 & 0 \\
+!<            2 & 1 & 1 & 0 & 0 \\
+!<            1 & 1 & 3 &-1 & 3 \\
+!<            0 & 0 & 1 & 2 &-1 \\
+!<            0 & 0 & 3 & 2 & 1
+!<      \end{pmatrix}  \\ \text{ } \\
+!< \rightarrow eltvar = (1, 2, 3, 3, 4, 5) \text{ and } eltptr = (1, 4, 7)
+!< $$
+!<
+!< + *eltvar* locates the elemental matrix line in the assembled matrix
+!< + *eltptr* gives the elemental matrix first entry position in *eltvar*
+!<          (last position being size(*eltvar*)+1) <br/><br/>
+!<
+!< The rhs is (12, 7, 23, 6, 22), and the solution (1, 2, 3, 4, 5)
+!<
+!< <h3>Big (well, in fact, medium) system -- nnz=2,097,152</h3>
+!<
+!< The system results from a *MUSST* study case and there is of course no theoretical solution to compare with
+!<
+!< @endnote
+!<
+!< @warning
+!<
+!< Some solver implementation are C written, so the arrays may begin at 0. It explains the variable ```dec``` in [[prod_a_x]]
+!<
+!< @endwarning
 program test_solvers
 use omp_lib,   only :   omp_get_wtime
 use data_arch, only :   I4, R4, R8, &
@@ -98,13 +99,14 @@ integer(kind=I4), dimension(:), allocatable :: eltvar       !! *elemental matrix
    call get_unit(uu)
 
    if (i==0) then
-      open(uu, file="mat/big_syst.sys")
+      open(unit = uu, file = "mat/big_syst.bin",   form = 'unformatted', access = 'stream')
    else
-      open(uu, file="mat/small_syst.sys")
+      open(unit = uu, file = "mat/small_syst.bin", form = 'unformatted', access = 'stream')
    endif
 
    ! ======================== SYST INFO ===========================================
-   read(uu, *) slv_struct%nn, slv_struct%ne, slv_struct%nvar, slv_struct%nt
+   read(uu) slv_struct%nn, slv_struct%ne, slv_struct%nvar, slv_struct%nt
+
    write(OPU, *) '*************** INFO ********************'
    write(OPU, *) 'system size:                  ', slv_struct%nn
    write(OPU, *) 'number of elemental matrices: ', slv_struct%ne
@@ -125,16 +127,16 @@ integer(kind=I4), dimension(:), allocatable :: eltvar       !! *elemental matrix
    call solve_syst(mat = slv_struct, step = 'ini')
 
    do ii = 1, slv_struct%nvar
-      read(uu, *) slv_struct%eltvar(ii)
+      read(uu) slv_struct%eltvar(ii)
    enddo
    do ii = 1, slv_struct%ne +1
-      read(uu, *) slv_struct%eltptr(ii)
+      read(uu) slv_struct%eltptr(ii)
    enddo
    do ii = 1, slv_struct%nt
-      read(uu, *) slv_struct%a_elt(ii)
+      read(uu) slv_struct%a_elt(ii)
    enddo
    do ii = 1, slv_struct%nn
-      read(uu, *) slv_struct%b(ii)
+      read(uu) slv_struct%b(ii)
    enddo
 
    close(uu)
@@ -205,8 +207,9 @@ contains
 
    !=========================================================================================
    !< @note The product \(\{y\}\) of the system matrix \([A]\) by the solution \(\{x\}\), is
-   !        calculated, and compared to the right hand side \(\{b\}\).
-   !        The calculated error is the absolute error in %.
+   !<        calculated, and compared to the right hand side \(\{b\}\).
+   !<        The calculated error is the absolute error in %.
+   !< @endnote
    !-----------------------------------------------------------------------------------------
    subroutine verif_solution(slv_struct, a_elt, b, error)
    implicit none
@@ -245,9 +248,8 @@ contains
 
 
    !=========================================================================================
-   !> @note multiplication of the system coefficient by a random factor
-   !-----------------------------------------------------------------------------------------
    subroutine modify_a_elt(tab, nz)
+   !! mMltiplication of the system coefficient by a random factor
    implicit none
    integer(kind=I4), intent(in) :: nz
    real(kind=R8), intent(inout) :: tab(1:nz)
@@ -262,9 +264,8 @@ contains
 
 
    !=========================================================================================
-   !> @note \([A] \{x\}\), assembled CC format
-   !-----------------------------------------------------------------------------------------
    subroutine prod_a_x(n, nz, x, y, a_elt, irow, jptr, slvt)
+   !! \([A] \{x\}\), assembled CC format
    implicit none
    integer(kind=I4), intent(in) :: n, nz, slvt
    real(kind=R8), dimension(nz), intent(in)     :: a_elt
@@ -286,9 +287,8 @@ contains
 
 
    !=========================================================================================
-   !> @note \([A] \{x\}\), elemental CC format
-   !-----------------------------------------------------------------------------------------
    subroutine prod_elemental_x(n, nz, nelt, nvar, x, y, a_elt, eltptr, eltvar)
+   !! \([A] \{x\}\), elemental CC format
    implicit none
    integer(kind=I4), intent(in) :: n, nz, nelt, nvar
    real(kind=R8),    dimension(nz     ), intent(in) :: a_elt

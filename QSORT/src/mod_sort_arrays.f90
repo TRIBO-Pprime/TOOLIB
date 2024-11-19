@@ -1,10 +1,10 @@
 !< author: Arthur Francisco
-!  version: 1.0.1
-!  date: feb, 24 2023
-!
-!  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
-!     **Various routines to sort real/integer arrays**
-!  </span>
+!<  version: 1.0.1
+!<  date: feb, 24 2023
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!<     **Various routines to sort real/integer arrays**
+!<  </span>
 
 module sort_arrays
 use data_arch, only : I4, R8
@@ -17,13 +17,14 @@ public :: init_order, sort_array2
 contains
 
    subroutine sort_array2(tab_inout, tab0, tab1, tab2, tab3, n)
+   !! Sort 1D arrays, real or integer, according the first one
    implicit none
-   integer(kind=I4), intent(in)                            :: n
-   class(*)        , intent(inout), dimension(n)           :: tab_inout
-   integer(kind=I4), intent(inout), dimension(n), optional :: tab0
-   class(*)        , intent(inout), dimension(n), optional :: tab1
-   class(*)        , intent(inout), dimension(n), optional :: tab2
-   class(*)        , intent(inout), dimension(n), optional :: tab3
+   integer(kind=I4), intent(in)                            :: n            !! *size of the arrays*
+   class(*)        , intent(inout), dimension(n)           :: tab_inout    !! *reference array to sort*
+   integer(kind=I4), intent(inout), dimension(n), optional :: tab0         !! *second array to sort according the order of the first one*
+   class(*)        , intent(inout), dimension(n), optional :: tab1         !! *third array to sort according the order of the first one*
+   class(*)        , intent(inout), dimension(n), optional :: tab2         !! *4th array to sort according the order of the first one*
+   class(*)        , intent(inout), dimension(n), optional :: tab3         !! *5th array to sort according the order of the first one*
 
       integer(kind=I4), allocatable, dimension(:) :: tab_order
 
@@ -64,11 +65,13 @@ contains
    return
    endsubroutine sort_array2
 
+
    subroutine change_array_order(tab_inout, order, n)
+   !! Given an order vector, sort a real or integer vector
    implicit none
-   integer(kind=I4), intent(in)                  :: n
-   class(*)        , intent(inout), dimension(n) :: tab_inout
-   integer(kind=I4), intent(inout), dimension(n) :: order
+   integer(kind=I4), intent(in)                  :: n          !! *size of the arrays*
+   class(*)        , intent(inout), dimension(n) :: tab_inout  !! *array to sort*
+   integer(kind=I4), intent(inout), dimension(n) :: order      !! *order vector*
 
       integer(kind=I4) :: i
 
@@ -113,9 +116,10 @@ contains
 
 
    subroutine init_order(order, n)
+   !! Vector initialization: 1 ... n
    implicit none
-   integer(kind=I4), intent(in)                :: n
-   integer(kind=I4), dimension(n), intent(out) :: order
+   integer(kind=I4), intent(in)                :: n      !! *size of the vector*
+   integer(kind=I4), dimension(n), intent(out) :: order  !! *order vector*
 
       integer(kind=I4) :: i
 
@@ -125,16 +129,13 @@ contains
    endsubroutine init_order
 
    !=========================================================================================
-   !<@note
-   !   Subroutine to sort a vector of integers
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    recursive subroutine sort_array_integer_with_order(g, d, itabref, order)
+   !! Sort a vector of integers and store the order
    implicit none
-   integer(kind=I4), intent(in   )               :: g
-   integer(kind=I4), intent(in   )               :: d
-   integer(kind=I4), intent(inout), dimension(:) :: itabref
-   integer(kind=I4), intent(inout), dimension(:) :: order
+   integer(kind=I4), intent(in   )               :: g          !! *left index*
+   integer(kind=I4), intent(in   )               :: d          !! *right index*
+   integer(kind=I4), intent(inout), dimension(:) :: itabref    !! *vector to sort*
+   integer(kind=I4), intent(inout), dimension(:) :: order      !! *sort order*
 
       integer(kind=I4) :: i, j, mil, itmp
       integer(kind=I4) :: tmp, cle
@@ -177,16 +178,13 @@ contains
    endsubroutine sort_array_integer_with_order
 
    !=========================================================================================
-   !<@note
-   !   Subroutine to sort a vector of reals
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    recursive subroutine sort_array_real_with_order(g, d, rtabref, order)
+   !! Sort a vector of reals and store the order
    implicit none
-   integer(kind=I4), intent(in)                  :: g
-   integer(kind=I4), intent(in)                  :: d
-   real(kind=R8),    intent(inout), dimension(:) :: rtabref
-   integer(kind=I4), intent(inout), dimension(:) :: order
+   integer(kind=I4), intent(in)                  :: g          !! *left index*
+   integer(kind=I4), intent(in)                  :: d          !! *right index*
+   real(kind=R8),    intent(inout), dimension(:) :: rtabref    !! *vector to sort*
+   integer(kind=I4), intent(inout), dimension(:) :: order      !! *sort order*
 
       integer(kind=I4) :: i, j, mil, itmp
       real(kind=R8)    :: tmp, cle
@@ -230,15 +228,12 @@ contains
 
 
    !=========================================================================================
-   !<@note
-   !   Subroutine to sort a vector of integers
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    recursive subroutine sort_array_integer(g, d, itabref)
+   !! Sort a vector of integers
    implicit none
-   integer(kind=I4), intent(in   )               :: g
-   integer(kind=I4), intent(in   )               :: d
-   integer(kind=I4), intent(inout), dimension(:) :: itabref
+   integer(kind=I4), intent(in   )               :: g          !! *left index*
+   integer(kind=I4), intent(in   )               :: d          !! *right index*
+   integer(kind=I4), intent(inout), dimension(:) :: itabref    !! *vector to sort*
 
       integer(kind=I4) :: i, j, mil
       integer(kind=I4) :: tmp, cle
@@ -276,15 +271,12 @@ contains
    endsubroutine sort_array_integer
 
    !=========================================================================================
-   !<@note
-   !   Subroutine to sort a vector of reals
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    recursive subroutine sort_array_real(g, d, rtabref)
+   !! Sort a vector of reals
    implicit none
-   integer(kind=I4), intent(in)                  :: g
-   integer(kind=I4), intent(in)                  :: d
-   real(kind=R8),    intent(inout), dimension(:) :: rtabref
+   integer(kind=I4), intent(in)                  :: g          !! *left index*
+   integer(kind=I4), intent(in)                  :: d          !! *right index*
+   real(kind=R8),    intent(inout), dimension(:) :: rtabref    !! *vector to sort*
 
       integer(kind=I4) :: i, j, mil
       real(kind=R8)    :: tmp, cle

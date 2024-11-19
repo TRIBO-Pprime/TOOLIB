@@ -1,14 +1,11 @@
-! ======================================================================
-! UMFPACK Fortran interface via the mUMFPACK module
-! ======================================================================
-! Version 1.0 (Apr 23, 2014) for UMFPACK version 5.6.2
-! ======================================================================
-! Compile with any Fortran compiler with support of iso_c_binding module
-! and link with the UMFPACK C library:
-! e.g., gfortran umfpack.f90 my_code.f90 -lumfpack
-! ======================================================================
+!< @note
+!< UMFPACK Fortran interface via the mUMFPACK module
+!< Version 1.0 (Apr 23, 2014) for UMFPACK version 5.6.2
+!< Compile with any Fortran compiler with support of iso_c_binding module
+!< and link with the UMFPACK C library:
+!< e.g., gfortran umfpack.f90 my_code.f90 -lumfpack
+!< @endnote
 module mumfpack
-! ======================================================================
 use iso_c_binding
 implicit none
 

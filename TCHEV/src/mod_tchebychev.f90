@@ -1,11 +1,11 @@
 
 !< author: Arthur Francisco
-!  version: 1.0.0
-!  date: february, 27 2023
-!
-!  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
-!     **Routines to subtract a least square polynomial from a surface**
-!  </span>
+!<  version: 1.0.0
+!<  date: february, 27 2023
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!<     **Routines to subtract a least square polynomial from a surface**
+!<  </span>
 
 module tchebychev
 use data_arch,     only : I4, R8
@@ -23,17 +23,20 @@ public :: tcheby, tab_tcheby, tab_poly_tcheby, tab_Jf_tcheby, coeff_tcheby_vers_
 contains
 
    !==================================================================================================
-   !> @brief         Valeur en x du polynôme de Tchebichev de degré n
-   !> @details       @f{align*}{
-   !> P_n(x)=\sum_{i=1}^{n}\left[ 2^{i-1} t_i x^i +\sum_{k=1}^{i/2} \frac{i(i-k-1)!}{k!(i-2k)!} (-1)^k 2^{i-2k-1} t_i x^{i-2k} \right]
-   !>                @f}
-   !>                Site : http://fr.wikipedia.org/wiki/Polynômes_de_Tchebychev
+   !< @note
+   !< Valeur en x du polynôme de Tchebichev de degré n
+   !<
+   !< $$
+   !< P_n(x)=\sum_{i=1}^{n}\left[ 2^{i-1} t_i x^i +\sum_{k=1}^{i/2} \frac{i(i-k-1)!}{k!(i-2k)!} (-1)^k 2^{i-2k-1} t_i x^{i-2k} \right]
+   !< $$
+   !< [Site](http://fr.wikipedia.org/wiki/Polynômes_de_Tchebychev)
+   !< @endnote
    !==================================================================================================
    function tcheby(n, x)
    implicit none
    real(kind=R8) :: tcheby
-   integer(kind=I4), intent(in) :: n !! degré du polynôme
-   real(kind=R8), intent(in)    :: x !! variable
+   integer(kind=I4), intent(in) :: n !! *degré du polynôme*
+   real(kind=R8), intent(in)    :: x !! *variable*
 
       integer(kind=I4) :: k, kk
       real(kind=R8)    :: y, tmp
@@ -54,17 +57,22 @@ contains
 
    return
    endfunction tcheby
+
+
    !==================================================================================================
-   !> @brief         Valeurs tabulées de polynômes de Tchebychev
-   !> @details       On se donne des points xi le long d'UN axe et on calcule les valeurs d'UN      \n
-   !>                polynôme de Tchebychev de degré j en ces points.
+   !< @note
+   !<  Valeurs tabulées de polynômes de Tchebychev
+   !<
+   !<  On se donne des points xi le long d'UN axe et on calcule les valeurs d'un
+   !<  polynôme de Tchebychev de degré j en ces points.
+   !< @endnote
    !==================================================================================================
    subroutine tab_tcheby(deg, nx, vec_x, tab_tche)
    implicit none
-   integer(kind=I4), intent(in ) :: deg !! degré max du polynôme
-   integer(kind=I4), intent(in ) :: nx  !! nbre de points de calcul
-   real(kind=R8),    intent(in ), dimension(1:nx) :: vec_x !! vecteur des points de calcul
-   real(kind=R8),    intent(out), allocatable, dimension(:,:)   :: tab_tche !! tableau des valeurs calculées
+   integer(kind=I4), intent(in ) :: deg                                       !! *degré max du polynôme*
+   integer(kind=I4), intent(in ) :: nx                                        !! *nbre de points de calcul*
+   real(kind=R8),    intent(in ), dimension(1:nx) :: vec_x                    !! *vecteur des points de calcul*
+   real(kind=R8),    intent(out), allocatable, dimension(:,:)   :: tab_tche   !! *tableau des valeurs calculées*
 
       integer(kind=I4) :: i, j
       real(kind=R8)    :: xi
@@ -80,23 +88,28 @@ contains
 
    return
    endsubroutine tab_tcheby
+
+
    !==================================================================================================
-   !> @brief         Surface définie par UN produit de polynômes de Tchebychev en x et y
-   !> @details       Le domaine étant discrétisé et UN ensemble de coefficients donnés (provenant  \n
-   !>                 d'une approximation par moindres carrés) on a la valeur de la fonction       \n
-   !>                 surface en chaque point.
+   !< @note
+   !<  Surface définie par un produit de polynômes de Tchebychev en x et y
+   !<
+   !<  Le domaine étant discrétisé et UN ensemble de coefficients donnés (provenant
+   !<  d'une approximation par moindres carrés) on a la valeur de la fonction surface en chaque point.
+   !<
+   !< @endnote
    !==================================================================================================
    subroutine tab_poly_tcheby(nx1, nx2, nvarx, nvary, nb_var, tab_tche1, tab_tche2, var, tab_poly_tche, multi_thread)
    implicit none
-   integer(kind=I4), intent(in ) :: nb_var   !!
-   integer(kind=I4), intent(in ) :: nx1      !! nbre de points de calcul selon x
-   integer(kind=I4), intent(in ) :: nx2      !! nbre de points de calcul selon y
-   integer(kind=I4), intent(in ) :: nvarx    !! degré max de Tchebychev utilisé selon x
-   integer(kind=I4), intent(in ) :: nvary    !! degré max de Tchebychev utilisé selon y
-   real(kind=R8),    intent(in ), dimension(1:nx1, 1:nvarx+1) :: tab_tche1       !! tableau des valeurs calculées
-   real(kind=R8),    intent(in ), dimension(1:nx2, 1:nvary+1) :: tab_tche2       !! tableau des valeurs calculées
-   real(kind=R8),    intent(in ), dimension(1:nb_var)         :: var             !! vecteur des coefficients
-   real(kind=R8),    intent(out), dimension(1:nx1, 1:nx2)     :: tab_poly_tche   !! tableau résultant : surface
+   integer(kind=I4), intent(in ) :: nb_var                                       !! *nbre de coefficients*
+   integer(kind=I4), intent(in ) :: nx1                                          !! *nbre de points de calcul selon x*
+   integer(kind=I4), intent(in ) :: nx2                                          !! *nbre de points de calcul selon y*
+   integer(kind=I4), intent(in ) :: nvarx                                        !! *degré max de Tchebychev utilisé selon x*
+   integer(kind=I4), intent(in ) :: nvary                                        !! *degré max de Tchebychev utilisé selon y*
+   real(kind=R8),    intent(in ), dimension(1:nx1, 1:nvarx+1) :: tab_tche1       !! *tableau des valeurs calculées*
+   real(kind=R8),    intent(in ), dimension(1:nx2, 1:nvary+1) :: tab_tche2       !! *tableau des valeurs calculées*
+   real(kind=R8),    intent(in ), dimension(1:nb_var)         :: var             !! *vecteur des coefficients*
+   real(kind=R8),    intent(out), dimension(1:nx1, 1:nx2)     :: tab_poly_tche   !! *tableau résultant : surface*
    logical(kind=I4), intent(in ), optional :: multi_thread
 
       real(kind=R8)    :: tmp1, tmp2
@@ -138,21 +151,21 @@ contains
 
    return
    endsubroutine tab_poly_tcheby
-   !==================================================================================================
-   !> @brief         Tableau des dérivées par rapport aux coefficients de tab_tche
-   !==================================================================================================
+
+
    subroutine tab_Jf_tcheby(nx1, nx2, nb_pts, nvarx, nvary, nb_var, tab_tche1, tab_tche2, tab_Jf, imask, multi_thread)
+   !! Tableau des dérivées par rapport aux coefficients de tab_tche
    implicit none
-   integer(kind=I4), intent(in ) :: nb_var   !! nombre de fonctions de base utilisées
-   integer(kind=I4), intent(in ) :: nx1      !! nbre de points de calcul selon x
-   integer(kind=I4), intent(in ) :: nx2      !! nbre de points de calcul selon y
-   integer(kind=I4), intent(in ) :: nb_pts   !!
-   integer(kind=I4), intent(in ) :: nvarx    !! degré max de Tchebychev utilisé selon x
-   integer(kind=I4), intent(in ) :: nvary    !! degré max de Tchebychev utilisé selon y
-   real(kind=R8),    intent(in ), dimension(1:nx1, 1:nvarx+1) :: tab_tche1    !! tableau des valeurs calculées
-   real(kind=R8),    intent(in ), dimension(1:nx2, 1:nvary+1) :: tab_tche2    !! tableau des valeurs calculées
-   integer(kind=I4), intent(in ), dimension(1:nx1, 1:nx2), optional :: imask  !! masque
-   real(kind=R8),    intent(out), allocatable, dimension(:,:) :: tab_Jf       !! tableau des dérivées
+   integer(kind=I4), intent(in ) :: nb_var                                    !! *nombre de fonctions de base utilisées*
+   integer(kind=I4), intent(in ) :: nx1                                       !! *nbre de points de calcul selon x*
+   integer(kind=I4), intent(in ) :: nx2                                       !! *nbre de points de calcul selon y*
+   integer(kind=I4), intent(in ) :: nb_pts                                    !! *nbre de points*
+   integer(kind=I4), intent(in ) :: nvarx                                     !! *degré max de Tchebychev utilisé selon x*
+   integer(kind=I4), intent(in ) :: nvary                                     !! *degré max de Tchebychev utilisé selon y*
+   real(kind=R8),    intent(in ), dimension(1:nx1, 1:nvarx+1) :: tab_tche1    !! *tableau des valeurs calculées*
+   real(kind=R8),    intent(in ), dimension(1:nx2, 1:nvary+1) :: tab_tche2    !! *tableau des valeurs calculées*
+   integer(kind=I4), intent(in ), dimension(1:nx1, 1:nx2), optional :: imask  !! *masque*
+   real(kind=R8),    intent(out), allocatable, dimension(:,:) :: tab_Jf       !! *tableau des dérivées*
    logical(kind=I4), intent(in ), optional :: multi_thread
 
       integer(kind=I4) :: ivar, jvar, ij, ipt, jpt, ijpt, ibatch, nb_threads
@@ -197,20 +210,27 @@ contains
 
    return
    endsubroutine tab_Jf_tcheby
+
    !==================================================================================================
-   ! MODIFIE !!!
-   !> @brief         Transformation des coefficients de Tchebychev en coefficients de monômes
-   !> @details       Un monôme de degré p reçoit de Ti(x) (polynôme de Tcheby de degré i) :
-   !>                @f{align*}{
-   !> 2^{i-1} t_i \text{ si i=p}
-   !> m(p)=m(p)+\frac{i(i-k-1)!}{k!(i-2k)!} (-1)^k 2^{i-2k-1} t(i) \text{ si } i=2k+p}
-   !>                @f}
+   !< @note
+   !<  Transformation des coefficients de Tchebychev en coefficients de monômes
+   !<
+   !<  Un monôme de degré p reçoit de Ti(x) (polynôme de Tcheby de degré i) :
+   !<  $$
+   !<  2^{i-1} t_i \text{ si i=p}
+   !<  $$
+   !<
+   !<  $$
+   !<  m(p)=m(p)+\frac{i(i-k-1)!}{k!(i-2k)!} (-1)^k 2^{i-2k-1} t(i) \text{ si } i=2k+p
+   !<  $$
+   !<
+   !< @endnote
    !==================================================================================================
    subroutine coeff_tcheby_vers_monome(coeff_t, coeff_m, deg)
    implicit none
-   integer(kind=I4), intent(in) :: deg !! degré du polynôme
-   real(kind=R8), intent(in ), dimension(0:deg) :: coeff_t  !! coefficients de la CL de polynômes de Tchebychev
-   real(kind=R8), intent(out), dimension(0:deg) :: coeff_m  !! coefficients de la CL de monômes
+   integer(kind=I4), intent(in) :: deg                      !! *degré du polynôme*
+   real(kind=R8), intent(in ), dimension(0:deg) :: coeff_t  !! *coefficients de la CL de polynômes de Tchebychev*
+   real(kind=R8), intent(out), dimension(0:deg) :: coeff_m  !! *coefficients de la CL de monômes*
 
       integer(kind=I4) :: k, n, p, q
       real(kind=R8) :: tkm2q, tmp
@@ -257,14 +277,14 @@ contains
 
    return
    endsubroutine coeff_tcheby_vers_monome
-   !==================================================================================================
-   !> @brief         Transformation du produit ti(x)*tj(y) de Tchebychev en coefficients de monômes x^i.y^j
-   !==================================================================================================
+
+
    subroutine coeff_tcheby_xy_vers_monome(tab_coeff_m, deg_x, deg_y)
+   !!  Transformation du produit \(ti(x) \cdot tj(y)\) de Tchebychev en coefficients de monômes \(x^i \cdot y^j\)
    implicit none
-   integer(kind=I4), intent(in ) :: deg_x !! degré du polynôme en x
-   integer(kind=I4), intent(in ) :: deg_y !! degré du polynôme en y
-   real(kind=R8),    intent(out), dimension(0:deg_x, 0:deg_y) :: tab_coeff_m  !! coefficients de la CL de monômes x^i * y^j
+   integer(kind=I4), intent(in ) :: deg_x                                     !! *degré du polynôme en \(x*\)
+   integer(kind=I4), intent(in ) :: deg_y                                     !! *degré du polynôme en \(y*\)
+   real(kind=R8),    intent(out), dimension(0:deg_x, 0:deg_y) :: tab_coeff_m  !! *coefficients de la CL de monômes \(x^i * y^j*\)
 
       integer(kind=I4) :: i, j
       real(kind=R8), dimension(0:deg_x) :: coeff_tx, coeff_mx
@@ -289,15 +309,15 @@ contains
 
    return
    endsubroutine coeff_tcheby_xy_vers_monome
-   !==================================================================================================
-   !> @brief         Transformation d'une CL de produits de polynômes de Tchebychev en x et y en polynôme classique
-   !==================================================================================================
+
+
    subroutine coeff_poly_tcheby_xy_vers_poly_monome(var, coeff_m, deg_x, deg_y)
+   !! Transformation d'une CL de produits de polynômes de Tchebychev en x et y en polynôme classique
    implicit none
-   integer(kind=I4), intent(in ) :: deg_x !! degré du polynôme en x
-   integer(kind=I4), intent(in ) :: deg_y !! degré du polynôme en y
-   real(kind=R8),    intent(in ), dimension(1:(deg_x+1)*(deg_y+1)) :: var     !! coefficients du produits de polynômes de Tchebychev
-   real(kind=R8),    intent(out), dimension(1:(deg_x+1)*(deg_y+1)) :: coeff_m !! coefficients du polynôme classique en x et y
+   integer(kind=I4), intent(in ) :: deg_x                                     !! *degré du polynôme en x*
+   integer(kind=I4), intent(in ) :: deg_y                                     !! *degré du polynôme en y*
+   real(kind=R8),    intent(in ), dimension(1:(deg_x+1)*(deg_y+1)) :: var     !! *coefficients du produits de polynômes de Tchebychev*
+   real(kind=R8),    intent(out), dimension(1:(deg_x+1)*(deg_y+1)) :: coeff_m !! *coefficients du polynôme classique en x et y*
 
       integer(kind=I4) :: i, j, ij
       real(kind=R8), dimension(0:deg_x, 0:deg_y) :: tab_poly__m, tab_coeff_m
@@ -324,6 +344,8 @@ contains
 
    return
    endsubroutine coeff_poly_tcheby_xy_vers_poly_monome
+
+
 !~    !==================================================================================================
 !~    !> @brief         Même principe que Tchebychev avec des monômes (plus simple, mais moindres     \n
 !~    !> @return        polynome résultat : fonction en (xi, yi)
@@ -436,21 +458,17 @@ contains
 
 
    subroutine least_squares_tcheby(tab_in, tab_out, long1, long2, nvarx, nvary, imask, verif, multi_thread)
-   !================================================================================================
-   !< @note Function that returns
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
+   !! Resulting polynomial surface, determined by linear least squares
    implicit none
-   integer(kind=I4), intent(in )                                        :: long1    !! taille x
-   integer(kind=I4), intent(in )                                        :: long2    !! taille y
-   integer(kind=I4), intent(in )                                        :: nvarx    !! degré du polynôme en x
-   integer(kind=I4), intent(in )                                        :: nvary    !! degré du polynôme en y
-   real   (kind=R8), intent(in ), dimension(1:long1, 1:long2)           :: tab_in   !! surface dont on a fait une approximation qui lui est soustraite
-   real   (kind=R8), intent(out), dimension(1:long1, 1:long2)           :: tab_out  !! tableau résultant : surface
-   integer(kind=I4), intent(in ), dimension(1:long1, 1:long2), optional :: imask    !! masque
-   logical(kind=I4), intent(in )                             , optional :: verif    !! dump
-   logical(kind=I4), intent(in )                             , optional :: multi_thread
+   integer(kind=I4), intent(in )                                        :: long1          !! *taille x*
+   integer(kind=I4), intent(in )                                        :: long2          !! *taille y*
+   integer(kind=I4), intent(in )                                        :: nvarx          !! *degré du polynôme en x*
+   integer(kind=I4), intent(in )                                        :: nvary          !! *degré du polynôme en y*
+   real   (kind=R8), intent(in ), dimension(1:long1, 1:long2)           :: tab_in         !! *surface dont on a fait une approximation qui lui est soustraite*
+   real   (kind=R8), intent(out), dimension(1:long1, 1:long2)           :: tab_out        !! *tableau résultant : surface*
+   integer(kind=I4), intent(in ), dimension(1:long1, 1:long2), optional :: imask          !! *masque*
+   logical(kind=I4), intent(in )                             , optional :: verif          !! *dump*
+   logical(kind=I4), intent(in )                             , optional :: multi_thread   !! *use multithread?*
 
       real(kind=R8), allocatable, dimension(:)   :: var1, vec_x1, vec_x2, vec_hij
       real(kind=R8), allocatable, dimension(:,:) :: tab_tche1, tab_tche2, Jf

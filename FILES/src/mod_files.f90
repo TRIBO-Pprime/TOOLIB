@@ -1,15 +1,15 @@
 
 !< author: Arthur Francisco
-!  version: 1.0.0
-!  date: february, 27 2023
-!
-!  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
-!     **Routines to subtract a least square polynomial from a surface**
-!  </span>
-
-!
-! TODO : rm -rf dir-name
-!
+!<  version: 1.0.0
+!<  date: february, 27 2023
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!<     **Some routines to deal with files**
+!<  </span>
+!<
+!< @todo
+!< rm -rf dir-name
+!< @endtodo
 
 module files
 use data_arch,     only : I4
@@ -23,12 +23,9 @@ public :: is_linux, dir_separator, mkdir, str_replace, list_files, list_dirs, cl
 
 contains
 
-   subroutine clean_scratch()
    !================================================================================================
-   !< @note Subroutine that removes all files with extension .scratch
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
+   subroutine clean_scratch()
+   !! Subroutine that removes all files with extension .scratch
    implicit none
 
       call execute_command_line( "find -type f -name ""*.scratch"" | xargs rm > err.scratch" )
@@ -37,12 +34,9 @@ contains
    endsubroutine clean_scratch
 
 
-   subroutine list_files(dir, list, ext)
    !================================================================================================
-   !< @note Subroutine that returns a list of files in a directory
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
+   subroutine list_files(dir, list, ext)
+   !! Subroutine that returns a list of files in a directory
    implicit none
    character(len =   *), intent(in )                            :: dir
    character(len = 512), intent(out), allocatable, dimension(:) :: list
@@ -92,12 +86,9 @@ contains
    endsubroutine list_files
 
 
-   subroutine list_dirs(str)
    !================================================================================================
-   !< @note Function that returns
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
+   subroutine list_dirs(str)
+   !! Subroutine that returns a list of subdirectories
    implicit none
    character(len = *), intent(in), optional :: str
 
@@ -111,12 +102,9 @@ contains
    endsubroutine list_dirs
 
 
-   logical(kind = 4) function is_linux()
    !================================================================================================
-   !< @note Function that returns true if the operating system is linux
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
+   logical(kind = 4) function is_linux()
+   !! Function that returns true if the operating system is linux
    implicit none
 
       character(len = 512) :: path
@@ -128,12 +116,9 @@ contains
    endfunction is_linux
 
 
-   character(len = 1) function dir_separator()
    !================================================================================================
-   !< @note Function that returns the system directory separator
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
+   character(len = 1) function dir_separator()
+   !! Function that returns the system directory separator
    implicit none
 
       logical(kind = I4)  :: os_linux, os_windows
@@ -148,12 +133,9 @@ contains
    endfunction dir_separator
 
 
-   subroutine mkdir(wkd, directory, sep, exit_status)
    !================================================================================================
-   !< @note Subroutine that creates a directory
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
+   subroutine mkdir(wkd, directory, sep, exit_status)
+   !! Subroutine that creates a directory
    implicit none
    character(len = *), intent(in ) :: wkd
    character(len = *), intent(in ) :: directory
@@ -170,12 +152,9 @@ contains
    endsubroutine mkdir
 
 
-   subroutine make_path(wkd, file_path, exit_status)
    !================================================================================================
-   !< @note Subroutine that creates the folders of a file path
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
+   subroutine make_path(wkd, file_path, exit_status)
+   !! Subroutine that creates the folders of a file path
    implicit none
    character(len = *), intent(in ) :: wkd
    character(len = *), intent(in ) :: file_path
@@ -197,12 +176,9 @@ contains
    endsubroutine make_path
 
 
-   subroutine path2vec(file_path, vec_path)
    !================================================================================================
-   !< @note Subroutine that creates a vector containing the folders of a file path
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
+   subroutine path2vec(file_path, vec_path)
+   !! Subroutine that creates a vector containing the folders of a file path
    implicit none
    character(len = *),   intent(in ) :: file_path
    character(len = 512), intent(out), dimension(:), allocatable :: vec_path
@@ -262,12 +238,9 @@ contains
    endsubroutine path2vec
 
 
-   subroutine vec2path(file_path, vec_path)
    !================================================================================================
-   !< @note Subroutine that creates a path from vector of folders
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
+   subroutine vec2path(file_path, vec_path)
+   !! Subroutine that creates a path from vector of folders
    implicit none
    character(len = : ),  intent(out), allocatable  :: file_path
    character(len = 512), intent(in ), dimension(:) :: vec_path
@@ -288,12 +261,9 @@ contains
    endsubroutine vec2path
 
 
-   function filename(file_path)
    !================================================================================================
-   !< @note Subroutine that keeps only the file from a path
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
+   function filename(file_path)
+   !! Subroutine that keeps only the file from a path
    implicit none
    character(len = * ), intent(in) :: file_path
    character(len = :), allocatable :: filename
@@ -311,12 +281,9 @@ contains
    endfunction filename
 
 
-   function dirname(file_path)
    !================================================================================================
-   !< @note Subroutine that keeps only the directory from a file path
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
+   function dirname(file_path)
+   !! Subroutine that keeps only the directory from a file path
    implicit none
    character(len = * ), intent(in) :: file_path
    character(len = :), allocatable :: dirname
@@ -334,12 +301,9 @@ contains
    endfunction dirname
 
 
-   function str_replace(string, old_str, new_str , place)
    !================================================================================================
-   !< @note Function that replaces a string with another string
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
+   function str_replace(string, old_str, new_str , place)
+   !! Function that replaces a string with another string
    implicit none
    character(len = :), allocatable :: str_replace  !! returned string
    character(len = *), intent(in) :: string        !! string to be modified
@@ -372,12 +336,9 @@ contains
    endfunction str_replace
 
 
-   function str_remove_chars(string, chars)
    !================================================================================================
-   !< @note Function that removes the characters of a string from another string
-   !
-   !  @endnote
-   !------------------------------------------------------------------------------------------------
+   function str_remove_chars(string, chars)
+   !! Function that removes the characters of a string from another string
    implicit none
    character(len = :), allocatable :: str_remove_chars  !! returned string
    character(len = *), intent(in)  :: string            !! string to be modified

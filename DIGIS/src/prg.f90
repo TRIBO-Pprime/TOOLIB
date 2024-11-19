@@ -1,11 +1,11 @@
 
 !< author: Arthur Francisco
-!  version: 1.0.0
-!  date: April, 16 2019
-!
-!  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
-!     **Routines to handle Digital Surf binary format (.sur). Example of use**
-!  </span>
+!<  version: 1.0.0
+!<  date: April, 16 2019
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!<     **Routines to handle Digital Surf binary format (.sur). Example of use**
+!<  </span>
 
 program test_surfile
 use data_arch

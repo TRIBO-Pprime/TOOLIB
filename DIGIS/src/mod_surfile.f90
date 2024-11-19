@@ -1,11 +1,11 @@
 
 !< author: Arthur Francisco
-!  version: 1.0.0
-!  date: july, 23 2018
-!
-!  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
-!     **Routines to handle Digital Surf binary format (.sur)**
-!  </span>
+!<  version: 1.0.0
+!<  date: November, 17 2024
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!<     **Routines to handle Digital Surf binary format (.sur)**
+!<  </span>
 
 module surfile
 use, intrinsic :: ISO_C_BINDING, only : C_CHAR, C_NULL_CHAR, C_FLOAT, C_INT, C_SHORT
@@ -16,16 +16,18 @@ implicit none
 
 private
 
-!< <span style="color:green">Surface object: header and heights</span>
-! @note
-!    Adapted from 'surffile.c', 'gwyddion' software, Copyright (C) 2005 David Necas, Petr Klapetek.
-! @endnote
-! @warning
-!    Must be 512 bytes long
-! @endwarning
 
+!< <span style="color:green">Fortran typed surface object: header, dimensions, mean and std</span>
 
+!< @note
+!< Fortran surface object, adapted from 'surffile.c', 'gwyddion' software, Copyright (C) 2005 David Necas, Petr Klapetek.
+!< @endnote
+!<
+!< @warning
+!< Must be 512 bytes long before length definition
+!< @endwarning
 type SCALE_SURF
+
    ! bytes below: 8+10+2*12+9*16+2*30+34+128 = 408
    character(len =  12) :: signature
    character(len =  16) :: xlength_unit
@@ -88,6 +90,8 @@ type SCALE_SURF
    integer(kind=2) :: nobjects            ! 1
    integer(kind=2) :: acquisition         ! 0
 
+   !------------- 512 bytes above
+
    real(kind=R8)   :: lx       !! *surface length*
    real(kind=R8)   :: ly       !! *surface width*
    real(kind=R8)   :: lz       !! *surface height (max -min)*
@@ -96,6 +100,12 @@ type SCALE_SURF
    real(kind=R8)   :: si       !! *surface mean height*
 endtype SCALE_SURF
 
+!< <span style="color:green">C like surface object: header and heights</span>
+
+!< @note
+!< Fortran surface object, adapted from 'surffile.c', 'gwyddion' software, Copyright (C) 2005 David Necas, Petr Klapetek.
+!< @endnote
+!<
 type OBJ_SURF
    ! bytes below: 8+10+2*12+9*16+2*30+34+128 = 408
    character(kind=C_CHAR), dimension( 12) :: signature
@@ -165,66 +175,67 @@ endtype OBJ_SURF
 integer(kind=4), parameter :: SURF_DAT = 1 !! *'.dat' format, txt*
 integer(kind=4), parameter :: SURF_SUR = 2 !! *'.sur' format, binary*
 
-public :: read_surf, write_surf, init_scal, unit2IUc, unit2IUf, &
-          trans_surf_txt, scal2surf, surf2scal, empty, SCALE_SURF, OBJ_SURF
+public :: read_surf, write_surf, init_scal, unit2IUc, unit2IUf,               &  !
+          trans_surf_txt, scal2surf, surf2scal, empty, SCALE_SURF, OBJ_SURF      !
 
 contains
 
    subroutine scal2surf(scal, surf)
+   !! Transform a [[SCALE_SURF]] object into a [[OBJ_SURF]] object
    implicit none
    type(SCALE_SURF), intent(in ) :: scal !! *object [[SCALE_SURF]]*
    type(OBJ_SURF),   intent(out) :: surf !! *object [[OBJ_SURF]]*
 
-      call f_c_string(fs=trim(scal%signature),     &
-                      cs=     surf%signature)
+      call f_c_string(fs=trim(scal%signature),     &  !
+                      cs=     surf%signature)         !
 
-      call f_c_string(fs=trim(scal%xlength_unit),  &
-                      cs=     surf%xlength_unit)
+      call f_c_string(fs=trim(scal%xlength_unit),  &  !
+                      cs=     surf%xlength_unit)      !
 
-      call f_c_string(fs=trim(scal%ylength_unit),  &
-                      cs=     surf%ylength_unit)
+      call f_c_string(fs=trim(scal%ylength_unit),  &  !
+                      cs=     surf%ylength_unit)      !
 
-      call f_c_string(fs=trim(scal%zlength_unit),  &
-                      cs=     surf%zlength_unit)
+      call f_c_string(fs=trim(scal%zlength_unit),  &  !
+                      cs=     surf%zlength_unit)      !
 
-      call f_c_string(fs=trim(scal%xaxis),         &
-                      cs=     surf%xaxis)
+      call f_c_string(fs=trim(scal%xaxis),         &  !
+                      cs=     surf%xaxis)             !
 
-      call f_c_string(fs=trim(scal%yaxis),         &
-                      cs=     surf%yaxis)
+      call f_c_string(fs=trim(scal%yaxis),         &  !
+                      cs=     surf%yaxis)             !
 
-      call f_c_string(fs=trim(scal%zaxis),         &
-                      cs=     surf%zaxis)
+      call f_c_string(fs=trim(scal%zaxis),         &  !
+                      cs=     surf%zaxis)             !
 
-      call f_c_string(fs=trim(scal%dx_unit),       &
-                      cs=     surf%dx_unit)
+      call f_c_string(fs=trim(scal%dx_unit),       &  !
+                      cs=     surf%dx_unit)           !
 
-      call f_c_string(fs=trim(scal%dy_unit),       &
-                      cs=     surf%dy_unit)
+      call f_c_string(fs=trim(scal%dy_unit),       &  !
+                      cs=     surf%dy_unit)           !
 
-      call f_c_string(fs=trim(scal%dz_unit),       &
-                      cs=     surf%dz_unit)
+      call f_c_string(fs=trim(scal%dz_unit),       &  !
+                      cs=     surf%dz_unit)           !
 
-      call f_c_string(fs=trim(scal%object_name),   &
-                      cs=     surf%object_name)
+      call f_c_string(fs=trim(scal%object_name),   &  !
+                      cs=     surf%object_name)       !
 
-      call f_c_string(fs=trim(scal%operator_name), &
-                      cs=     surf%operator_name)
+      call f_c_string(fs=trim(scal%operator_name), &  !
+                      cs=     surf%operator_name)     !
 
-      call f_c_string(fs=trim(scal%client_zone),   &
-                      cs=     surf%client_zone)
+      call f_c_string(fs=trim(scal%client_zone),   &  !
+                      cs=     surf%client_zone)       !
 
-      call f_c_string(fs=trim(scal%reserved),      &
-                      cs=     surf%reserved)
+      call f_c_string(fs=trim(scal%reserved),      &  !
+                      cs=     surf%reserved)          !
 
-      call f_c_string(fs=trim(scal%reservedzone),  &
-                      cs=     surf%reservedzone)
+      call f_c_string(fs=trim(scal%reservedzone),  &  !
+                      cs=     surf%reservedzone)      !
 
-      call f_c_string(fs=trim(scal%obsolete),      &
-                      cs=     surf%obsolete)
+      call f_c_string(fs=trim(scal%obsolete),      &  !
+                      cs=     surf%obsolete)          !
 
-      call f_c_string(fs=trim(scal%obsolete2),     &
-                      cs=     surf%obsolete2)
+      call f_c_string(fs=trim(scal%obsolete2),     &  !
+                      cs=     surf%obsolete2)         !
 
       surf%dx                    = scal%dx
       surf%dy                    = scal%dy
@@ -265,83 +276,86 @@ contains
       surf%private_size    = scal%private_size
       surf%nobjects        = scal%nobjects
       surf%acquisition     = scal%acquisition
+
    return
    endsubroutine scal2surf
 
 
    subroutine surf2scal(surf, scal)
+   !! Transform a [[OBJ_SURF]] object into a [[SCALE_SURF]] object
    implicit none
    type(OBJ_SURF),   intent(in ) :: surf !! *object [[OBJ_SURF]]*
    type(SCALE_SURF), intent(out) :: scal !! *object [[SCALE_SURF]]*
+
       integer(kind=I4) :: i
 
-      call c_f_string(cs = surf%signature,     &
-                      fs = scal%signature,     &
-                 borne_s = i)
+      call c_f_string(cs = surf%signature,      &  !
+                      fs = scal%signature,      &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%xlength_unit,  &
-                      fs = scal%xlength_unit,  &
-                 borne_s = i)
+      call c_f_string(cs = surf%xlength_unit,   &  !
+                      fs = scal%xlength_unit,   &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%ylength_unit,  &
-                      fs = scal%ylength_unit,  &
-                 borne_s = i)
+      call c_f_string(cs = surf%ylength_unit,   &  !
+                      fs = scal%ylength_unit,   &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%zlength_unit,  &
-                      fs = scal%zlength_unit,  &
-                 borne_s = i)
+      call c_f_string(cs = surf%zlength_unit,   &  !
+                      fs = scal%zlength_unit,   &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%xaxis,         &
-                      fs = scal%xaxis,         &
-                 borne_s = i)
+      call c_f_string(cs = surf%xaxis,          &  !
+                      fs = scal%xaxis,          &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%yaxis,         &
-                      fs = scal%yaxis,         &
-                 borne_s = i)
+      call c_f_string(cs = surf%yaxis,          &  !
+                      fs = scal%yaxis,          &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%zaxis,         &
-                      fs = scal%zaxis,         &
-                 borne_s = i)
+      call c_f_string(cs = surf%zaxis,          &  !
+                      fs = scal%zaxis,          &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%dx_unit,       &
-                      fs = scal%dx_unit,       &
-                 borne_s = i)
+      call c_f_string(cs = surf%dx_unit,        &  !
+                      fs = scal%dx_unit,        &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%dy_unit,       &
-                      fs = scal%dy_unit,       &
-                 borne_s = i)
+      call c_f_string(cs = surf%dy_unit,        &  !
+                      fs = scal%dy_unit,        &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%dz_unit,       &
-                      fs = scal%dz_unit,       &
-                 borne_s = i)
+      call c_f_string(cs = surf%dz_unit,        &  !
+                      fs = scal%dz_unit,        &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%object_name,   &
-                      fs = scal%object_name,   &
-                 borne_s = i)
+      call c_f_string(cs = surf%object_name,    &  !
+                      fs = scal%object_name,    &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%operator_name, &
-                      fs = scal%operator_name, &
-                 borne_s = i)
+      call c_f_string(cs = surf%operator_name,  &  !
+                      fs = scal%operator_name,  &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%client_zone,   &
-                      fs = scal%client_zone,   &
-                 borne_s = i)
+      call c_f_string(cs = surf%client_zone,    &  !
+                      fs = scal%client_zone,    &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%reserved,      &
-                      fs = scal%reserved,      &
-                 borne_s = i)
+      call c_f_string(cs = surf%reserved,       &  !
+                      fs = scal%reserved,       &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%reservedzone,  &
-                      fs = scal%reservedzone,  &
-                 borne_s = i)
+      call c_f_string(cs = surf%reservedzone,   &  !
+                      fs = scal%reservedzone,   &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%obsolete,      &
-                      fs = scal%obsolete,      &
-                 borne_s = i)
+      call c_f_string(cs = surf%obsolete,       &  !
+                      fs = scal%obsolete,       &  !
+                 lngth_s = i)                      !
 
-      call c_f_string(cs = surf%obsolete2,     &
-                      fs = scal%obsolete2,     &
-                 borne_s =i)
+      call c_f_string(cs = surf%obsolete2,      &  !
+                      fs = scal%obsolete2,      &  !
+                 lngth_s = i)                      !
 
       scal%dx                    = surf%dx
       scal%dy                    = surf%dy
@@ -389,65 +403,71 @@ contains
    return
    endsubroutine surf2scal
 
-   !=========================================================================================
-   !>@note
-   !   Just empties a string
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
+
    subroutine empty(charinout)
+   !! Just empties a string
    implicit none
    character(len=*), intent(inout) :: charinout
+
       charinout = repeat(' ', len(charinout))
+
    return
    endsubroutine empty
 
 
    !=========================================================================================
    !< @note
-   !   Converts a C string to a Fortran string
-   !
-   !   A From a memory viewpoint, a C string is like a character vector ending with a ```C_NULL_CHAR```, so as long as
-   !   it is not found, the characters are copied one by one in a fortran string
-   ! @endnote
+   !<   Converts a C string to a Fortran string
+   !<
+   !<   From a memory viewpoint, a C string is like a character vector ending with a ```C_NULL_CHAR```
+   !<   so, as long as it is not found, the characters are copied one by one in a fortran string
+   !< @endnote
    !-----------------------------------------------------------------------------------------
-   subroutine c_f_string(cs, fs, borne_s)
+   subroutine c_f_string(cs, fs, lngth_s)
    implicit none
    character(kind=C_CHAR), dimension(:), intent(in) :: cs   !! *C string*
    character(len=*), intent(out) :: fs                      !! *Fortran string*
-   integer(kind=I4), intent(out) :: borne_s                 !! *resulting Fortran string length*
+   integer(kind=I4), intent(out) :: lngth_s                 !! *resulting Fortran string length*
+
       integer(kind=I4) :: i, ucs
+
       ucs = size(cs) ! vector length
-      borne_s = ucs  ! resulting string default length
+      lngth_s = ucs  ! resulting string default length
       i = 1
       do
          if (i>ucs) exit
          if (cs(i)==C_NULL_CHAR) then  ! fin de chaîne c rencontrée ; s'il n'y a pas de null_char
-            borne_s = i-1              ! c'est qu'on utilise tout le vecteur
+            lngth_s = i-1              ! c'est qu'on utilise tout le vecteur
             exit
          endif
          i = i + 1
       enddo
+
       call empty(fs)
-      do i = 1, borne_s ! the C string is translated into fortran
+
+      do i = 1, lngth_s ! the C string is translated into fortran
          fs(i:i) = cs(i)
       enddo
+
    return
    endsubroutine c_f_string
 
 
    !=========================================================================================
    !< @note
-   !   Converts a Fortran string to a C string
-   !
-   !   A From a memory viewpoint, a C string is like a character vector ending with a ```C_NULL_CHAR```,
-   !   so the characters are copied one by one in a ```C_CHAR``` vector that ends with a ```C_NULL_CHAR```
-   ! @endnote
+   !<   Converts a Fortran string to a C string
+   !<
+   !<   A From a memory viewpoint, a C string is like a character vector ending with a ```C_NULL_CHAR```,
+   !<   so the characters are copied one by one in a ```C_CHAR``` vector that ends with a ```C_NULL_CHAR```
+   !< @endnote
    !-----------------------------------------------------------------------------------------
    subroutine f_c_string(fs, cs)
    implicit none
    character(len=*), intent(in) :: fs                       !! *fortran string*
    character(kind=C_CHAR), dimension(:), intent(out) :: cs  !! *resulting C string*
+
       integer(kind=I4) :: i, ufs
+
       ufs = len_trim(fs)   ! longueur de la chaîne fortran sans les null, les blancs, ...
       if (ufs==0) then     ! si la chaîne est vide
          cs(1) = C_NULL_CHAR
@@ -457,16 +477,13 @@ contains
          enddo
          if (ufs<size(cs)) cs(ufs+1) = C_NULL_CHAR ! si la fin du vecteur n'est pas atteinte
       endif
+
    return
    endsubroutine f_c_string
 
 
-   !=========================================================================================
-   !> @note
-   !   [[OBJ_SURF]] initialization, every unit is m
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    subroutine init_scal(scal, nx, ny, lx, ly, unit_z)
+   !! [[OBJ_SURF]] initialization, every unit is m
    implicit none
    type(SCALE_SURF), intent(out) :: scal !! *object [[SCALE_SURF]]*
    integer(kind=I4), optional, intent(in) :: nx
@@ -474,6 +491,7 @@ contains
    real(kind=R8),    optional, intent(in) :: lx
    real(kind=R8),    optional, intent(in) :: ly
    character(*),     optional, intent(in) :: unit_z
+
       integer(kind=I4), dimension(1:8) :: time_val
       character(len=256) :: string
 
@@ -565,17 +583,18 @@ contains
 
    !=========================================================================================
    !< @note
-   !   Writes an [[OBJ_SURF]] object in a text file
-   !
-   !   The object components are first written in a fortran string, then it is written into
-   !   the file with a comment
-   ! @endnote
+   !<   Writes an [[OBJ_SURF]] object in a text file
+   !<
+   !<   The object components are first written in a fortran string, then it is written into
+   !<   the file with a comment
+   !< @endnote
    !-----------------------------------------------------------------------------------------
    subroutine trans_surf_txt(surf, fichier, xyz)
    implicit none
    type(OBJ_SURF), intent(in)   :: surf      !! *object [[OBJ_SURF]]*
    character(len=*), intent(in) :: fichier   !! *text file to write*
    logical(kind=I4), intent(in) :: xyz       !! *whether to also write the heights (maybe huge)*
+
       integer(kind=I4) :: i, k, s
       character(len=512) :: string, cc
 
@@ -583,22 +602,22 @@ contains
 
       open(k, file=trim(fichier))
 
-         call c_f_string(cs=surf%signature, fs=string, borne_s=s)
+         call c_f_string(cs=surf%signature, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "signature              " ; call empty(cc)
          write(cc,*) surf%format                ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "format                 " ; call empty(cc)
          write(cc,*) surf%nobjects              ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "nobjects               " ; call empty(cc)
          write(cc,*) surf%version               ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "version                " ; call empty(cc)
          write(cc,*) surf%type                  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "type                   " ; call empty(cc)
-         call c_f_string(cs=surf%object_name, fs=string, borne_s=s)
+         call c_f_string(cs=surf%object_name, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "object_name            " ; call empty(cc)
-         call c_f_string(cs=surf%operator_name, fs=string, borne_s=s)
+         call c_f_string(cs=surf%operator_name, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "operator_name          " ; call empty(cc)
          write(cc,*) surf%material_code         ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "material_code          " ; call empty(cc)
          write(cc,*) surf%acquisition           ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "acquisition            " ; call empty(cc)
          write(cc,*) surf%range                 ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "range                  " ; call empty(cc)
          write(cc,*) surf%special_points        ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "special_points         " ; call empty(cc)
          write(cc,*) surf%absolute              ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "absolute               " ; call empty(cc)
-         call c_f_string(cs=surf%reserved, fs=string, borne_s=s)
+         call c_f_string(cs=surf%reserved, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "reserved               " ; call empty(cc)
          write(cc,*) surf%pointsize             ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "pointsize              " ; call empty(cc)
          write(cc,*) surf%zmin                  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "zmin                   " ; call empty(cc)
@@ -609,23 +628,23 @@ contains
          write(cc,*) surf%dx                    ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "dx                     " ; call empty(cc)
          write(cc,*) surf%dy                    ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "dy                     " ; call empty(cc)
          write(cc,*) surf%dz                    ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "dz                     " ; call empty(cc)
-         call c_f_string(cs=surf%xaxis, fs=string, borne_s=s)
+         call c_f_string(cs=surf%xaxis, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "xaxis                  " ; call empty(cc)
-         call c_f_string(cs=surf%yaxis, fs=string, borne_s=s)
+         call c_f_string(cs=surf%yaxis, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "yaxis                  " ; call empty(cc)
-         call c_f_string(cs=surf%zaxis, fs=string, borne_s=s)
+         call c_f_string(cs=surf%zaxis, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "zaxis                  " ; call empty(cc)
-         call c_f_string(cs=surf%dx_unit, fs=string, borne_s=s)
+         call c_f_string(cs=surf%dx_unit, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "dx_unit                " ; call empty(cc)
-         call c_f_string(cs=surf%dy_unit, fs=string, borne_s=s)
+         call c_f_string(cs=surf%dy_unit, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "dy_unit                " ; call empty(cc)
-         call c_f_string(cs=surf%dz_unit, fs=string, borne_s=s)
+         call c_f_string(cs=surf%dz_unit, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "dz_unit                " ; call empty(cc)
-         call c_f_string(cs=surf%xlength_unit, fs=string, borne_s=s)
+         call c_f_string(cs=surf%xlength_unit, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "xlength_unit           " ; call empty(cc)
-         call c_f_string(cs=surf%ylength_unit, fs=string, borne_s=s)
+         call c_f_string(cs=surf%ylength_unit, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "ylength_unit           " ; call empty(cc)
-         call c_f_string(cs=surf%zlength_unit, fs=string, borne_s=s)
+         call c_f_string(cs=surf%zlength_unit, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "zlength_unit           " ; call empty(cc)
          write(cc,*) surf%xunit_ratio           ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "xunit_ratio            " ; call empty(cc)
          write(cc,*) surf%yunit_ratio           ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "yunit_ratio            " ; call empty(cc)
@@ -633,7 +652,7 @@ contains
          write(cc,*) surf%imprint               ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "imprint                " ; call empty(cc)
          write(cc,*) surf%inversion             ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "inversion              " ; call empty(cc)
          write(cc,*) surf%leveling              ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "leveling               " ; call empty(cc)
-         call c_f_string(cs=surf%obsolete, fs=string, borne_s=s)
+         call c_f_string(cs=surf%obsolete, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "obsolete               " ; call empty(cc)
          write(cc,*) surf%seconds               ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "seconds                " ; call empty(cc)
          write(cc,*) surf%minutes               ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "minutes                " ; call empty(cc)
@@ -643,16 +662,16 @@ contains
          write(cc,*) surf%year                  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "year                   " ; call empty(cc)
          write(cc,*) surf%dayof                 ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "dayof                  " ; call empty(cc)
          write(cc,*) surf%measurement_duration  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "measurement_duration   " ; call empty(cc)
-         call c_f_string(cs=surf%obsolete2, fs=string, borne_s=s)
+         call c_f_string(cs=surf%obsolete2, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "obsolete2              " ; call empty(cc)
          write(cc,*) surf%comment_size          ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "comment_size           " ; call empty(cc)
          write(cc,*) surf%private_size          ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "private_size           " ; call empty(cc)
-         call c_f_string(cs=surf%client_zone, fs=string, borne_s=s)
+         call c_f_string(cs=surf%client_zone, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "client_zone            " ; call empty(cc)
          write(cc,*) surf%XOffset               ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "XOffset                " ; call empty(cc)
          write(cc,*) surf%YOffset               ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "YOffset                " ; call empty(cc)
          write(cc,*) surf%ZOffset               ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "ZOffset                " ; call empty(cc)
-         call c_f_string(cs=surf%reservedzone, fs=string, borne_s=s)
+         call c_f_string(cs=surf%reservedzone, fs=string, lngth_s=s)
          write(cc,*) '"',trim(string(1:s)),'"'  ; write(k,'(1x,a,T130,a)') adjustl(trim(cc)), "reservedzone           " ; call empty(cc)
 
          if (xyz) then
@@ -669,11 +688,12 @@ contains
 
    !=========================================================================================
    !< @note
-   !   Subroutine that opens a ```.sur``` file and transfers it contents into an object [[OBJ_SURF]]
-   ! @endnote
-   ! @warning
-   !    By default here, the heights are not written with ```dump=.true.```
-   ! @endwarning
+   !<   Subroutine that opens a ```.sur``` file and transfers it contents into an object [[OBJ_SURF]]
+   !< @endnote
+   !<
+   !< @warning
+   !<    By default here, the heights are not written with ```dump=.true.```
+   !< @endwarning
    !-----------------------------------------------------------------------------------------
    subroutine open_surffile(fichier, surf, scal, dump)
    implicit none
@@ -681,6 +701,7 @@ contains
    type(OBJ_SURF), intent(out)   :: surf            !! *object that will contain the file infos and heights*
    type(SCALE_SURF), intent(out) :: scal            !! *object [[SCALE_SURF]]*
    logical(kind=I4), optional, intent(in) :: dump   !! *whether to transform the data in a text file*
+
       integer(kind=I4) :: i, k
       real(kind=R8)    :: scal_x, scal_y, scal_z
       character(kind=C_CHAR) :: charact
@@ -723,39 +744,46 @@ contains
    endsubroutine open_surffile
 
 
-   !=========================================================================================
-   !< @note
-   !   Converts uppercase to lowercase, adapted from [here](http://fortranwiki.org/fortran/show/String_Functions)
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    function lower(s1) result (s2)
+   !! Converts uppercase to lowercase, adapted from [here](http://fortranwiki.org/fortran/show/String_Functions)
    character(*), intent(in) :: s1   !! *string to transform to lower case*
    character(len(s1))  :: s2        !! *result: same string but each character is lower case*
+
       character(len=1) :: ch
       integer(kind=I4), parameter :: duc = ichar('A') - ichar('a')
       integer(kind=I4) :: i
+
       do i = 1, len(s1)
          ch = s1(i:i)
          if (ch >= 'A'.and.ch <= 'Z') ch = char(ichar(ch)-duc)
          s2(i:i) = ch
       enddo
+
    return
    endfunction lower
 
+
    function unit2IUc(string) result (met)
+   !! Convert a C type unit string into value (m)
    implicit none
    real(kind=R8) :: met
    character(kind=C_CHAR), dimension(:), intent(in) :: string
+
       character(len=2) :: chaine
+
       chaine = string(1)//string(2)
       met    = unit2IUf(chaine)
+
    return
    endfunction unit2IUc
 
+
    function unit2IUf(string) result (met)
+   !! Convert a unit string into value (m)
    implicit none
    real(kind=R8) :: met
    character(*), intent(in) :: string
+
       select case(string)
          case('m')
             met = 1.e+00_R8
@@ -784,18 +812,17 @@ contains
                met = 1
             endif
       endselect
+
    return
    endfunction unit2IUf
 
-   !=========================================================================================
-   !< @note
-   !   Subroutine that writes the heights of an [[OBJ_SURF]] object into a 2D array
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
+
    subroutine trans_surf_tab(surf, tab)
+   !! Write the heights of an [[OBJ_SURF]] object into a 2D array
    implicit none
    type(OBJ_SURF), intent(inout) :: surf                            !! *object ```OBJ_SURF``` that contains the heights*
    real(kind=R8), dimension(:, :), allocatable, intent(out) :: tab  !! *height array*
+
       integer(kind=I4) :: long, larg, i, j, k
       real(kind=R8)    :: unit_z
 
@@ -812,22 +839,25 @@ contains
       enddo
       enddo
       deallocate(surf%val)
+
    return
    endsubroutine trans_surf_tab
 
 
    !=========================================================================================
    !< @note
-   !   Subroutine that opens a surface file ```.sur``` or ```.dat```
-   !
-   !   The heights are centred, scaled then put into a vector.
-   ! @endnote
-   ! @warning
-   !    If the scale factor ```sq``` is negative, the heights are not scaled when reading ```.sur```
-   ! @endwarning
-   ! @warning
-   !    By default, the ```.sur``` header is dumped
-   ! @endwarning
+   !<   Subroutine that opens a surface file ```.sur``` or ```.dat```
+   !<
+   !<   The heights are centred, scaled then put into a vector.
+   !< @endnote
+   !<
+   !< @warning
+   !<    If the scale factor ```sq``` is negative, the heights are not scaled when reading ```.sur```
+   !< @endwarning
+   !<
+   !< @warning
+   !<    By default, the ```.sur``` header is dumped
+   !< @endwarning
    !-----------------------------------------------------------------------------------------
    subroutine read_surf(nom_fic, mu, sq, tab_s, scal)
    implicit none
@@ -967,15 +997,12 @@ contains
    endsubroutine read_surf
 
 
-   !=========================================================================================
-   !< @note
-   !   Subroutine that creates an object [[OBJ_SURF]]
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    subroutine build_surf(surf, tab)
+   !! Creates an object [[OBJ_SURF]] from an array
    implicit none
    type(OBJ_SURF), intent(inout) :: surf  !! *resulting object ```OBJ_SURF```*
    real(kind=R8), dimension(1:surf%xres, 1:surf%yres), intent(in) :: tab
+
       integer(kind=I4)   :: i, j, k, nx, ny
       real(kind=R8)      :: max_n, min_t, max_t, mil_t, amp_t, unit_x, unit_y, unit_z
 
@@ -1017,15 +1044,12 @@ contains
    endsubroutine build_surf
 
 
-   !=========================================================================================
-   !< @note
-   !   Subroutine that writes an object [[OBJ_SURF]] in a file
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    subroutine write_surffile(fichier, surf)
+   !! Write an object [[OBJ_SURF]] in a file
    implicit none
    character(len=*), intent(in)  :: fichier  !! *file to be written*
    type(OBJ_SURF), intent(inout) :: surf     !! *object ```OBJ_SURF``` to write*
+
       integer(kind=I4) :: i, k
 
       call get_unit(k)
@@ -1053,16 +1077,13 @@ contains
    endsubroutine write_surffile
 
 
-   !=========================================================================================
-   !< @note
-   !   Subroutine that writes a height array into a surface file ```.sur``` or ```.dat```
-   ! @endnote
-   !-----------------------------------------------------------------------------------------
    subroutine write_surf(nom_fic, tab_s, scal)
+   !! Writes a height array into a surface file ```.sur``` or ```.dat```
    implicit none
    character(len=*), intent(in)    :: nom_fic   !! *file name*
    type(SCALE_SURF), intent(inout) :: scal      !! *object [[SCALE_SURF]]*
    real(kind=R8), dimension(1:scal%xres, 1:scal%yres), intent(in) :: tab_s
+
       character(len=3) :: ext
       integer(kind=I4) :: style, i, j, k
       type(OBJ_SURF)   :: surf_s
@@ -1098,8 +1119,8 @@ contains
                enddo
             close(k)
       endselect
-   return
 
+   return
    endsubroutine write_surf
 
 

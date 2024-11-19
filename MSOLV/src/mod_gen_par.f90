@@ -3,7 +3,7 @@
 !  date: july, 12 2018
 !
 !  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
-!     **MUSST general parameters**
+!     **Very general parameters**
 !  </span>
 module gen_param
 use data_arch, only : I4, R8

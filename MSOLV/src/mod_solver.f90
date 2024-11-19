@@ -1,12 +1,18 @@
 
-!< author: Noël Brunetière<br/>&emsp;Arthur Francisco
-!  version: 1.0.0
-!  date: july, 12 2018
-!
-!  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
-!     **Api for different sparse matrix solvers**
-!  </span>
-
+!< author: Arthur Francisco
+!<  version: 1.0.0
+!<  date: july, 12 2018
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!<     **Api for different sparse matrix solvers**
+!<  </span>
+!<
+!< @warning
+!< If WITH_MA48 has been set to true, you are supposed to have the license for
+!< the HSL MA48 use.
+!< By default the HSL MA48 are not provided here.
+!< @endwarning
+!<
 module solver
 use iso_c_binding,   only : C_PTR, C_NULL_PTR, C_ASSOCIATED
 use iso_fortran_env, only : output_unit, error_unit
@@ -132,18 +138,22 @@ public :: MAT_SOLV, MS_MAT_SOLV, solve_syst, MUMP, UMFP, SULU, SOLVER_BS, SOLVER
 contains
 
    !=========================================================================================
-   !< @note General hat subroutine that handles the resolution steps:      <br/>
-   !  * ```ini``` solver initialization                                    <br/>
-   !  * ```ana``` solver analyzis when it's proposed by the solver         <br/>
-   !  * ```fac``` solver factorization                                     <br/>
-   !  * ```sol``` solver solution                                          <br/>
-   !  * ```fre``` solver memory release when it's proposed by the solver   <br/>
-   !  * ```end``` solver end
+   !< @note General hat subroutine that handles the resolution steps:
+   !<
+   !<  * ```ini``` solver initialization
+   !<  * ```ana``` solver analyzis when it's proposed by the solver
+   !<  * ```fac``` solver factorization
+   !<  * ```sol``` solver solution
+   !<  * ```fre``` solver memory release when it's proposed by the solver
+   !<  * ```end``` solver end
+   !<
+   !< @endnote
    !-----------------------------------------------------------------------------------------
    subroutine solve_syst(mat, step)
    implicit none
    type(MAT_SOLV), intent(inout) :: mat   !! *high level system type*
    character(len=*), intent(in)  :: step  !! *'ini'=initialize, 'ana'=analyze, 'fac'=factorize, 'sol'=solve, 'fre'=free memory, 'end'=close solver*
+
       if ( index(step, 'ini')/=0 ) then ; call init_solver(     mat) ; mat%ini = .true. ; return ; endif
       if ( index(step, 'ana')/=0 ) then ; call analyse_solver(  mat) ; mat%ana = .true. ; return ; endif
       if ( index(step, 'fac')/=0 ) then ; call factorize_solver(mat) ; mat%fac = .true. ; return ; endif
@@ -151,16 +161,17 @@ contains
       if ( index(step, 'fre')/=0 ) then ; call freefact_solver( mat) ; mat%fre = .true. ; return ; endif
       if ( index(step, 'end')/=0 ) then ; call close_solver( mat)    ; mat%end = .true. ; return ; endif
       stop 'Bad step chosen in SOLVE_SYST'
+
    return
    endsubroutine solve_syst
 
 
    !=========================================================================================
-   !> @note Subroutine to initialize the matrices of the solver
-   !-----------------------------------------------------------------------------------------
    subroutine init_solver(mat)
+   !! Subroutine to initialize the matrices of the solver
    implicit none
    type(MAT_SOLV), intent(inout) :: mat   !! *high level system type*
+
       integer(kind=I4) :: ierr
 
       ! allocation of the system vectors: rhs and unknown
@@ -244,9 +255,8 @@ contains
 
 
    !=========================================================================================
-   !> @note Subroutine to analyse, factorize (symbolic) the matrix of the system
-   !-----------------------------------------------------------------------------------------
    subroutine analyse_solver(mat)
+   !! Subroutine to analyse, factorize (symbolic) the matrix of the system
    implicit none
    type(MAT_SOLV), intent(inout), target :: mat   !! *high level system type*
 
@@ -320,9 +330,8 @@ contains
 
 
    !=========================================================================================
-   !> @note Subroutine to factorize the matrix of the system
-   !-----------------------------------------------------------------------------------------
    subroutine factorize_solver(mat)
+   !! Subroutine to factorize the matrix of the system
    implicit none
    type(MAT_SOLV), intent(inout) :: mat   !! *high level system type*
 
@@ -367,16 +376,17 @@ contains
             stop 'Unknown solver type, FACTORIZE_SOLVER'
 
       endselect
+
    return
    endsubroutine factorize_solver
 
 
    !=========================================================================================
-   !> @note Subroutine to solve the system \([A]\{x\} = \{b\}\) (sparse A)
-   !-----------------------------------------------------------------------------------------
    subroutine solution_solver(mat)
+   !! Subroutine to solve the system \([A]\{x\} = \{b\}\) (sparse A)
    implicit none
    type(MAT_SOLV), target, intent(inout) :: mat   !! *high level system type*
+
       integer(kind=I4) :: ierr
 
       select case(mat%slv_t)
@@ -447,9 +457,8 @@ contains
 
 
    !=========================================================================================
-   !> @note Subroutine to free the factors if applicable
-   !-----------------------------------------------------------------------------------------
    subroutine freefact_solver(mat)
+   !! Subroutine to free the factors if applicable
    implicit none
    type(MAT_SOLV), intent(inout) :: mat   !! *high level system type*
 
@@ -481,11 +490,11 @@ contains
 
 
    !=========================================================================================
-   !> @note Subroutine to close the solver
-   !-----------------------------------------------------------------------------------------
    subroutine close_solver(mat)
+   !! Subroutine to close the solver
    implicit none
    type(MAT_SOLV), intent(inout) :: mat   !! *high level system type*
+
       integer(kind=I4) :: ierr
 
       if ( allocated( mat%eltptr ) ) deallocate( mat%eltptr )
@@ -556,42 +565,42 @@ contains
 
 
    !=========================================================================================
-   !> @note Subroutine to transform the Rutherford Boeing format into Harwell Boeing and triplet
-   !-----------------------------------------------------------------------------------------
    subroutine convert_matrice_format(mat)
+   !! Subroutine to transform the Rutherford Boeing format into Harwell Boeing and triplet
    implicit none
    type(MAT_SOLV), intent(inout), target :: mat   !! *high level system type*
+
       integer(kind=I4) :: i
 
-      ! =======================================================================================================================
-      ! Compressed Column Storage (CCS) is also called the Harwell-Boeing sparse matrix format.
-      ! ************************************************
-      ! Elemental entries (example provided by MUMP):
-      ! A1 = 1|-1  2  3| A2 = 3|2 -1  3|
-      !      2| 2  1  1|      4|1  2 -1|
-      !      3| 1  1  1|      5|3  2  1| => a_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 1, 2, 1, 3, -1, 2, 2, 3, -1, 1)
-      !
-      ! A  = 1|-1  2  3  0  0|
-      !      2| 2  1  1  0  0|
-      !      3| 1  1  3 -1  3|
-      !      4| 0  0  1  2 -1|
-      !      5| 0  0  3  2  1| => eltvar = (1, 2, 3, 3, 4, 5), it locates the elemental matrix line in the assembled matrix
-      !                        => eltptr = (1, 4, 7), it gives the elemental matrix first entry position in eltvar (last
-      !                                               position being size(eltvar)+1)
-      !
-      ! ************************************************
-      ! Assembled matrix :
-      ! A being the same, a_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 3, 1, 3, -1, 2, 2, 3, -1, 1)
-      !                    irow = ( 1, 2, 3, 1, 2, 3, 1, 2, 3, 4, 5,  3, 4, 5, 3,  4, 5)
-      !                    jptr = (1, 4, 7, 12, 15, 18)
-      !
-      ! =======================================================================================================================
-      ! Triplet form
-      ! ************************************************
-      ! For each non zero a_elt entry, returns its row and column number
-      ! A being the same, a_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 3, 1, 3, -1, 2, 2, 3, -1, 1)
-      !                    irow = ( 1, 2, 3, 1, 2, 3, 1, 2, 3, 4, 5,  3, 4, 5, 3,  4, 5)
-      !                    jcol = ( 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3,  4, 4, 4, 5,  5, 5)
+      !< =======================================================================================================================
+      !< Compressed Column Storage (CCS) is also called the Harwell-Boeing sparse matrix format.
+      !< ************************************************
+      !< Elemental entries (example provided by MUMP):
+      !< A1 = 1|-1  2  3| A2 = 3|2 -1  3|
+      !<      2| 2  1  1|      4|1  2 -1|
+      !<      3| 1  1  1|      5|3  2  1| => a_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 1, 2, 1, 3, -1, 2, 2, 3, -1, 1)
+      !<
+      !< A  = 1|-1  2  3  0  0|
+      !<      2| 2  1  1  0  0|
+      !<      3| 1  1  3 -1  3|
+      !<      4| 0  0  1  2 -1|
+      !<      5| 0  0  3  2  1| => eltvar = (1, 2, 3, 3, 4, 5), it locates the elemental matrix line in the assembled matrix
+      !<                        => eltptr = (1, 4, 7), it gives the elemental matrix first entry position in eltvar (last
+      !<                                               position being size(eltvar)+1)
+      !<
+      !< ************************************************
+      !< Assembled matrix :
+      !< A being the same, a_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 3, 1, 3, -1, 2, 2, 3, -1, 1)
+      !<                    irow = ( 1, 2, 3, 1, 2, 3, 1, 2, 3, 4, 5,  3, 4, 5, 3,  4, 5)
+      !<                    jptr = (1, 4, 7, 12, 15, 18)
+      !<
+      !< =======================================================================================================================
+      !< Triplet form
+      !< ************************************************
+      !< For each non zero a_elt entry, returns its row and column number
+      !< A being the same, a_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 3, 1, 3, -1, 2, 2, 3, -1, 1)
+      !<                    irow = ( 1, 2, 3, 1, 2, 3, 1, 2, 3, 4, 5,  3, 4, 5, 3,  4, 5)
+      !<                    jcol = ( 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3,  4, 4, 4, 5,  5, 5)
 
       call from_elemental_to_assembled(mat = mat)
 
@@ -625,16 +634,17 @@ contains
             stop 'Unknown solver type, CONVERT_MATRICE_FORMAT'
 
       endselect
+
    return
    endsubroutine convert_matrice_format
 
 
    !=========================================================================================
-   !> @note Subroutine to transform the elemental entries into assembled CC vectors
-   !-----------------------------------------------------------------------------------------
    subroutine from_elemental_to_assembled(mat)
+   !! Subroutine to transform the elemental entries into assembled CC vectors
    implicit none
    type(MAT_SOLV), intent(inout), target :: mat   !! *high level system type*
+
       integer(kind=I4), pointer :: solver, nb_elt, n, ntot, nz
       integer(kind=I4), dimension(:), pointer :: eltptr
       integer(kind=I4), dimension(:), pointer :: eltvar

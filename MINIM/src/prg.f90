@@ -1,8 +1,13 @@
+!< author: John Burkardt
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!< **A fortran collection of functions for minimization problems. Example of use.**
+!< </span>
 program test_minpack
 use minpack
 !*****************************************************************************80
 !
-!! minpack_test() tests minpack().
+! minpack_test() tests minpack().
 !
 !  Licensing:
 !
