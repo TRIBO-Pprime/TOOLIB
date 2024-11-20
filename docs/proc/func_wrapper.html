@@ -1,0 +1,477 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>func_wrapper &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>func_wrapper
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> Jacob Williams</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">9 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/mod_pikaia_oop.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_pikaia_oop.f90.html'>mod_pikaia_oop.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/pikaia_oop.html'>pikaia_oop</a></li>
+            <li class="breadcrumb-item active" aria-current="page">func_wrapper</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/func_wrapper.html#src">func_wrapper</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  subroutine func_wrapper(me, x, f)  
+</h2>
+    
+
+    <p>Wrapper for the user&rsquo;s function that is used by the main pikaia routine
+The x input to this function comes from pikaia, and will be between [0,1].</p>
+
+    <h3>Type Bound</h3>
+    <p><a href='../type/pikaia_class.html'>pikaia_class</a></p>
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~14"></span>
+              class(<a href='../type/pikaia_class.html'>pikaia_class</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~72"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-f~11"></span>
+              real(kind=wp),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>f</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~func_wrapper~~CalledByGraph Pages: 1 -->
+<svg id="procfunc_wrapperCalledByGraph" width="641pt" height="45pt"
+ viewBox="0.00 0.00 641.00 44.68" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~func_wrapper~~CalledByGraph" class="graph" transform="scale(0.86 0.86) rotate(0) translate(4 48)">
+<title>proc~~func_wrapper~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-48 742,-48 742,4 -4,4"/>
+<!-- proc~func_wrapper -->
+<g id="proc~~func_wrapper~~CalledByGraph_node1" class="node">
+<title>proc~func_wrapper</title>
+<polygon fill="none" stroke="black" points="738,-44 593,-44 593,-20 738,-20 738,-44"/>
+<text text-anchor="middle" x="665.5" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50">pikaia_class%func_wrapper</text>
+</g>
+<!-- proc~newpop -->
+<g id="proc~~func_wrapper~~CalledByGraph_node2" class="node">
+<title>proc~newpop</title>
+<g id="a_proc~~func_wrapper~~CalledByGraph_node2"><a xlink:href="../proc/newpop.html" xlink:title="pikaia_class%newpop">
+<polygon fill="#d9534f" stroke="#d9534f" points="557,-24 440,-24 440,0 557,0 557,-24"/>
+<text text-anchor="middle" x="498.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%newpop</text>
+</a>
+</g>
+</g>
+<!-- proc~newpop&#45;&gt;proc~func_wrapper -->
+<g id="proc~~func_wrapper~~CalledByGraph_edge1" class="edge">
+<title>proc~newpop&#45;&gt;proc~func_wrapper</title>
+<path fill="none" stroke="#ff0000" d="M557.21,-19C565.49,-20 574.14,-21.05 582.78,-22.09"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="582.54,-25.59 592.89,-23.32 583.39,-18.64 582.54,-25.59"/>
+</g>
+<!-- proc~pikaia -->
+<g id="proc~~func_wrapper~~CalledByGraph_node3" class="node">
+<title>proc~pikaia</title>
+<g id="a_proc~~func_wrapper~~CalledByGraph_node3"><a xlink:href="../proc/pikaia.html" xlink:title="pikaia_class%pikaia">
+<polygon fill="#d9534f" stroke="#d9534f" points="404,-44 297,-44 297,-20 404,-20 404,-44"/>
+<text text-anchor="middle" x="350.5" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%pikaia</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~func_wrapper -->
+<g id="proc~~func_wrapper~~CalledByGraph_edge2" class="edge">
+<title>proc~pikaia&#45;&gt;proc~func_wrapper</title>
+<path fill="none" stroke="#ff0000" d="M404.38,-32.7C416.11,-32.82 428.48,-32.93 440,-33 492,-33.29 505,-33.24 557,-33 565.32,-32.96 574,-32.91 582.66,-32.84"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="582.83,-36.34 592.8,-32.76 582.77,-29.34 582.83,-36.34"/>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~newpop -->
+<g id="proc~~func_wrapper~~CalledByGraph_edge3" class="edge">
+<title>proc~pikaia&#45;&gt;proc~newpop</title>
+<path fill="none" stroke="#ff0000" d="M404.21,-24.78C412.55,-23.64 421.27,-22.44 429.88,-21.26"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="430.5,-24.71 439.93,-19.89 429.55,-17.78 430.5,-24.71"/>
+</g>
+<!-- proc~solve_with_pikaia -->
+<g id="proc~~func_wrapper~~CalledByGraph_node4" class="node">
+<title>proc~solve_with_pikaia</title>
+<g id="a_proc~~func_wrapper~~CalledByGraph_node4"><a xlink:href="../proc/solve_with_pikaia.html" xlink:title="pikaia_class%solve_with_pikaia">
+<polygon fill="#d9534f" stroke="#d9534f" points="261,-44 98,-44 98,-20 261,-20 261,-44"/>
+<text text-anchor="middle" x="179.5" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%solve_with_pikaia</text>
+</a>
+</g>
+</g>
+<!-- proc~solve_with_pikaia&#45;&gt;proc~pikaia -->
+<g id="proc~~func_wrapper~~CalledByGraph_edge4" class="edge">
+<title>proc~solve_with_pikaia&#45;&gt;proc~pikaia</title>
+<path fill="none" stroke="#00ffff" d="M261.04,-32C269.53,-32 278.07,-32 286.32,-32"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="286.59,-35.5 296.59,-32 286.59,-28.5 286.59,-35.5"/>
+</g>
+<!-- program~test_algen -->
+<g id="proc~~func_wrapper~~CalledByGraph_node5" class="node">
+<title>program~test_algen</title>
+<g id="a_proc~~func_wrapper~~CalledByGraph_node5"><a xlink:href="../program/test_algen.html" xlink:title="test_algen">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="62,-44 0,-44 0,-20 62,-20 62,-44"/>
+<text text-anchor="middle" x="31" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_algen</text>
+</a>
+</g>
+</g>
+<!-- program~test_algen&#45;&gt;proc~solve_with_pikaia -->
+<g id="proc~~func_wrapper~~CalledByGraph_edge5" class="edge">
+<title>program~test_algen&#45;&gt;proc~solve_with_pikaia</title>
+<path fill="none" stroke="#ff0000" d="M62.35,-32C69.97,-32 78.53,-32 87.47,-32"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="87.7,-35.5 97.7,-32 87.7,-28.5 87.7,-35.5"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panprocfunc_wrapperCalledByGraph = svgPanZoom('#procfunc_wrapperCalledByGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">func_wrapper</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    class</span><span class="p">(</span><span class="n">pikaia_class</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">me</span><span class="w">   </span><span class="c">! pikaia class</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="w">    </span><span class="c">! optimization variable vector [0,1]</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">f</span><span class="w">    </span><span class="c">! fitness value</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">xp</span><span class="w">    </span><span class="c">!unscaled x vector: [xu,xl]</span>
+
+<span class="w">    </span><span class="c">!map each x variable from [0,1] to [xl,xu]:</span>
+<span class="w">    </span><span class="n">xp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">xl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">del</span><span class="o">*</span><span class="n">x</span>
+
+<span class="w">    </span><span class="c">!call the user&#39;s function with xp:</span>
+<span class="w">    </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">user_f</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">func_wrapper</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

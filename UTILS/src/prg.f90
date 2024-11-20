@@ -1,15 +1,14 @@
 !< author: Arthur Francisco
-!  version: 1.0.0
-!  date: march, 07 2023
-!
-!  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
-!     ** data_arch test**
-!  </span>
+!<  version: 1.0.0
+!<  date: march, 07 2023
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!<     **Various subroutines. Example of use.**
+!<  </span>
 
 program test_data_arch
 use data_arch
 use miscellaneous, only : get_unit, trans_center2corner, trans_corner2center, progress_bar_terminal
-!~ use omp_lib, only : omp_get_num_procs
 implicit none
 
    integer(kind=I4) :: uu, i, j
@@ -17,8 +16,6 @@ implicit none
    character(len=3) :: snx
 
    real(kind=R8), dimension(nx, ny) :: array_in, array_out
-
-!~    NB_THREADS_MAX = omp_get_num_procs()
 
    call get_unit(uu)
 
@@ -46,7 +43,6 @@ implicit none
 
       write(uu, '(I9,T40,a)') EXPO_MAX,         'EXPO_MAX'
 
-!~       write(uu, '(I9,T40,a)') NB_THREADS_MAX,   'NB_THREADS_MAX'
    close( uu )
 
    write(snx, '(I3.3)') nx

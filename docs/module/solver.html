@@ -1,0 +1,2000 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>solver &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>solver
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> Arthur Francisco</li>
+            <li class="list-inline-item" id="meta-date"><i class="fa fa-calendar-o"></i> july, 12 2018</li>
+            <li class="list-inline-item" id="meta-version"><i class="fa fa-barcode"></i> 1.0.0</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 3.8% of total for modules and submodules.">471 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/mod_solver.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_solver.f90.html'>mod_solver.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">solver</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/solver.html#variable-ma48">MA48</a>
+            <a class="list-group-item" href="../module/solver.html#variable-mump">MUMP</a>
+            <a class="list-group-item" href="../module/solver.html#variable-solver_bs">SOLVER_BS</a>
+            <a class="list-group-item" href="../module/solver.html#variable-solver_ts">SOLVER_TS</a>
+            <a class="list-group-item" href="../module/solver.html#variable-sulu">SULU</a>
+            <a class="list-group-item" href="../module/solver.html#variable-umfp">UMFP</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/solver.html#type-mat_ma48">MAT_MA48</a>
+            <a class="list-group-item" href="../module/solver.html#type-mat_ma48~2">MAT_MA48</a>
+            <a class="list-group-item" href="../module/solver.html#type-mat_solv">MAT_SOLV</a>
+            <a class="list-group-item" href="../module/solver.html#type-mat_umfp">MAT_UMFP</a>
+            <a class="list-group-item" href="../module/solver.html#type-ms_mat_solv">MS_MAT_SOLV</a>
+        </div>
+      </div>
+    </div>
+
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/solver.html#proc-analyse_solver">analyse_solver</a>
+            <a class="list-group-item" href="../module/solver.html#proc-close_solver">close_solver</a>
+            <a class="list-group-item" href="../module/solver.html#proc-convert_matrice_format">convert_matrice_format</a>
+            <a class="list-group-item" href="../module/solver.html#proc-factorize_solver">factorize_solver</a>
+            <a class="list-group-item" href="../module/solver.html#proc-freefact_solver">freefact_solver</a>
+            <a class="list-group-item" href="../module/solver.html#proc-from_elemental_to_assembled">from_elemental_to_assembled</a>
+            <a class="list-group-item" href="../module/solver.html#proc-init_solver">init_solver</a>
+            <a class="list-group-item" href="../module/solver.html#proc-solution_solver">solution_solver</a>
+            <a class="list-group-item" href="../module/solver.html#proc-solve_syst">solve_syst</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      <p><span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+    <strong>Api for different sparse matrix solvers</strong>
+ </span></p>
+<div class="alert alert-warning">
+<p class="alert-title h4">Warning</p>
+<p>If WITH_MA48 has been set to true, you are supposed to have the license for
+the HSL MA48 use.
+By default the HSL MA48 are not provided here.</p>
+</div>
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='gen_param.html'>gen_param</a></li>
+                  <li class="list-inline-item"><a href='sulu_wrapper.html'>sulu_wrapper</a></li>
+                  <li class="list-inline-item"><a href='mumfpack.html'>mumfpack</a></li>
+                  <li class="list-inline-item"><a href='mumps_wrapper.html'>mumps_wrapper</a></li>
+                  <li class="list-inline-item">hsl_ma48_double</li>
+                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_c_binding'>iso_c_binding</a></li>
+                  <li class="list-inline-item"><a href='data_arch.html'>data_arch</a></li>
+                  <li class="list-inline-item"><a href='sort_arrays.html'>sort_arrays</a></li>
+                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_fortran_env'>iso_fortran_env</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~solver~~UsesGraph Pages: 1 -->
+<svg id="modulesolverUsesGraph" width="432pt" height="322pt"
+ viewBox="0.00 0.00 432.00 321.94" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~solver~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 317.94)">
+<title>module~~solver~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-317.94 428,-317.94 428,4 -4,4"/>
+<!-- module~solver -->
+<g id="module~~solver~~UsesGraph_node1" class="node">
+<title>module~solver</title>
+<polygon fill="none" stroke="black" points="424,-170.94 370,-170.94 370,-146.94 424,-146.94 424,-170.94"/>
+<text text-anchor="middle" x="397" y="-156.54" font-family="Helvetica,sans-Serif" font-size="10.50">solver</text>
+</g>
+<!-- hsl_ma48_double -->
+<g id="module~~solver~~UsesGraph_node2" class="node">
+<title>hsl_ma48_double</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="334,-313.94 237,-313.94 237,-289.94 334,-289.94 334,-313.94"/>
+<text text-anchor="middle" x="285.5" y="-299.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hsl_ma48_double</text>
+</g>
+<!-- module~solver&#45;&gt;hsl_ma48_double -->
+<g id="module~~solver~~UsesGraph_edge1" class="edge">
+<title>module~solver&#45;&gt;hsl_ma48_double</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M392.24,-170.97C384.58,-193.9 365.16,-244.36 334,-275.94 330.95,-279.03 327.46,-281.85 323.79,-284.39"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="321.65,-281.6 315,-289.84 325.34,-287.55 321.65,-281.6"/>
+</g>
+<!-- iso_c_binding -->
+<g id="module~~solver~~UsesGraph_node3" class="node">
+<title>iso_c_binding</title>
+<g id="a_module~~solver~~UsesGraph_node3"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
+<polygon fill="#337ab7" stroke="#337ab7" points="201,-233.94 123,-233.94 123,-209.94 201,-209.94 201,-233.94"/>
+<text text-anchor="middle" x="162" y="-219.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_c_binding</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;iso_c_binding -->
+<g id="module~~solver~~UsesGraph_edge2" class="edge">
+<title>module~solver&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M391.25,-171.25C382.98,-190.69 363.93,-227.83 334,-242.94 291.29,-264.5 235.19,-250.92 199.11,-237.69"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="200.08,-234.32 189.49,-234 197.57,-240.85 200.08,-234.32"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="module~~solver~~UsesGraph_node4" class="node">
+<title>iso_fortran_env</title>
+<g id="a_module~~solver~~UsesGraph_node4"><a xlink:href="http://fortranwiki.org/fortran/show/iso_fortran_env" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="87,-45.94 0,-45.94 0,-21.94 87,-21.94 87,-45.94"/>
+<text text-anchor="middle" x="43.5" y="-31.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;iso_fortran_env -->
+<g id="module~~solver~~UsesGraph_edge3" class="edge">
+<title>module~solver&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M393.16,-146.77C386.78,-122.02 369.06,-65.41 334,-32.94 317.32,-17.49 307.64,-22.32 286.5,-13.94"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M284.5,-13.94C219.77,11.71 137.7,-4.47 88.24,-18.92"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="87.05,-15.62 78.49,-21.87 89.08,-22.32 87.05,-15.62"/>
+</g>
+<!-- module~data_arch -->
+<g id="module~~solver~~UsesGraph_node5" class="node">
+<title>module~data_arch</title>
+<g id="a_module~~solver~~UsesGraph_node5"><a xlink:href="../module/data_arch.html" xlink:title="data_arch">
+<polygon fill="#337ab7" stroke="#337ab7" points="192.5,-65.94 131.5,-65.94 131.5,-41.94 192.5,-41.94 192.5,-65.94"/>
+<text text-anchor="middle" x="162" y="-51.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">data_arch</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~data_arch -->
+<g id="module~~solver~~UsesGraph_edge4" class="edge">
+<title>module~solver&#45;&gt;module~data_arch</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M284.5,-13.94C268.39,-7.56 226.75,-23.83 196.7,-37.51"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="195,-34.44 187.4,-41.82 197.95,-40.79 195,-34.44"/>
+</g>
+<!-- module~gen_param -->
+<g id="module~~solver~~UsesGraph_node6" class="node">
+<title>module~gen_param</title>
+<g id="a_module~~solver~~UsesGraph_node6"><a xlink:href="../module/gen_param.html" xlink:title="gen_param">
+<polygon fill="#337ab7" stroke="#337ab7" points="319,-149.94 252,-149.94 252,-125.94 319,-125.94 319,-149.94"/>
+<text text-anchor="middle" x="285.5" y="-135.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">gen_param</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~gen_param -->
+<g id="module~~solver~~UsesGraph_edge5" class="edge">
+<title>module~solver&#45;&gt;module~gen_param</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M369.77,-153.91C357.67,-151.59 342.99,-148.78 329.35,-146.16"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="329.66,-142.66 319.18,-144.21 328.34,-149.53 329.66,-142.66"/>
+</g>
+<!-- module~mumfpack -->
+<g id="module~~solver~~UsesGraph_node7" class="node">
+<title>module~mumfpack</title>
+<g id="a_module~~solver~~UsesGraph_node7"><a xlink:href="../module/mumfpack.html" xlink:title="mumfpack">
+<polygon fill="#337ab7" stroke="#337ab7" points="316.5,-233.94 254.5,-233.94 254.5,-209.94 316.5,-209.94 316.5,-233.94"/>
+<text text-anchor="middle" x="285.5" y="-219.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mumfpack</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~mumfpack -->
+<g id="module~~solver~~UsesGraph_edge6" class="edge">
+<title>module~solver&#45;&gt;module~mumfpack</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M379.93,-171C367.7,-179.88 350.26,-191.93 334,-200.94 331.16,-202.51 328.18,-204.06 325.16,-205.56"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="323.58,-202.43 316.04,-209.87 326.58,-208.75 323.58,-202.43"/>
+</g>
+<!-- module~mumps_wrapper -->
+<g id="module~~solver~~UsesGraph_node8" class="node">
+<title>module~mumps_wrapper</title>
+<g id="a_module~~solver~~UsesGraph_node8"><a xlink:href="../module/mumps_wrapper.html" xlink:title="mumps_wrapper">
+<polygon fill="#337ab7" stroke="#337ab7" points="332,-65.94 239,-65.94 239,-41.94 332,-41.94 332,-65.94"/>
+<text text-anchor="middle" x="285.5" y="-51.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mumps_wrapper</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~mumps_wrapper -->
+<g id="module~~solver~~UsesGraph_edge7" class="edge">
+<title>module~solver&#45;&gt;module~mumps_wrapper</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M389.75,-146.82C379.99,-128.95 359.6,-95.46 334,-74.94 332.42,-73.67 330.75,-72.47 329.01,-71.32"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="330.38,-68.06 319.97,-66.07 326.87,-74.12 330.38,-68.06"/>
+</g>
+<!-- module~sort_arrays -->
+<g id="module~~solver~~UsesGraph_node9" class="node">
+<title>module~sort_arrays</title>
+<g id="a_module~~solver~~UsesGraph_node9"><a xlink:href="../module/sort_arrays.html" xlink:title="sort_arrays">
+<polygon fill="#337ab7" stroke="#337ab7" points="319,-107.94 252,-107.94 252,-83.94 319,-83.94 319,-107.94"/>
+<text text-anchor="middle" x="285.5" y="-93.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_arrays</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~sort_arrays -->
+<g id="module~~solver~~UsesGraph_edge8" class="edge">
+<title>module~solver&#45;&gt;module~sort_arrays</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M379.93,-146.88C367.7,-138 350.26,-125.95 334,-116.94 331.16,-115.37 328.18,-113.82 325.16,-112.33"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="326.58,-109.13 316.04,-108.02 323.58,-115.46 326.58,-109.13"/>
+</g>
+<!-- module~sulu_wrapper -->
+<g id="module~~solver~~UsesGraph_node10" class="node">
+<title>module~sulu_wrapper</title>
+<g id="a_module~~solver~~UsesGraph_node10"><a xlink:href="../module/sulu_wrapper.html" xlink:title="sulu_wrapper">
+<polygon fill="#337ab7" stroke="#337ab7" points="324,-191.94 247,-191.94 247,-167.94 324,-167.94 324,-191.94"/>
+<text text-anchor="middle" x="285.5" y="-177.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sulu_wrapper</text>
+</a>
+</g>
+</g>
+<!-- module~solver&#45;&gt;module~sulu_wrapper -->
+<g id="module~~solver~~UsesGraph_edge9" class="edge">
+<title>module~solver&#45;&gt;module~sulu_wrapper</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M369.77,-163.97C359.1,-166.02 346.41,-168.45 334.2,-170.79"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="333.27,-167.41 324.11,-172.73 334.59,-174.28 333.27,-167.41"/>
+</g>
+<!-- module~data_arch&#45;&gt;iso_fortran_env -->
+<g id="module~~solver~~UsesGraph_edge10" class="edge">
+<title>module~data_arch&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M131.3,-48.84C120.98,-47.07 109.06,-45.03 97.43,-43.03"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="97.78,-39.54 87.34,-41.3 96.6,-46.44 97.78,-39.54"/>
+</g>
+<!-- module~gen_param&#45;&gt;module~data_arch -->
+<g id="module~~solver~~UsesGraph_edge11" class="edge">
+<title>module~gen_param&#45;&gt;module~data_arch</title>
+<path fill="none" stroke="#00ffa9" stroke-dasharray="5,2" d="M253.67,-125.88C247.98,-123.21 242.19,-120.2 237,-116.94 216.87,-104.3 196.48,-86.49 182.21,-73.03"/>
+<polygon fill="#00ffa9" stroke="#00ffa9" points="184.6,-70.46 174.96,-66.06 179.75,-75.51 184.6,-70.46"/>
+</g>
+<!-- module~mumfpack&#45;&gt;iso_c_binding -->
+<g id="module~~solver~~UsesGraph_edge12" class="edge">
+<title>module~mumfpack&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#00a9ff" stroke-dasharray="5,2" d="M254.47,-221.94C241.57,-221.94 226.18,-221.94 211.72,-221.94"/>
+<polygon fill="#00a9ff" stroke="#00a9ff" points="211.42,-218.44 201.42,-221.94 211.42,-225.44 211.42,-218.44"/>
+</g>
+<!-- module~sort_arrays&#45;&gt;module~data_arch -->
+<g id="module~~solver~~UsesGraph_edge13" class="edge">
+<title>module~sort_arrays&#45;&gt;module~data_arch</title>
+<path fill="none" stroke="#aa00ff" stroke-dasharray="5,2" d="M251.94,-84.69C236.69,-79.41 218.39,-73.09 202.37,-67.55"/>
+<polygon fill="#aa00ff" stroke="#aa00ff" points="203.33,-64.18 192.73,-64.22 201.04,-70.8 203.33,-64.18"/>
+</g>
+<!-- module~sulu_wrapper&#45;&gt;iso_c_binding -->
+<g id="module~~solver~~UsesGraph_edge14" class="edge">
+<title>module~sulu_wrapper&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#ff00aa" stroke-dasharray="5,2" d="M249.68,-191.98C236.59,-196.5 221.52,-201.71 207.66,-206.5"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="206.13,-203.33 197.82,-209.9 208.42,-209.95 206.13,-203.33"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+          <div class="card">
+      <h3 class="card-header card-title bg-light">Used by</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~solver~~UsedByGraph Pages: 1 -->
+<svg id="modulesolverUsedByGraph" width="168pt" height="32pt"
+ viewBox="0.00 0.00 168.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~solver~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>module~~solver~~UsedByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 164,-28 164,4 -4,4"/>
+<!-- module~solver -->
+<g id="module~~solver~~UsedByGraph_node1" class="node">
+<title>module~solver</title>
+<polygon fill="none" stroke="black" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">solver</text>
+</g>
+<!-- program~test_solvers -->
+<g id="module~~solver~~UsedByGraph_node2" class="node">
+<title>program~test_solvers</title>
+<g id="a_module~~solver~~UsedByGraph_node2"><a xlink:href="../program/test_solvers.html" xlink:title="test_solvers">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="160,-24 90,-24 90,0 160,0 160,-24"/>
+<text text-anchor="middle" x="125" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_solvers</text>
+</a>
+</g>
+</g>
+<!-- program~test_solvers&#45;&gt;module~solver -->
+<g id="module~~solver~~UsedByGraph_edge1" class="edge">
+<title>program~test_solvers&#45;&gt;module~solver</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M89.88,-12C81.62,-12 72.76,-12 64.4,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="64.16,-8.5 54.16,-12 64.16,-15.5 64.16,-8.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsedByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsedByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      <br>
+
+
+        <section>
+          <h2>Variables</h2>
+            <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ma48"></span>
+              integer(kind=I4),
+            </td>
+              <td>private,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>MA48</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+                <p><em>code for     Ma48 solver type</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mump"></span>
+              integer(kind=I4),
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>MUMP</strong></td>
+<td> =</td>
+                <td>2</td>
+            <td>
+                <p><em>code for    MUMPS solver type</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-solver_bs"></span>
+              integer(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>SOLVER_BS</strong></td>
+<td> =</td>
+                <td>-1</td>
+            <td>
+                <p><em>solver used for bottom scale grids</em> [not used by the present module]</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-solver_ts"></span>
+              integer(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>SOLVER_TS</strong></td>
+<td> =</td>
+                <td>-1</td>
+            <td>
+                <p><em>solver used for top scale grids</em> [not used by the present module]</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sulu"></span>
+              integer(kind=I4),
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>SULU</strong></td>
+<td> =</td>
+                <td>1</td>
+            <td>
+                <p><em>code for SUPER LU solver type</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-umfp"></span>
+              integer(kind=I4),
+            </td>
+              <td>public,</td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>UMFP</strong></td>
+<td> =</td>
+                <td>3</td>
+            <td>
+                <p><em>code for  UMFPACK solver type</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+        </section>
+        <br>
+
+
+
+
+        <section>
+          <h2>Derived Types</h2>
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-mat_ma48"></span>
+      <h3>
+        type, private&nbsp;::&nbsp;
+        <a href='../type/mat_ma48.html'>MAT_MA48</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      <p><span style="color:green">All the stuff needed by <em>HSL_MA48</em></span></p>
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ainf"></span>
+              type(MA48_AINFO),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ainf</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ctrl"></span>
+              type(MA48_CONTROL),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ctrl</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fact"></span>
+              type(MA48_FACTORS),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fact</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fast"></span>
+              integer(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fast</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-finf"></span>
+              type(MA48_FINFO),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>finf</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-resid"></span>
+              real(kind=R8),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(2)
+            </td>
+            <td>::</td>
+            <td><strong>resid</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sinf"></span>
+              type(MA48_SINFO),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sinf</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-zmat"></span>
+              type(ZD11_TYPE),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>zmat</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-mat_ma48~2"></span>
+      <h3>
+        type, private&nbsp;::&nbsp;
+        <a href='../type/mat_ma48~2.html'>MAT_MA48</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      
+
+
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-mat_solv"></span>
+      <h3>
+        type, public&nbsp;::&nbsp;
+        <a href='../type/mat_solv.html'>MAT_SOLV</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      <p><span style="color:green">MUSST high level system type</span></p>
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a_elt~2"></span>
+              real(kind=R8),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>a_elt</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>unassembled rigidity matrix</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ana"></span>
+              logical(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ana</strong></td>
+<td> =</td>
+                <td>.false.</td>
+            <td>
+<p><em>the system is analyzed</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-b~3"></span>
+              real(kind=R8),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>b</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>right hand side vector</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-code"></span>
+              integer(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>code</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>error code</em>   [not used yet]</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-eltptr~3"></span>
+              integer(kind=I4),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>eltptr</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>element rows pointer</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-eltvar~3"></span>
+              integer(kind=I4),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>eltvar</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>rows in assembled matrix</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-end"></span>
+              logical(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>end</strong></td>
+<td> =</td>
+                <td>.false.</td>
+            <td>
+<p><em>the system is closed</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-error~3"></span>
+              real(kind=R8),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>error</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>error value</em>  [not used yet]</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fac"></span>
+              logical(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fac</strong></td>
+<td> =</td>
+                <td>.false.</td>
+            <td>
+<p><em>the system is factorized</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fre"></span>
+              logical(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fre</strong></td>
+<td> =</td>
+                <td>.false.</td>
+            <td>
+<p><em>the system is freed</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ini"></span>
+              logical(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ini</strong></td>
+<td> =</td>
+                <td>.false.</td>
+            <td>
+<p><em>the system is initialized</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-irow~2"></span>
+              integer(kind=I4),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>irow</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>line number</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-jcol"></span>
+              integer(kind=I4),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>jcol</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>column number</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-jptr~2"></span>
+              integer(kind=I4),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>jptr</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>line pointer</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-matma48"></span>
+              type(<a href='../type/mat_ma48~2.html'>MAT_MA48</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>matma48</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>matrices for ma48 solver</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-matmump"></span>
+              type(MAT_MUMP),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>matmump</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>matrices for mumps solver</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-matsulu"></span>
+              type(MAT_SULU),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>matsulu</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>matrices for SuperLu solver</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-matumfp"></span>
+              type(<a href='../type/mat_umfp.html'>MAT_UMFP</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>matumfp</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>matrices for Umfpack solver</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mess"></span>
+              character(len=1024),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mess</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>message</em>      [not used yet]</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ne"></span>
+              integer(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ne</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>number of elements</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nn~4"></span>
+              integer(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nn</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>number of nodes</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nt"></span>
+              integer(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nt</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>number of </em><em>a priori</em><em> non-zero terms in the matrix</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nvar~2"></span>
+              integer(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nvar</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>eltvar length ( if 4-nodes elt -&gt; 2 lines X number of elemental matrices)</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nz~6"></span>
+              integer(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nz</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>number of non-zero terms in the matrix</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-slv_t"></span>
+              integer(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>slv_t</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>solver type</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sol"></span>
+              logical(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sol</strong></td>
+<td> =</td>
+                <td>.false.</td>
+            <td>
+<p><em>the system is solved</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~76"></span>
+              real(kind=R8),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>unknwon vector</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-mat_umfp"></span>
+      <h3>
+        type, private&nbsp;::&nbsp;
+        <a href='../type/mat_umfp.html'>MAT_UMFP</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      <p><span style="color:green">All the stuff needed by <em>UMFPACK</em></span></p>
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-c_control"></span>
+              real(kind=R8),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(0:UMFPACK_CONTROL-1)
+            </td>
+            <td>::</td>
+            <td><strong>c_control</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-c_info"></span>
+              real(kind=R8),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(0:UMFPACK_INFO   -1)
+            </td>
+            <td>::</td>
+            <td><strong>c_info</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-c_numeric"></span>
+              type(c_ptr),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>c_numeric</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-c_symbolic"></span>
+              type(c_ptr),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>c_symbolic</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-ms_mat_solv"></span>
+      <h3>
+        type, public&nbsp;::&nbsp;
+        <a href='../type/ms_mat_solv.html'>MS_MAT_SOLV</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      <p><span style="color:green">MUSST multiscale high level solver type</span></p>
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bs_mat"></span>
+              type(<a href='../type/mat_solv.html'>MAT_SOLV</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>bs_mat</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>bottom-scale solver type matrices (table)</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ts_mat"></span>
+              type(<a href='../type/mat_solv.html'>MAT_SOLV</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ts_mat</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+<p><em>top-scale solver type matrices</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-analyse_solver"></span> <h3>private  subroutine <a href='../proc/analyse_solver.html'>analyse_solver</a>(mat)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to analyse, factorize (symbolic) the matrix of the system</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mat~5"></span>
+              type(<a href='../type/mat_solv.html'>MAT_SOLV</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>mat</strong></td>
+            <td>
+<p><em>high level system type</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-close_solver"></span> <h3>private  subroutine <a href='../proc/close_solver.html'>close_solver</a>(mat)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to close the solver</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mat~9"></span>
+              type(<a href='../type/mat_solv.html'>MAT_SOLV</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mat</strong></td>
+            <td>
+<p><em>high level system type</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-convert_matrice_format"></span> <h3>public  subroutine <a href='../proc/convert_matrice_format.html'>convert_matrice_format</a>(mat)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Compressed Column Storage (CCS) is also called the Harwell-Boeing sparse matrix format.</p><a href="../proc/convert_matrice_format.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mat~10"></span>
+              type(<a href='../type/mat_solv.html'>MAT_SOLV</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>mat</strong></td>
+            <td>
+<p><em>high level system type</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-factorize_solver"></span> <h3>private  subroutine <a href='../proc/factorize_solver.html'>factorize_solver</a>(mat)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to factorize the matrix of the system</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mat~6"></span>
+              type(<a href='../type/mat_solv.html'>MAT_SOLV</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mat</strong></td>
+            <td>
+<p><em>high level system type</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-freefact_solver"></span> <h3>private  subroutine <a href='../proc/freefact_solver.html'>freefact_solver</a>(mat)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to free the factors if applicable</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mat~8"></span>
+              type(<a href='../type/mat_solv.html'>MAT_SOLV</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mat</strong></td>
+            <td>
+<p><em>high level system type</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-from_elemental_to_assembled"></span> <h3>private  subroutine <a href='../proc/from_elemental_to_assembled.html'>from_elemental_to_assembled</a>(mat)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to transform the elemental entries into assembled CC vectors</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mat~11"></span>
+              type(<a href='../type/mat_solv.html'>MAT_SOLV</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>mat</strong></td>
+            <td>
+<p><em>high level system type</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-init_solver"></span> <h3>private  subroutine <a href='../proc/init_solver.html'>init_solver</a>(mat)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to initialize the matrices of the solver</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mat~4"></span>
+              type(<a href='../type/mat_solv.html'>MAT_SOLV</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mat</strong></td>
+            <td>
+<p><em>high level system type</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-solution_solver"></span> <h3>private  subroutine <a href='../proc/solution_solver.html'>solution_solver</a>(mat)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Subroutine to solve the system <script type="math/tex">[A]\{x\} = \{b\}</script> (sparse A)</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mat~7"></span>
+              type(<a href='../type/mat_solv.html'>MAT_SOLV</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>mat</strong></td>
+            <td>
+<p><em>high level system type</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-solve_syst"></span> <h3>public  subroutine <a href='../proc/solve_syst.html'>solve_syst</a>(mat, step)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>General hat subroutine that handles the resolution steps:</p><a href="../proc/solve_syst.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mat~3"></span>
+              type(<a href='../type/mat_solv.html'>MAT_SOLV</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mat</strong></td>
+            <td>
+<p><em>high level system type</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-step"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>step</strong></td>
+            <td>
+<p><em>&lsquo;ini&rsquo;=initialize, &lsquo;ana&rsquo;=analyze, &lsquo;fac&rsquo;=factorize, &lsquo;sol&rsquo;=solve, &lsquo;fre&rsquo;=free memory, &lsquo;end&rsquo;=close solver</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

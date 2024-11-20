@@ -1,0 +1,685 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>get_unit &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>get_unit
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">20 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/mod_miscellaneous.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_miscellaneous.f90.html'>mod_miscellaneous.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/miscellaneous.html'>miscellaneous</a></li>
+            <li class="breadcrumb-item active" aria-current="page">get_unit</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/get_unit.html#src">get_unit</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine get_unit(iunit)  
+</h2>
+    
+
+    <p>Provide for a free unit, from here <a href="https://people.sc.fsu.edu/~jburkardt/f_src">John Burkardt website</a></p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iunit"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iunit</strong></td>
+            <td>
+                <p>free unit to use</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~get_unit~~CalledByGraph Pages: 1 -->
+<svg id="procget_unitCalledByGraph" width="535pt" height="595pt"
+ viewBox="0.00 0.00 535.00 594.93" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~get_unit~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 590.93)">
+<title>proc~~get_unit~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-590.93 531,-590.93 531,4 -4,4"/>
+<!-- proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_node1" class="node">
+<title>proc~get_unit</title>
+<polygon fill="none" stroke="black" points="527,-314 473,-314 473,-290 527,-290 527,-314"/>
+<text text-anchor="middle" x="500" y="-299.6" font-family="Helvetica,sans-Serif" font-size="10.50">get_unit</text>
+</g>
+<!-- proc~least_squares_tcheby -->
+<g id="proc~~get_unit~~CalledByGraph_node2" class="node">
+<title>proc~least_squares_tcheby</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node2"><a xlink:href="../proc/least_squares_tcheby.html" xlink:title="least_squares_tcheby">
+<polygon fill="#d9534f" stroke="#d9534f" points="437,-554 320,-554 320,-530 437,-530 437,-554"/>
+<text text-anchor="middle" x="378.5" y="-539.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">least_squares_tcheby</text>
+</a>
+</g>
+</g>
+<!-- proc~least_squares_tcheby&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge1" class="edge">
+<title>proc~least_squares_tcheby&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M425.66,-529.86C429.86,-527.43 433.75,-524.5 437,-521 489.18,-464.79 497.88,-367.92 499.03,-324.36"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="502.53,-324.31 499.18,-314.26 495.53,-324.2 502.53,-324.31"/>
+</g>
+<!-- proc~list_files -->
+<g id="proc~~get_unit~~CalledByGraph_node3" class="node">
+<title>proc~list_files</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node3"><a xlink:href="../proc/list_files.html" xlink:title="list_files">
+<polygon fill="#d9534f" stroke="#d9534f" points="405.5,-512 351.5,-512 351.5,-488 405.5,-488 405.5,-512"/>
+<text text-anchor="middle" x="378.5" y="-497.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">list_files</text>
+</a>
+</g>
+</g>
+<!-- proc~list_files&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge2" class="edge">
+<title>proc~list_files&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M405.71,-493.13C416.62,-489.11 428.67,-483.01 437,-474 476.85,-430.88 491.48,-360.27 496.53,-324.41"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="500.06,-324.43 497.86,-314.07 493.12,-323.54 500.06,-324.43"/>
+</g>
+<!-- proc~open_surffile -->
+<g id="proc~~get_unit~~CalledByGraph_node4" class="node">
+<title>proc~open_surffile</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node4"><a xlink:href="../proc/open_surffile.html" xlink:title="open_surffile">
+<polygon fill="#d9534f" stroke="#d9534f" points="276,-432 202,-432 202,-408 276,-408 276,-432"/>
+<text text-anchor="middle" x="239" y="-417.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">open_surffile</text>
+</a>
+</g>
+</g>
+<!-- proc~open_surffile&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge3" class="edge">
+<title>proc~open_surffile&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M276.06,-426.05C318.01,-431.14 387.78,-433.39 437,-403 466.13,-385.01 483.58,-347.75 492.23,-323.86"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="495.6,-324.83 495.51,-314.23 488.97,-322.57 495.6,-324.83"/>
+</g>
+<!-- proc~trans_surf_txt -->
+<g id="proc~~get_unit~~CalledByGraph_node8" class="node">
+<title>proc~trans_surf_txt</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node8"><a xlink:href="../proc/trans_surf_txt.html" xlink:title="trans_surf_txt">
+<polygon fill="#d9534f" stroke="#d9534f" points="417.5,-394 339.5,-394 339.5,-370 417.5,-370 417.5,-394"/>
+<text text-anchor="middle" x="378.5" y="-379.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">trans_surf_txt</text>
+</a>
+</g>
+</g>
+<!-- proc~open_surffile&#45;&gt;proc~trans_surf_txt -->
+<g id="proc~~get_unit~~CalledByGraph_edge22" class="edge">
+<title>proc~open_surffile&#45;&gt;proc~trans_surf_txt</title>
+<path fill="none" stroke="#00ff66" d="M276.13,-410.02C292.36,-405.53 311.74,-400.17 329.2,-395.35"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="330.5,-398.62 339.21,-392.58 328.64,-391.87 330.5,-398.62"/>
+</g>
+<!-- proc~read_surf -->
+<g id="proc~~get_unit~~CalledByGraph_node5" class="node">
+<title>proc~read_surf</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node5"><a xlink:href="../proc/read_surf.html" xlink:title="read_surf">
+<polygon fill="#d9534f" stroke="#d9534f" points="407.5,-234 349.5,-234 349.5,-210 407.5,-210 407.5,-234"/>
+<text text-anchor="middle" x="378.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">read_surf</text>
+</a>
+</g>
+</g>
+<!-- proc~read_surf&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge4" class="edge">
+<title>proc~read_surf&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M407.55,-232.73C417.2,-236.93 427.87,-242.14 437,-248 452.42,-257.9 467.97,-271.45 479.63,-282.5"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="477.43,-285.23 487.04,-289.67 482.3,-280.2 477.43,-285.23"/>
+</g>
+<!-- proc~read_surf~2 -->
+<g id="proc~~get_unit~~CalledByGraph_node6" class="node">
+<title>proc~read_surf~2</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node6"><a xlink:href="../proc/read_surf~2.html" xlink:title="read_surf">
+<polygon fill="#d9534f" stroke="#d9534f" points="158,-432 100,-432 100,-408 158,-408 158,-432"/>
+<text text-anchor="middle" x="129" y="-417.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">read_surf</text>
+</a>
+</g>
+</g>
+<!-- proc~read_surf~2&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge5" class="edge">
+<title>proc~read_surf~2&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M158.43,-431.06C216.49,-451.63 350.49,-488.65 437,-430 473.06,-405.55 488.87,-353.99 495.21,-324.31"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="498.72,-324.6 497.2,-314.11 491.85,-323.26 498.72,-324.6"/>
+</g>
+<!-- proc~read_surf~2&#45;&gt;proc~open_surffile -->
+<g id="proc~~get_unit~~CalledByGraph_edge18" class="edge">
+<title>proc~read_surf~2&#45;&gt;proc~open_surffile</title>
+<path fill="none" stroke="#ffcc00" d="M158.09,-420C168.33,-420 180.2,-420 191.61,-420"/>
+<polygon fill="#ffcc00" stroke="#ffcc00" points="191.9,-423.5 201.9,-420 191.9,-416.5 191.9,-423.5"/>
+</g>
+<!-- proc~save_surf -->
+<g id="proc~~get_unit~~CalledByGraph_node7" class="node">
+<title>proc~save_surf</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node7"><a xlink:href="../proc/save_surf.html" xlink:title="save_surf">
+<polygon fill="#d9534f" stroke="#d9534f" points="408,-192 349,-192 349,-168 408,-168 408,-192"/>
+<text text-anchor="middle" x="378.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">save_surf</text>
+</a>
+</g>
+</g>
+<!-- proc~save_surf&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge6" class="edge">
+<title>proc~save_surf&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M408.07,-186.3C417.99,-189.51 428.69,-194.21 437,-201 463.11,-222.34 481.2,-257.75 490.84,-280.47"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="487.67,-281.97 494.67,-289.92 494.16,-279.34 487.67,-281.97"/>
+</g>
+<!-- proc~trans_surf_txt&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge7" class="edge">
+<title>proc~trans_surf_txt&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M410.51,-369.97C419.34,-366.01 428.79,-361.27 437,-356 452.42,-346.1 467.97,-332.55 479.63,-321.5"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="482.3,-323.8 487.04,-314.33 477.43,-318.77 482.3,-323.8"/>
+</g>
+<!-- proc~write_surf -->
+<g id="proc~~get_unit~~CalledByGraph_node9" class="node">
+<title>proc~write_surf</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node9"><a xlink:href="../proc/write_surf.html" xlink:title="write_surf">
+<polygon fill="#d9534f" stroke="#d9534f" points="268.5,-352 209.5,-352 209.5,-328 268.5,-328 268.5,-352"/>
+<text text-anchor="middle" x="239" y="-337.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_surf</text>
+</a>
+</g>
+</g>
+<!-- proc~write_surf&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge8" class="edge">
+<title>proc~write_surf&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M268.7,-339.68C307.33,-338.75 378.03,-335.34 437,-323 445.63,-321.19 454.73,-318.55 463.22,-315.75"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="464.53,-319 472.84,-312.42 462.24,-312.38 464.53,-319"/>
+</g>
+<!-- proc~write_surffile -->
+<g id="proc~~get_unit~~CalledByGraph_node10" class="node">
+<title>proc~write_surffile</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node10"><a xlink:href="../proc/write_surffile.html" xlink:title="write_surffile">
+<polygon fill="#d9534f" stroke="#d9534f" points="415,-314 342,-314 342,-290 415,-290 415,-314"/>
+<text text-anchor="middle" x="378.5" y="-299.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_surffile</text>
+</a>
+</g>
+</g>
+<!-- proc~write_surf&#45;&gt;proc~write_surffile -->
+<g id="proc~~get_unit~~CalledByGraph_edge25" class="edge">
+<title>proc~write_surf&#45;&gt;proc~write_surffile</title>
+<path fill="none" stroke="#00cbff" d="M268.82,-332.03C287.1,-326.98 311.13,-320.34 331.94,-314.59"/>
+<polygon fill="#00cbff" stroke="#00cbff" points="333.16,-317.89 341.87,-311.85 331.29,-311.14 333.16,-317.89"/>
+</g>
+<!-- proc~write_surffile&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge9" class="edge">
+<title>proc~write_surffile&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M415.03,-302C430.12,-302 447.7,-302 462.86,-302"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="462.91,-305.5 472.91,-302 462.91,-298.5 462.91,-305.5"/>
+</g>
+<!-- program~main -->
+<g id="proc~~get_unit~~CalledByGraph_node11" class="node">
+<title>program~main</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node11"><a xlink:href="../program/main.html" xlink:title="main">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="405.5,-150 351.5,-150 351.5,-126 405.5,-126 405.5,-150"/>
+<text text-anchor="middle" x="378.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">main</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge10" class="edge">
+<title>program~main&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M405.68,-142.79C416.47,-145.89 428.42,-150.91 437,-159 472.23,-192.21 488.5,-248.84 495.1,-279.94"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="491.68,-280.66 497.05,-289.79 498.54,-279.31 491.68,-280.66"/>
+</g>
+<!-- program~test_algen -->
+<g id="proc~~get_unit~~CalledByGraph_node12" class="node">
+<title>program~test_algen</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node12"><a xlink:href="../program/test_algen.html" xlink:title="test_algen">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="409.5,-108 347.5,-108 347.5,-84 409.5,-84 409.5,-108"/>
+<text text-anchor="middle" x="378.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_algen</text>
+</a>
+</g>
+</g>
+<!-- program~test_algen&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge11" class="edge">
+<title>program~test_algen&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M409.57,-101.5C419.4,-104.61 429.66,-109.46 437,-117 481.52,-162.73 494.09,-241.35 497.63,-279.68"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="494.15,-280.09 498.43,-289.78 501.13,-279.54 494.15,-280.09"/>
+</g>
+<!-- program~test_data_arch -->
+<g id="proc~~get_unit~~CalledByGraph_node13" class="node">
+<title>program~test_data_arch</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node13"><a xlink:href="../program/test_data_arch.html" xlink:title="test_data_arch">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="420.5,-66 336.5,-66 336.5,-42 420.5,-42 420.5,-66"/>
+<text text-anchor="middle" x="378.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_data_arch</text>
+</a>
+</g>
+</g>
+<!-- program~test_data_arch&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge12" class="edge">
+<title>program~test_data_arch&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M420.54,-63.41C426.68,-66.3 432.47,-70.07 437,-75 491.05,-133.77 498.71,-235.11 499.31,-279.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="495.81,-279.85 499.33,-289.84 502.81,-279.83 495.81,-279.85"/>
+</g>
+<!-- program~test_fftw3 -->
+<g id="proc~~get_unit~~CalledByGraph_node14" class="node">
+<title>program~test_fftw3</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node14"><a xlink:href="../program/test_fftw3.html" xlink:title="test_fftw3">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="268,-234 210,-234 210,-210 268,-210 268,-234"/>
+<text text-anchor="middle" x="239" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_fftw3</text>
+</a>
+</g>
+</g>
+<!-- program~test_fftw3&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge13" class="edge">
+<title>program~test_fftw3&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M268.15,-230.09C306.47,-241.18 377.14,-261.9 437,-281 445.48,-283.71 454.58,-286.72 463.12,-289.61"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="462.23,-293 472.82,-292.9 464.48,-286.37 462.23,-293"/>
+</g>
+<!-- program~test_fftw3&#45;&gt;proc~read_surf -->
+<g id="proc~~get_unit~~CalledByGraph_edge19" class="edge">
+<title>program~test_fftw3&#45;&gt;proc~read_surf</title>
+<path fill="none" stroke="#cbff00" d="M268.16,-222C288.64,-222 316.61,-222 339.14,-222"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="339.38,-225.5 349.38,-222 339.38,-218.5 339.38,-225.5"/>
+</g>
+<!-- program~test_fftw3&#45;&gt;proc~save_surf -->
+<g id="proc~~get_unit~~CalledByGraph_edge21" class="edge">
+<title>program~test_fftw3&#45;&gt;proc~save_surf</title>
+<path fill="none" stroke="#00ff00" d="M268.16,-213.4C288.69,-207.13 316.75,-198.56 339.3,-191.67"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="340.37,-195 348.91,-188.73 338.32,-188.31 340.37,-195"/>
+</g>
+<!-- program~test_solvers -->
+<g id="proc~~get_unit~~CalledByGraph_node15" class="node">
+<title>program~test_solvers</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node15"><a xlink:href="../program/test_solvers.html" xlink:title="test_solvers">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="413.5,-24 343.5,-24 343.5,0 413.5,0 413.5,-24"/>
+<text text-anchor="middle" x="378.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_solvers</text>
+</a>
+</g>
+</g>
+<!-- program~test_solvers&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge14" class="edge">
+<title>program~test_solvers&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M413.59,-18.31C422.28,-21.43 430.88,-26.07 437,-33 469.72,-70.04 489.96,-222 496.59,-279.67"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="493.15,-280.33 497.74,-289.88 500.1,-279.55 493.15,-280.33"/>
+</g>
+<!-- program~test_tchebychev -->
+<g id="proc~~get_unit~~CalledByGraph_node16" class="node">
+<title>program~test_tchebychev</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node16"><a xlink:href="../program/test_tchebychev.html" xlink:title="test_tchebychev">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="284,-574 194,-574 194,-550 284,-550 284,-574"/>
+<text text-anchor="middle" x="239" y="-559.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_tchebychev</text>
+</a>
+</g>
+</g>
+<!-- program~test_tchebychev&#45;&gt;proc~get_unit -->
+<g id="proc~~get_unit~~CalledByGraph_edge15" class="edge">
+<title>program~test_tchebychev&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M274.8,-574.03C317.78,-586.49 390.85,-599.47 437,-563 474.68,-533.22 491.89,-382.01 497.15,-324.37"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="500.66,-324.42 498.05,-314.15 493.69,-323.8 500.66,-324.42"/>
+</g>
+<!-- program~test_tchebychev&#45;&gt;proc~least_squares_tcheby -->
+<g id="proc~~get_unit~~CalledByGraph_edge16" class="edge">
+<title>program~test_tchebychev&#45;&gt;proc~least_squares_tcheby</title>
+<path fill="none" stroke="#ff0000" d="M284.26,-555.56C292.39,-554.38 301.04,-553.12 309.67,-551.87"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="310.37,-555.3 319.76,-550.4 309.36,-548.37 310.37,-555.3"/>
+</g>
+<!-- program~test_files -->
+<g id="proc~~get_unit~~CalledByGraph_node17" class="node">
+<title>program~test_files</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node17"><a xlink:href="../program/test_files.html" xlink:title="test_files">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="266.5,-512 211.5,-512 211.5,-488 266.5,-488 266.5,-512"/>
+<text text-anchor="middle" x="239" y="-497.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_files</text>
+</a>
+</g>
+</g>
+<!-- program~test_files&#45;&gt;proc~list_files -->
+<g id="proc~~get_unit~~CalledByGraph_edge17" class="edge">
+<title>program~test_files&#45;&gt;proc~list_files</title>
+<path fill="none" stroke="#ff6600" d="M266.51,-500C287.63,-500 317.42,-500 340.82,-500"/>
+<polygon fill="#ff6600" stroke="#ff6600" points="341.07,-503.5 351.07,-500 341.07,-496.5 341.07,-503.5"/>
+</g>
+<!-- program~test_surfile -->
+<g id="proc~~get_unit~~CalledByGraph_node18" class="node">
+<title>program~test_surfile</title>
+<g id="a_proc~~get_unit~~CalledByGraph_node18"><a xlink:href="../program/test_surfile.html" xlink:title="test_surfile">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="64,-392 0,-392 0,-368 64,-368 64,-392"/>
+<text text-anchor="middle" x="32" y="-377.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_surfile</text>
+</a>
+</g>
+</g>
+<!-- program~test_surfile&#45;&gt;proc~read_surf~2 -->
+<g id="proc~~get_unit~~CalledByGraph_edge20" class="edge">
+<title>program~test_surfile&#45;&gt;proc~read_surf~2</title>
+<path fill="none" stroke="#65ff00" d="M61.5,-392C70.6,-395.83 80.82,-400.13 90.46,-404.19"/>
+<polygon fill="#65ff00" stroke="#65ff00" points="89.27,-407.49 99.84,-408.14 91.99,-401.04 89.27,-407.49"/>
+</g>
+<!-- program~test_surfile&#45;&gt;proc~trans_surf_txt -->
+<g id="proc~~get_unit~~CalledByGraph_edge23" class="edge">
+<title>program~test_surfile&#45;&gt;proc~trans_surf_txt</title>
+<path fill="none" stroke="#00ff66" d="M64.18,-380.18C124.48,-380.53 257.46,-381.3 329.26,-381.72"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="329.38,-385.22 339.4,-381.78 329.42,-378.22 329.38,-385.22"/>
+</g>
+<!-- program~test_surfile&#45;&gt;proc~write_surf -->
+<g id="proc~~get_unit~~CalledByGraph_edge24" class="edge">
+<title>program~test_surfile&#45;&gt;proc~write_surf</title>
+<path fill="none" stroke="#00ffcb" d="M64.33,-373.32C75.57,-370.96 88.34,-368.32 100,-366 133.5,-359.34 171.67,-352.19 199.36,-347.07"/>
+<polygon fill="#00ffcb" stroke="#00ffcb" points="200.22,-350.47 209.42,-345.21 198.96,-343.58 200.22,-350.47"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">subroutine </span><span class="n">get_unit</span><span class="p">(</span><span class="n">iunit</span><span class="p">)</span>
+<span class="w">   </span><span class="c">!! Provide for a free unit, from here [John Burkardt website](https://people.sc.fsu.edu/~jburkardt/f_src)</span>
+<span class="w">   </span><span class="k">implicit none</span>
+<span class="k">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">iunit</span><span class="w"> </span><span class="c">!! free unit to use</span>
+
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ios</span>
+<span class="w">      </span><span class="kt">logical</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lopen</span>
+
+<span class="w">      </span><span class="n">iunit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">99</span>
+
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">OPU</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">IPU</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ERU</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            inquire</span><span class="w"> </span><span class="p">(</span><span class="n">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">opened</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lopen</span><span class="p">,</span><span class="w"> </span><span class="n">iostat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ios</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ios</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">               if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">lopen</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                  </span><span class="n">iunit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span>
+<span class="w">                  </span><span class="k">return</span>
+<span class="k">               endif</span>
+<span class="k">            endif</span>
+<span class="k">         endif</span>
+
+<span class="k">      enddo</span>
+
+<span class="k">   return</span>
+<span class="k">   endsubroutine </span><span class="n">get_unit</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

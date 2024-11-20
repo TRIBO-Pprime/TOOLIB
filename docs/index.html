@@ -17,6 +17,7 @@
     <link href="./css/pygments.css" rel="stylesheet">
     <link href="./css/font-awesome.min.css" rel="stylesheet">
     <link href="./css/local.css" rel="stylesheet">
+      <link  href="./tipuesearch/tipuesearch.css" rel="stylesheet">
       <link href="./css/user.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -47,9 +48,20 @@
                   <a class="nav-link" href="./lists/procedures.html">Procedures</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./program/test_tchebychev.html">Program</a>
+                  <a class="nav-link" href="./lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./lists/programs.html">Programs</a>
                 </li>
             </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="./search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
           </div><!--/.nav-collapse -->
         </div>
       </nav>
@@ -95,10 +107,10 @@
       </div>
         <div class="row">
           <hr>
-          <div class="col-xs-6 col-sm-4">
+          <div class="col-xs-6 col-sm-3">
             <div>
               <h3>Source Files</h3>
-              <ul><li><a href='sourcefile/mod_tchebychev.f90.html'>mod_tchebychev.f90</a></li><li><a href='sourcefile/prg.f90.html'>prg.f90</a></li></ul>
+              <ul><li><a href='sourcefile/dmumps_struc.f90.html'>dmumps_struc.f90</a></li><li><a href='sourcefile/mod_bspline.f90.html'>mod_bspline.f90</a></li><li><a href='sourcefile/mod_cholesky.f90.html'>mod_cholesky.f90</a></li><li><a href='sourcefile/mod_data_arch.f90.html'>mod_data_arch.f90</a></li><li><a href='sourcefile/mod_fftw3.f90.html'>mod_fftw3.f90</a></li><li><a href='sourcefile/mod_files.f90.html'>mod_files.f90</a></li><li><a href='sourcefile/mod_gen_par.f90.html'>mod_gen_par.f90</a></li><li><a href='sourcefile/mod_gnufor.f90.html'>mod_gnufor.f90</a></li><li><a href='sourcefile/mod_intpl.f90.html'>mod_intpl.f90</a></li><li><a href='sourcefile/mod_least_squares.f90.html'>mod_least_squares.f90</a></li></ul>
             </div>
             <div>
               <ul>
@@ -106,10 +118,10 @@
               </ul>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-4">
+          <div class="col-xs-6 col-sm-3">
             <div>
               <h3>Modules</h3>
-              <ul><li><a href='module/tchebychev.html'>tchebychev</a></li></ul>
+              <ul><li><a href='module/bspline.html'>bspline</a></li><li><a href='module/cholesky.html'>cholesky</a></li><li><a href='module/data_arch.html'>data_arch</a></li><li><a href='module/fftw3.html'>fftw3</a></li><li><a href='module/files.html'>files</a></li><li><a href='module/gen_param.html'>gen_param</a></li><li><a href='module/gnufor.html'>gnufor</a></li><li><a href='module/intpl.html'>intpl</a></li><li><a href='module/least_squares.html'>least_squares</a></li><li><a href='module/minpack.html'>minpack</a></li></ul>
             </div>
             <div>
               <ul>
@@ -117,14 +129,25 @@
               </ul>
             </div>
           </div>
-          <div class="col-xs-6 col-sm-4">
+          <div class="col-xs-6 col-sm-3">
             <div>
               <h3>Procedures</h3>
-              <ul><li><a href='proc/coeff_poly_tcheby_xy_vers_poly_monome.html'>coeff_poly_tcheby_xy_vers_poly_monome</a></li><li><a href='proc/coeff_tcheby_vers_monome.html'>coeff_tcheby_vers_monome</a></li><li><a href='proc/coeff_tcheby_xy_vers_monome.html'>coeff_tcheby_xy_vers_monome</a></li><li><a href='proc/convert_to_poly.html'>convert_to_poly</a></li><li><a href='proc/genere_surf_poly.html'>genere_surf_poly</a></li><li><a href='proc/least_squares_tcheby.html'>least_squares_tcheby</a></li><li><a href='proc/tab_jf_tcheby.html'>tab_Jf_tcheby</a></li><li><a href='proc/tab_poly_tcheby.html'>tab_poly_tcheby</a></li><li><a href='proc/tab_tcheby.html'>tab_tcheby</a></li><li><a href='proc/tcheby.html'>tcheby</a></li></ul>
+              <ul><li><a href='proc/abs_diff_sk_ku.html'>abs_diff_sk_ku</a></li><li><a href='proc/add_tang.html'>add_tang</a></li><li><a href='proc/adjmut.html'>adjmut</a></li><li><a href='proc/alloc_fftw3.html'>alloc_fftw3</a></li><li><a href='proc/alloc_fftw3_real.html'>alloc_fftw3_real</a></li><li><a href='proc/analyse_solver.html'>analyse_solver</a></li><li><a href='proc/apod.html'>apod</a></li><li><a href='proc/autocov_impo.html'>autocov_impo</a></li><li><a href='proc/build_surf.html'>build_surf</a></li><li><a href='proc/c_f_string.html'>c_f_string</a></li></ul>
             </div>
             <div>
               <ul>
                 <li><a href="./lists/procedures.html"><em>All procedures&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Derived Types</h3>
+              <ul><li><a href='type/dmumps_l0ompfac_t.html'>DMUMPS_L0OMPFAC_T</a></li><li><a href='type/dmumps_root_struc.html'>DMUMPS_ROOT_STRUC</a></li><li><a href='type/dmumps_struc.html'>DMUMPS_STRUC</a></li><li><a href='type/expheader.html'>EXPHEADER</a></li><li><a href='type/fftw_iodim.html'>fftw_iodim</a></li><li><a href='type/fftw_iodim64.html'>fftw_iodim64</a></li><li><a href='type/fftwf_iodim.html'>fftwf_iodim</a></li><li><a href='type/fftwf_iodim64.html'>fftwf_iodim64</a></li><li><a href='type/globallu_t.html'>GLOBALLU_T</a></li><li><a href='type/lu_stack_t.html'>LU_STACK_T</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/types.html"><em>All derived types&hellip;</em></a></li>
               </ul>
             </div>
           </div>
@@ -144,7 +167,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-11-19 19:00              </p>
+ on 2024-11-20 15:32 +0100             </p>
           </div>
         </div>
         <br>
@@ -168,6 +191,9 @@
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
+          <script src="./tipuesearch/tipuesearch_content.js"></script>
+          <script src="./tipuesearch/tipuesearch_set.js"></script>
+          <script src="./tipuesearch/tipuesearch.js"></script>
 
   </body>
 </html>

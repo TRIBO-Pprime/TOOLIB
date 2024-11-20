@@ -1,0 +1,675 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>convert_matrice_format &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>convert_matrice_format
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">25 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/mod_solver.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_solver.f90.html'>mod_solver.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/solver.html'>solver</a></li>
+            <li class="breadcrumb-item active" aria-current="page">convert_matrice_format</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/convert_matrice_format.html#src">convert_matrice_format</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine convert_matrice_format(mat)  
+</h2>
+    
+
+    <h1 id="subroutine-to-transform-the-rutherford-boeing-format-into-harwell-boeing-and-triplet">Subroutine to transform the Rutherford Boeing format into Harwell Boeing and triplet</h1>
+<p>Compressed Column Storage (CCS) is also called the Harwell-Boeing sparse matrix format.</p>
+<hr>
+<p>Elemental entries (example provided by MUMP):
+A1 = 1|-1  2  3| A2 = 3|2 -1  3|
+     2| 2  1  1|      4|1  2 -1|
+     3| 1  1  1|      5|3  2  1| =&gt; a_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 1, 2, 1, 3, -1, 2, 2, 3, -1, 1)</p>
+<p>A  = 1|-1  2  3  0  0|
+     2| 2  1  1  0  0|
+     3| 1  1  3 -1  3|
+     4| 0  0  1  2 -1|
+     5| 0  0  3  2  1| =&gt; eltvar = (1, 2, 3, 3, 4, 5), it locates the elemental matrix line in the assembled matrix
+                       =&gt; eltptr = (1, 4, 7), it gives the elemental matrix first entry position in eltvar (last
+                                              position being size(eltvar)+1)</p>
+<hr>
+<p>Assembled matrix :
+A being the same, a_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 3, 1, 3, -1, 2, 2, 3, -1, 1)
+                   irow = ( 1, 2, 3, 1, 2, 3, 1, 2, 3, 4, 5,  3, 4, 5, 3,  4, 5)
+                   jptr = (1, 4, 7, 12, 15, 18)</p>
+<p>=======================================================================================================================
+Triplet form</p>
+<hr>
+<p>For each non zero a_elt entry, returns its row and column number
+A being the same, a_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 3, 1, 3, -1, 2, 2, 3, -1, 1)
+                   irow = ( 1, 2, 3, 1, 2, 3, 1, 2, 3, 4, 5,  3, 4, 5, 3,  4, 5)
+                   jcol = ( 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3,  4, 4, 4, 5,  5, 5)</p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mat~10"></span>
+              type(<a href='../type/mat_solv.html'>MAT_SOLV</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>mat</strong></td>
+            <td>
+                <p><em>high level system type</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~convert_matrice_format~~CallsGraph Pages: 1 -->
+<svg id="procconvert_matrice_formatCallsGraph" width="626pt" height="194pt"
+ viewBox="0.00 0.00 626.00 194.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~convert_matrice_format~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 190)">
+<title>proc~~convert_matrice_format~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-190 622,-190 622,4 -4,4"/>
+<!-- proc~convert_matrice_format -->
+<g id="proc~~convert_matrice_format~~CallsGraph_node1" class="node">
+<title>proc~convert_matrice_format</title>
+<polygon fill="none" stroke="black" points="126,-114 0,-114 0,-90 126,-90 126,-114"/>
+<text text-anchor="middle" x="63" y="-99.6" font-family="Helvetica,sans-Serif" font-size="10.50">convert_matrice_format</text>
+</g>
+<!-- proc~from_elemental_to_assembled -->
+<g id="proc~~convert_matrice_format~~CallsGraph_node2" class="node">
+<title>proc~from_elemental_to_assembled</title>
+<g id="a_proc~~convert_matrice_format~~CallsGraph_node2"><a xlink:href="../proc/from_elemental_to_assembled.html" xlink:title="from_elemental_to_assembled">
+<polygon fill="#d9534f" stroke="#d9534f" points="322,-114 162,-114 162,-90 322,-90 322,-114"/>
+<text text-anchor="middle" x="242" y="-99.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">from_elemental_to_assembled</text>
+</a>
+</g>
+</g>
+<!-- proc~convert_matrice_format&#45;&gt;proc~from_elemental_to_assembled -->
+<g id="proc~~convert_matrice_format~~CallsGraph_edge1" class="edge">
+<title>proc~convert_matrice_format&#45;&gt;proc~from_elemental_to_assembled</title>
+<path fill="none" stroke="#ff0000" d="M126.4,-102C134.63,-102 143.19,-102 151.75,-102"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="151.8,-105.5 161.8,-102 151.8,-98.5 151.8,-105.5"/>
+</g>
+<!-- proc~sort_array2 -->
+<g id="proc~~convert_matrice_format~~CallsGraph_node3" class="node">
+<title>proc~sort_array2</title>
+<g id="a_proc~~convert_matrice_format~~CallsGraph_node3"><a xlink:href="../proc/sort_array2.html" xlink:title="sort_array2">
+<polygon fill="#d9534f" stroke="#d9534f" points="425,-114 358,-114 358,-90 425,-90 425,-114"/>
+<text text-anchor="middle" x="391.5" y="-99.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_array2</text>
+</a>
+</g>
+</g>
+<!-- proc~from_elemental_to_assembled&#45;&gt;proc~sort_array2 -->
+<g id="proc~~convert_matrice_format~~CallsGraph_edge2" class="edge">
+<title>proc~from_elemental_to_assembled&#45;&gt;proc~sort_array2</title>
+<path fill="none" stroke="#ff0000" d="M322.36,-102C331.09,-102 339.71,-102 347.73,-102"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="347.89,-105.5 357.89,-102 347.89,-98.5 347.89,-105.5"/>
+</g>
+<!-- proc~change_array_order -->
+<g id="proc~~convert_matrice_format~~CallsGraph_node4" class="node">
+<title>proc~change_array_order</title>
+<g id="a_proc~~convert_matrice_format~~CallsGraph_node4"><a xlink:href="../proc/change_array_order.html" xlink:title="change_array_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="594.5,-186 484.5,-186 484.5,-162 594.5,-162 594.5,-186"/>
+<text text-anchor="middle" x="539.5" y="-171.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">change_array_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~change_array_order -->
+<g id="proc~~convert_matrice_format~~CallsGraph_edge3" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~change_array_order</title>
+<path fill="none" stroke="#ff0000" d="M405.67,-114.2C418.78,-125.73 439.93,-142.76 461,-153 465.32,-155.1 469.88,-157.01 474.53,-158.75"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="473.59,-162.13 484.18,-162.09 475.87,-155.51 473.59,-162.13"/>
+</g>
+<!-- proc~init_order -->
+<g id="proc~~convert_matrice_format~~CallsGraph_node5" class="node">
+<title>proc~init_order</title>
+<g id="a_proc~~convert_matrice_format~~CallsGraph_node5"><a xlink:href="../proc/init_order.html" xlink:title="init_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="568.5,-144 510.5,-144 510.5,-120 568.5,-120 568.5,-144"/>
+<text text-anchor="middle" x="539.5" y="-129.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">init_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~init_order -->
+<g id="proc~~convert_matrice_format~~CallsGraph_edge4" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~init_order</title>
+<path fill="none" stroke="#ff0000" d="M425.27,-108.73C447.53,-113.31 477.05,-119.37 500.37,-124.17"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="499.77,-127.62 510.27,-126.2 501.18,-120.76 499.77,-127.62"/>
+</g>
+<!-- proc~sort_array_integer_with_order -->
+<g id="proc~~convert_matrice_format~~CallsGraph_node6" class="node">
+<title>proc~sort_array_integer_with_order</title>
+<g id="a_proc~~convert_matrice_format~~CallsGraph_node6"><a xlink:href="../proc/sort_array_integer_with_order.html" xlink:title="sort_array_integer_with_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="618,-84 461,-84 461,-60 618,-60 618,-84"/>
+<text text-anchor="middle" x="539.5" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_array_integer_with_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~sort_array_integer_with_order -->
+<g id="proc~~convert_matrice_format~~CallsGraph_edge5" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~sort_array_integer_with_order</title>
+<path fill="none" stroke="#ff0000" d="M425.27,-95.27C438.51,-92.55 454.32,-89.3 469.86,-86.1"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="470.92,-89.46 480.01,-84.02 469.51,-82.6 470.92,-89.46"/>
+</g>
+<!-- proc~sort_array_real_with_order -->
+<g id="proc~~convert_matrice_format~~CallsGraph_node7" class="node">
+<title>proc~sort_array_real_with_order</title>
+<g id="a_proc~~convert_matrice_format~~CallsGraph_node7"><a xlink:href="../proc/sort_array_real_with_order.html" xlink:title="sort_array_real_with_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="610.5,-24 468.5,-24 468.5,0 610.5,0 610.5,-24"/>
+<text text-anchor="middle" x="539.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_array_real_with_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~sort_array_real_with_order -->
+<g id="proc~~convert_matrice_format~~CallsGraph_edge6" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~sort_array_real_with_order</title>
+<path fill="none" stroke="#ff0000" d="M407.21,-89.88C420.73,-79.01 441.57,-62.99 461,-51 474.1,-42.91 489.09,-35.07 502.37,-28.56"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="504.2,-31.56 511.7,-24.07 501.17,-25.26 504.2,-31.56"/>
+</g>
+<!-- proc~sort_array_integer_with_order&#45;&gt;proc~sort_array_integer_with_order -->
+<g id="proc~~convert_matrice_format~~CallsGraph_edge7" class="edge">
+<title>proc~sort_array_integer_with_order&#45;&gt;proc~sort_array_integer_with_order</title>
+<path fill="none" stroke="#00ffff" d="M515.03,-84.01C506.48,-92.97 514.64,-102 539.5,-102 554.65,-102 563.6,-98.65 566.34,-94"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="569.68,-92.94 563.97,-84.01 562.87,-94.55 569.68,-92.94"/>
+</g>
+<!-- proc~sort_array_real_with_order&#45;&gt;proc~sort_array_real_with_order -->
+<g id="proc~~convert_matrice_format~~CallsGraph_edge8" class="edge">
+<title>proc~sort_array_real_with_order&#45;&gt;proc~sort_array_real_with_order</title>
+<path fill="none" stroke="#7f00ff" d="M515.03,-24.01C506.48,-32.97 514.64,-42 539.5,-42 554.65,-42 563.6,-38.65 566.34,-34"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="569.68,-32.94 563.97,-24.01 562.87,-34.55 569.68,-32.94"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~convert_matrice_format~~CalledByGraph Pages: 1 -->
+<svg id="procconvert_matrice_formatCalledByGraph" width="240pt" height="32pt"
+ viewBox="0.00 0.00 240.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~convert_matrice_format~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~convert_matrice_format~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 236,-28 236,4 -4,4"/>
+<!-- proc~convert_matrice_format -->
+<g id="proc~~convert_matrice_format~~CalledByGraph_node1" class="node">
+<title>proc~convert_matrice_format</title>
+<polygon fill="none" stroke="black" points="232,-24 106,-24 106,0 232,0 232,-24"/>
+<text text-anchor="middle" x="169" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">convert_matrice_format</text>
+</g>
+<!-- program~test_solvers -->
+<g id="proc~~convert_matrice_format~~CalledByGraph_node2" class="node">
+<title>program~test_solvers</title>
+<g id="a_proc~~convert_matrice_format~~CalledByGraph_node2"><a xlink:href="../program/test_solvers.html" xlink:title="test_solvers">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_solvers</text>
+</a>
+</g>
+</g>
+<!-- program~test_solvers&#45;&gt;proc~convert_matrice_format -->
+<g id="proc~~convert_matrice_format~~CalledByGraph_edge1" class="edge">
+<title>program~test_solvers&#45;&gt;proc~convert_matrice_format</title>
+<path fill="none" stroke="#ff0000" d="M70.34,-12C78.27,-12 87.01,-12 95.9,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="95.96,-15.5 105.96,-12 95.96,-8.5 95.96,-15.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">subroutine </span><span class="n">convert_matrice_format</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+<span class="w">   </span><span class="c">!! Subroutine to transform the Rutherford Boeing format into Harwell Boeing and triplet</span>
+<span class="w">   </span><span class="k">implicit none</span>
+<span class="k">   type</span><span class="p">(</span><span class="n">MAT_SOLV</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">target</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">mat</span><span class="w">   </span><span class="c">!! *high level system type*</span>
+
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span>
+
+<span class="w">      </span><span class="c">!&lt; =======================================================================================================================</span>
+<span class="w">      </span><span class="c">!&lt; Compressed Column Storage (CCS) is also called the Harwell-Boeing sparse matrix format.</span>
+<span class="w">      </span><span class="c">!&lt; ************************************************</span>
+<span class="w">      </span><span class="c">!&lt; Elemental entries (example provided by MUMP):</span>
+<span class="w">      </span><span class="c">!&lt; A1 = 1|-1  2  3| A2 = 3|2 -1  3|</span>
+<span class="w">      </span><span class="c">!&lt;      2| 2  1  1|      4|1  2 -1|</span>
+<span class="w">      </span><span class="c">!&lt;      3| 1  1  1|      5|3  2  1| =&gt; a_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 1, 2, 1, 3, -1, 2, 2, 3, -1, 1)</span>
+<span class="w">      </span><span class="c">!&lt;</span>
+<span class="w">      </span><span class="c">!&lt; A  = 1|-1  2  3  0  0|</span>
+<span class="w">      </span><span class="c">!&lt;      2| 2  1  1  0  0|</span>
+<span class="w">      </span><span class="c">!&lt;      3| 1  1  3 -1  3|</span>
+<span class="w">      </span><span class="c">!&lt;      4| 0  0  1  2 -1|</span>
+<span class="w">      </span><span class="c">!&lt;      5| 0  0  3  2  1| =&gt; eltvar = (1, 2, 3, 3, 4, 5), it locates the elemental matrix line in the assembled matrix</span>
+<span class="w">      </span><span class="c">!&lt;                        =&gt; eltptr = (1, 4, 7), it gives the elemental matrix first entry position in eltvar (last</span>
+<span class="w">      </span><span class="c">!&lt;                                               position being size(eltvar)+1)</span>
+<span class="w">      </span><span class="c">!&lt;</span>
+<span class="w">      </span><span class="c">!&lt; ************************************************</span>
+<span class="w">      </span><span class="c">!&lt; Assembled matrix :</span>
+<span class="w">      </span><span class="c">!&lt; A being the same, a_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 3, 1, 3, -1, 2, 2, 3, -1, 1)</span>
+<span class="w">      </span><span class="c">!&lt;                    irow = ( 1, 2, 3, 1, 2, 3, 1, 2, 3, 4, 5,  3, 4, 5, 3,  4, 5)</span>
+<span class="w">      </span><span class="c">!&lt;                    jptr = (1, 4, 7, 12, 15, 18)</span>
+<span class="w">      </span><span class="c">!&lt;</span>
+<span class="w">      </span><span class="c">!&lt; =======================================================================================================================</span>
+<span class="w">      </span><span class="c">!&lt; Triplet form</span>
+<span class="w">      </span><span class="c">!&lt; ************************************************</span>
+<span class="w">      </span><span class="c">!&lt; For each non zero a_elt entry, returns its row and column number</span>
+<span class="w">      </span><span class="c">!&lt; A being the same, a_elt = (-1, 2, 1, 2, 1, 1, 3, 1, 3, 1, 3, -1, 2, 2, 3, -1, 1)</span>
+<span class="w">      </span><span class="c">!&lt;                    irow = ( 1, 2, 3, 1, 2, 3, 1, 2, 3, 4, 5,  3, 4, 5, 3,  4, 5)</span>
+<span class="w">      </span><span class="c">!&lt;                    jcol = ( 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3,  4, 4, 4, 5,  5, 5)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">from_elemental_to_assembled</span><span class="p">(</span><span class="n">mat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">select case</span><span class="p">(</span><span class="n">mat</span><span class="p">%</span><span class="n">slv_t</span><span class="p">)</span>
+
+<span class="w">         </span><span class="k">case</span><span class="p">(</span><span class="n">MA48</span><span class="p">)</span><span class="w">  </span><span class="c">! Triplet form: irow, jcol, a_elt</span>
+<span class="cp">#if WITH_MA48</span>
+<span class="w">            </span><span class="k">continue</span>
+<span class="cp">#else</span>
+<span class="w">   </span><span class="k">stop</span><span class="w"> </span><span class="s1">&#39;MA48_LIB not defined&#39;</span>
+<span class="cp">#endif</span>
+
+<span class="w">         </span><span class="k">case</span><span class="p">(</span><span class="n">MUMP</span><span class="p">)</span><span class="w">  </span><span class="c">! Compressed row, elemental entries chosen: eltptr, eltvar, a_elt</span>
+<span class="w">            </span><span class="k">continue</span>
+
+<span class="k">         case</span><span class="p">(</span><span class="n">UMFP</span><span class="p">,</span><span class="w"> </span><span class="n">SULU</span><span class="p">)</span><span class="w">  </span><span class="c">! Compressed row, assembled form: irow, jptr, a_elt</span>
+<span class="w">            </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">jcol</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="c">! no more needed</span>
+<span class="w">            </span><span class="c">! UMFP and SULU allocations begin at 0 (C convention)</span>
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">nn</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span>
+<span class="w">               </span><span class="n">mat</span><span class="p">%</span><span class="n">jptr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">jptr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+<span class="w">            </span><span class="k">enddo</span>
+
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="n">mat</span><span class="p">%</span><span class="n">slv_t</span><span class="o">==</span><span class="n">SULU</span><span class="p">)</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">matsulu</span><span class="p">%</span><span class="n">jptr</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">jptr</span><span class="w"> </span><span class="c">! otherwise, matsulu%jptr will be associated to</span>
+<span class="w">                                                              </span><span class="c">! a deallocated part of memory</span>
+
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">nz</span>
+<span class="w">               </span><span class="n">mat</span><span class="p">%</span><span class="n">irow</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">irow</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+<span class="w">            </span><span class="k">enddo</span>
+
+<span class="k">         case </span><span class="n">default</span>
+<span class="w">            </span><span class="k">stop</span><span class="w"> </span><span class="s1">&#39;Unknown solver type, CONVERT_MATRICE_FORMAT&#39;</span>
+
+<span class="w">      </span><span class="k">endselect</span>
+
+<span class="k">   return</span>
+<span class="k">   endsubroutine </span><span class="n">convert_matrice_format</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,718 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>from_elemental_to_assembled &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>from_elemental_to_assembled
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">105 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/mod_solver.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_solver.f90.html'>mod_solver.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/solver.html'>solver</a></li>
+            <li class="breadcrumb-item active" aria-current="page">from_elemental_to_assembled</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/from_elemental_to_assembled.html#src">from_elemental_to_assembled</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  subroutine from_elemental_to_assembled(mat)  
+</h2>
+    
+
+    <p>Subroutine to transform the elemental entries into assembled CC vectors</p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mat~11"></span>
+              type(<a href='../type/mat_solv.html'>MAT_SOLV</a>),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              target
+            </td>
+            <td>::</td>
+            <td><strong>mat</strong></td>
+            <td>
+                <p><em>high level system type</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~from_elemental_to_assembled~~CallsGraph Pages: 1 -->
+<svg id="procfrom_elemental_to_assembledCallsGraph" width="464pt" height="194pt"
+ viewBox="0.00 0.00 464.00 194.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~from_elemental_to_assembled~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 190)">
+<title>proc~~from_elemental_to_assembled~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-190 460,-190 460,4 -4,4"/>
+<!-- proc~from_elemental_to_assembled -->
+<g id="proc~~from_elemental_to_assembled~~CallsGraph_node1" class="node">
+<title>proc~from_elemental_to_assembled</title>
+<polygon fill="none" stroke="black" points="160,-114 0,-114 0,-90 160,-90 160,-114"/>
+<text text-anchor="middle" x="80" y="-99.6" font-family="Helvetica,sans-Serif" font-size="10.50">from_elemental_to_assembled</text>
+</g>
+<!-- proc~sort_array2 -->
+<g id="proc~~from_elemental_to_assembled~~CallsGraph_node2" class="node">
+<title>proc~sort_array2</title>
+<g id="a_proc~~from_elemental_to_assembled~~CallsGraph_node2"><a xlink:href="../proc/sort_array2.html" xlink:title="sort_array2">
+<polygon fill="#d9534f" stroke="#d9534f" points="263,-114 196,-114 196,-90 263,-90 263,-114"/>
+<text text-anchor="middle" x="229.5" y="-99.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_array2</text>
+</a>
+</g>
+</g>
+<!-- proc~from_elemental_to_assembled&#45;&gt;proc~sort_array2 -->
+<g id="proc~~from_elemental_to_assembled~~CallsGraph_edge1" class="edge">
+<title>proc~from_elemental_to_assembled&#45;&gt;proc~sort_array2</title>
+<path fill="none" stroke="#ff0000" d="M160.36,-102C169.09,-102 177.71,-102 185.73,-102"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="185.89,-105.5 195.89,-102 185.89,-98.5 185.89,-105.5"/>
+</g>
+<!-- proc~change_array_order -->
+<g id="proc~~from_elemental_to_assembled~~CallsGraph_node3" class="node">
+<title>proc~change_array_order</title>
+<g id="a_proc~~from_elemental_to_assembled~~CallsGraph_node3"><a xlink:href="../proc/change_array_order.html" xlink:title="change_array_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="432.5,-186 322.5,-186 322.5,-162 432.5,-162 432.5,-186"/>
+<text text-anchor="middle" x="377.5" y="-171.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">change_array_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~change_array_order -->
+<g id="proc~~from_elemental_to_assembled~~CallsGraph_edge2" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~change_array_order</title>
+<path fill="none" stroke="#ff0000" d="M243.67,-114.2C256.78,-125.73 277.93,-142.76 299,-153 303.32,-155.1 307.88,-157.01 312.53,-158.75"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="311.59,-162.13 322.18,-162.09 313.87,-155.51 311.59,-162.13"/>
+</g>
+<!-- proc~init_order -->
+<g id="proc~~from_elemental_to_assembled~~CallsGraph_node4" class="node">
+<title>proc~init_order</title>
+<g id="a_proc~~from_elemental_to_assembled~~CallsGraph_node4"><a xlink:href="../proc/init_order.html" xlink:title="init_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="406.5,-144 348.5,-144 348.5,-120 406.5,-120 406.5,-144"/>
+<text text-anchor="middle" x="377.5" y="-129.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">init_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~init_order -->
+<g id="proc~~from_elemental_to_assembled~~CallsGraph_edge3" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~init_order</title>
+<path fill="none" stroke="#ff0000" d="M263.27,-108.73C285.53,-113.31 315.05,-119.37 338.37,-124.17"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="337.77,-127.62 348.27,-126.2 339.18,-120.76 337.77,-127.62"/>
+</g>
+<!-- proc~sort_array_integer_with_order -->
+<g id="proc~~from_elemental_to_assembled~~CallsGraph_node5" class="node">
+<title>proc~sort_array_integer_with_order</title>
+<g id="a_proc~~from_elemental_to_assembled~~CallsGraph_node5"><a xlink:href="../proc/sort_array_integer_with_order.html" xlink:title="sort_array_integer_with_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="456,-84 299,-84 299,-60 456,-60 456,-84"/>
+<text text-anchor="middle" x="377.5" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_array_integer_with_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~sort_array_integer_with_order -->
+<g id="proc~~from_elemental_to_assembled~~CallsGraph_edge4" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~sort_array_integer_with_order</title>
+<path fill="none" stroke="#ff0000" d="M263.27,-95.27C276.51,-92.55 292.32,-89.3 307.86,-86.1"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="308.92,-89.46 318.01,-84.02 307.51,-82.6 308.92,-89.46"/>
+</g>
+<!-- proc~sort_array_real_with_order -->
+<g id="proc~~from_elemental_to_assembled~~CallsGraph_node6" class="node">
+<title>proc~sort_array_real_with_order</title>
+<g id="a_proc~~from_elemental_to_assembled~~CallsGraph_node6"><a xlink:href="../proc/sort_array_real_with_order.html" xlink:title="sort_array_real_with_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="448.5,-24 306.5,-24 306.5,0 448.5,0 448.5,-24"/>
+<text text-anchor="middle" x="377.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_array_real_with_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~sort_array_real_with_order -->
+<g id="proc~~from_elemental_to_assembled~~CallsGraph_edge5" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~sort_array_real_with_order</title>
+<path fill="none" stroke="#ff0000" d="M245.21,-89.88C258.73,-79.01 279.57,-62.99 299,-51 312.1,-42.91 327.09,-35.07 340.37,-28.56"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="342.2,-31.56 349.7,-24.07 339.17,-25.26 342.2,-31.56"/>
+</g>
+<!-- proc~sort_array_integer_with_order&#45;&gt;proc~sort_array_integer_with_order -->
+<g id="proc~~from_elemental_to_assembled~~CallsGraph_edge6" class="edge">
+<title>proc~sort_array_integer_with_order&#45;&gt;proc~sort_array_integer_with_order</title>
+<path fill="none" stroke="#00ffff" d="M353.03,-84.01C344.48,-92.97 352.64,-102 377.5,-102 392.65,-102 401.6,-98.65 404.34,-94"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="407.68,-92.94 401.97,-84.01 400.87,-94.55 407.68,-92.94"/>
+</g>
+<!-- proc~sort_array_real_with_order&#45;&gt;proc~sort_array_real_with_order -->
+<g id="proc~~from_elemental_to_assembled~~CallsGraph_edge7" class="edge">
+<title>proc~sort_array_real_with_order&#45;&gt;proc~sort_array_real_with_order</title>
+<path fill="none" stroke="#7f00ff" d="M353.03,-24.01C344.48,-32.97 352.64,-42 377.5,-42 392.65,-42 401.6,-38.65 404.34,-34"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="407.68,-32.94 401.97,-24.01 400.87,-34.55 407.68,-32.94"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~from_elemental_to_assembled~~CalledByGraph Pages: 1 -->
+<svg id="procfrom_elemental_to_assembledCalledByGraph" width="436pt" height="32pt"
+ viewBox="0.00 0.00 436.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~from_elemental_to_assembled~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~from_elemental_to_assembled~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 432,-28 432,4 -4,4"/>
+<!-- proc~from_elemental_to_assembled -->
+<g id="proc~~from_elemental_to_assembled~~CalledByGraph_node1" class="node">
+<title>proc~from_elemental_to_assembled</title>
+<polygon fill="none" stroke="black" points="428,-24 268,-24 268,0 428,0 428,-24"/>
+<text text-anchor="middle" x="348" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">from_elemental_to_assembled</text>
+</g>
+<!-- proc~convert_matrice_format -->
+<g id="proc~~from_elemental_to_assembled~~CalledByGraph_node2" class="node">
+<title>proc~convert_matrice_format</title>
+<g id="a_proc~~from_elemental_to_assembled~~CalledByGraph_node2"><a xlink:href="../proc/convert_matrice_format.html" xlink:title="convert_matrice_format">
+<polygon fill="#d9534f" stroke="#d9534f" points="232,-24 106,-24 106,0 232,0 232,-24"/>
+<text text-anchor="middle" x="169" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">convert_matrice_format</text>
+</a>
+</g>
+</g>
+<!-- proc~convert_matrice_format&#45;&gt;proc~from_elemental_to_assembled -->
+<g id="proc~~from_elemental_to_assembled~~CalledByGraph_edge1" class="edge">
+<title>proc~convert_matrice_format&#45;&gt;proc~from_elemental_to_assembled</title>
+<path fill="none" stroke="#ff0000" d="M232.4,-12C240.63,-12 249.19,-12 257.75,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="257.8,-15.5 267.8,-12 257.8,-8.5 257.8,-15.5"/>
+</g>
+<!-- program~test_solvers -->
+<g id="proc~~from_elemental_to_assembled~~CalledByGraph_node3" class="node">
+<title>program~test_solvers</title>
+<g id="a_proc~~from_elemental_to_assembled~~CalledByGraph_node3"><a xlink:href="../program/test_solvers.html" xlink:title="test_solvers">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_solvers</text>
+</a>
+</g>
+</g>
+<!-- program~test_solvers&#45;&gt;proc~convert_matrice_format -->
+<g id="proc~~from_elemental_to_assembled~~CalledByGraph_edge2" class="edge">
+<title>program~test_solvers&#45;&gt;proc~convert_matrice_format</title>
+<path fill="none" stroke="#ff0000" d="M70.34,-12C78.27,-12 87.01,-12 95.9,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="95.96,-15.5 105.96,-12 95.96,-8.5 95.96,-15.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">subroutine </span><span class="n">from_elemental_to_assembled</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+<span class="w">   </span><span class="c">!! Subroutine to transform the elemental entries into assembled CC vectors</span>
+<span class="w">   </span><span class="k">implicit none</span>
+<span class="k">   type</span><span class="p">(</span><span class="n">MAT_SOLV</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">target</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">mat</span><span class="w">   </span><span class="c">!! *high level system type*</span>
+
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">solver</span><span class="p">,</span><span class="w"> </span><span class="n">nb_elt</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">ntot</span><span class="p">,</span><span class="w"> </span><span class="n">nz</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">eltptr</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">eltvar</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w">    </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a_elt</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">irow</span><span class="p">,</span><span class="w"> </span><span class="n">jcol</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">jptr</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">inelt</span><span class="p">,</span><span class="w"> </span><span class="n">imatorder</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">ii</span><span class="p">,</span><span class="w"> </span><span class="n">jj</span><span class="p">,</span><span class="w"> </span><span class="n">i1</span><span class="p">,</span><span class="w"> </span><span class="n">i2</span><span class="p">,</span><span class="w"> </span><span class="n">ir1</span><span class="p">,</span><span class="w"> </span><span class="n">ir2</span><span class="p">,</span><span class="w"> </span><span class="n">jr1</span><span class="p">,</span><span class="w"> </span><span class="n">jr2</span><span class="p">,</span><span class="w"> </span><span class="n">itmp</span><span class="p">,</span><span class="w"> </span><span class="n">innz</span><span class="p">,</span><span class="w"> </span><span class="n">state</span>
+
+<span class="w">      </span><span class="n">solver</span><span class="w">   </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">slv_t</span>
+<span class="w">      </span><span class="n">nb_elt</span><span class="w">   </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">ne</span>
+<span class="w">      </span><span class="n">n</span><span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">nn</span>
+<span class="w">      </span><span class="n">ntot</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">nt</span>
+<span class="w">      </span><span class="n">nz</span><span class="w">       </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">nz</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">solver</span><span class="o">==</span><span class="n">MUMP</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="w">      </span><span class="c">! conversion from elemental form to triplet form, perhaps with null a_elts</span>
+<span class="w">      </span><span class="c">!--------------------------------------------------------------------------</span>
+<span class="w">      </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="nb">allocated</span><span class="p">(</span><span class="n">mat</span><span class="p">%</span><span class="n">irow</span><span class="p">))</span><span class="w"> </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">irow</span><span class="p">(</span><span class="n">ntot</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">state</span><span class="o">/=</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">stop</span><span class="w"> </span><span class="s1">&#39;Memory allocation problem, FROM_ELEMENTAL_TO_ASSEMBLED&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="nb">allocated</span><span class="p">(</span><span class="n">mat</span><span class="p">%</span><span class="n">jcol</span><span class="p">))</span><span class="w"> </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">jcol</span><span class="p">(</span><span class="n">ntot</span><span class="p">),</span><span class="w"> </span><span class="nb">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">state</span><span class="o">/=</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">stop</span><span class="w"> </span><span class="s1">&#39;Memory allocation problem, FROM_ELEMENTAL_TO_ASSEMBLED&#39;</span>
+
+<span class="w">      </span><span class="n">eltptr</span><span class="w">   </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">eltptr</span>
+<span class="w">      </span><span class="n">eltvar</span><span class="w">   </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">eltvar</span>
+<span class="w">      </span><span class="n">a_elt</span><span class="w">    </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">a_elt</span>
+<span class="w">      </span><span class="n">irow</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">irow</span>
+<span class="w">      </span><span class="n">jcol</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">jcol</span>
+<span class="w">      </span><span class="n">jptr</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">jptr</span>
+
+<span class="w">      </span><span class="n">irow</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">ntot</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+<span class="w">      </span><span class="n">jcol</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">ntot</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+
+<span class="w">      </span><span class="n">ii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="k">do </span><span class="n">inelt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">nb_elt</span>
+<span class="w">         </span><span class="n">imatorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eltptr</span><span class="p">(</span><span class="n">inelt</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="n">eltptr</span><span class="p">(</span><span class="n">inelt</span><span class="p">)</span>
+<span class="w">         </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">imatorder</span>
+<span class="w">            </span><span class="n">irow</span><span class="p">(</span><span class="n">ii</span><span class="p">:(</span><span class="n">ii</span><span class="w"> </span><span class="o">+</span><span class="n">imatorder</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eltvar</span><span class="p">(</span><span class="n">eltptr</span><span class="p">(</span><span class="n">inelt</span><span class="p">):</span><span class="n">eltptr</span><span class="p">(</span><span class="n">inelt</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">            </span><span class="n">jcol</span><span class="p">(</span><span class="n">ii</span><span class="p">:(</span><span class="n">ii</span><span class="w"> </span><span class="o">+</span><span class="n">imatorder</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eltvar</span><span class="p">(</span><span class="n">eltptr</span><span class="p">(</span><span class="n">inelt</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">            </span><span class="n">ii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ii</span><span class="w"> </span><span class="o">+</span><span class="n">imatorder</span>
+<span class="w">         </span><span class="k">enddo</span>
+<span class="k">      enddo</span>
+
+<span class="w">      </span><span class="c">! where a_elt brings no contribution, rows and columns are zeroed</span>
+<span class="w">      </span><span class="c">!-----------------------------------------------------------------</span>
+<span class="w">      </span><span class="k">where</span><span class="p">(</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">a_elt</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">EPS_R8</span><span class="w"> </span><span class="p">)</span>
+<span class="w">         </span><span class="n">irow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">         </span><span class="n">jcol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="k">endwhere</span>
+
+<span class="w">      </span><span class="c">! the triplet irow, jcol and a_elt is sorted according jcol</span>
+<span class="w">      </span><span class="c">!-----------------------------------------------------------</span>
+<span class="w">      </span><span class="k">call </span><span class="n">sort_array2</span><span class="p">(</span><span class="n">tab_inout</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">jcol</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">ntot</span><span class="p">),</span><span class="w">           </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                            </span><span class="n">tab1</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">irow</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">ntot</span><span class="p">),</span><span class="w">           </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                            </span><span class="n">tab2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a_elt</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">ntot</span><span class="p">),</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ntot</span><span class="p">)</span><span class="w">    </span><span class="c">!</span>
+
+<span class="w">      </span><span class="c">! column pointer determination for each new value</span>
+<span class="w">      </span><span class="c">!----------------------------------------------</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">mat</span><span class="p">%</span><span class="n">jptr</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="p">(</span><span class="n">mat</span><span class="p">%</span><span class="n">jptr</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">jptr</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">jptr</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mat</span><span class="p">%</span><span class="n">jptr</span>
+<span class="w">      </span><span class="n">ii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="k">do</span>
+<span class="k">         if</span><span class="w"> </span><span class="p">(</span><span class="n">jcol</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">exit</span><span class="w">  </span><span class="c">! zeroed terms are ignored</span>
+<span class="w">         </span><span class="n">ii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ii</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      </span><span class="n">jptr</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ii</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+<span class="w">         </span><span class="n">itmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jcol</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
+<span class="w">         </span><span class="k">do</span>
+<span class="k">            </span><span class="n">ii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ii</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jcol</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">itmp</span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
+<span class="k">         enddo</span>
+<span class="k">         </span><span class="n">jptr</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ii</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      </span><span class="n">jptr</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ntot</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span>
+
+<span class="w">      </span><span class="c">! columns are already sorted; rows are now sorted for each row value</span>
+<span class="w">      </span><span class="c">!--------------------------------------------------------------------</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">         </span><span class="n">i1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jptr</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">         </span><span class="n">i2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jptr</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+<span class="w">         </span><span class="k">call </span><span class="n">sort_array2</span><span class="p">(</span><span class="n">tab_inout</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="n">irow</span><span class="p">(</span><span class="n">i1</span><span class="p">:</span><span class="n">i2</span><span class="p">),</span><span class="w">                     </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                               </span><span class="n">tab1</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">a_elt</span><span class="p">(</span><span class="n">i1</span><span class="p">:</span><span class="n">i2</span><span class="p">),</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i1</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w">       </span><span class="c">!</span>
+
+<span class="w">      </span><span class="k">enddo</span>
+
+<span class="w">      </span><span class="c">! assembly starting from the jcol, irow and a_elt top</span>
+<span class="w">      </span><span class="c">! for identical matrix locations, a_elts are added</span>
+<span class="w">      </span><span class="c">!-----------------------------------------------------</span>
+<span class="w">      </span><span class="n">innz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="n">jj</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">jptr</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">  </span><span class="c">! first non-zero element</span>
+<span class="w">      </span><span class="n">jr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jcol</span><span class="p">(</span><span class="n">jj</span><span class="p">)</span>
+<span class="w">      </span><span class="n">ir1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">irow</span><span class="p">(</span><span class="n">jj</span><span class="p">)</span>
+<span class="w">      </span><span class="n">jcol</span><span class="p">(</span><span class="n">innz</span><span class="p">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">jr1</span>
+<span class="w">      </span><span class="n">irow</span><span class="p">(</span><span class="n">innz</span><span class="p">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">ir1</span>
+<span class="w">      </span><span class="n">a_elt</span><span class="p">(</span><span class="n">innz</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a_elt</span><span class="p">(</span><span class="n">jj</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jj</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ntot</span>
+<span class="w">         </span><span class="n">jr2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jcol</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">         </span><span class="n">ir2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">irow</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">jr2</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">jr1</span><span class="p">).</span><span class="nb">or</span><span class="p">.(</span><span class="n">ir2</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">ir1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w">  </span><span class="c">! if row or column index has changed</span>
+<span class="w">            </span><span class="n">innz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">innz</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w">                         </span><span class="c">! a non-zero term is added</span>
+<span class="w">            </span><span class="n">jcol</span><span class="p">(</span><span class="n">innz</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jr2</span>
+<span class="w">            </span><span class="n">irow</span><span class="p">(</span><span class="n">innz</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ir2</span>
+<span class="w">            </span><span class="n">a_elt</span><span class="p">(</span><span class="n">innz</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a_elt</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">         </span><span class="k">else</span>
+<span class="k">            </span><span class="n">a_elt</span><span class="p">(</span><span class="n">innz</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a_elt</span><span class="p">(</span><span class="n">innz</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a_elt</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w">   </span><span class="c">! row and column indexes are the same, stiffness terms are added</span>
+<span class="w">         </span><span class="k">endif</span>
+<span class="k">         </span><span class="n">jr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jr2</span><span class="w">                                 </span><span class="c">! stores (i-1) and (j-1) for further comparison</span>
+<span class="w">         </span><span class="n">ir1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ir2</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      </span><span class="n">nz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">innz</span>
+<span class="w">      </span><span class="n">jcol</span><span class="p">(</span><span class="w"> </span><span class="n">nz</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">ntot</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+<span class="w">      </span><span class="n">irow</span><span class="p">(</span><span class="w"> </span><span class="n">nz</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">ntot</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+<span class="w">      </span><span class="n">a_elt</span><span class="p">(</span><span class="n">nz</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">ntot</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">huge</span><span class="p">(</span><span class="mf">1._R8</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! col pointer update</span>
+<span class="w">      </span><span class="c">!----------------------------------------------</span>
+<span class="w">      </span><span class="n">jj</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="n">jptr</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+<span class="w">         </span><span class="n">itmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jcol</span><span class="p">(</span><span class="n">jj</span><span class="p">)</span>
+<span class="w">         </span><span class="k">do</span>
+<span class="k">            </span><span class="n">jj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jj</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">jcol</span><span class="p">(</span><span class="n">jj</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">itmp</span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
+<span class="k">         enddo</span>
+<span class="k">         </span><span class="n">jptr</span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jj</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      </span><span class="n">jptr</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nz</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span>
+
+<span class="w">      </span><span class="k">nullify</span><span class="p">(</span><span class="n">eltptr</span><span class="p">,</span><span class="w"> </span><span class="n">eltvar</span><span class="p">,</span><span class="w"> </span><span class="n">a_elt</span><span class="p">,</span><span class="w"> </span><span class="n">irow</span><span class="p">,</span><span class="w"> </span><span class="n">jcol</span><span class="p">,</span><span class="w"> </span><span class="n">jptr</span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">return</span>
+<span class="k">   endsubroutine </span><span class="n">from_elemental_to_assembled</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

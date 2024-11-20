@@ -1,0 +1,785 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>test_interp_pond &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>test_interp_pond
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">85 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/prg.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/prg.f90~11.html'>prg.f90</a></li>
+                <li class="breadcrumb-item"><a href='../program/test_intpl.html'>test_intpl</a></li>
+            <li class="breadcrumb-item active" aria-current="page">test_interp_pond</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/test_interp_pond.html#src">test_interp_pond</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2> subroutine test_interp_pond(ordre)  
+</h2>
+    
+
+    <p>Test interpolation/weighting function for a particular order</p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ordre"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ordre</strong></td>
+            <td>
+                <p>order</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~test_interp_pond~~CallsGraph Pages: 1 -->
+<svg id="proctest_interp_pondCallsGraph" width="383pt" height="234pt"
+ viewBox="0.00 0.00 383.00 234.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~test_interp_pond~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 230)">
+<title>proc~~test_interp_pond~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-230 379,-230 379,4 -4,4"/>
+<!-- proc~test_interp_pond -->
+<g id="proc~~test_interp_pond~~CallsGraph_node1" class="node">
+<title>proc~test_interp_pond</title>
+<polygon fill="none" stroke="black" points="93,-124 0,-124 0,-100 93,-100 93,-124"/>
+<text text-anchor="middle" x="46.5" y="-109.6" font-family="Helvetica,sans-Serif" font-size="10.50">test_interp_pond</text>
+</g>
+<!-- proc~def_tab1d -->
+<g id="proc~~test_interp_pond~~CallsGraph_node2" class="node">
+<title>proc~def_tab1d</title>
+<g id="a_proc~~test_interp_pond~~CallsGraph_node2"><a xlink:href="../proc/def_tab1d.html" xlink:title="def_tab1D">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="191,-226 129,-226 129,-202 191,-202 191,-226"/>
+<text text-anchor="middle" x="160" y="-211.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">def_tab1D</text>
+</a>
+</g>
+</g>
+<!-- proc~test_interp_pond&#45;&gt;proc~def_tab1d -->
+<g id="proc~~test_interp_pond~~CallsGraph_edge1" class="edge">
+<title>proc~test_interp_pond&#45;&gt;proc~def_tab1d</title>
+<path fill="none" stroke="#ff0000" d="M58.51,-124.19C73.65,-140.64 102.07,-170.48 129,-193 130.13,-193.94 131.3,-194.89 132.49,-195.82"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="130.43,-198.66 140.54,-201.83 134.62,-193.04 130.43,-198.66"/>
+</g>
+<!-- proc~def_tab2d -->
+<g id="proc~~test_interp_pond~~CallsGraph_node3" class="node">
+<title>proc~def_tab2d</title>
+<g id="a_proc~~test_interp_pond~~CallsGraph_node3"><a xlink:href="../proc/def_tab2d.html" xlink:title="def_tab2D">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="191,-184 129,-184 129,-160 191,-160 191,-184"/>
+<text text-anchor="middle" x="160" y="-169.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">def_tab2D</text>
+</a>
+</g>
+</g>
+<!-- proc~test_interp_pond&#45;&gt;proc~def_tab2d -->
+<g id="proc~~test_interp_pond~~CallsGraph_edge2" class="edge">
+<title>proc~test_interp_pond&#45;&gt;proc~def_tab2d</title>
+<path fill="none" stroke="#ff0000" d="M70.06,-124.14C86.61,-133.05 109.3,-145.25 127.61,-155.11"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="126.01,-158.22 136.47,-159.88 129.32,-152.06 126.01,-158.22"/>
+</g>
+<!-- proc~interp1d -->
+<g id="proc~~test_interp_pond~~CallsGraph_node4" class="node">
+<title>proc~interp1d</title>
+<g id="a_proc~~test_interp_pond~~CallsGraph_node4"><a xlink:href="../proc/interp1d.html" xlink:title="interp1D">
+<polygon fill="#d9534f" stroke="#d9534f" points="283,-114 229,-114 229,-90 283,-90 283,-114"/>
+<text text-anchor="middle" x="256" y="-99.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">interp1D</text>
+</a>
+</g>
+</g>
+<!-- proc~test_interp_pond&#45;&gt;proc~interp1d -->
+<g id="proc~~test_interp_pond~~CallsGraph_edge3" class="edge">
+<title>proc~test_interp_pond&#45;&gt;proc~interp1d</title>
+<path fill="none" stroke="#ff0000" d="M93.15,-114.46C121.39,-115.44 158.36,-115.78 191,-113 200.14,-112.22 209.94,-110.82 219.05,-109.28"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="219.75,-112.71 228.97,-107.51 218.51,-105.82 219.75,-112.71"/>
+</g>
+<!-- proc~interp2d -->
+<g id="proc~~test_interp_pond~~CallsGraph_node5" class="node">
+<title>proc~interp2d</title>
+<g id="a_proc~~test_interp_pond~~CallsGraph_node5"><a xlink:href="../proc/interp2d.html" xlink:title="interp2D">
+<polygon fill="#d9534f" stroke="#d9534f" points="187,-104 133,-104 133,-80 187,-80 187,-104"/>
+<text text-anchor="middle" x="160" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">interp2D</text>
+</a>
+</g>
+</g>
+<!-- proc~test_interp_pond&#45;&gt;proc~interp2d -->
+<g id="proc~~test_interp_pond~~CallsGraph_edge4" class="edge">
+<title>proc~test_interp_pond&#45;&gt;proc~interp2d</title>
+<path fill="none" stroke="#ff0000" d="M93.17,-103.81C103.07,-102.03 113.4,-100.18 122.86,-98.48"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="123.51,-101.92 132.73,-96.71 122.27,-95.03 123.51,-101.92"/>
+</g>
+<!-- proc~restrict1d -->
+<g id="proc~~test_interp_pond~~CallsGraph_node6" class="node">
+<title>proc~restrict1d</title>
+<g id="a_proc~~test_interp_pond~~CallsGraph_node6"><a xlink:href="../proc/restrict1d.html" xlink:title="restrict1D">
+<polygon fill="#d9534f" stroke="#d9534f" points="285,-53 227,-53 227,-29 285,-29 285,-53"/>
+<text text-anchor="middle" x="256" y="-38.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">restrict1D</text>
+</a>
+</g>
+</g>
+<!-- proc~test_interp_pond&#45;&gt;proc~restrict1d -->
+<g id="proc~~test_interp_pond~~CallsGraph_edge5" class="edge">
+<title>proc~test_interp_pond&#45;&gt;proc~restrict1d</title>
+<path fill="none" stroke="#ff0000" d="M68.35,-99.81C84.47,-90.81 107.57,-78.82 129,-71 157.78,-60.5 191.61,-52.68 216.96,-47.66"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="217.77,-51.07 226.93,-45.74 216.45,-44.19 217.77,-51.07"/>
+</g>
+<!-- proc~restrict2d -->
+<g id="proc~~test_interp_pond~~CallsGraph_node7" class="node">
+<title>proc~restrict2d</title>
+<g id="a_proc~~test_interp_pond~~CallsGraph_node7"><a xlink:href="../proc/restrict2d.html" xlink:title="restrict2D">
+<polygon fill="#d9534f" stroke="#d9534f" points="189,-24 131,-24 131,0 189,0 189,-24"/>
+<text text-anchor="middle" x="160" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">restrict2D</text>
+</a>
+</g>
+</g>
+<!-- proc~test_interp_pond&#45;&gt;proc~restrict2d -->
+<g id="proc~~test_interp_pond~~CallsGraph_edge6" class="edge">
+<title>proc~test_interp_pond&#45;&gt;proc~restrict2d</title>
+<path fill="none" stroke="#ff0000" d="M60.68,-99.86C76.73,-85.12 104.7,-59.56 129,-38 131.66,-35.64 134.46,-33.18 137.25,-30.75"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="139.64,-33.3 144.9,-24.1 135.06,-28.02 139.64,-33.3"/>
+</g>
+<!-- proc~interp -->
+<g id="proc~~test_interp_pond~~CallsGraph_node8" class="node">
+<title>proc~interp</title>
+<g id="a_proc~~test_interp_pond~~CallsGraph_node8"><a xlink:href="../proc/interp.html" xlink:title="interp">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="375,-114 321,-114 321,-90 375,-90 375,-114"/>
+<text text-anchor="middle" x="348" y="-99.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">interp</text>
+</a>
+</g>
+</g>
+<!-- proc~interp1d&#45;&gt;proc~interp -->
+<g id="proc~~test_interp_pond~~CallsGraph_edge7" class="edge">
+<title>proc~interp1d&#45;&gt;proc~interp</title>
+<path fill="none" stroke="#00ff00" d="M283.03,-102C291.63,-102 301.36,-102 310.59,-102"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="310.72,-105.5 320.71,-102 310.71,-98.5 310.72,-105.5"/>
+</g>
+<!-- proc~interp2d&#45;&gt;proc~interp1d -->
+<g id="proc~~test_interp_pond~~CallsGraph_edge8" class="edge">
+<title>proc~interp2d&#45;&gt;proc~interp1d</title>
+<path fill="none" stroke="#00ffff" d="M187.18,-94.79C196.96,-95.83 208.25,-97.03 218.77,-98.15"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="218.64,-101.65 228.96,-99.23 219.38,-94.69 218.64,-101.65"/>
+</g>
+<!-- proc~restrict -->
+<g id="proc~~test_interp_pond~~CallsGraph_node9" class="node">
+<title>proc~restrict</title>
+<g id="a_proc~~test_interp_pond~~CallsGraph_node9"><a xlink:href="../proc/restrict.html" xlink:title="restrict">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="375,-53 321,-53 321,-29 375,-29 375,-53"/>
+<text text-anchor="middle" x="348" y="-38.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">restrict</text>
+</a>
+</g>
+</g>
+<!-- proc~restrict1d&#45;&gt;proc~restrict -->
+<g id="proc~~test_interp_pond~~CallsGraph_edge9" class="edge">
+<title>proc~restrict1d&#45;&gt;proc~restrict</title>
+<path fill="none" stroke="#0000ff" d="M285.48,-41C293.44,-41 302.21,-41 310.57,-41"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="310.85,-44.5 320.85,-41 310.85,-37.5 310.85,-44.5"/>
+</g>
+<!-- proc~restrict2d&#45;&gt;proc~restrict1d -->
+<g id="proc~~test_interp_pond~~CallsGraph_edge10" class="edge">
+<title>proc~restrict2d&#45;&gt;proc~restrict1d</title>
+<path fill="none" stroke="#ff00ff" d="M189.2,-20.7C197.94,-23.4 207.71,-26.41 217,-29.28"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="216.23,-32.7 226.82,-32.31 218.29,-26.01 216.23,-32.7"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~test_interp_pond~~CalledByGraph Pages: 1 -->
+<svg id="proctest_interp_pondCalledByGraph" width="192pt" height="32pt"
+ viewBox="0.00 0.00 192.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~test_interp_pond~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~test_interp_pond~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 188,-28 188,4 -4,4"/>
+<!-- proc~test_interp_pond -->
+<g id="proc~~test_interp_pond~~CalledByGraph_node1" class="node">
+<title>proc~test_interp_pond</title>
+<polygon fill="none" stroke="black" points="184,-24 91,-24 91,0 184,0 184,-24"/>
+<text text-anchor="middle" x="137.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">test_interp_pond</text>
+</g>
+<!-- program~test_intpl -->
+<g id="proc~~test_interp_pond~~CalledByGraph_node2" class="node">
+<title>program~test_intpl</title>
+<g id="a_proc~~test_interp_pond~~CalledByGraph_node2"><a xlink:href="../program/test_intpl.html" xlink:title="test_intpl">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="55,-24 0,-24 0,0 55,0 55,-24"/>
+<text text-anchor="middle" x="27.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_intpl</text>
+</a>
+</g>
+</g>
+<!-- program~test_intpl&#45;&gt;proc~test_interp_pond -->
+<g id="proc~~test_interp_pond~~CalledByGraph_edge1" class="edge">
+<title>program~test_intpl&#45;&gt;proc~test_interp_pond</title>
+<path fill="none" stroke="#ff0000" d="M55.2,-12C63,-12 71.84,-12 80.74,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="80.77,-15.5 90.77,-12 80.77,-8.5 80.77,-15.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">subroutine </span><span class="n">test_interp_pond</span><span class="p">(</span><span class="w"> </span><span class="n">ordre</span><span class="w"> </span><span class="p">)</span>
+<span class="w">   </span><span class="c">!! Test interpolation/weighting function for a particular order</span>
+<span class="w">   </span><span class="k">implicit none</span>
+<span class="k">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ordre</span><span class="w"> </span><span class="c">!! order</span>
+
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">ii</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">jj</span><span class="p">,</span><span class="w"> </span><span class="n">istat1</span><span class="p">,</span><span class="w"> </span><span class="n">istat2</span>
+
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">tableau1D</span><span class="p">,</span><span class="w"> </span><span class="n">tab_f1D</span><span class="p">,</span><span class="w"> </span><span class="n">tab_g1D</span><span class="p">,</span><span class="w"> </span><span class="n">erreur1D</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tableau2D</span><span class="p">,</span><span class="w"> </span><span class="n">tab_f2D</span><span class="p">,</span><span class="w"> </span><span class="n">tab_g2D</span><span class="p">,</span><span class="w"> </span><span class="n">erreur2D</span>
+
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">tborne</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">bfin</span><span class="p">,</span><span class="w"> </span><span class="n">bgro</span>
+
+<span class="w">      </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">tableau1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">),</span><span class="w">  </span><span class="n">tab_f1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">),</span><span class="w">   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                  </span><span class="n">tab_g1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">),</span><span class="w"> </span><span class="n">erreur1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">),</span><span class="w">   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                  </span><span class="nb">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">istat1</span><span class="w"> </span><span class="p">)</span><span class="w">                     </span><span class="c">!</span>
+
+<span class="w">      </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">tableau2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">),</span><span class="w">  </span><span class="n">tab_f2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">),</span><span class="w">   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                  </span><span class="n">tab_g2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">),</span><span class="w"> </span><span class="n">erreur2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">),</span><span class="w">   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                  </span><span class="nb">stat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">istat2</span><span class="w"> </span><span class="p">)</span><span class="w">                                 </span><span class="c">!</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">istat1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">istat2</span><span class="w"> </span><span class="o">/=</span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">stop</span><span class="w"> </span><span class="s1">&#39;&quot;test_interp_pond&quot; problem of allocation&#39;</span>
+
+<span class="w">      </span><span class="c">!.............................................................</span>
+<span class="w">      </span><span class="k">do </span><span class="n">ii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n1</span>
+<span class="w">         </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">ii</span>
+<span class="w">         </span><span class="n">tableau1D</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">def_tab1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="c">! initialisation à une fonction ressemblant à UN noyau élastique</span>
+<span class="w">      </span><span class="k">enddo</span>
+
+<span class="k">      call </span><span class="n">interp1D</span><span class="p">(</span><span class="w"> </span><span class="n">tabgros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tableau1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">),</span><span class="w">    </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">lb_gros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">tabfin</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">tab_f1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">),</span><span class="w">      </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">lb_fin</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">ub_gros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w">                 </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">ordre</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">ordre</span><span class="w"> </span><span class="p">)</span><span class="w">                </span><span class="c">! interpolation de ce tableau</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span>
+<span class="w">         </span><span class="n">erreur1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">def_tab1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tab_f1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                                </span><span class="p">(</span><span class="w"> </span><span class="n">def_tab1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tab_f1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="c">! comparaison théorique/interpolé</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;interp 1D - max err, mean err: :         &#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">maxval</span><span class="p">(</span><span class="w"> </span><span class="n">erreur1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">)</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="w"> </span><span class="n">erreur1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">n2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">!-!&lt;.............................................................</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span>
+<span class="w">         </span><span class="n">tableau1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">def_tab1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="c">! initialisation à une fonction ressemblant à UN noyau élastique</span>
+<span class="w">      </span><span class="k">enddo</span>
+
+<span class="k">      call </span><span class="n">restrict1D</span><span class="p">(</span><span class="w"> </span><span class="n">tabfin</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">tableau1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">),</span><span class="w">     </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">lb_fin</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">tabgros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab_g1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">),</span><span class="w">       </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">lb_gros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">ub_gros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">ordre</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">ordre</span><span class="w"> </span><span class="p">)</span><span class="w">                 </span><span class="c">! restriction de ce tableau</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">ii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n1</span>
+<span class="w">         </span><span class="n">erreur1D</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">def_tab1D</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ii</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tab_g1D</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                                 </span><span class="p">(</span><span class="w"> </span><span class="n">def_tab1D</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ii</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tab_g1D</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="c">! comparaison théorique/interpolé</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;weight 1D - max err, mean err:           &#39;</span><span class="p">,</span><span class="w">  </span><span class="nb">maxval</span><span class="p">(</span><span class="w"> </span><span class="n">erreur1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">)</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="w"> </span><span class="n">erreur1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">n1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">!-!&lt;.............................................................</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span>
+<span class="w">         </span><span class="n">tableau1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">def_tab1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="c">! initialisation à une fonction ressemblant à UN noyau élastique</span>
+<span class="w">      </span><span class="k">enddo</span>
+
+<span class="k">      call </span><span class="n">restrict1D</span><span class="p">(</span><span class="w"> </span><span class="n">tabfin</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">tableau1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">lb_fin</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">tabgros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab_g1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">),</span><span class="w">    </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">lb_gros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">ub_gros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w">               </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">ordre</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">ordre</span><span class="w"> </span><span class="p">)</span><span class="w">              </span><span class="c">! restriction de ce tableau</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">interp1D</span><span class="p">(</span><span class="w"> </span><span class="n">tabgros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab_g1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">),</span><span class="w">      </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">lb_gros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">tabfin</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">tab_f1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">),</span><span class="w">      </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">lb_fin</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">ub_gros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w">                 </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">ordre</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">ordre</span><span class="w"> </span><span class="p">)</span><span class="w">                </span><span class="c">! interpolation de ce tableau</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span>
+<span class="w">         </span><span class="n">erreur1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">tableau1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tab_f1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                                </span><span class="p">(</span><span class="w"> </span><span class="n">tableau1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tab_f1D</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="c">! comparaison avant/après</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;weight + interp 1D - max err, mean err:  &#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">maxval</span><span class="p">(</span><span class="w"> </span><span class="n">erreur1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">)</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="w"> </span><span class="n">erreur1D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">n2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">!.............................................................</span>
+<span class="w">      </span><span class="c">! Idem 2D</span>
+<span class="w">      </span><span class="c">!.............................................................</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">jj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n1</span>
+<span class="w">      </span><span class="k">do </span><span class="n">ii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n1</span>
+<span class="w">         </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">ii</span>
+<span class="w">         </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">jj</span>
+<span class="w">         </span><span class="n">tableau2D</span><span class="p">(</span><span class="n">ii</span><span class="p">,</span><span class="w"> </span><span class="n">jj</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">def_tab2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      enddo</span>
+
+<span class="k">      </span><span class="n">bfin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tborne</span><span class="p">(</span><span class="w"> </span><span class="n">lb1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ub1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="n">lb2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ub2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n2</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="n">bgro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tborne</span><span class="p">(</span><span class="w"> </span><span class="n">lb1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ub1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="n">lb2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ub2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">interp2D</span><span class="p">(</span><span class="w"> </span><span class="n">tabgro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tableau2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">bgro</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">bgro</span><span class="p">,</span><span class="w">                   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">tabfin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab_f2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">),</span><span class="w">    </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">bfin</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">bfin</span><span class="p">,</span><span class="w">                   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">ordre</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">ordre</span><span class="w"> </span><span class="p">)</span><span class="w">                    </span><span class="c">!</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span>
+<span class="w">         </span><span class="n">erreur2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">def_tab2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tab_f2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                                   </span><span class="p">(</span><span class="w"> </span><span class="n">def_tab2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tab_f2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="c">!</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      enddo</span>
+<span class="k">      write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;interp 2D - max err, mean err:           &#39;</span><span class="p">,</span><span class="w">  </span><span class="nb">maxval</span><span class="p">(</span><span class="w"> </span><span class="n">erreur2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">)</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="w"> </span><span class="n">erreur2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">n2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="w">      </span><span class="c">!.............................................................</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span>
+<span class="w">         </span><span class="n">tableau2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">def_tab2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      enddo</span>
+
+<span class="k">      </span><span class="n">bfin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tborne</span><span class="p">(</span><span class="w"> </span><span class="n">lb1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ub1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="n">lb2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ub2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n2</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="n">bgro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tborne</span><span class="p">(</span><span class="w"> </span><span class="n">lb1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ub1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="n">lb2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ub2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">restrict2D</span><span class="p">(</span><span class="w"> </span><span class="n">tabfin</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">tableau2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">bfin</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">bfin</span><span class="p">,</span><span class="w">                   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">tabgros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab_g2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">),</span><span class="w">    </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">bgros</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">bgro</span><span class="p">,</span><span class="w">                   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">ordre</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">ordre</span><span class="w"> </span><span class="p">)</span><span class="w">                    </span><span class="c">!</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">jj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n1</span>
+<span class="w">      </span><span class="k">do </span><span class="n">ii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n1</span>
+<span class="w">         </span><span class="n">erreur2D</span><span class="p">(</span><span class="n">ii</span><span class="p">,</span><span class="w"> </span><span class="n">jj</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">def_tab2D</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ii</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">jj</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tab_g2D</span><span class="p">(</span><span class="n">ii</span><span class="p">,</span><span class="w"> </span><span class="n">jj</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                                     </span><span class="p">(</span><span class="w"> </span><span class="n">def_tab2D</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ii</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">jj</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tab_g2D</span><span class="p">(</span><span class="n">ii</span><span class="p">,</span><span class="w"> </span><span class="n">jj</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">    </span><span class="c">!</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      enddo</span>
+
+<span class="k">      write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;weight 2D - max err, mean err:           &#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">maxval</span><span class="p">(</span><span class="w"> </span><span class="n">erreur2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">)</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="w"> </span><span class="n">erreur2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">n1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="w">      </span><span class="c">!.............................................................</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span>
+<span class="w">         </span><span class="n">tableau2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">def_tab2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      enddo</span>
+
+<span class="k">      </span><span class="n">bfin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tborne</span><span class="p">(</span><span class="w"> </span><span class="n">lb1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ub1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="n">lb2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ub2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n2</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="n">bgro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tborne</span><span class="p">(</span><span class="w"> </span><span class="n">lb1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ub1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="n">lb2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">ub2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">restrict2D</span><span class="p">(</span><span class="w"> </span><span class="n">tabfin</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">tableau2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">),</span><span class="w">     </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">bfin</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">bfin</span><span class="p">,</span><span class="w">                      </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">tabgros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab_g2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">),</span><span class="w">       </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">bgros</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">bgro</span><span class="p">,</span><span class="w">                      </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                       </span><span class="n">ordre</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">ordre</span><span class="w"> </span><span class="p">)</span><span class="w">                       </span><span class="c">!</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">interp2D</span><span class="p">(</span><span class="w"> </span><span class="n">tabgro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab_g2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">),</span><span class="w">       </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">bgro</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">bgro</span><span class="p">,</span><span class="w">                      </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">tabfin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab_f2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">),</span><span class="w">       </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">bfin</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">bfin</span><span class="p">,</span><span class="w">                      </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                     </span><span class="n">ordre</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">ordre</span><span class="w"> </span><span class="p">)</span><span class="w">                       </span><span class="c">!</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span>
+<span class="w">         </span><span class="n">erreur2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">tableau2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tab_f2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                                  </span><span class="p">(</span><span class="w"> </span><span class="n">tableau2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tab_f2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="c">!</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      enddo</span>
+<span class="k">      write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;weight + interp 2D - max err, mean err:  &#39;</span><span class="p">,</span><span class="w">  </span><span class="nb">maxval</span><span class="p">(</span><span class="w"> </span><span class="n">erreur2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">)</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="w"> </span><span class="n">erreur2D</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">n2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">tableau1D</span><span class="p">,</span><span class="w"> </span><span class="n">tab_f1D</span><span class="p">,</span><span class="w"> </span><span class="n">tab_g1D</span><span class="p">,</span><span class="w"> </span><span class="n">erreur1D</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">tableau2D</span><span class="p">,</span><span class="w"> </span><span class="n">tab_f2D</span><span class="p">,</span><span class="w"> </span><span class="n">tab_g2D</span><span class="p">,</span><span class="w"> </span><span class="n">erreur2D</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">return</span>
+<span class="k">   endsubroutine </span><span class="n">test_interp_pond</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

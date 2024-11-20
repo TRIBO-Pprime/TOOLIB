@@ -1,0 +1,611 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>dintrv &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>dintrv
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">52 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/mod_bspline.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_bspline.f90.html'>mod_bspline.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/bspline.html'>bspline</a></li>
+            <li class="breadcrumb-item active" aria-current="page">dintrv</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/dintrv.html#src">dintrv</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  subroutine dintrv(XT, lxt, x, ilo, ileft, mflag)  
+</h2>
+    
+
+    <p>Computes the largest integer ileft in 1 &lt;= ileft &lt;= lxt
+  such that XT(ileft) &lt;= x where XT(*) is a subdivision of
+  the x interval.
+  precisely,</p>
+<div class="codehilite"><pre><span></span><code><span class="w">         </span><span class="k">if            </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">XT</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">   </span><span class="k">then </span><span class="n">ileft</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w">   </span><span class="n">mflag</span><span class="o">=-</span><span class="mi">1</span>
+<span class="w">         </span><span class="k">if   </span><span class="n">XT</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">XT</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then </span><span class="n">ileft</span><span class="o">=</span><span class="n">i</span><span class="p">,</span><span class="w">   </span><span class="n">mflag</span><span class="o">=</span><span class="mi">0</span>
+<span class="w">         </span><span class="k">if </span><span class="n">XT</span><span class="p">(</span><span class="n">lxt</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">x</span><span class="w">           </span><span class="k">then </span><span class="n">ileft</span><span class="o">=</span><span class="n">lxt</span><span class="p">,</span><span class="w"> </span><span class="n">mflag</span><span class="o">=</span><span class="mi">1</span>
+</code></pre></div>
+
+<p>that is, when multiplicities are present in the break point
+  to the left of x, the largest index is taken for ileft.</p>
+<h1 id="history">History</h1>
+<ul>
+<li>interv written by carl de boor [5]</li>
+<li>dintrv author: amos, d. e., (snla) : date written 800901</li>
+<li>revision date 820801</li>
+<li>Jacob Williams, 2/24/2015 : updated to free-form Fortran.</li>
+</ul>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xt"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(lxt)
+            </td>
+            <td>::</td>
+            <td><strong>XT</strong></td>
+            <td>
+                <p>a knot or break point vector of length lxt</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lxt"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lxt</strong></td>
+            <td>
+                <p>length of the XT vector</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~102"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+            <td>
+                <p>argument</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ilo~3"></span>
+              integer,
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ilo</strong></td>
+            <td>
+                <p>an initialization parameter which must be set
+to 1 the first time the spline array XT is
+processed by dintrv. ilo contains information for
+efficient processing after the initial call and ilo
+must not be changed by the user.  distinct splines
+require distinct ilo parameters.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ileft~2"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ileft</strong></td>
+            <td>
+                <p>largest integer satisfying XT(ileft) &lt;= x</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mflag~3"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mflag</strong></td>
+            <td>
+                <p>signals when x lies out of bounds</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~dintrv~~CalledByGraph Pages: 1 -->
+<svg id="procdintrvCalledByGraph" width="448pt" height="74pt"
+ viewBox="0.00 0.00 448.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~dintrv~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<title>proc~~dintrv~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-70 444,-70 444,4 -4,4"/>
+<!-- proc~dintrv -->
+<g id="proc~~dintrv~~CalledByGraph_node1" class="node">
+<title>proc~dintrv</title>
+<polygon fill="none" stroke="black" points="440,-44 386,-44 386,-20 440,-20 440,-44"/>
+<text text-anchor="middle" x="413" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50">dintrv</text>
+</g>
+<!-- proc~db2val -->
+<g id="proc~~dintrv~~CalledByGraph_node2" class="node">
+<title>proc~db2val</title>
+<g id="a_proc~~dintrv~~CalledByGraph_node2"><a xlink:href="../proc/db2val.html" xlink:title="db2val">
+<polygon fill="#d9534f" stroke="#d9534f" points="260,-24 206,-24 206,0 260,0 260,-24"/>
+<text text-anchor="middle" x="233" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">db2val</text>
+</a>
+</g>
+</g>
+<!-- proc~db2val&#45;&gt;proc~dintrv -->
+<g id="proc~~dintrv~~CalledByGraph_edge1" class="edge">
+<title>proc~db2val&#45;&gt;proc~dintrv</title>
+<path fill="none" stroke="#ff0000" d="M260.26,-14.95C290.85,-18.39 341.55,-24.08 375.84,-27.94"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="375.59,-31.43 385.92,-29.07 376.37,-24.47 375.59,-31.43"/>
+</g>
+<!-- proc~dbvalu -->
+<g id="proc~~dintrv~~CalledByGraph_node3" class="node">
+<title>proc~dbvalu</title>
+<g id="a_proc~~dintrv~~CalledByGraph_node3"><a xlink:href="../proc/dbvalu.html" xlink:title="dbvalu">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="350,-64 296,-64 296,-40 350,-40 350,-64"/>
+<text text-anchor="middle" x="323" y="-49.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dbvalu</text>
+</a>
+</g>
+</g>
+<!-- proc~db2val&#45;&gt;proc~dbvalu -->
+<g id="proc~~dintrv~~CalledByGraph_edge5" class="edge">
+<title>proc~db2val&#45;&gt;proc~dbvalu</title>
+<path fill="none" stroke="#00ffff" d="M260.4,-24C268.66,-27.75 277.9,-31.95 286.66,-35.94"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="285.37,-39.19 295.92,-40.14 288.26,-32.82 285.37,-39.19"/>
+</g>
+<!-- proc~dbvalu&#45;&gt;proc~dintrv -->
+<g id="proc~~dintrv~~CalledByGraph_edge2" class="edge">
+<title>proc~dbvalu&#45;&gt;proc~dintrv</title>
+<path fill="none" stroke="#ff0000" d="M350.4,-46C358.48,-44.16 367.51,-42.11 376.1,-40.16"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="376.94,-43.56 385.92,-37.93 375.39,-36.73 376.94,-43.56"/>
+</g>
+<!-- proc~db1val -->
+<g id="proc~~dintrv~~CalledByGraph_node4" class="node">
+<title>proc~db1val</title>
+<g id="a_proc~~dintrv~~CalledByGraph_node4"><a xlink:href="../proc/db1val.html" xlink:title="db1val">
+<polygon fill="#d9534f" stroke="#d9534f" points="260,-66 206,-66 206,-42 260,-42 260,-66"/>
+<text text-anchor="middle" x="233" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">db1val</text>
+</a>
+</g>
+</g>
+<!-- proc~db1val&#45;&gt;proc~dbvalu -->
+<g id="proc~~dintrv~~CalledByGraph_edge4" class="edge">
+<title>proc~db1val&#45;&gt;proc~dbvalu</title>
+<path fill="none" stroke="#00ffff" d="M260.4,-53.4C268.39,-53.22 277.31,-53.02 285.82,-52.82"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="286,-56.32 295.92,-52.59 285.84,-49.32 286,-56.32"/>
+</g>
+<!-- proc~interp_surf -->
+<g id="proc~~dintrv~~CalledByGraph_node5" class="node">
+<title>proc~interp_surf</title>
+<g id="a_proc~~dintrv~~CalledByGraph_node5"><a xlink:href="../proc/interp_surf.html" xlink:title="interp_surf">
+<polygon fill="#d9534f" stroke="#d9534f" points="170,-24 106,-24 106,0 170,0 170,-24"/>
+<text text-anchor="middle" x="138" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">interp_surf</text>
+</a>
+</g>
+</g>
+<!-- proc~interp_surf&#45;&gt;proc~db2val -->
+<g id="proc~~dintrv~~CalledByGraph_edge3" class="edge">
+<title>proc~interp_surf&#45;&gt;proc~db2val</title>
+<path fill="none" stroke="#ff0000" d="M170.23,-12C178.48,-12 187.46,-12 195.94,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="195.97,-15.5 205.97,-12 195.97,-8.5 195.97,-15.5"/>
+</g>
+<!-- program~test_bspline -->
+<g id="proc~~dintrv~~CalledByGraph_node6" class="node">
+<title>program~test_bspline</title>
+<g id="a_proc~~dintrv~~CalledByGraph_node6"><a xlink:href="../program/test_bspline.html" xlink:title="test_bspline">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_bspline</text>
+</a>
+</g>
+</g>
+<!-- program~test_bspline&#45;&gt;proc~interp_surf -->
+<g id="proc~~dintrv~~CalledByGraph_edge6" class="edge">
+<title>program~test_bspline&#45;&gt;proc~interp_surf</title>
+<path fill="none" stroke="#00ffff" d="M70.19,-12C78.41,-12 87.28,-12 95.78,-12"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="95.9,-15.5 105.9,-12 95.9,-8.5 95.9,-15.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">dintrv</span><span class="p">(</span><span class="n">XT</span><span class="p">,</span><span class="n">lxt</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">ilo</span><span class="p">,</span><span class="n">ileft</span><span class="p">,</span><span class="n">mflag</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">lxt</span><span class="w">    </span><span class="c">!! length of the XT vector</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">lxt</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">XT</span><span class="w">     </span><span class="c">!! a knot or break point vector of length lxt</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">                </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="w">      </span><span class="c">!! argument</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">ilo</span><span class="w">    </span><span class="c">!! an initialization parameter which must be set</span>
+<span class="w">                                                 </span><span class="c">!! to 1 the first time the spline array XT is</span>
+<span class="w">                                                 </span><span class="c">!! processed by dintrv. ilo contains information for</span>
+<span class="w">                                                 </span><span class="c">!! efficient processing after the initial call and ilo</span>
+<span class="w">                                                 </span><span class="c">!! must not be changed by the user.  distinct splines</span>
+<span class="w">                                                 </span><span class="c">!! require distinct ilo parameters.</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">                </span><span class="kd">::</span><span class="w"> </span><span class="n">ileft</span><span class="w">  </span><span class="c">!! largest integer satisfying XT(ileft) &lt;= x</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">                </span><span class="kd">::</span><span class="w"> </span><span class="n">mflag</span><span class="w">  </span><span class="c">!! signals when x lies out of bounds</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ihi</span><span class="p">,</span><span class="w"> </span><span class="n">istep</span><span class="p">,</span><span class="w"> </span><span class="n">middle</span>
+
+<span class="w">      </span><span class="n">ihi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ilo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ihi</span><span class="o">&lt;</span><span class="n">lxt</span><span class="p">)</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">XT</span><span class="p">(</span><span class="n">lxt</span><span class="p">))</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">110</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lxt</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">90</span>
+<span class="w">      </span><span class="n">ilo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lxt</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="n">ihi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lxt</span>
+
+<span class="w">   </span><span class="mi">10</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">XT</span><span class="p">(</span><span class="n">ihi</span><span class="p">))</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">40</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">XT</span><span class="p">(</span><span class="n">ilo</span><span class="p">))</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">100</span>
+
+<span class="c">! *** now x &lt; XT(ihi) . find lower bound</span>
+<span class="w">      </span><span class="n">istep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">   </span><span class="mi">20</span><span class="w"> </span><span class="n">ihi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ilo</span>
+<span class="w">      </span><span class="n">ilo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ihi</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">istep</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ilo</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">30</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">XT</span><span class="p">(</span><span class="n">ilo</span><span class="p">))</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">70</span>
+<span class="w">      </span><span class="n">istep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">istep</span><span class="o">*</span><span class="mi">2</span>
+<span class="w">      </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">20</span>
+
+<span class="w">   </span><span class="mi">30</span><span class="w"> </span><span class="n">ilo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">XT</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">90</span>
+<span class="w">      </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">70</span>
+
+<span class="c">! *** now x &gt;= XT(ilo) . find upper bound</span>
+<span class="w">   </span><span class="mi">40</span><span class="w"> </span><span class="n">istep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">   </span><span class="mi">50</span><span class="w"> </span><span class="n">ilo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ihi</span>
+<span class="w">      </span><span class="n">ihi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ilo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">istep</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ihi</span><span class="o">&gt;=</span><span class="n">lxt</span><span class="p">)</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">60</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">XT</span><span class="p">(</span><span class="n">ihi</span><span class="p">))</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">70</span>
+<span class="w">      </span><span class="n">istep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">istep</span><span class="o">*</span><span class="mi">2</span>
+<span class="w">      </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">50</span>
+
+<span class="w">   </span><span class="mi">60</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">XT</span><span class="p">(</span><span class="n">lxt</span><span class="p">))</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">110</span>
+<span class="w">      </span><span class="n">ihi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lxt</span>
+
+<span class="c">! *** now XT(ilo) &lt;= x &lt; XT(ihi) . narrow the interval</span>
+<span class="w">   </span><span class="mi">70</span><span class="w"> </span><span class="n">middle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ilo</span><span class="o">+</span><span class="n">ihi</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">middle</span><span class="o">==</span><span class="n">ilo</span><span class="p">)</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">100</span>
+<span class="c">!     note. it is assumed that middle = ilo in case ihi = ilo+1</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">XT</span><span class="p">(</span><span class="n">middle</span><span class="p">))</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">80</span>
+<span class="w">      </span><span class="n">ilo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">middle</span>
+<span class="w">      </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">70</span>
+
+<span class="w">   </span><span class="mi">80</span><span class="w"> </span><span class="n">ihi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">middle</span>
+<span class="w">      </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">70</span>
+
+<span class="c">! *** set output and return</span>
+<span class="w">   </span><span class="mi">90</span><span class="w"> </span><span class="n">mflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+<span class="w">      </span><span class="n">ileft</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="k">return</span>
+
+<span class="k">  </span><span class="mi">100</span><span class="w"> </span><span class="n">mflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="n">ileft</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ilo</span>
+<span class="w">      </span><span class="k">return</span>
+
+<span class="k">  </span><span class="mi">110</span><span class="w"> </span><span class="n">mflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="n">ileft</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lxt</span>
+
+<span class="w">    </span><span class="k">endsubroutine </span><span class="n">dintrv</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

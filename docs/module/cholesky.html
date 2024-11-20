@@ -1,0 +1,821 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>cholesky &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>cholesky
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> Arthur Francisco</li>
+            <li class="list-inline-item" id="meta-date"><i class="fa fa-calendar-o"></i> November, 16 2024</li>
+            <li class="list-inline-item" id="meta-version"><i class="fa fa-barcode"></i> 1.0.0</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.5% of total for modules and submodules.">66 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/mod_cholesky.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_cholesky.f90.html'>mod_cholesky.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">cholesky</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/cholesky.html#proc-choldc">choldc</a>
+            <a class="list-group-item" href="../module/cholesky.html#proc-cholsl">cholsl</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      <p><span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+       <strong>Cholesky decomposition and resolution</strong>
+ </span></p>
+<h1 id="description">Description</h1>
+<p>The Cholesky decomposition is a method for solving systems of linear equations, particularly when the coefficient matrix is symmetric and positive definite. The method involves decomposing the matrix into a product of a lower triangular matrix and its transpose.
+ 
+<div><button class="collapsible">More ...</button>
+ <div class="content">
+
+ Here's a detailed description of the Cholesky method for solving the system \( Ax = b \).
+ <p></p>
+ <h4> Decompose \( A \) </h4>
+ <p></p>
+ Given a symmetric positive definite matrix \( A \), we can decompose it to find \( L \) in \( A = L L^T \), where \( L \) is a lower triangular matrix.
+ <p></p>
+ <h4> Forward Substitution </h4>
+ <p></p>
+ Solve the system \( Ly = b \) for \( y \). This can be done using forward substitution since \( L \) is a lower triangular matrix.
+
+ \[ y_1 = \frac{b_1}{L_{11}} \qquad y_2 = \frac{b_2 - L_{21}y_1}{L_{22}} \qquad y_3 = \frac{b_3 - L_{31}y_1 - L_{32}y_2}{L_{33}}  \ldots \]
+ <p></p>
+ <h4> Backward Substitution </h4>
+ <p></p>
+ Once \( y \) is found, solve the system \( L^T x = y \) for \( x \) using backward substitution since \( L^T \) is an upper triangular matrix.
+
+ \[ x_n = \frac{y_n}{L_{nn}} \qquad x_{n-1} = \frac{y_{n-1} - L_{n-1,n}x_n}{L_{n-1,n-1}} \qquad x_{n-2} = \frac{y_{n-2} - L_{n-2,n-1}x_{n-1} - L_{n-2,n}x_n}{L_{n-2,n-2}}  \ldots \]
+
+ </div>
+ </div>
+</p>
+<script>
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+
+</script>
+<br>          <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='data_arch.html'>data_arch</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~cholesky~~UsesGraph Pages: 1 -->
+<svg id="modulecholeskyUsesGraph" width="282pt" height="32pt"
+ viewBox="0.00 0.00 282.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~cholesky~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>module~~cholesky~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 278,-28 278,4 -4,4"/>
+<!-- module~cholesky -->
+<g id="module~~cholesky~~UsesGraph_node1" class="node">
+<title>module~cholesky</title>
+<polygon fill="none" stroke="black" points="274,-24 220,-24 220,0 274,0 274,-24"/>
+<text text-anchor="middle" x="247" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">cholesky</text>
+</g>
+<!-- module~data_arch -->
+<g id="module~~cholesky~~UsesGraph_node2" class="node">
+<title>module~data_arch</title>
+<g id="a_module~~cholesky~~UsesGraph_node2"><a xlink:href="../module/data_arch.html" xlink:title="data_arch">
+<polygon fill="#337ab7" stroke="#337ab7" points="184,-24 123,-24 123,0 184,0 184,-24"/>
+<text text-anchor="middle" x="153.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">data_arch</text>
+</a>
+</g>
+</g>
+<!-- module~cholesky&#45;&gt;module~data_arch -->
+<g id="module~~cholesky~~UsesGraph_edge1" class="edge">
+<title>module~cholesky&#45;&gt;module~data_arch</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M219.53,-12C211.65,-12 202.84,-12 194.31,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="194.12,-8.5 184.12,-12 194.12,-15.5 194.12,-8.5"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="module~~cholesky~~UsesGraph_node3" class="node">
+<title>iso_fortran_env</title>
+<g id="a_module~~cholesky~~UsesGraph_node3"><a xlink:href="http://fortranwiki.org/fortran/show/iso_fortran_env" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="87,-24 0,-24 0,0 87,0 87,-24"/>
+<text text-anchor="middle" x="43.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~data_arch&#45;&gt;iso_fortran_env -->
+<g id="module~~cholesky~~UsesGraph_edge2" class="edge">
+<title>module~data_arch&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M122.99,-12C115.09,-12 106.3,-12 97.55,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="97.34,-8.5 87.34,-12 97.34,-15.5 97.34,-8.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+          <div class="card">
+      <h3 class="card-header card-title bg-light">Used by</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~cholesky~~UsedByGraph Pages: 1 -->
+<svg id="modulecholeskyUsedByGraph" width="406pt" height="95pt"
+ viewBox="0.00 0.00 406.00 95.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~cholesky~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 91)">
+<title>module~~cholesky~~UsedByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-91 402,-91 402,4 -4,4"/>
+<!-- module~cholesky -->
+<g id="module~~cholesky~~UsedByGraph_node1" class="node">
+<title>module~cholesky</title>
+<polygon fill="none" stroke="black" points="54,-45 0,-45 0,-21 54,-21 54,-45"/>
+<text text-anchor="middle" x="27" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">cholesky</text>
+</g>
+<!-- module~least_squares -->
+<g id="module~~cholesky~~UsedByGraph_node2" class="node">
+<title>module~least_squares</title>
+<g id="a_module~~cholesky~~UsedByGraph_node2"><a xlink:href="../module/least_squares.html" xlink:title="least_squares">
+<polygon fill="#337ab7" stroke="#337ab7" points="169,-66 90,-66 90,-42 169,-42 169,-66"/>
+<text text-anchor="middle" x="129.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">least_squares</text>
+</a>
+</g>
+</g>
+<!-- module~least_squares&#45;&gt;module~cholesky -->
+<g id="module~~cholesky~~UsedByGraph_edge1" class="edge">
+<title>module~least_squares&#45;&gt;module~cholesky</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M89.93,-45.94C81.43,-44.16 72.46,-42.29 64.06,-40.54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="64.68,-37.09 54.18,-38.47 63.25,-43.94 64.68,-37.09"/>
+</g>
+<!-- program~test_utils -->
+<g id="module~~cholesky~~UsedByGraph_node3" class="node">
+<title>program~test_utils</title>
+<g id="a_module~~cholesky~~UsedByGraph_node3"><a xlink:href="../program/test_utils.html" xlink:title="test_utils">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="157,-24 102,-24 102,0 157,0 157,-24"/>
+<text text-anchor="middle" x="129.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_utils</text>
+</a>
+</g>
+</g>
+<!-- program~test_utils&#45;&gt;module~cholesky -->
+<g id="module~~cholesky~~UsedByGraph_edge2" class="edge">
+<title>program~test_utils&#45;&gt;module~cholesky</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M101.83,-17.57C90.29,-19.98 76.61,-22.84 64.17,-25.44"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="63.17,-22.08 54.1,-27.55 64.6,-28.93 63.17,-22.08"/>
+</g>
+<!-- module~tchebychev -->
+<g id="module~~cholesky~~UsedByGraph_node4" class="node">
+<title>module~tchebychev</title>
+<g id="a_module~~cholesky~~UsedByGraph_node4"><a xlink:href="../module/tchebychev.html" xlink:title="tchebychev">
+<polygon fill="#337ab7" stroke="#337ab7" points="272,-87 205,-87 205,-63 272,-63 272,-87"/>
+<text text-anchor="middle" x="238.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tchebychev</text>
+</a>
+</g>
+</g>
+<!-- module~tchebychev&#45;&gt;module~least_squares -->
+<g id="module~~cholesky~~UsedByGraph_edge3" class="edge">
+<title>module~tchebychev&#45;&gt;module~least_squares</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M204.82,-68.59C196.78,-67.01 187.99,-65.28 179.37,-63.59"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="179.87,-60.12 169.38,-61.63 178.52,-66.99 179.87,-60.12"/>
+</g>
+<!-- program~test_least -->
+<g id="module~~cholesky~~UsedByGraph_node5" class="node">
+<title>program~test_least</title>
+<g id="a_module~~cholesky~~UsedByGraph_node5"><a xlink:href="../program/test_least.html" xlink:title="test_least">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="267.5,-45 209.5,-45 209.5,-21 267.5,-21 267.5,-45"/>
+<text text-anchor="middle" x="238.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_least</text>
+</a>
+</g>
+</g>
+<!-- program~test_least&#45;&gt;module~least_squares -->
+<g id="module~~cholesky~~UsedByGraph_edge4" class="edge">
+<title>program~test_least&#45;&gt;module~least_squares</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M209.39,-38.52C200.1,-40.34 189.48,-42.43 179.1,-44.46"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="178.42,-41.03 169.29,-46.39 179.77,-47.9 178.42,-41.03"/>
+</g>
+<!-- program~test_tchebychev -->
+<g id="module~~cholesky~~UsedByGraph_node6" class="node">
+<title>program~test_tchebychev</title>
+<g id="a_module~~cholesky~~UsedByGraph_node6"><a xlink:href="../program/test_tchebychev.html" xlink:title="test_tchebychev">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="398,-87 308,-87 308,-63 398,-63 398,-87"/>
+<text text-anchor="middle" x="353" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_tchebychev</text>
+</a>
+</g>
+</g>
+<!-- program~test_tchebychev&#45;&gt;module~tchebychev -->
+<g id="module~~cholesky~~UsedByGraph_edge5" class="edge">
+<title>program~test_tchebychev&#45;&gt;module~tchebychev</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M307.86,-75C299.37,-75 290.49,-75 282.05,-75"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="282.03,-71.5 272.03,-75 282.03,-78.5 282.03,-71.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsedByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsedByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      <br>
+
+
+
+
+
+
+
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-choldc"></span> <h3>public  subroutine <a href='../proc/choldc.html'>choldc</a>(a, n, np, p, info)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Given a positive definite symmetric matrix a(1:n,1:n), with
+ physical dimensions np, this routine constructs its Cholesky
+ decomposition, A=L L^T. On input, only the upper triangle of
+ a need to be given; it is not modified. The Cholesky factor L
+ is returned in the lower triangle of a, except for its diagonal
+ elements which are returned in p(1:n).</p><a href="../proc/choldc.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a"></span>
+              real(kind=R8),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(np, np)
+            </td>
+            <td>::</td>
+            <td><strong>a</strong></td>
+            <td>
+<p><em>system matrix</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+            <td>
+<p><em>system size</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-np"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>np</strong></td>
+            <td>
+<p><em>matrix size</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-p"></span>
+              real(kind=R8),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              dimension(np)
+            </td>
+            <td>::</td>
+            <td><strong>p</strong></td>
+            <td>
+<p><em>diagonal elements</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>info</strong></td>
+            <td>
+<p><em>information ouput</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-cholsl"></span> <h3>public  subroutine <a href='../proc/cholsl.html'>cholsl</a>(a, n, np, p, b, x, info)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Solves the set of linear equations A x = b, where A is a positive-
+ definite symmetric matrix with physical dimensions np. A and P are
+ are input as the output from choldc. Only the lower triangle of A
+ is accessed. B(1:n) is inout as the right-hand side vector. The
+ solution vector is returned in X(1:n). A, n, np, and P are not
+ modified and can be left in place for successive calls with different
+ right-hand sides B. B is not modified unless you identify B and X in
+ the calling sequence, which is allowed.</p><a href="../proc/cholsl.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a~2"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(np, np)
+            </td>
+            <td>::</td>
+            <td><strong>a</strong></td>
+            <td>
+<p><em>system matrix</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~2"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+            <td>
+<p><em>system size</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-np~2"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>np</strong></td>
+            <td>
+<p><em>matrix size</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-p~2"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(np)
+            </td>
+            <td>::</td>
+            <td><strong>p</strong></td>
+            <td>
+<p><em>diagonal elements</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-b"></span>
+              real(kind=R8),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(np)
+            </td>
+            <td>::</td>
+            <td><strong>b</strong></td>
+            <td>
+<p><em>rhs</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x"></span>
+              real(kind=R8),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(np)
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+            <td>
+<p><em>solution vector</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~2"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>info</strong></td>
+            <td>
+<p><em>information ouput</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

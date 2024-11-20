@@ -1,0 +1,586 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>lmdif1_test &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>lmdif1_test
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">26 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/prg.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/prg.f90~3.html'>prg.f90</a></li>
+                <li class="breadcrumb-item"><a href='../program/test_minpack.html'>test_minpack</a></li>
+            <li class="breadcrumb-item active" aria-current="page">lmdif1_test</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+    <em>None</em>
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2> subroutine lmdif1_test()  
+</h2>
+    
+
+    <p>LMDIF1_TEST tests LMDIF1.</p>
+
+
+    <h3>Arguments</h3>
+    <em>None</em>
+    <br>
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~lmdif1_test~~CallsGraph Pages: 1 -->
+<svg id="proclmdif1_testCallsGraph" width="444pt" height="152pt"
+ viewBox="0.00 0.00 444.00 152.26" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~lmdif1_test~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 148.26)">
+<title>proc~~lmdif1_test~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-148.26 440,-148.26 440,4 -4,4"/>
+<!-- proc~lmdif1_test -->
+<g id="proc~~lmdif1_test~~CallsGraph_node1" class="node">
+<title>proc~lmdif1_test</title>
+<polygon fill="none" stroke="black" points="64,-66 0,-66 0,-42 64,-42 64,-66"/>
+<text text-anchor="middle" x="32" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">lmdif1_test</text>
+</g>
+<!-- proc~lmdif1 -->
+<g id="proc~~lmdif1_test~~CallsGraph_node2" class="node">
+<title>proc~lmdif1</title>
+<g id="a_proc~~lmdif1_test~~CallsGraph_node2"><a xlink:href="../proc/lmdif1.html" xlink:title="lmdif1">
+<polygon fill="#d9534f" stroke="#d9534f" points="160,-108 106,-108 106,-84 160,-84 160,-108"/>
+<text text-anchor="middle" x="133" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmdif1</text>
+</a>
+</g>
+</g>
+<!-- proc~lmdif1_test&#45;&gt;proc~lmdif1 -->
+<g id="proc~~lmdif1_test~~CallsGraph_edge1" class="edge">
+<title>proc~lmdif1_test&#45;&gt;proc~lmdif1</title>
+<path fill="none" stroke="#ff0000" d="M61.37,-66.04C72.35,-70.69 85.04,-76.08 96.61,-80.98"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="95.43,-84.29 106,-84.97 98.16,-77.84 95.43,-84.29"/>
+</g>
+<!-- proc~lmdif1_f -->
+<g id="proc~~lmdif1_test~~CallsGraph_node3" class="node">
+<title>proc~lmdif1_f</title>
+<g id="a_proc~~lmdif1_test~~CallsGraph_node3"><a xlink:href="../proc/lmdif1_f.html" xlink:title="lmdif1_f">
+<polygon fill="#d9534f" stroke="#d9534f" points="160,-66 106,-66 106,-42 160,-42 160,-66"/>
+<text text-anchor="middle" x="133" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmdif1_f</text>
+</a>
+</g>
+</g>
+<!-- proc~lmdif1_test&#45;&gt;proc~lmdif1_f -->
+<g id="proc~~lmdif1_test~~CallsGraph_edge2" class="edge">
+<title>proc~lmdif1_test&#45;&gt;proc~lmdif1_f</title>
+<path fill="none" stroke="#ff0000" d="M64.05,-54C74.09,-54 85.31,-54 95.69,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="95.72,-57.5 105.72,-54 95.72,-50.5 95.72,-57.5"/>
+</g>
+<!-- proc~r8vec_print -->
+<g id="proc~~lmdif1_test~~CallsGraph_node4" class="node">
+<title>proc~r8vec_print</title>
+<g id="a_proc~~lmdif1_test~~CallsGraph_node4"><a xlink:href="../proc/r8vec_print.html" xlink:title="r8vec_print">
+<polygon fill="#d9534f" stroke="#d9534f" points="166,-24 100,-24 100,0 166,0 166,-24"/>
+<text text-anchor="middle" x="133" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">r8vec_print</text>
+</a>
+</g>
+</g>
+<!-- proc~lmdif1_test&#45;&gt;proc~r8vec_print -->
+<g id="proc~~lmdif1_test~~CallsGraph_edge3" class="edge">
+<title>proc~lmdif1_test&#45;&gt;proc~r8vec_print</title>
+<path fill="none" stroke="#ff0000" d="M61.37,-41.96C71.62,-37.61 83.36,-32.63 94.29,-28"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="95.79,-31.16 103.63,-24.04 93.05,-24.72 95.79,-31.16"/>
+</g>
+<!-- proc~lmdif -->
+<g id="proc~~lmdif1_test~~CallsGraph_node5" class="node">
+<title>proc~lmdif</title>
+<g id="a_proc~~lmdif1_test~~CallsGraph_node5"><a xlink:href="../proc/lmdif.html" xlink:title="lmdif">
+<polygon fill="#d9534f" stroke="#d9534f" points="256,-108 202,-108 202,-84 256,-84 256,-108"/>
+<text text-anchor="middle" x="229" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmdif</text>
+</a>
+</g>
+</g>
+<!-- proc~lmdif1&#45;&gt;proc~lmdif -->
+<g id="proc~~lmdif1_test~~CallsGraph_edge4" class="edge">
+<title>proc~lmdif1&#45;&gt;proc~lmdif</title>
+<path fill="none" stroke="#ff0000" d="M160.18,-96C169.96,-96 181.25,-96 191.77,-96"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="191.96,-99.5 201.96,-96 191.96,-92.5 191.96,-99.5"/>
+</g>
+<!-- proc~enorm -->
+<g id="proc~~lmdif1_test~~CallsGraph_node6" class="node">
+<title>proc~enorm</title>
+<g id="a_proc~~lmdif1_test~~CallsGraph_node6"><a xlink:href="../proc/enorm.html" xlink:title="enorm">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="436,-87 382,-87 382,-63 436,-63 436,-87"/>
+<text text-anchor="middle" x="409" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">enorm</text>
+</a>
+</g>
+</g>
+<!-- proc~lmdif&#45;&gt;proc~enorm -->
+<g id="proc~~lmdif1_test~~CallsGraph_edge5" class="edge">
+<title>proc~lmdif&#45;&gt;proc~enorm</title>
+<path fill="none" stroke="#ff0000" d="M243.03,-108.29C254.79,-118.48 273.11,-132.2 292,-138 314.94,-145.04 323.86,-147.27 346,-138 366.59,-129.38 383.8,-110.21 394.82,-95.27"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="397.69,-97.27 400.57,-87.08 391.96,-93.25 397.69,-97.27"/>
+</g>
+<!-- proc~fdjac2 -->
+<g id="proc~~lmdif1_test~~CallsGraph_node7" class="node">
+<title>proc~fdjac2</title>
+<g id="a_proc~~lmdif1_test~~CallsGraph_node7"><a xlink:href="../proc/fdjac2.html" xlink:title="fdjac2">
+<polygon fill="#d9534f" stroke="#d9534f" points="346,-129 292,-129 292,-105 346,-105 346,-129"/>
+<text text-anchor="middle" x="319" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fdjac2</text>
+</a>
+</g>
+</g>
+<!-- proc~lmdif&#45;&gt;proc~fdjac2 -->
+<g id="proc~~lmdif1_test~~CallsGraph_edge6" class="edge">
+<title>proc~lmdif&#45;&gt;proc~fdjac2</title>
+<path fill="none" stroke="#ff0000" d="M256.4,-102.3C264.48,-104.23 273.51,-106.38 282.1,-108.43"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="281.38,-111.86 291.92,-110.78 283,-105.05 281.38,-111.86"/>
+</g>
+<!-- proc~lmpar -->
+<g id="proc~~lmdif1_test~~CallsGraph_node8" class="node">
+<title>proc~lmpar</title>
+<g id="a_proc~~lmdif1_test~~CallsGraph_node8"><a xlink:href="../proc/lmpar.html" xlink:title="lmpar">
+<polygon fill="#d9534f" stroke="#d9534f" points="346,-45 292,-45 292,-21 346,-21 346,-45"/>
+<text text-anchor="middle" x="319" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmpar</text>
+</a>
+</g>
+</g>
+<!-- proc~lmdif&#45;&gt;proc~lmpar -->
+<g id="proc~~lmdif1_test~~CallsGraph_edge7" class="edge">
+<title>proc~lmdif&#45;&gt;proc~lmpar</title>
+<path fill="none" stroke="#ff0000" d="M246.97,-83.85C259.99,-74.53 278.18,-61.51 292.89,-50.98"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="294.99,-53.78 301.08,-45.11 290.92,-48.09 294.99,-53.78"/>
+</g>
+<!-- proc~qrfac -->
+<g id="proc~~lmdif1_test~~CallsGraph_node9" class="node">
+<title>proc~qrfac</title>
+<g id="a_proc~~lmdif1_test~~CallsGraph_node9"><a xlink:href="../proc/qrfac.html" xlink:title="qrfac">
+<polygon fill="#d9534f" stroke="#d9534f" points="346,-87 292,-87 292,-63 346,-63 346,-87"/>
+<text text-anchor="middle" x="319" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">qrfac</text>
+</a>
+</g>
+</g>
+<!-- proc~lmdif&#45;&gt;proc~qrfac -->
+<g id="proc~~lmdif1_test~~CallsGraph_edge8" class="edge">
+<title>proc~lmdif&#45;&gt;proc~qrfac</title>
+<path fill="none" stroke="#ff0000" d="M256.4,-89.7C264.48,-87.77 273.51,-85.62 282.1,-83.57"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="283,-86.95 291.92,-81.22 281.38,-80.14 283,-86.95"/>
+</g>
+<!-- proc~lmpar&#45;&gt;proc~enorm -->
+<g id="proc~~lmdif1_test~~CallsGraph_edge9" class="edge">
+<title>proc~lmpar&#45;&gt;proc~enorm</title>
+<path fill="none" stroke="#00ffff" d="M345.45,-45.15C354.21,-49.33 364.17,-54.08 373.52,-58.54"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="372.07,-61.73 382.6,-62.88 375.09,-55.41 372.07,-61.73"/>
+</g>
+<!-- proc~qrsolv -->
+<g id="proc~~lmdif1_test~~CallsGraph_node10" class="node">
+<title>proc~qrsolv</title>
+<g id="a_proc~~lmdif1_test~~CallsGraph_node10"><a xlink:href="../proc/qrsolv.html" xlink:title="qrsolv">
+<polygon fill="#d9534f" stroke="#d9534f" points="436,-45 382,-45 382,-21 436,-21 436,-45"/>
+<text text-anchor="middle" x="409" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">qrsolv</text>
+</a>
+</g>
+</g>
+<!-- proc~lmpar&#45;&gt;proc~qrsolv -->
+<g id="proc~~lmdif1_test~~CallsGraph_edge10" class="edge">
+<title>proc~lmpar&#45;&gt;proc~qrsolv</title>
+<path fill="none" stroke="#00ffff" d="M346.4,-33C354.39,-33 363.31,-33 371.82,-33"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="371.92,-36.5 381.92,-33 371.92,-29.5 371.92,-36.5"/>
+</g>
+<!-- proc~qrfac&#45;&gt;proc~enorm -->
+<g id="proc~~lmdif1_test~~CallsGraph_edge11" class="edge">
+<title>proc~qrfac&#45;&gt;proc~enorm</title>
+<path fill="none" stroke="#7f00ff" d="M346.4,-75C354.39,-75 363.31,-75 371.82,-75"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="371.92,-78.5 381.92,-75 371.92,-71.5 371.92,-78.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~lmdif1_test~~CalledByGraph Pages: 1 -->
+<svg id="proclmdif1_testCalledByGraph" width="184pt" height="32pt"
+ viewBox="0.00 0.00 184.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~lmdif1_test~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~lmdif1_test~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 180,-28 180,4 -4,4"/>
+<!-- proc~lmdif1_test -->
+<g id="proc~~lmdif1_test~~CalledByGraph_node1" class="node">
+<title>proc~lmdif1_test</title>
+<polygon fill="none" stroke="black" points="176,-24 112,-24 112,0 176,0 176,-24"/>
+<text text-anchor="middle" x="144" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">lmdif1_test</text>
+</g>
+<!-- program~test_minpack -->
+<g id="proc~~lmdif1_test~~CalledByGraph_node2" class="node">
+<title>program~test_minpack</title>
+<g id="a_proc~~lmdif1_test~~CalledByGraph_node2"><a xlink:href="../program/test_minpack.html" xlink:title="test_minpack">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="76,-24 0,-24 0,0 76,0 76,-24"/>
+<text text-anchor="middle" x="38" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_minpack</text>
+</a>
+</g>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmdif1_test -->
+<g id="proc~~lmdif1_test~~CalledByGraph_edge1" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmdif1_test</title>
+<path fill="none" stroke="#ff0000" d="M76.25,-12C84.54,-12 93.37,-12 101.81,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="101.84,-15.5 111.84,-12 101.84,-8.5 101.84,-15.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

@@ -1,45 +1,45 @@
 !< author: Arthur Francisco
-!  version: 1.0.0
-!  date: november, 01 2024
-!
-!  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
-!     **PIKAIA oop example of use**
-!  </span>
-
+!<  version: 1.0.0
+!<  date: november, 01 2024
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!<     **PIKAIA oop example of use**
+!<  </span>
+!<
 !< @note
-!  The example chosen is the generation of a surface with given statistical moments.
-!  The implementation is part of the analytical developments presented in:<br/>
-!  A. Francisco and N. Brunetière, "A hybrid method for fast and efficient rough surface generation",
-!  Proc IMechE Part J:J Engineering Tribology, 2016, Vol. 230(7) 747–768, DOI: 10.1177/1350650115612116
-!
-!  The surface heights are generated thanks the *tangent* function. This function is indeed very near the common material
-!  curves. Thus, providing the right lower and upper bounds makes it possible to match the desired statistical moments.
-! @endnote
-
+!<  The example chosen is the generation of a surface with given statistical moments.
+!<  The implementation is part of the analytical developments presented in:<br/>
+!<  A. Francisco and N. Brunetière, "A hybrid method for fast and efficient rough surface generation",
+!<  Proc IMechE Part J:J Engineering Tribology, 2016, Vol. 230(7) 747–768, DOI: 10.1177/1350650115612116
+!<
+!<  The surface heights are generated thanks the *tangent* function. This function is indeed very near the common material
+!<  curves. Thus, providing the right lower and upper bounds makes it possible to match the desired statistical moments.
+!< @endnote
+!<
 !< @note
-!  The main difficulty to cope with is the high non linearity and the convergence only possible near the solution.
-!  Classical optimization methods fail in reaching the true solution: the lower and upper limits ```x(1:2```.<br/>
-!  The **PIKAIA** program, which implements a genetic algorithm, is utilized to found a "good" solution, then a
-!  very classical optimization routine is used to find the nearly exact solution.
-! @endnote
-
+!<  The main difficulty to cope with is the high non linearity and the convergence only possible near the solution.
+!<  Classical optimization methods fail in reaching the true solution: the lower and upper limits ```x(1:2```.<br/>
+!<  The **PIKAIA** program, which implements a genetic algorithm, is utilized to found a "good" solution, then a
+!<  very classical optimization routine is used to find the nearly exact solution.
+!< @endnote
+!<
 !< @warning
-!  **PIKAIA** cost function must be chosen so as to be maximized.<br/>
-!  For clarity reasons, the optimization function must be minimized because it is the deviation to the solution.
-!  @warning
-
+!<  **PIKAIA** cost function must be chosen so as to be maximized.<br/>
+!<  For clarity reasons, the optimization function must be minimized because it is the deviation to the solution.
+!<  @warning
+!<
 !< @note
-!  First each thread runs the **PIKAIA** program to find a rather good starting point ```x```. The parameters
-!  (as defined by ```CTRL```) are the same. The only difference is the starting population. Thus, several concurrent
-!  populations evolve during ```CTRL(02)``` generations.<br/>
-!  Then, the optimization subroutine starts from the best population.
-! @endnote
-
+!<  First each thread runs the **PIKAIA** program to find a rather good starting point ```x```. The parameters
+!<  (as defined by ```CTRL```) are the same. The only difference is the starting population. Thus, several concurrent
+!<  populations evolve during ```CTRL(02)``` generations.<br/>
+!<  Then, the optimization subroutine starts from the best population.
+!< @endnote
+!<
 !< @note
-!  ```make all ```    <br/>
-!  ```./prg```        <br/>
-!  The surface is in ascii mode in the "/out" directory
-! @endnote
+!<  ```make all ```    <br/>
+!<  ```./prg```        <br/>
+!<  The surface is in ascii mode in the "/out" directory
+!< @endnote
 
 program test_algen
 use omp_lib

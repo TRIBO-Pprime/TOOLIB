@@ -2,19 +2,19 @@
 project: TOOLIB
 summary: **TOOLIB** -- Tools for various needs <br/> ![CREST_img](./media/toolib_banner.jpg)
 author:  Arthur Francisco
-src_dir: #./ALGEN/src
-         #./CHOLE/src
-         #./DIGIS/src
-         #./FFTW3/src
-         #./FILES/src
-         #./GPLOT/src
-         #./INTPL/src
-         #./LEAST/src
-         #./MINIM/src
-         #./MSOLV/src
-         #./QSORT/src
-         #./SPLIN/src
-         #./TCHEV/src
+src_dir: ./ALGEN/src
+         ./CHOLE/src
+         ./DIGIS/src
+         ./FFTW3/src
+         ./FILES/src
+         ./GPLOT/src
+         ./INTPL/src
+         ./LEAST/src
+         ./MINIM/src
+         ./MSOLV/src
+         ./QSORT/src
+         ./SPLIN/src
+         ./TCHEV/src
          ./UTILS/src
 output_dir: ./docs
 css: ./css/TOOLIB.css
@@ -36,8 +36,8 @@ display: public
          protected
          private
 source: true
-graph: false
-search: false
+graph: true
+search: true
 sort: alpha
 coloured_edges: true
 print_creation_date: true

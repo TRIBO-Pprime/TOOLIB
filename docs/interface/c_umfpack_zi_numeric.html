@@ -1,0 +1,956 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>c_umfpack_zi_numeric &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>c_umfpack_zi_numeric
+      <small>Interface</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.2% of total for procedures.">172 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/umfpack.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/umfpack.f90.html'>umfpack.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/mumfpack.html'>mumfpack</a></li>
+            <li class="breadcrumb-item active" aria-current="page">c_umfpack_zi_numeric</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+    <em>None</em>
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      <h2>interface</h2>
+      
+      <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: interface~~c_umfpack_zi_numeric~~CalledByGraph Pages: 1 -->
+<svg id="interfacec_umfpack_zi_numericCalledByGraph" width="641pt" height="222pt"
+ viewBox="0.00 0.00 641.00 222.49" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph" class="graph" transform="scale(0.51 0.51) rotate(0) translate(4 433)">
+<title>interface~~c_umfpack_zi_numeric~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-433 1255,-433 1255,4 -4,4"/>
+<!-- interface~c_umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node1" class="node">
+<title>interface~c_umfpack_zi_numeric</title>
+<polygon fill="none" stroke="black" points="1251,-289 1129,-289 1129,-265 1251,-265 1251,-289"/>
+<text text-anchor="middle" x="1190" y="-274.6" font-family="Helvetica,sans-Serif" font-size="10.50">c_umfpack_zi_numeric</text>
+</g>
+<!-- proc~umfpack_ci_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node2" class="node">
+<title>proc~umfpack_ci_numeric</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node2"><a xlink:href="../proc/umfpack_ci_numeric.html" xlink:title="umfpack_ci_numeric">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="1093,-310 982,-310 982,-286 1093,-286 1093,-310"/>
+<text text-anchor="middle" x="1037.5" y="-295.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_ci_numeric</text>
+</a>
+</g>
+</g>
+<!-- proc~umfpack_ci_numeric&#45;&gt;interface~c_umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge1" class="edge">
+<title>proc~umfpack_ci_numeric&#45;&gt;interface~c_umfpack_zi_numeric</title>
+<path fill="none" stroke="#ff0000" d="M1093.26,-290.36C1101.6,-289.2 1110.3,-287.98 1118.9,-286.78"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="1119.52,-290.23 1128.94,-285.38 1118.55,-283.3 1119.52,-290.23"/>
+</g>
+<!-- proc~umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node3" class="node">
+<title>proc~umfpack_zi_numeric</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node3"><a xlink:href="../proc/umfpack_zi_numeric.html" xlink:title="umfpack_zi_numeric">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="1093,-268 982,-268 982,-244 1093,-244 1093,-268"/>
+<text text-anchor="middle" x="1037.5" y="-253.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_zi_numeric</text>
+</a>
+</g>
+</g>
+<!-- proc~umfpack_zi_numeric&#45;&gt;interface~c_umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge2" class="edge">
+<title>proc~umfpack_zi_numeric&#45;&gt;interface~c_umfpack_zi_numeric</title>
+<path fill="none" stroke="#ff0000" d="M1093.26,-263.64C1101.6,-264.8 1110.3,-266.02 1118.9,-267.22"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="1118.55,-270.7 1128.94,-268.62 1119.52,-263.77 1118.55,-270.7"/>
+</g>
+<!-- interface~umfpack_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node4" class="node">
+<title>interface~umfpack_numeric</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node4"><a xlink:href="../interface/umfpack_numeric.html" xlink:title="umfpack_numeric">
+<polygon fill="#a7506f" stroke="#a7506f" points="763,-364 666,-364 666,-340 763,-340 763,-364"/>
+<text text-anchor="middle" x="714.5" y="-349.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_numeric</text>
+</a>
+</g>
+</g>
+<!-- interface~umfpack_numeric&#45;&gt;proc~umfpack_ci_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge4" class="edge">
+<title>interface~umfpack_numeric&#45;&gt;proc~umfpack_ci_numeric</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M763.44,-353.6C810.57,-354.07 884.2,-351.86 946,-337 966.3,-332.12 987.82,-323.03 1004.77,-314.85"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="1006.78,-317.76 1014.18,-310.18 1003.67,-311.49 1006.78,-317.76"/>
+</g>
+<!-- interface~umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node5" class="node">
+<title>interface~umfpack_zi_numeric</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node5"><a xlink:href="../interface/umfpack_zi_numeric.html" xlink:title="umfpack_zi_numeric">
+<polygon fill="#a7506f" stroke="#a7506f" points="940.5,-310 829.5,-310 829.5,-286 940.5,-286 940.5,-310"/>
+<text text-anchor="middle" x="885" y="-295.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_zi_numeric</text>
+</a>
+</g>
+</g>
+<!-- interface~umfpack_numeric&#45;&gt;interface~umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge7" class="edge">
+<title>interface~umfpack_numeric&#45;&gt;interface~umfpack_zi_numeric</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M753.31,-339.88C777.92,-332 810.21,-321.65 836.54,-313.21"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="837.86,-316.46 846.31,-310.08 835.72,-309.8 837.86,-316.46"/>
+</g>
+<!-- interface~umfpack_zi_numeric&#45;&gt;proc~umfpack_ci_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge5" class="edge">
+<title>interface~umfpack_zi_numeric&#45;&gt;proc~umfpack_ci_numeric</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M940.76,-298C950.78,-298 961.33,-298 971.61,-298"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="971.78,-301.5 981.78,-298 971.78,-294.5 971.78,-301.5"/>
+</g>
+<!-- interface~umfpack_zi_numeric&#45;&gt;interface~umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge8" class="edge">
+<title>interface~umfpack_zi_numeric&#45;&gt;interface~umfpack_zi_numeric</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M859.87,-310.01C851.09,-318.97 859.47,-328 885,-328 900.56,-328 909.75,-324.65 912.56,-320"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="915.9,-318.9 910.13,-310.01 909.1,-320.56 915.9,-318.9"/>
+</g>
+<!-- proc~s_umfpack_ci_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node6" class="node">
+<title>proc~s_umfpack_ci_numeric</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node6"><a xlink:href="../proc/s_umfpack_ci_numeric.html" xlink:title="s_umfpack_ci_numeric">
+<polygon fill="#d9534f" stroke="#d9534f" points="946,-178 824,-178 824,-154 946,-154 946,-178"/>
+<text text-anchor="middle" x="885" y="-163.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">s_umfpack_ci_numeric</text>
+</a>
+</g>
+</g>
+<!-- proc~s_umfpack_ci_numeric&#45;&gt;proc~umfpack_ci_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge3" class="edge">
+<title>proc~s_umfpack_ci_numeric&#45;&gt;proc~umfpack_ci_numeric</title>
+<path fill="none" stroke="#ff0000" d="M893.5,-178.07C907.99,-200.5 941.98,-248.87 982,-277 984.22,-278.56 986.57,-280.02 988.99,-281.39"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="987.54,-284.58 998.04,-285.94 990.69,-278.32 987.54,-284.58"/>
+</g>
+<!-- interface~s_umfpack_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node7" class="node">
+<title>interface~s_umfpack_numeric</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node7"><a xlink:href="../interface/s_umfpack_numeric.html" xlink:title="s_umfpack_numeric">
+<polygon fill="#a7506f" stroke="#a7506f" points="586,-325 477,-325 477,-301 586,-301 586,-325"/>
+<text text-anchor="middle" x="531.5" y="-310.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">s_umfpack_numeric</text>
+</a>
+</g>
+</g>
+<!-- interface~s_umfpack_numeric&#45;&gt;proc~s_umfpack_ci_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge13" class="edge">
+<title>interface~s_umfpack_numeric&#45;&gt;proc~s_umfpack_ci_numeric</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M574.32,-301C584.38,-298.08 595.08,-294.95 605,-292 621.04,-287.23 624.94,-285.69 641,-281 706.1,-261.98 727.36,-270.38 788,-240 816.88,-225.53 845.64,-201.81 864.04,-185.13"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="866.76,-187.38 871.73,-178.03 862.01,-182.24 866.76,-187.38"/>
+</g>
+<!-- interface~s_umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node8" class="node">
+<title>interface~s_umfpack_zi_numeric</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node8"><a xlink:href="../interface/s_umfpack_zi_numeric.html" xlink:title="s_umfpack_zi_numeric">
+<polygon fill="#a7506f" stroke="#a7506f" points="775.5,-178 653.5,-178 653.5,-154 775.5,-154 775.5,-178"/>
+<text text-anchor="middle" x="714.5" y="-163.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">s_umfpack_zi_numeric</text>
+</a>
+</g>
+</g>
+<!-- interface~s_umfpack_numeric&#45;&gt;interface~s_umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge25" class="edge">
+<title>interface~s_umfpack_numeric&#45;&gt;interface~s_umfpack_zi_numeric</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M586.03,-301.55C592.7,-298.97 599.2,-295.83 605,-292 626.09,-278.08 624.63,-267.25 641,-248 659.24,-226.55 680.66,-202.46 695.46,-185.97"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="698.46,-187.87 702.54,-178.1 693.25,-183.19 698.46,-187.87"/>
+</g>
+<!-- interface~s_umfpack_zi_numeric&#45;&gt;proc~s_umfpack_ci_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge14" class="edge">
+<title>interface~s_umfpack_zi_numeric&#45;&gt;proc~s_umfpack_ci_numeric</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M775.86,-166C788.03,-166 800.93,-166 813.41,-166"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="813.78,-169.5 823.78,-166 813.78,-162.5 813.78,-169.5"/>
+</g>
+<!-- interface~s_umfpack_zi_numeric&#45;&gt;interface~s_umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge26" class="edge">
+<title>interface~s_umfpack_zi_numeric&#45;&gt;interface~s_umfpack_zi_numeric</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M686.39,-178.01C676.58,-186.97 685.95,-196 714.5,-196 732.35,-196 742.7,-192.47 745.56,-187.64"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="748.88,-186.55 742.61,-178.01 742.19,-188.6 748.88,-186.55"/>
+</g>
+<!-- proc~s_umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node9" class="node">
+<title>proc~s_umfpack_zi_numeric</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node9"><a xlink:href="../proc/s_umfpack_zi_numeric.html" xlink:title="s_umfpack_zi_numeric">
+<polygon fill="#d9534f" stroke="#d9534f" points="775.5,-314 653.5,-314 653.5,-290 775.5,-290 775.5,-314"/>
+<text text-anchor="middle" x="714.5" y="-299.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">s_umfpack_zi_numeric</text>
+</a>
+</g>
+</g>
+<!-- proc~s_umfpack_zi_numeric&#45;&gt;interface~umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge6" class="edge">
+<title>proc~s_umfpack_zi_numeric&#45;&gt;interface~umfpack_zi_numeric</title>
+<path fill="none" stroke="#00ff00" d="M775.86,-300.57C789.91,-300.23 804.94,-299.88 819.18,-299.54"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="819.47,-303.03 829.39,-299.3 819.31,-296.03 819.47,-303.03"/>
+</g>
+<!-- proc~umfpack_ci_operator_csc -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node10" class="node">
+<title>proc~umfpack_ci_operator_csc</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node10"><a xlink:href="../proc/umfpack_ci_operator_csc.html" xlink:title="umfpack_ci_operator_CSC">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="785,-132 644,-132 644,-108 785,-108 785,-132"/>
+<text text-anchor="middle" x="714.5" y="-117.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_ci_operator_CSC</text>
+</a>
+</g>
+</g>
+<!-- proc~umfpack_ci_operator_csc&#45;&gt;proc~s_umfpack_ci_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge9" class="edge">
+<title>proc~umfpack_ci_operator_csc&#45;&gt;proc~s_umfpack_ci_numeric</title>
+<path fill="none" stroke="#0000ff" d="M759.77,-132.09C781.35,-137.98 807.47,-145.11 830.19,-151.31"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="829.46,-154.74 840.02,-153.99 831.3,-147.98 829.46,-154.74"/>
+</g>
+<!-- proc~umfpack_ci_operator_csr -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node11" class="node">
+<title>proc~umfpack_ci_operator_csr</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node11"><a xlink:href="../proc/umfpack_ci_operator_csr.html" xlink:title="umfpack_ci_operator_CSR">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="785,-82 644,-82 644,-58 785,-58 785,-82"/>
+<text text-anchor="middle" x="714.5" y="-67.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_ci_operator_CSR</text>
+</a>
+</g>
+</g>
+<!-- proc~umfpack_ci_operator_csr&#45;&gt;proc~s_umfpack_ci_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge10" class="edge">
+<title>proc~umfpack_ci_operator_csr&#45;&gt;proc~s_umfpack_ci_numeric</title>
+<path fill="none" stroke="#0000ff" d="M750.16,-82.01C762.4,-86.73 776.07,-92.56 788,-99 814.37,-113.23 842.2,-133.29 861.07,-147.75"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="859.02,-150.59 869.07,-153.95 863.32,-145.06 859.02,-150.59"/>
+</g>
+<!-- proc~umfpack_ci_operator_pcsc -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node12" class="node">
+<title>proc~umfpack_ci_operator_pcsc</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node12"><a xlink:href="../proc/umfpack_ci_operator_pcsc.html" xlink:title="umfpack_ci_operator_pCSC">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="788,-24 641,-24 641,0 788,0 788,-24"/>
+<text text-anchor="middle" x="714.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_ci_operator_pCSC</text>
+</a>
+</g>
+</g>
+<!-- proc~umfpack_ci_operator_pcsc&#45;&gt;proc~s_umfpack_ci_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge11" class="edge">
+<title>proc~umfpack_ci_operator_pcsc&#45;&gt;proc~s_umfpack_ci_numeric</title>
+<path fill="none" stroke="#0000ff" d="M745.73,-24.03C759.43,-30.31 775.34,-38.81 788,-49 823,-77.17 854.08,-119.91 870.85,-145.19"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="867.98,-147.18 876.37,-153.65 873.84,-143.36 867.98,-147.18"/>
+</g>
+<!-- proc~umfpack_ci_operator_pcsr -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node13" class="node">
+<title>proc~umfpack_ci_operator_pcsr</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node13"><a xlink:href="../proc/umfpack_ci_operator_pcsr.html" xlink:title="umfpack_ci_operator_pCSR">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="605,-283 458,-283 458,-259 605,-259 605,-283"/>
+<text text-anchor="middle" x="531.5" y="-268.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_ci_operator_pCSR</text>
+</a>
+</g>
+</g>
+<!-- proc~umfpack_ci_operator_pcsr&#45;&gt;proc~s_umfpack_ci_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge12" class="edge">
+<title>proc~umfpack_ci_operator_pcsr&#45;&gt;proc~s_umfpack_ci_numeric</title>
+<path fill="none" stroke="#0000ff" d="M587.94,-258.93C640.11,-247.04 720.14,-227.44 788,-205 808.03,-198.38 829.86,-189.64 847.63,-182.11"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="849.24,-185.23 857.05,-178.07 846.48,-178.79 849.24,-185.23"/>
+</g>
+<!-- interface~operator(.umfpack.) -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node14" class="node">
+<title>interface~operator(.umfpack.)</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node14"><a xlink:href="../interface/operator(.umfpack.).html" xlink:title="operator(.umfpack.)">
+<polygon fill="#a7506f" stroke="#a7506f" points="422,-136 315,-136 315,-112 422,-112 422,-136"/>
+<text text-anchor="middle" x="368.5" y="-121.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">operator(.umfpack.)</text>
+</a>
+</g>
+</g>
+<!-- interface~operator(.umfpack.)&#45;&gt;proc~umfpack_ci_operator_csc -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge27" class="edge">
+<title>interface~operator(.umfpack.)&#45;&gt;proc~umfpack_ci_operator_csc</title>
+<path fill="none" stroke="#00ff91" stroke-dasharray="5,2" d="M388.62,-111.85C405.96,-101.6 432.62,-87.72 458,-82 521.74,-67.64 540.59,-71.05 605,-82 618.38,-84.27 648.14,-94.85 673.12,-104.27"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="672.18,-107.65 682.77,-107.94 674.66,-101.11 672.18,-107.65"/>
+</g>
+<!-- interface~operator(.umfpack.)&#45;&gt;proc~umfpack_ci_operator_csr -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge28" class="edge">
+<title>interface~operator(.umfpack.)&#45;&gt;proc~umfpack_ci_operator_csr</title>
+<path fill="none" stroke="#0091ff" stroke-dasharray="5,2" d="M383.32,-111.93C399.79,-98.42 428.78,-77.34 458,-69 515.18,-52.68 582.54,-53.73 633.74,-58.43"/>
+<polygon fill="#0091ff" stroke="#0091ff" points="633.46,-61.92 643.76,-59.41 634.15,-54.95 633.46,-61.92"/>
+</g>
+<!-- interface~operator(.umfpack.)&#45;&gt;proc~umfpack_ci_operator_pcsc -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge29" class="edge">
+<title>interface~operator(.umfpack.)&#45;&gt;proc~umfpack_ci_operator_pcsc</title>
+<path fill="none" stroke="#4800ff" stroke-dasharray="5,2" d="M380.43,-111.74C395.93,-95.22 425.98,-66.27 458,-52 512.5,-27.72 579.27,-17.87 630.88,-14.01"/>
+<polygon fill="#4800ff" stroke="#4800ff" points="631.26,-17.49 640.99,-13.31 630.78,-10.51 631.26,-17.49"/>
+</g>
+<!-- interface~operator(.umfpack.)&#45;&gt;proc~umfpack_ci_operator_pcsr -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge30" class="edge">
+<title>interface~operator(.umfpack.)&#45;&gt;proc~umfpack_ci_operator_pcsr</title>
+<path fill="none" stroke="#ff00da" stroke-dasharray="5,2" d="M377.91,-136.03C399.87,-167.43 457.3,-249.5 458,-250 460.22,-251.59 462.56,-253.06 464.99,-254.41"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="463.56,-257.61 474.08,-258.86 466.64,-251.32 463.56,-257.61"/>
+</g>
+<!-- proc~umfpack_zi_operator_csc -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node21" class="node">
+<title>proc~umfpack_zi_operator_csc</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node21"><a xlink:href="../proc/umfpack_zi_operator_csc.html" xlink:title="umfpack_zi_operator_CSC">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="602,-241 461,-241 461,-217 602,-217 602,-241"/>
+<text text-anchor="middle" x="531.5" y="-226.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_zi_operator_CSC</text>
+</a>
+</g>
+</g>
+<!-- interface~operator(.umfpack.)&#45;&gt;proc~umfpack_zi_operator_csc -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge37" class="edge">
+<title>interface~operator(.umfpack.)&#45;&gt;proc~umfpack_zi_operator_csc</title>
+<path fill="none" stroke="#002eff" stroke-dasharray="5,2" d="M379.03,-136.19C393.93,-154.46 424.55,-188.82 458,-208 461.26,-209.87 464.7,-211.58 468.24,-213.16"/>
+<polygon fill="#002eff" stroke="#002eff" points="467.2,-216.51 477.78,-216.98 469.81,-210.01 467.2,-216.51"/>
+</g>
+<!-- proc~umfpack_zi_operator_csr -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node22" class="node">
+<title>proc~umfpack_zi_operator_csr</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node22"><a xlink:href="../proc/umfpack_zi_operator_csr.html" xlink:title="umfpack_zi_operator_CSR">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="602,-199 461,-199 461,-175 602,-175 602,-199"/>
+<text text-anchor="middle" x="531.5" y="-184.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_zi_operator_CSR</text>
+</a>
+</g>
+</g>
+<!-- interface~operator(.umfpack.)&#45;&gt;proc~umfpack_zi_operator_csr -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge38" class="edge">
+<title>interface~operator(.umfpack.)&#45;&gt;proc~umfpack_zi_operator_csr</title>
+<path fill="none" stroke="#5c00ff" stroke-dasharray="5,2" d="M392.35,-136.1C409.96,-145.11 435.1,-157.32 458,-166 463.42,-168.05 469.12,-170.03 474.86,-171.88"/>
+<polygon fill="#5c00ff" stroke="#5c00ff" points="473.91,-175.25 484.49,-174.89 475.99,-168.57 473.91,-175.25"/>
+</g>
+<!-- proc~umfpack_zi_operator_pcsc -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node23" class="node">
+<title>proc~umfpack_zi_operator_pcsc</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node23"><a xlink:href="../proc/umfpack_zi_operator_pcsc.html" xlink:title="umfpack_zi_operator_pCSC">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="605,-157 458,-157 458,-133 605,-133 605,-157"/>
+<text text-anchor="middle" x="531.5" y="-142.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_zi_operator_pCSC</text>
+</a>
+</g>
+</g>
+<!-- interface~operator(.umfpack.)&#45;&gt;proc~umfpack_zi_operator_pcsc -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge39" class="edge">
+<title>interface~operator(.umfpack.)&#45;&gt;proc~umfpack_zi_operator_pcsc</title>
+<path fill="none" stroke="#e700ff" stroke-dasharray="5,2" d="M422.22,-130.88C430.39,-131.94 439,-133.07 447.65,-134.19"/>
+<polygon fill="#e700ff" stroke="#e700ff" points="447.42,-137.69 457.79,-135.52 448.32,-130.75 447.42,-137.69"/>
+</g>
+<!-- proc~umfpack_zi_operator_pcsr -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node24" class="node">
+<title>proc~umfpack_zi_operator_pcsr</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node24"><a xlink:href="../proc/umfpack_zi_operator_pcsr.html" xlink:title="umfpack_zi_operator_pCSR">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="605,-115 458,-115 458,-91 605,-91 605,-115"/>
+<text text-anchor="middle" x="531.5" y="-100.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_zi_operator_pCSR</text>
+</a>
+</g>
+</g>
+<!-- interface~operator(.umfpack.)&#45;&gt;proc~umfpack_zi_operator_pcsr -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge40" class="edge">
+<title>interface~operator(.umfpack.)&#45;&gt;proc~umfpack_zi_operator_pcsr</title>
+<path fill="none" stroke="#ff008b" stroke-dasharray="5,2" d="M422.22,-117.12C430.39,-116.06 439,-114.93 447.65,-113.81"/>
+<polygon fill="#ff008b" stroke="#ff008b" points="448.32,-117.25 457.79,-112.48 447.42,-110.31 448.32,-117.25"/>
+</g>
+<!-- proc~umf4cnum -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node15" class="node">
+<title>proc~umf4cnum</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node15"><a xlink:href="../proc/umf4cnum.html" xlink:title="umf4cnum">
+<polygon fill="#d9534f" stroke="#d9534f" points="400,-429 337,-429 337,-405 400,-405 400,-429"/>
+<text text-anchor="middle" x="368.5" y="-414.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4cnum</text>
+</a>
+</g>
+</g>
+<!-- proc~umf4cnum&#45;&gt;interface~s_umfpack_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge15" class="edge">
+<title>proc~umf4cnum&#45;&gt;interface~s_umfpack_numeric</title>
+<path fill="none" stroke="#ff0000" d="M400.14,-406.37C407.48,-403.39 415.17,-399.88 422,-396 454.77,-377.38 488.66,-349.9 509.66,-331.73"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="512.09,-334.25 517.3,-325.03 507.48,-328.98 512.09,-334.25"/>
+</g>
+<!-- proc~umf4cnum_ip -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node16" class="node">
+<title>proc~umf4cnum_ip</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node16"><a xlink:href="../proc/umf4cnum_ip.html" xlink:title="umf4cnum_ip">
+<polygon fill="#d9534f" stroke="#d9534f" points="407,-387 330,-387 330,-363 407,-363 407,-387"/>
+<text text-anchor="middle" x="368.5" y="-372.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4cnum_ip</text>
+</a>
+</g>
+</g>
+<!-- proc~umf4cnum_ip&#45;&gt;interface~s_umfpack_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge16" class="edge">
+<title>proc~umf4cnum_ip&#45;&gt;interface~s_umfpack_numeric</title>
+<path fill="none" stroke="#ff0000" d="M400.92,-362.9C426.3,-353.13 462.2,-339.3 489.78,-328.68"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="491.08,-331.93 499.15,-325.07 488.56,-325.4 491.08,-331.93"/>
+</g>
+<!-- proc~umf4num -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node17" class="node">
+<title>proc~umf4num</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node17"><a xlink:href="../proc/umf4num.html" xlink:title="umf4num">
+<polygon fill="#d9534f" stroke="#d9534f" points="397.5,-345 339.5,-345 339.5,-321 397.5,-321 397.5,-345"/>
+<text text-anchor="middle" x="368.5" y="-330.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4num</text>
+</a>
+</g>
+</g>
+<!-- proc~umf4num&#45;&gt;interface~s_umfpack_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge17" class="edge">
+<title>proc~umf4num&#45;&gt;interface~s_umfpack_numeric</title>
+<path fill="none" stroke="#ff0000" d="M397.54,-329.52C416.62,-327.15 442.66,-323.91 466.64,-320.93"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="467.27,-324.38 476.76,-319.68 466.41,-317.43 467.27,-324.38"/>
+</g>
+<!-- proc~umf4num_ip -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node18" class="node">
+<title>proc~umf4num_ip</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node18"><a xlink:href="../proc/umf4num_ip.html" xlink:title="umf4num_ip">
+<polygon fill="#d9534f" stroke="#d9534f" points="166,-245 94,-245 94,-221 166,-221 166,-245"/>
+<text text-anchor="middle" x="130" y="-230.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4num_ip</text>
+</a>
+</g>
+</g>
+<!-- proc~umf4num_ip&#45;&gt;interface~s_umfpack_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge18" class="edge">
+<title>proc~umf4num_ip&#45;&gt;interface~s_umfpack_numeric</title>
+<path fill="none" stroke="#ff0000" d="M166.03,-222.43C223.66,-207.21 340.23,-185.7 422,-232 449.06,-247.32 433.36,-273.03 458,-292 460.98,-294.29 464.2,-296.34 467.57,-298.16"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="466.25,-301.4 476.79,-302.47 469.22,-295.06 466.25,-301.4"/>
+</g>
+<!-- proc~umf4znum -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node19" class="node">
+<title>proc~umf4znum</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node19"><a xlink:href="../proc/umf4znum.html" xlink:title="umf4znum">
+<polygon fill="#d9534f" stroke="#d9534f" points="400,-265 337,-265 337,-241 400,-241 400,-265"/>
+<text text-anchor="middle" x="368.5" y="-250.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4znum</text>
+</a>
+</g>
+</g>
+<!-- proc~umf4znum&#45;&gt;interface~s_umfpack_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge19" class="edge">
+<title>proc~umf4znum&#45;&gt;interface~s_umfpack_numeric</title>
+<path fill="none" stroke="#ff0000" d="M394.69,-265.18C412.21,-273.37 436.22,-284.09 458,-292 463.6,-294.04 469.5,-296.01 475.42,-297.88"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="474.75,-301.34 485.34,-300.93 476.8,-294.65 474.75,-301.34"/>
+</g>
+<!-- proc~umf4znum_ip -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node20" class="node">
+<title>proc~umf4znum_ip</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node20"><a xlink:href="../proc/umf4znum_ip.html" xlink:title="umf4znum_ip">
+<polygon fill="#d9534f" stroke="#d9534f" points="279,-305 202,-305 202,-281 279,-281 279,-305"/>
+<text text-anchor="middle" x="240.5" y="-290.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4znum_ip</text>
+</a>
+</g>
+</g>
+<!-- proc~umf4znum_ip&#45;&gt;interface~s_umfpack_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge20" class="edge">
+<title>proc~umf4znum_ip&#45;&gt;interface~s_umfpack_numeric</title>
+<path fill="none" stroke="#ff0000" d="M279.28,-295.61C326.91,-298.91 409.5,-304.63 466.92,-308.6"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="466.76,-312.1 476.98,-309.3 467.24,-305.11 466.76,-312.1"/>
+</g>
+<!-- proc~umfpack_zi_operator_csc&#45;&gt;interface~s_umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge21" class="edge">
+<title>proc~umfpack_zi_operator_csc&#45;&gt;interface~s_umfpack_zi_numeric</title>
+<path fill="none" stroke="#ffda00" d="M576.4,-216.95C585.88,-214.17 595.81,-211.1 605,-208 628.46,-200.08 654.33,-190.11 674.92,-181.88"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="676.31,-185.09 684.28,-178.11 673.7,-178.6 676.31,-185.09"/>
+</g>
+<!-- proc~umfpack_zi_operator_csr&#45;&gt;interface~s_umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge22" class="edge">
+<title>proc~umfpack_zi_operator_csr&#45;&gt;interface~s_umfpack_zi_numeric</title>
+<path fill="none" stroke="#ffda00" d="M602.22,-178.91C615.63,-177.35 629.69,-175.72 643.12,-174.17"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="643.72,-177.62 653.25,-172.99 642.91,-170.67 643.72,-177.62"/>
+</g>
+<!-- proc~umfpack_zi_operator_pcsc&#45;&gt;interface~s_umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge23" class="edge">
+<title>proc~umfpack_zi_operator_pcsc&#45;&gt;interface~s_umfpack_zi_numeric</title>
+<path fill="none" stroke="#ffda00" d="M605.08,-153.42C617.73,-154.89 630.86,-156.41 643.44,-157.87"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="643.06,-161.35 653.39,-159.03 643.86,-154.4 643.06,-161.35"/>
+</g>
+<!-- proc~umfpack_zi_operator_pcsr&#45;&gt;interface~s_umfpack_zi_numeric -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge24" class="edge">
+<title>proc~umfpack_zi_operator_pcsr&#45;&gt;interface~s_umfpack_zi_numeric</title>
+<path fill="none" stroke="#ffda00" d="M578.11,-115.01C587.11,-117.71 596.42,-120.76 605,-124 621.55,-130.26 624.61,-134.33 641,-141 649.15,-144.32 657.93,-147.59 666.47,-150.62"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="665.36,-153.94 675.96,-153.92 667.66,-147.33 665.36,-153.94"/>
+</g>
+<!-- interface~umf4cnum -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node25" class="node">
+<title>interface~umf4cnum</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node25"><a xlink:href="../interface/umf4cnum.html" xlink:title="umf4cnum">
+<polygon fill="#a7506f" stroke="#a7506f" points="272,-385 209,-385 209,-361 272,-361 272,-385"/>
+<text text-anchor="middle" x="240.5" y="-370.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4cnum</text>
+</a>
+</g>
+</g>
+<!-- interface~umf4cnum&#45;&gt;proc~umf4cnum_ip -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge31" class="edge">
+<title>interface~umf4cnum&#45;&gt;proc~umf4cnum_ip</title>
+<path fill="none" stroke="#e7ff00" stroke-dasharray="5,2" d="M272,-373.48C286.22,-373.71 303.48,-373.98 319.4,-374.24"/>
+<polygon fill="#e7ff00" stroke="#e7ff00" points="319.56,-377.74 329.62,-374.4 319.67,-370.74 319.56,-377.74"/>
+</g>
+<!-- interface~umf4cnum&#45;&gt;interface~umf4cnum -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge41" class="edge">
+<title>interface~umf4cnum&#45;&gt;interface~umf4cnum</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M222.31,-385.01C215.96,-393.97 222.02,-403 240.5,-403 251.76,-403 258.41,-399.65 260.45,-395"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="263.87,-394.25 258.69,-385.01 256.98,-395.47 263.87,-394.25"/>
+</g>
+<!-- interface~umf4num -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node26" class="node">
+<title>interface~umf4num</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node26"><a xlink:href="../interface/umf4num.html" xlink:title="umf4num">
+<polygon fill="#a7506f" stroke="#a7506f" points="58,-345 0,-345 0,-321 58,-321 58,-345"/>
+<text text-anchor="middle" x="29" y="-330.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4num</text>
+</a>
+</g>
+</g>
+<!-- interface~umf4num&#45;&gt;proc~umf4cnum_ip -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge32" class="edge">
+<title>interface~umf4num&#45;&gt;proc~umf4cnum_ip</title>
+<path fill="none" stroke="#e7ff00" stroke-dasharray="5,2" d="M39.98,-345.08C51.56,-358.26 71.92,-378.94 94,-390 137.8,-411.93 153.26,-407.09 202,-412 236.05,-415.43 245.52,-419.1 279,-412 296.13,-408.37 298.87,-402.81 315,-396 318.97,-394.33 323.12,-392.61 327.27,-390.91"/>
+<polygon fill="#e7ff00" stroke="#e7ff00" points="328.93,-394.02 336.88,-387.02 326.3,-387.53 328.93,-394.02"/>
+</g>
+<!-- interface~umf4num&#45;&gt;proc~umf4num_ip -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge34" class="edge">
+<title>interface~umf4num&#45;&gt;proc~umf4num_ip</title>
+<path fill="none" stroke="#00ff2e" stroke-dasharray="5,2" d="M42.14,-320.74C59.08,-303.63 89.98,-272.42 109.99,-252.21"/>
+<polygon fill="#00ff2e" stroke="#00ff2e" points="112.52,-254.62 117.07,-245.05 107.55,-249.69 112.52,-254.62"/>
+</g>
+<!-- interface~umf4num&#45;&gt;proc~umf4znum_ip -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge35" class="edge">
+<title>interface~umf4num&#45;&gt;proc~umf4znum_ip</title>
+<path fill="none" stroke="#00b9ff" stroke-dasharray="5,2" d="M58.03,-322.54C69.11,-318.74 82.03,-314.72 94,-312 126.19,-304.68 163.07,-299.91 191.65,-296.97"/>
+<polygon fill="#00b9ff" stroke="#00b9ff" points="192.17,-300.44 201.78,-295.97 191.48,-293.47 192.17,-300.44"/>
+</g>
+<!-- interface~umf4num&#45;&gt;interface~umf4cnum -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge42" class="edge">
+<title>interface~umf4num&#45;&gt;interface~umf4cnum</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M44.67,-345.15C56.98,-354.52 75.48,-366.73 94,-372 128.34,-381.77 169.11,-381.05 198.75,-378.46"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="199.13,-381.94 208.74,-377.47 198.44,-374.97 199.13,-381.94"/>
+</g>
+<!-- interface~umf4num&#45;&gt;interface~umf4num -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge44" class="edge">
+<title>interface~umf4num&#45;&gt;interface~umf4num</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M12.47,-345.01C6.69,-353.97 12.2,-363 29,-363 39.24,-363 45.28,-359.65 47.13,-355"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="50.57,-354.33 45.53,-345.01 43.66,-355.44 50.57,-354.33"/>
+</g>
+<!-- interface~umf4znum -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_node27" class="node">
+<title>interface~umf4znum</title>
+<g id="a_interface~~c_umfpack_zi_numeric~~CalledByGraph_node27"><a xlink:href="../interface/umf4znum.html" xlink:title="umf4znum">
+<polygon fill="#a7506f" stroke="#a7506f" points="161.5,-345 98.5,-345 98.5,-321 161.5,-321 161.5,-345"/>
+<text text-anchor="middle" x="130" y="-330.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4znum</text>
+</a>
+</g>
+</g>
+<!-- interface~umf4num&#45;&gt;interface~umf4znum -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge45" class="edge">
+<title>interface~umf4num&#45;&gt;interface~umf4znum</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M58.1,-333C67.44,-333 78.03,-333 88.13,-333"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="88.4,-336.5 98.4,-333 88.4,-329.5 88.4,-336.5"/>
+</g>
+<!-- interface~umf4znum&#45;&gt;proc~umf4cnum_ip -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge33" class="edge">
+<title>interface~umf4znum&#45;&gt;proc~umf4cnum_ip</title>
+<path fill="none" stroke="#e7ff00" stroke-dasharray="5,2" d="M161.51,-335.78C191.56,-338.78 238.69,-344.21 279,-352 292.41,-354.59 306.81,-358.04 320.01,-361.48"/>
+<polygon fill="#e7ff00" stroke="#e7ff00" points="319.28,-364.9 329.84,-364.09 321.08,-358.14 319.28,-364.9"/>
+</g>
+<!-- interface~umf4znum&#45;&gt;proc~umf4znum_ip -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge36" class="edge">
+<title>interface~umf4znum&#45;&gt;proc~umf4znum_ip</title>
+<path fill="none" stroke="#00b9ff" stroke-dasharray="5,2" d="M161.51,-321.75C172.69,-317.63 185.54,-312.89 197.55,-308.47"/>
+<polygon fill="#00b9ff" stroke="#00b9ff" points="198.77,-311.75 206.94,-305 196.35,-305.18 198.77,-311.75"/>
+</g>
+<!-- interface~umf4znum&#45;&gt;interface~umf4cnum -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge43" class="edge">
+<title>interface~umf4znum&#45;&gt;interface~umf4cnum</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M161.51,-344.25C173.18,-348.55 186.68,-353.53 199.13,-358.12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="198.25,-361.52 208.84,-361.7 200.67,-354.95 198.25,-361.52"/>
+</g>
+<!-- interface~umf4znum&#45;&gt;interface~umf4znum -->
+<g id="interface~~c_umfpack_zi_numeric~~CalledByGraph_edge46" class="edge">
+<title>interface~umf4znum&#45;&gt;interface~umf4znum</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M113.47,-345.01C107.69,-353.97 113.2,-363 130,-363 140.24,-363 146.28,-359.65 148.13,-355"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="151.57,-354.33 146.53,-345.01 144.66,-355.44 151.57,-354.33"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var paninterfacec_umfpack_zi_numericCalledByGraph = svgPanZoom('#interfacec_umfpack_zi_numericCalledByGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+      <h2>public  function c_umfpack_zi_numeric(Ap, Ai, Ax, Az, Symbolic, Numeric, Control, Info) bind(c,name='umfpack_zi_numeric')  
+</h2>
+
+    
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ap~4"></span>
+              type(c_ptr),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              value
+            </td>
+            <td>::</td>
+            <td><strong>Ap</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ai~4"></span>
+              type(c_ptr),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              value
+            </td>
+            <td>::</td>
+            <td><strong>Ai</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ax~4"></span>
+              type(c_ptr),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              value
+            </td>
+            <td>::</td>
+            <td><strong>Ax</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-az~2"></span>
+              type(c_ptr),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              value
+            </td>
+            <td>::</td>
+            <td><strong>Az</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-symbolic~4"></span>
+              type(c_ptr),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              value
+            </td>
+            <td>::</td>
+            <td><strong>Symbolic</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-numeric~2"></span>
+              type(c_ptr)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Numeric</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-control~4"></span>
+              type(c_ptr),
+            </td>
+<td></td>
+              <td></td>            <td>
+              value
+            </td>
+            <td>::</td>
+            <td><strong>Control</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~4"></span>
+              type(c_ptr),
+            </td>
+<td></td>
+              <td></td>            <td>
+              value
+            </td>
+            <td>::</td>
+            <td><strong>Info</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value <span class="anchor" id="variable-c_umfpack_zi_numeric"></span><small>integer(kind=c_int)</small></h3>
+    
+    <br>
+
+ </div>
+</div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

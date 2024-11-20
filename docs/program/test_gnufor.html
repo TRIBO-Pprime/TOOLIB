@@ -1,0 +1,850 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>test_gnufor &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>test_gnufor      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> John Burkardt</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.6% of total for programs.">11 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/prg.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/prg.f90~8.html'>prg.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">test_gnufor</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/test_gnufor.html#src">test_gnufor</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/gnufor.html'>gnufor</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: program~~test_gnufor~~UsesGraph Pages: 1 -->
+<svg id="programtest_gnuforUsesGraph" width="165pt" height="32pt"
+ viewBox="0.00 0.00 165.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~test_gnufor~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>program~~test_gnufor~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 161,-28 161,4 -4,4"/>
+<!-- program~test_gnufor -->
+<g id="program~~test_gnufor~~UsesGraph_node1" class="node">
+<title>program~test_gnufor</title>
+<polygon fill="none" stroke="black" points="157,-24 90,-24 90,0 157,0 157,-24"/>
+<text text-anchor="middle" x="123.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">test_gnufor</text>
+</g>
+<!-- module~gnufor -->
+<g id="program~~test_gnufor~~UsesGraph_node2" class="node">
+<title>module~gnufor</title>
+<g id="a_program~~test_gnufor~~UsesGraph_node2"><a xlink:href="../module/gnufor.html" xlink:title="gnufor">
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">gnufor</text>
+</a>
+</g>
+</g>
+<!-- program~test_gnufor&#45;&gt;module~gnufor -->
+<g id="program~~test_gnufor~~UsesGraph_edge1" class="edge">
+<title>program~test_gnufor&#45;&gt;module~gnufor</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M89.98,-12C81.63,-12 72.6,-12 64.08,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="64.02,-8.5 54.02,-12 64.02,-15.5 64.02,-8.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <p><span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+<strong>A fortran api to GNUPLOT. Example of use.</strong>
+</span></p>
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: program~~test_gnufor~~CallsGraph Pages: 1 -->
+<svg id="programtest_gnuforCallsGraph" width="408pt" height="536pt"
+ viewBox="0.00 0.00 408.00 536.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~test_gnufor~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 532)">
+<title>program~~test_gnufor~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-532 404,-532 404,4 -4,4"/>
+<!-- program~test_gnufor -->
+<g id="program~~test_gnufor~~CallsGraph_node1" class="node">
+<title>program~test_gnufor</title>
+<polygon fill="none" stroke="black" points="67,-240 0,-240 0,-216 67,-216 67,-240"/>
+<text text-anchor="middle" x="33.5" y="-225.6" font-family="Helvetica,sans-Serif" font-size="10.50">test_gnufor</text>
+</g>
+<!-- proc~test01 -->
+<g id="program~~test_gnufor~~CallsGraph_node2" class="node">
+<title>proc~test01</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node2"><a xlink:href="../proc/test01.html" xlink:title="test01">
+<polygon fill="#d9534f" stroke="#d9534f" points="157,-266 103,-266 103,-242 157,-242 157,-266"/>
+<text text-anchor="middle" x="130" y="-251.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test01</text>
+</a>
+</g>
+</g>
+<!-- program~test_gnufor&#45;&gt;proc~test01 -->
+<g id="program~~test_gnufor~~CallsGraph_edge1" class="edge">
+<title>program~test_gnufor&#45;&gt;proc~test01</title>
+<path fill="none" stroke="#ff0000" d="M67.02,-236.95C75.46,-239.27 84.6,-241.78 93.2,-244.15"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="92.41,-247.56 102.98,-246.84 94.26,-240.81 92.41,-247.56"/>
+</g>
+<!-- proc~test02 -->
+<g id="program~~test_gnufor~~CallsGraph_node3" class="node">
+<title>proc~test02</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node3"><a xlink:href="../proc/test02.html" xlink:title="test02">
+<polygon fill="#d9534f" stroke="#d9534f" points="157,-72 103,-72 103,-48 157,-48 157,-72"/>
+<text text-anchor="middle" x="130" y="-57.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test02</text>
+</a>
+</g>
+</g>
+<!-- program~test_gnufor&#45;&gt;proc~test02 -->
+<g id="program~~test_gnufor~~CallsGraph_edge2" class="edge">
+<title>program~test_gnufor&#45;&gt;proc~test02</title>
+<path fill="none" stroke="#ff0000" d="M41.3,-215.92C57.16,-187.72 96.79,-117.27 116.89,-81.52"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="120.16,-82.86 122.01,-72.43 114.06,-79.43 120.16,-82.86"/>
+</g>
+<!-- proc~test03 -->
+<g id="program~~test_gnufor~~CallsGraph_node4" class="node">
+<title>proc~test03</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node4"><a xlink:href="../proc/test03.html" xlink:title="test03">
+<polygon fill="#d9534f" stroke="#d9534f" points="157,-444 103,-444 103,-420 157,-420 157,-444"/>
+<text text-anchor="middle" x="130" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test03</text>
+</a>
+</g>
+</g>
+<!-- program~test_gnufor&#45;&gt;proc~test03 -->
+<g id="program~~test_gnufor~~CallsGraph_edge3" class="edge">
+<title>program~test_gnufor&#45;&gt;proc~test03</title>
+<path fill="none" stroke="#ff0000" d="M40.13,-240.15C55.69,-273.74 99.44,-368.18 119.15,-410.74"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="116.02,-412.31 123.4,-419.91 122.37,-409.37 116.02,-412.31"/>
+</g>
+<!-- proc~test04 -->
+<g id="program~~test_gnufor~~CallsGraph_node5" class="node">
+<title>proc~test04</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node5"><a xlink:href="../proc/test04.html" xlink:title="test04">
+<polygon fill="#d9534f" stroke="#d9534f" points="157,-334 103,-334 103,-310 157,-310 157,-334"/>
+<text text-anchor="middle" x="130" y="-319.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test04</text>
+</a>
+</g>
+</g>
+<!-- program~test_gnufor&#45;&gt;proc~test04 -->
+<g id="program~~test_gnufor~~CallsGraph_edge4" class="edge">
+<title>program~test_gnufor&#45;&gt;proc~test04</title>
+<path fill="none" stroke="#ff0000" d="M46.85,-240.29C62.7,-256.05 90.38,-283.58 109.19,-302.29"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="107.08,-305.14 116.64,-309.71 112.02,-300.17 107.08,-305.14"/>
+</g>
+<!-- proc~test05 -->
+<g id="program~~test_gnufor~~CallsGraph_node6" class="node">
+<title>proc~test05</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node6"><a xlink:href="../proc/test05.html" xlink:title="test05">
+<polygon fill="#d9534f" stroke="#d9534f" points="157,-219 103,-219 103,-195 157,-195 157,-219"/>
+<text text-anchor="middle" x="130" y="-204.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test05</text>
+</a>
+</g>
+</g>
+<!-- program~test_gnufor&#45;&gt;proc~test05 -->
+<g id="program~~test_gnufor~~CallsGraph_edge5" class="edge">
+<title>program~test_gnufor&#45;&gt;proc~test05</title>
+<path fill="none" stroke="#ff0000" d="M67.02,-220.77C75.46,-218.9 84.6,-216.87 93.2,-214.95"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="93.98,-218.37 102.98,-212.78 92.46,-211.54 93.98,-218.37"/>
+</g>
+<!-- proc~test06 -->
+<g id="program~~test_gnufor~~CallsGraph_node7" class="node">
+<title>proc~test06</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node7"><a xlink:href="../proc/test06.html" xlink:title="test06">
+<polygon fill="#d9534f" stroke="#d9534f" points="157,-156 103,-156 103,-132 157,-132 157,-156"/>
+<text text-anchor="middle" x="130" y="-141.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test06</text>
+</a>
+</g>
+</g>
+<!-- program~test_gnufor&#45;&gt;proc~test06 -->
+<g id="program~~test_gnufor~~CallsGraph_edge6" class="edge">
+<title>program~test_gnufor&#45;&gt;proc~test06</title>
+<path fill="none" stroke="#ff0000" d="M48.04,-215.96C63.62,-202.12 89.4,-179.2 107.68,-162.95"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="110.34,-165.27 115.49,-156.01 105.69,-160.04 110.34,-165.27"/>
+</g>
+<!-- proc~run_gnuplot -->
+<g id="program~~test_gnufor~~CallsGraph_node9" class="node">
+<title>proc~run_gnuplot</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node9"><a xlink:href="../proc/run_gnuplot.html" xlink:title="run_gnuplot">
+<polygon fill="#d9534f" stroke="#d9534f" points="286.5,-234 216.5,-234 216.5,-210 286.5,-210 286.5,-234"/>
+<text text-anchor="middle" x="251.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">run_gnuplot</text>
+</a>
+</g>
+</g>
+<!-- proc~test01&#45;&gt;proc~run_gnuplot -->
+<g id="program~~test_gnufor~~CallsGraph_edge7" class="edge">
+<title>proc~test01&#45;&gt;proc~run_gnuplot</title>
+<path fill="none" stroke="#ff0000" d="M157.22,-246.98C171.56,-243.14 189.71,-238.28 206.18,-233.87"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="207.41,-237.16 216.16,-231.19 205.6,-230.4 207.41,-237.16"/>
+</g>
+<!-- proc~write_xy_data -->
+<g id="program~~test_gnufor~~CallsGraph_node12" class="node">
+<title>proc~write_xy_data</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node12"><a xlink:href="../proc/write_xy_data.html" xlink:title="write_xy_data">
+<polygon fill="#d9534f" stroke="#d9534f" points="291,-276 212,-276 212,-252 291,-252 291,-276"/>
+<text text-anchor="middle" x="251.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_xy_data</text>
+</a>
+</g>
+</g>
+<!-- proc~test01&#45;&gt;proc~write_xy_data -->
+<g id="program~~test_gnufor~~CallsGraph_edge8" class="edge">
+<title>proc~test01&#45;&gt;proc~write_xy_data</title>
+<path fill="none" stroke="#ff0000" d="M157.22,-256.19C170.18,-257.28 186.23,-258.62 201.35,-259.89"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="201.37,-263.4 211.62,-260.75 201.95,-256.43 201.37,-263.4"/>
+</g>
+<!-- proc~write_xy_plot -->
+<g id="program~~test_gnufor~~CallsGraph_node13" class="node">
+<title>proc~write_xy_plot</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node13"><a xlink:href="../proc/write_xy_plot.html" xlink:title="write_xy_plot">
+<polygon fill="#d9534f" stroke="#d9534f" points="289,-318 214,-318 214,-294 289,-294 289,-318"/>
+<text text-anchor="middle" x="251.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_xy_plot</text>
+</a>
+</g>
+</g>
+<!-- proc~test01&#45;&gt;proc~write_xy_plot -->
+<g id="program~~test_gnufor~~CallsGraph_edge9" class="edge">
+<title>proc~test01&#45;&gt;proc~write_xy_plot</title>
+<path fill="none" stroke="#ff0000" d="M153.67,-266.11C165.29,-272.12 179.74,-279.28 193,-285 197.18,-286.8 201.56,-288.58 205.97,-290.31"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="205,-293.68 215.59,-293.97 207.49,-287.14 205,-293.68"/>
+</g>
+<!-- proc~test02&#45;&gt;proc~run_gnuplot -->
+<g id="program~~test_gnufor~~CallsGraph_edge10" class="edge">
+<title>proc~test02&#45;&gt;proc~run_gnuplot</title>
+<path fill="none" stroke="#ffff00" d="M135.99,-72.03C149.8,-105.27 187.9,-196.22 193,-201 197.07,-204.82 201.89,-207.95 206.98,-210.52"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="205.76,-213.81 216.33,-214.57 208.54,-207.39 205.76,-213.81"/>
+</g>
+<!-- proc~write_xyy_data -->
+<g id="program~~test_gnufor~~CallsGraph_node14" class="node">
+<title>proc~write_xyy_data</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node14"><a xlink:href="../proc/write_xyy_data.html" xlink:title="write_xyy_data">
+<polygon fill="#d9534f" stroke="#d9534f" points="293.5,-24 209.5,-24 209.5,0 293.5,0 293.5,-24"/>
+<text text-anchor="middle" x="251.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_xyy_data</text>
+</a>
+</g>
+</g>
+<!-- proc~test02&#45;&gt;proc~write_xyy_data -->
+<g id="program~~test_gnufor~~CallsGraph_edge11" class="edge">
+<title>proc~test02&#45;&gt;proc~write_xyy_data</title>
+<path fill="none" stroke="#ffff00" d="M157.1,-48.22C168.11,-43.35 181.12,-37.75 193,-33 197.45,-31.22 202.12,-29.41 206.79,-27.65"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="208.17,-30.87 216.32,-24.1 205.72,-24.31 208.17,-30.87"/>
+</g>
+<!-- proc~write_xyy_plots -->
+<g id="program~~test_gnufor~~CallsGraph_node15" class="node">
+<title>proc~write_xyy_plots</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node15"><a xlink:href="../proc/write_xyy_plots.html" xlink:title="write_xyy_plots">
+<polygon fill="#d9534f" stroke="#d9534f" points="294,-66 209,-66 209,-42 294,-42 294,-66"/>
+<text text-anchor="middle" x="251.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_xyy_plots</text>
+</a>
+</g>
+</g>
+<!-- proc~test02&#45;&gt;proc~write_xyy_plots -->
+<g id="program~~test_gnufor~~CallsGraph_edge12" class="edge">
+<title>proc~test02&#45;&gt;proc~write_xyy_plots</title>
+<path fill="none" stroke="#ffff00" d="M157.22,-58.68C169.39,-58.07 184.29,-57.32 198.59,-56.61"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="199.03,-60.09 208.84,-56.09 198.68,-53.1 199.03,-60.09"/>
+</g>
+<!-- proc~pi -->
+<g id="program~~test_gnufor~~CallsGraph_node8" class="node">
+<title>proc~pi</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node8"><a xlink:href="../proc/pi.html" xlink:title="pi">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="278.5,-528 224.5,-528 224.5,-504 278.5,-504 278.5,-528"/>
+<text text-anchor="middle" x="251.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pi</text>
+</a>
+</g>
+</g>
+<!-- proc~test03&#45;&gt;proc~pi -->
+<g id="program~~test_gnufor~~CallsGraph_edge13" class="edge">
+<title>proc~test03&#45;&gt;proc~pi</title>
+<path fill="none" stroke="#00ff00" d="M140.26,-444.27C151.39,-458.28 171.32,-481.05 193,-495 199.65,-499.28 207.29,-502.84 214.78,-505.75"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="213.86,-509.14 224.46,-509.19 216.21,-502.54 213.86,-509.14"/>
+</g>
+<!-- proc~test03&#45;&gt;proc~run_gnuplot -->
+<g id="program~~test_gnufor~~CallsGraph_edge14" class="edge">
+<title>proc~test03&#45;&gt;proc~run_gnuplot</title>
+<path fill="none" stroke="#00ff00" d="M134.68,-419.81C147.02,-379.05 186.53,-249.69 193,-243 196.93,-238.94 201.7,-235.66 206.8,-233.02"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="208.45,-236.11 216.21,-228.9 205.65,-229.7 208.45,-236.11"/>
+</g>
+<!-- proc~write_xyz_data -->
+<g id="program~~test_gnufor~~CallsGraph_node16" class="node">
+<title>proc~write_xyz_data</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node16"><a xlink:href="../proc/write_xyz_data.html" xlink:title="write_xyz_data">
+<polygon fill="#d9534f" stroke="#d9534f" points="293.5,-444 209.5,-444 209.5,-420 293.5,-420 293.5,-444"/>
+<text text-anchor="middle" x="251.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_xyz_data</text>
+</a>
+</g>
+</g>
+<!-- proc~test03&#45;&gt;proc~write_xyz_data -->
+<g id="program~~test_gnufor~~CallsGraph_edge15" class="edge">
+<title>proc~test03&#45;&gt;proc~write_xyz_data</title>
+<path fill="none" stroke="#00ff00" d="M157.22,-432C169.5,-432 184.56,-432 198.98,-432"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="199.31,-435.5 209.31,-432 199.31,-428.5 199.31,-435.5"/>
+</g>
+<!-- proc~write_xyz_plot -->
+<g id="program~~test_gnufor~~CallsGraph_node17" class="node">
+<title>proc~write_xyz_plot</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node17"><a xlink:href="../proc/write_xyz_plot.html" xlink:title="write_xyz_plot">
+<polygon fill="#d9534f" stroke="#d9534f" points="291.5,-486 211.5,-486 211.5,-462 291.5,-462 291.5,-486"/>
+<text text-anchor="middle" x="251.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_xyz_plot</text>
+</a>
+</g>
+</g>
+<!-- proc~test03&#45;&gt;proc~write_xyz_plot -->
+<g id="program~~test_gnufor~~CallsGraph_edge16" class="edge">
+<title>proc~test03&#45;&gt;proc~write_xyz_plot</title>
+<path fill="none" stroke="#00ff00" d="M157.22,-441.22C171.7,-446.3 190.05,-452.75 206.64,-458.59"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="205.57,-461.92 216.16,-461.93 207.89,-455.31 205.57,-461.92"/>
+</g>
+<!-- proc~test04&#45;&gt;proc~run_gnuplot -->
+<g id="program~~test_gnufor~~CallsGraph_edge17" class="edge">
+<title>proc~test04&#45;&gt;proc~run_gnuplot</title>
+<path fill="none" stroke="#00ffff" d="M137.6,-309.83C147.49,-292.65 167.74,-261.33 193,-243 197.25,-239.92 201.99,-237.25 206.89,-234.94"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="208.53,-238.04 216.39,-230.94 205.82,-231.59 208.53,-238.04"/>
+</g>
+<!-- proc~write_vector_data -->
+<g id="program~~test_gnufor~~CallsGraph_node10" class="node">
+<title>proc~write_vector_data</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node10"><a xlink:href="../proc/write_vector_data.html" xlink:title="write_vector_data">
+<polygon fill="#d9534f" stroke="#d9534f" points="300,-360 203,-360 203,-336 300,-336 300,-360"/>
+<text text-anchor="middle" x="251.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_vector_data</text>
+</a>
+</g>
+</g>
+<!-- proc~test04&#45;&gt;proc~write_vector_data -->
+<g id="program~~test_gnufor~~CallsGraph_edge18" class="edge">
+<title>proc~test04&#45;&gt;proc~write_vector_data</title>
+<path fill="none" stroke="#00ffff" d="M157.22,-327.71C167.74,-329.99 180.31,-332.73 192.76,-335.44"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="192.16,-338.89 202.68,-337.59 193.65,-332.05 192.16,-338.89"/>
+</g>
+<!-- proc~write_vector_plot -->
+<g id="program~~test_gnufor~~CallsGraph_node11" class="node">
+<title>proc~write_vector_plot</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node11"><a xlink:href="../proc/write_vector_plot.html" xlink:title="write_vector_plot">
+<polygon fill="#d9534f" stroke="#d9534f" points="298.5,-402 204.5,-402 204.5,-378 298.5,-378 298.5,-402"/>
+<text text-anchor="middle" x="251.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_vector_plot</text>
+</a>
+</g>
+</g>
+<!-- proc~test04&#45;&gt;proc~write_vector_plot -->
+<g id="program~~test_gnufor~~CallsGraph_edge19" class="edge">
+<title>proc~test04&#45;&gt;proc~write_vector_plot</title>
+<path fill="none" stroke="#00ffff" d="M144.46,-334.1C156.5,-344.44 174.98,-359.17 193,-369 196.22,-370.76 199.62,-372.42 203.09,-373.99"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="201.79,-377.24 212.37,-377.9 204.51,-370.79 201.79,-377.24"/>
+</g>
+<!-- proc~test05&#45;&gt;proc~run_gnuplot -->
+<g id="program~~test_gnufor~~CallsGraph_edge20" class="edge">
+<title>proc~test05&#45;&gt;proc~run_gnuplot</title>
+<path fill="none" stroke="#0000ff" d="M157.22,-210.29C171.56,-212.09 189.71,-214.37 206.18,-216.44"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="205.81,-219.92 216.16,-217.69 206.68,-212.97 205.81,-219.92"/>
+</g>
+<!-- proc~write_xyzgrid_data -->
+<g id="program~~test_gnufor~~CallsGraph_node19" class="node">
+<title>proc~write_xyzgrid_data</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node19"><a xlink:href="../proc/write_xyzgrid_data.html" xlink:title="write_xyzgrid_data">
+<polygon fill="#d9534f" stroke="#d9534f" points="302.5,-150 200.5,-150 200.5,-126 302.5,-126 302.5,-150"/>
+<text text-anchor="middle" x="251.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_xyzgrid_data</text>
+</a>
+</g>
+</g>
+<!-- proc~test05&#45;&gt;proc~write_xyzgrid_data -->
+<g id="program~~test_gnufor~~CallsGraph_edge21" class="edge">
+<title>proc~test05&#45;&gt;proc~write_xyzgrid_data</title>
+<path fill="none" stroke="#0000ff" d="M144.42,-194.62C156.43,-184.05 174.89,-169 193,-159 196.21,-157.23 199.6,-155.55 203.07,-153.97"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="204.49,-157.17 212.34,-150.05 201.76,-150.73 204.49,-157.17"/>
+</g>
+<!-- proc~write_xyzgrid_surface -->
+<g id="program~~test_gnufor~~CallsGraph_node20" class="node">
+<title>proc~write_xyzgrid_surface</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node20"><a xlink:href="../proc/write_xyzgrid_surface.html" xlink:title="write_xyzgrid_surface">
+<polygon fill="#d9534f" stroke="#d9534f" points="309.5,-192 193.5,-192 193.5,-168 309.5,-168 309.5,-192"/>
+<text text-anchor="middle" x="251.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_xyzgrid_surface</text>
+</a>
+</g>
+</g>
+<!-- proc~test05&#45;&gt;proc~write_xyzgrid_surface -->
+<g id="program~~test_gnufor~~CallsGraph_edge22" class="edge">
+<title>proc~test05&#45;&gt;proc~write_xyzgrid_surface</title>
+<path fill="none" stroke="#0000ff" d="M157.22,-201.07C166.27,-199.03 176.84,-196.64 187.54,-194.23"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="188.38,-197.62 197.37,-192.01 186.84,-190.8 188.38,-197.62"/>
+</g>
+<!-- proc~test06&#45;&gt;proc~run_gnuplot -->
+<g id="program~~test_gnufor~~CallsGraph_edge23" class="edge">
+<title>proc~test06&#45;&gt;proc~run_gnuplot</title>
+<path fill="none" stroke="#ff00ff" d="M141.75,-156.43C153.31,-169.13 172.77,-188.68 193,-201 197.37,-203.66 202.13,-206.06 206.98,-208.21"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="205.75,-211.49 216.33,-212.03 208.4,-205.01 205.75,-211.49"/>
+</g>
+<!-- proc~write_xyzgrid_contour -->
+<g id="program~~test_gnufor~~CallsGraph_node18" class="node">
+<title>proc~write_xyzgrid_contour</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node18"><a xlink:href="../proc/write_xyzgrid_contour.html" xlink:title="write_xyzgrid_contour">
+<polygon fill="#d9534f" stroke="#d9534f" points="310,-108 193,-108 193,-84 310,-84 310,-108"/>
+<text text-anchor="middle" x="251.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_xyzgrid_contour</text>
+</a>
+</g>
+</g>
+<!-- proc~test06&#45;&gt;proc~write_xyzgrid_contour -->
+<g id="program~~test_gnufor~~CallsGraph_edge24" class="edge">
+<title>proc~test06&#45;&gt;proc~write_xyzgrid_contour</title>
+<path fill="none" stroke="#ff00ff" d="M157.1,-132.22C168.11,-127.35 181.12,-121.75 193,-117 197.45,-115.22 202.12,-113.41 206.79,-111.65"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="208.17,-114.87 216.32,-108.1 205.72,-108.31 208.17,-114.87"/>
+</g>
+<!-- proc~test06&#45;&gt;proc~write_xyzgrid_data -->
+<g id="program~~test_gnufor~~CallsGraph_edge25" class="edge">
+<title>proc~test06&#45;&gt;proc~write_xyzgrid_data</title>
+<path fill="none" stroke="#ff00ff" d="M157.22,-142.68C167,-142.19 178.55,-141.61 190.13,-141.03"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="190.46,-144.52 200.27,-140.52 190.11,-137.53 190.46,-144.52"/>
+</g>
+<!-- proc~get_unit~2 -->
+<g id="program~~test_gnufor~~CallsGraph_node21" class="node">
+<title>proc~get_unit~2</title>
+<g id="a_program~~test_gnufor~~CallsGraph_node21"><a xlink:href="../proc/get_unit~2.html" xlink:title="get_unit">
+<polygon fill="#d9534f" stroke="#d9534f" points="400,-276 346,-276 346,-252 400,-252 400,-276"/>
+<text text-anchor="middle" x="373" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_unit</text>
+</a>
+</g>
+</g>
+<!-- proc~write_vector_data&#45;&gt;proc~get_unit~2 -->
+<g id="program~~test_gnufor~~CallsGraph_edge26" class="edge">
+<title>proc~write_vector_data&#45;&gt;proc~get_unit~2</title>
+<path fill="none" stroke="#ffeb00" d="M292.58,-335.99C298.63,-333.44 304.64,-330.45 310,-327 327.95,-315.45 344.7,-297.84 356.26,-284.18"/>
+<polygon fill="#ffeb00" stroke="#ffeb00" points="359.11,-286.22 362.74,-276.27 353.7,-281.78 359.11,-286.22"/>
+</g>
+<!-- proc~write_vector_plot&#45;&gt;proc~get_unit~2 -->
+<g id="program~~test_gnufor~~CallsGraph_edge27" class="edge">
+<title>proc~write_vector_plot&#45;&gt;proc~get_unit~2</title>
+<path fill="none" stroke="#9cff00" d="M295.75,-377.98C300.86,-375.5 305.75,-372.53 310,-369 336.94,-346.59 354.96,-309.27 364.33,-285.69"/>
+<polygon fill="#9cff00" stroke="#9cff00" points="367.65,-286.8 367.93,-276.21 361.11,-284.32 367.65,-286.8"/>
+</g>
+<!-- proc~write_xy_data&#45;&gt;proc~get_unit~2 -->
+<g id="program~~test_gnufor~~CallsGraph_edge28" class="edge">
+<title>proc~write_xy_data&#45;&gt;proc~get_unit~2</title>
+<path fill="none" stroke="#27ff00" d="M291.3,-264C305.53,-264 321.57,-264 335.58,-264"/>
+<polygon fill="#27ff00" stroke="#27ff00" points="335.84,-267.5 345.84,-264 335.84,-260.5 335.84,-267.5"/>
+</g>
+<!-- proc~write_xy_plot&#45;&gt;proc~get_unit~2 -->
+<g id="program~~test_gnufor~~CallsGraph_edge29" class="edge">
+<title>proc~write_xy_plot&#45;&gt;proc~get_unit~2</title>
+<path fill="none" stroke="#00ff4e" d="M286.74,-293.96C302.13,-288.56 320.3,-282.17 335.9,-276.69"/>
+<polygon fill="#00ff4e" stroke="#00ff4e" points="337.46,-279.85 345.73,-273.23 335.13,-273.25 337.46,-279.85"/>
+</g>
+<!-- proc~write_xyy_data&#45;&gt;proc~get_unit~2 -->
+<g id="program~~test_gnufor~~CallsGraph_edge30" class="edge">
+<title>proc~write_xyy_data&#45;&gt;proc~get_unit~2</title>
+<path fill="none" stroke="#00ffc4" d="M293.56,-21.39C299.7,-24.28 305.48,-28.06 310,-33 364.93,-92.99 372.1,-196.44 372.44,-241.7"/>
+<polygon fill="#00ffc4" stroke="#00ffc4" points="368.94,-241.88 372.4,-251.89 375.94,-241.91 368.94,-241.88"/>
+</g>
+<!-- proc~write_xyy_plots&#45;&gt;proc~get_unit~2 -->
+<g id="program~~test_gnufor~~CallsGraph_edge31" class="edge">
+<title>proc~write_xyy_plots&#45;&gt;proc~get_unit~2</title>
+<path fill="none" stroke="#00c4ff" d="M294.21,-64.02C300.05,-66.83 305.57,-70.42 310,-75 355.33,-121.86 367.52,-202.41 370.8,-241.46"/>
+<polygon fill="#00c4ff" stroke="#00c4ff" points="367.31,-241.8 371.52,-251.52 374.29,-241.3 367.31,-241.8"/>
+</g>
+<!-- proc~write_xyz_data&#45;&gt;proc~get_unit~2 -->
+<g id="program~~test_gnufor~~CallsGraph_edge32" class="edge">
+<title>proc~write_xyz_data&#45;&gt;proc~get_unit~2</title>
+<path fill="none" stroke="#004eff" d="M293.59,-421.79C299.58,-419 305.31,-415.47 310,-411 346.07,-376.66 362.05,-318.04 368.38,-286.19"/>
+<polygon fill="#004eff" stroke="#004eff" points="371.86,-286.59 370.23,-276.12 364.98,-285.33 371.86,-286.59"/>
+</g>
+<!-- proc~write_xyz_plot&#45;&gt;proc~get_unit~2 -->
+<g id="program~~test_gnufor~~CallsGraph_edge33" class="edge">
+<title>proc~write_xyz_plot&#45;&gt;proc~get_unit~2</title>
+<path fill="none" stroke="#2700ff" d="M291.56,-465.19C298.37,-462.23 304.9,-458.27 310,-453 355.33,-406.14 367.52,-325.59 370.8,-286.54"/>
+<polygon fill="#2700ff" stroke="#2700ff" points="374.29,-286.7 371.52,-276.48 367.31,-286.2 374.29,-286.7"/>
+</g>
+<!-- proc~write_xyzgrid_contour&#45;&gt;proc~get_unit~2 -->
+<g id="program~~test_gnufor~~CallsGraph_edge34" class="edge">
+<title>proc~write_xyzgrid_contour&#45;&gt;proc~get_unit~2</title>
+<path fill="none" stroke="#9c00ff" d="M297.38,-108.1C301.98,-110.55 306.31,-113.48 310,-117 346.07,-151.34 362.05,-209.96 368.38,-241.81"/>
+<polygon fill="#9c00ff" stroke="#9c00ff" points="364.98,-242.67 370.23,-251.88 371.86,-241.41 364.98,-242.67"/>
+</g>
+<!-- proc~write_xyzgrid_data&#45;&gt;proc~get_unit~2 -->
+<g id="program~~test_gnufor~~CallsGraph_edge35" class="edge">
+<title>proc~write_xyzgrid_data&#45;&gt;proc~get_unit~2</title>
+<path fill="none" stroke="#ff00eb" d="M295.75,-150.02C300.86,-152.5 305.75,-155.47 310,-159 336.94,-181.41 354.96,-218.73 364.33,-242.31"/>
+<polygon fill="#ff00eb" stroke="#ff00eb" points="361.11,-243.68 367.93,-251.79 367.65,-241.2 361.11,-243.68"/>
+</g>
+<!-- proc~write_xyzgrid_surface&#45;&gt;proc~get_unit~2 -->
+<g id="program~~test_gnufor~~CallsGraph_edge36" class="edge">
+<title>proc~write_xyzgrid_surface&#45;&gt;proc~get_unit~2</title>
+<path fill="none" stroke="#ff0075" d="M292.58,-192.01C298.63,-194.56 304.64,-197.55 310,-201 327.95,-212.55 344.7,-230.16 356.26,-243.82"/>
+<polygon fill="#ff0075" stroke="#ff0075" points="353.7,-246.22 362.74,-251.73 359.11,-241.78 353.7,-246.22"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">program </span><span class="n">test_gnufor</span>
+<span class="k">use </span><span class="n">gnufor</span>
+<span class="k">implicit none</span>
+
+<span class="k">   call </span><span class="n">test01</span><span class="p">()</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test02</span><span class="p">()</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test03</span><span class="p">()</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test04</span><span class="p">()</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test05</span><span class="p">()</span>
+<span class="w">   </span><span class="k">call </span><span class="n">test06</span><span class="p">()</span>
+
+<span class="k">stop</span>
+<span class="k">endprogram </span><span class="n">test_gnufor</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

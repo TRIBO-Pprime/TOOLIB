@@ -1,0 +1,1150 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>test_surfile &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>test_surfile      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> Arthur Francisco</li>
+            <li class="list-inline-item" id="meta-date"><i class="fa fa-calendar-o"></i> April, 16 2019</li>
+            <li class="list-inline-item" id="meta-version"><i class="fa fa-barcode"></i> 1.0.0</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 1.7% of total for programs.">32 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/prg.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/prg.f90.html'>prg.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">test_surfile</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/test_surfile.html#variable-i~3">i</a>
+            <a class="list-group-item" href="../program/test_surfile.html#variable-j~2">j</a>
+            <a class="list-group-item" href="../program/test_surfile.html#variable-scal">scal</a>
+            <a class="list-group-item" href="../program/test_surfile.html#variable-surf">surf</a>
+            <a class="list-group-item" href="../program/test_surfile.html#variable-tab">tab</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/test_surfile.html#src">test_surfile</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/data_arch.html'>data_arch</a></li>
+                  <li class="list-inline-item"><a href='../module/surfile.html'>surfile</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: program~~test_surfile~~UsesGraph Pages: 1 -->
+<svg id="programtest_surfileUsesGraph" width="498pt" height="150pt"
+ viewBox="0.00 0.00 498.00 149.99" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~test_surfile~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 145.99)">
+<title>program~~test_surfile~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-145.99 494,-145.99 494,4 -4,4"/>
+<!-- program~test_surfile -->
+<g id="program~~test_surfile~~UsesGraph_node1" class="node">
+<title>program~test_surfile</title>
+<polygon fill="none" stroke="black" points="490,-128 426,-128 426,-104 490,-104 490,-128"/>
+<text text-anchor="middle" x="458" y="-113.6" font-family="Helvetica,sans-Serif" font-size="10.50">test_surfile</text>
+</g>
+<!-- module~data_arch -->
+<g id="program~~test_surfile~~UsesGraph_node2" class="node">
+<title>module~data_arch</title>
+<g id="a_program~~test_surfile~~UsesGraph_node2"><a xlink:href="../module/data_arch.html" xlink:title="data_arch">
+<polygon fill="#337ab7" stroke="#337ab7" points="184,-66 123,-66 123,-42 184,-42 184,-66"/>
+<text text-anchor="middle" x="153.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">data_arch</text>
+</a>
+</g>
+</g>
+<!-- program~test_surfile&#45;&gt;module~data_arch -->
+<g id="program~~test_surfile~~UsesGraph_edge1" class="edge">
+<title>program~test_surfile&#45;&gt;module~data_arch</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M425.69,-125.51C386.65,-135.93 318.09,-149.5 261,-136"/>
+</g>
+<!-- module~surfile -->
+<g id="program~~test_surfile~~UsesGraph_node3" class="node">
+<title>module~surfile</title>
+<g id="a_program~~test_surfile~~UsesGraph_node3"><a xlink:href="../module/surfile.html" xlink:title="surfile">
+<polygon fill="#337ab7" stroke="#337ab7" points="390,-108 336,-108 336,-84 390,-84 390,-108"/>
+<text text-anchor="middle" x="363" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">surfile</text>
+</a>
+</g>
+</g>
+<!-- program~test_surfile&#45;&gt;module~surfile -->
+<g id="program~~test_surfile~~UsesGraph_edge2" class="edge">
+<title>program~test_surfile&#45;&gt;module~surfile</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M425.77,-109.28C417.52,-107.51 408.54,-105.58 400.06,-103.75"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="400.54,-100.28 390.03,-101.6 399.07,-107.12 400.54,-100.28"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="program~~test_surfile~~UsesGraph_node5" class="node">
+<title>iso_fortran_env</title>
+<g id="a_program~~test_surfile~~UsesGraph_node5"><a xlink:href="http://fortranwiki.org/fortran/show/iso_fortran_env" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="87,-66 0,-66 0,-42 87,-42 87,-66"/>
+<text text-anchor="middle" x="43.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~data_arch&#45;&gt;iso_fortran_env -->
+<g id="program~~test_surfile~~UsesGraph_edge3" class="edge">
+<title>module~data_arch&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M122.99,-54C115.09,-54 106.3,-54 97.55,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="97.34,-50.5 87.34,-54 97.34,-57.5 97.34,-50.5"/>
+</g>
+<!-- module~surfile&#45;&gt;module~data_arch -->
+<g id="program~~test_surfile~~UsesGraph_edge5" class="edge">
+<title>module~surfile&#45;&gt;module~data_arch</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M347.38,-108.01C328.12,-122.36 292.94,-143.55 261,-136"/>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M259,-136C221.75,-127.19 188.88,-95.34 170.36,-74.02"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="172.88,-71.58 163.77,-66.17 167.52,-76.08 172.88,-71.58"/>
+</g>
+<!-- iso_c_binding -->
+<g id="program~~test_surfile~~UsesGraph_node4" class="node">
+<title>iso_c_binding</title>
+<g id="a_program~~test_surfile~~UsesGraph_node4"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
+<polygon fill="#337ab7" stroke="#337ab7" points="299,-108 221,-108 221,-84 299,-84 299,-108"/>
+<text text-anchor="middle" x="260" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_c_binding</text>
+</a>
+</g>
+</g>
+<!-- module~surfile&#45;&gt;iso_c_binding -->
+<g id="program~~test_surfile~~UsesGraph_edge4" class="edge">
+<title>module~surfile&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M335.99,-96C327.84,-96 318.56,-96 309.38,-96"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="309.11,-92.5 299.11,-96 309.11,-99.5 309.11,-92.5"/>
+</g>
+<!-- module~miscellaneous -->
+<g id="program~~test_surfile~~UsesGraph_node6" class="node">
+<title>module~miscellaneous</title>
+<g id="a_program~~test_surfile~~UsesGraph_node6"><a xlink:href="../module/miscellaneous.html" xlink:title="miscellaneous">
+<polygon fill="#337ab7" stroke="#337ab7" points="300,-66 220,-66 220,-42 300,-42 300,-66"/>
+<text text-anchor="middle" x="260" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">miscellaneous</text>
+</a>
+</g>
+</g>
+<!-- module~surfile&#45;&gt;module~miscellaneous -->
+<g id="program~~test_surfile~~UsesGraph_edge6" class="edge">
+<title>module~surfile&#45;&gt;module~miscellaneous</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M335.99,-85.18C324.92,-80.58 311.78,-75.12 299.62,-70.06"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="300.71,-66.72 290.13,-66.11 298.02,-73.18 300.71,-66.72"/>
+</g>
+<!-- module~sort_arrays -->
+<g id="program~~test_surfile~~UsesGraph_node7" class="node">
+<title>module~sort_arrays</title>
+<g id="a_program~~test_surfile~~UsesGraph_node7"><a xlink:href="../module/sort_arrays.html" xlink:title="sort_arrays">
+<polygon fill="#337ab7" stroke="#337ab7" points="293.5,-24 226.5,-24 226.5,0 293.5,0 293.5,-24"/>
+<text text-anchor="middle" x="260" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_arrays</text>
+</a>
+</g>
+</g>
+<!-- module~surfile&#45;&gt;module~sort_arrays -->
+<g id="program~~test_surfile~~UsesGraph_edge7" class="edge">
+<title>module~surfile&#45;&gt;module~sort_arrays</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M351.95,-83.78C340.4,-70.24 320.38,-48.29 300,-33 298.39,-31.79 296.69,-30.6 294.95,-29.46"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="296.39,-26.23 286.03,-24.03 292.76,-32.22 296.39,-26.23"/>
+</g>
+<!-- module~miscellaneous&#45;&gt;module~data_arch -->
+<g id="program~~test_surfile~~UsesGraph_edge8" class="edge">
+<title>module~miscellaneous&#45;&gt;module~data_arch</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M219.79,-54C211.48,-54 202.71,-54 194.38,-54"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="194.13,-50.5 184.13,-54 194.13,-57.5 194.13,-50.5"/>
+</g>
+<!-- module~sort_arrays&#45;&gt;module~data_arch -->
+<g id="program~~test_surfile~~UsesGraph_edge9" class="edge">
+<title>module~sort_arrays&#45;&gt;module~data_arch</title>
+<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M229.05,-24.04C218.03,-28.47 205.37,-33.55 193.65,-38.26"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="192.06,-35.13 184.09,-42.11 194.67,-41.63 192.06,-35.13"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <p><span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+   <strong>Routines to handle Digital Surf binary format (.sur). Example of use</strong>
+</span></p>
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: program~~test_surfile~~CallsGraph Pages: 1 -->
+<svg id="programtest_surfileCallsGraph" width="641pt" height="535pt"
+ viewBox="0.00 0.00 641.00 534.65" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~test_surfile~~CallsGraph" class="graph" transform="scale(0.97 0.97) rotate(0) translate(4 549)">
+<title>program~~test_surfile~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-549 659,-549 659,4 -4,4"/>
+<!-- program~test_surfile -->
+<g id="program~~test_surfile~~CallsGraph_node1" class="node">
+<title>program~test_surfile</title>
+<polygon fill="none" stroke="black" points="64,-270 0,-270 0,-246 64,-246 64,-270"/>
+<text text-anchor="middle" x="32" y="-255.6" font-family="Helvetica,sans-Serif" font-size="10.50">test_surfile</text>
+</g>
+<!-- proc~init_scal -->
+<g id="program~~test_surfile~~CallsGraph_node2" class="node">
+<title>proc~init_scal</title>
+<g id="a_program~~test_surfile~~CallsGraph_node2"><a xlink:href="../proc/init_scal.html" xlink:title="init_scal">
+<polygon fill="#d9534f" stroke="#d9534f" points="156.5,-545 102.5,-545 102.5,-521 156.5,-521 156.5,-545"/>
+<text text-anchor="middle" x="129.5" y="-530.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">init_scal</text>
+</a>
+</g>
+</g>
+<!-- program~test_surfile&#45;&gt;proc~init_scal -->
+<g id="program~~test_surfile~~CallsGraph_edge1" class="edge">
+<title>program~test_surfile&#45;&gt;proc~init_scal</title>
+<path fill="none" stroke="#ff0000" d="M34.29,-270.19C38.62,-307.2 54.99,-420.72 100,-502 102.15,-505.89 104.89,-509.67 107.81,-513.19"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="105.45,-515.79 114.77,-520.82 110.62,-511.08 105.45,-515.79"/>
+</g>
+<!-- proc~read_surf~2 -->
+<g id="program~~test_surfile~~CallsGraph_node3" class="node">
+<title>proc~read_surf~2</title>
+<g id="a_program~~test_surfile~~CallsGraph_node3"><a xlink:href="../proc/read_surf~2.html" xlink:title="read_surf">
+<polygon fill="#d9534f" stroke="#d9534f" points="158.5,-270 100.5,-270 100.5,-246 158.5,-246 158.5,-270"/>
+<text text-anchor="middle" x="129.5" y="-255.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">read_surf</text>
+</a>
+</g>
+</g>
+<!-- program~test_surfile&#45;&gt;proc~read_surf~2 -->
+<g id="program~~test_surfile~~CallsGraph_edge2" class="edge">
+<title>program~test_surfile&#45;&gt;proc~read_surf~2</title>
+<path fill="none" stroke="#ff0000" d="M64.01,-258C72.29,-258 81.35,-258 89.99,-258"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="90.23,-261.5 100.23,-258 90.23,-254.5 90.23,-261.5"/>
+</g>
+<!-- proc~scal2surf -->
+<g id="program~~test_surfile~~CallsGraph_node4" class="node">
+<title>proc~scal2surf</title>
+<g id="a_program~~test_surfile~~CallsGraph_node4"><a xlink:href="../proc/scal2surf.html" xlink:title="scal2surf">
+<polygon fill="#d9534f" stroke="#d9534f" points="263.5,-24 208.5,-24 208.5,0 263.5,0 263.5,-24"/>
+<text text-anchor="middle" x="236" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">scal2surf</text>
+</a>
+</g>
+</g>
+<!-- program~test_surfile&#45;&gt;proc~scal2surf -->
+<g id="program~~test_surfile~~CallsGraph_edge3" class="edge">
+<title>program~test_surfile&#45;&gt;proc~scal2surf</title>
+<path fill="none" stroke="#ff0000" d="M36.71,-245.97C45.06,-220.15 67.22,-158.27 100,-115 133.69,-70.55 148.9,-64.39 195,-33 196.9,-31.71 198.88,-30.44 200.91,-29.2"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="203.01,-32.03 209.95,-24.03 199.53,-25.96 203.01,-32.03"/>
+</g>
+<!-- proc~trans_surf_txt -->
+<g id="program~~test_surfile~~CallsGraph_node5" class="node">
+<title>proc~trans_surf_txt</title>
+<g id="a_program~~test_surfile~~CallsGraph_node5"><a xlink:href="../proc/trans_surf_txt.html" xlink:title="trans_surf_txt">
+<polygon fill="#d9534f" stroke="#d9534f" points="430.5,-510 352.5,-510 352.5,-486 430.5,-486 430.5,-510"/>
+<text text-anchor="middle" x="391.5" y="-495.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">trans_surf_txt</text>
+</a>
+</g>
+</g>
+<!-- program~test_surfile&#45;&gt;proc~trans_surf_txt -->
+<g id="program~~test_surfile~~CallsGraph_edge4" class="edge">
+<title>program~test_surfile&#45;&gt;proc~trans_surf_txt</title>
+<path fill="none" stroke="#ff0000" d="M38.89,-270.16C56.78,-305.72 114.31,-410.12 195,-459 240.03,-486.28 300.57,-494.91 342.29,-497.42"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="342.3,-500.93 352.47,-497.94 342.66,-493.94 342.3,-500.93"/>
+</g>
+<!-- proc~write_surf -->
+<g id="program~~test_surfile~~CallsGraph_node6" class="node">
+<title>proc~write_surf</title>
+<g id="a_program~~test_surfile~~CallsGraph_node6"><a xlink:href="../proc/write_surf.html" xlink:title="write_surf">
+<polygon fill="#d9534f" stroke="#d9534f" points="159,-148 100,-148 100,-124 159,-124 159,-148"/>
+<text text-anchor="middle" x="129.5" y="-133.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_surf</text>
+</a>
+</g>
+</g>
+<!-- program~test_surfile&#45;&gt;proc~write_surf -->
+<g id="program~~test_surfile~~CallsGraph_edge5" class="edge">
+<title>program~test_surfile&#45;&gt;proc~write_surf</title>
+<path fill="none" stroke="#ff0000" d="M42.51,-245.86C58.95,-224.85 92.87,-181.52 112.84,-156.01"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="115.62,-158.13 119.03,-148.09 110.11,-153.81 115.62,-158.13"/>
+</g>
+<!-- proc~empty -->
+<g id="program~~test_surfile~~CallsGraph_node9" class="node">
+<title>proc~empty</title>
+<g id="a_program~~test_surfile~~CallsGraph_node9"><a xlink:href="../proc/empty.html" xlink:title="empty">
+<polygon fill="#d9534f" stroke="#d9534f" points="655,-511 601,-511 601,-487 655,-487 655,-511"/>
+<text text-anchor="middle" x="628" y="-496.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">empty</text>
+</a>
+</g>
+</g>
+<!-- proc~init_scal&#45;&gt;proc~empty -->
+<g id="program~~test_surfile~~CallsGraph_edge6" class="edge">
+<title>proc~init_scal&#45;&gt;proc~empty</title>
+<path fill="none" stroke="#ff0000" d="M156.61,-533.4C224.39,-534.08 411.32,-533.67 565,-512 573.44,-510.81 582.45,-509.15 590.91,-507.41"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="591.84,-510.79 600.89,-505.28 590.38,-503.95 591.84,-510.79"/>
+</g>
+<!-- proc~get_unit -->
+<g id="program~~test_surfile~~CallsGraph_node11" class="node">
+<title>proc~get_unit</title>
+<g id="a_program~~test_surfile~~CallsGraph_node11"><a xlink:href="../proc/get_unit.html" xlink:title="get_unit">
+<polygon fill="#d9534f" stroke="#d9534f" points="562.5,-186 508.5,-186 508.5,-162 562.5,-162 562.5,-186"/>
+<text text-anchor="middle" x="535.5" y="-171.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_unit</text>
+</a>
+</g>
+</g>
+<!-- proc~read_surf~2&#45;&gt;proc~get_unit -->
+<g id="program~~test_surfile~~CallsGraph_edge7" class="edge">
+<title>proc~read_surf~2&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#cbff00" d="M158.65,-260.43C189.7,-261.8 240.12,-260.01 277,-239 299.56,-226.15 290.17,-205.36 313,-193 371.73,-161.21 452.25,-163.71 498.28,-168.67"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="498.04,-172.17 508.38,-169.86 498.86,-165.22 498.04,-172.17"/>
+</g>
+<!-- proc~lower -->
+<g id="program~~test_surfile~~CallsGraph_node12" class="node">
+<title>proc~lower</title>
+<g id="a_program~~test_surfile~~CallsGraph_node12"><a xlink:href="../proc/lower.html" xlink:title="lower">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="263,-188 209,-188 209,-164 263,-164 263,-188"/>
+<text text-anchor="middle" x="236" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lower</text>
+</a>
+</g>
+</g>
+<!-- proc~read_surf~2&#45;&gt;proc~lower -->
+<g id="program~~test_surfile~~CallsGraph_edge8" class="edge">
+<title>proc~read_surf~2&#45;&gt;proc~lower</title>
+<path fill="none" stroke="#cbff00" d="M141.54,-245.72C153.75,-232.6 174.43,-211.7 195,-197 196.81,-195.7 198.72,-194.44 200.67,-193.21"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="202.55,-196.16 209.41,-188.09 199.01,-190.12 202.55,-196.16"/>
+</g>
+<!-- proc~open_surffile -->
+<g id="program~~test_surfile~~CallsGraph_node13" class="node">
+<title>proc~open_surffile</title>
+<g id="a_program~~test_surfile~~CallsGraph_node13"><a xlink:href="../proc/open_surffile.html" xlink:title="open_surffile">
+<polygon fill="#d9534f" stroke="#d9534f" points="273,-450 199,-450 199,-426 273,-426 273,-450"/>
+<text text-anchor="middle" x="236" y="-435.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">open_surffile</text>
+</a>
+</g>
+</g>
+<!-- proc~read_surf~2&#45;&gt;proc~open_surffile -->
+<g id="program~~test_surfile~~CallsGraph_edge9" class="edge">
+<title>proc~read_surf~2&#45;&gt;proc~open_surffile</title>
+<path fill="none" stroke="#cbff00" d="M135.03,-270.04C144.38,-294.21 167.32,-349.95 195,-392 200.98,-401.09 208.61,-410.3 215.6,-418.06"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="213.46,-420.9 222.82,-425.85 218.59,-416.14 213.46,-420.9"/>
+</g>
+<!-- proc~sort_array2 -->
+<g id="program~~test_surfile~~CallsGraph_node14" class="node">
+<title>proc~sort_array2</title>
+<g id="a_program~~test_surfile~~CallsGraph_node14"><a xlink:href="../proc/sort_array2.html" xlink:title="sort_array2">
+<polygon fill="#d9534f" stroke="#d9534f" points="269.5,-310 202.5,-310 202.5,-286 269.5,-286 269.5,-310"/>
+<text text-anchor="middle" x="236" y="-295.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_array2</text>
+</a>
+</g>
+</g>
+<!-- proc~read_surf~2&#45;&gt;proc~sort_array2 -->
+<g id="program~~test_surfile~~CallsGraph_edge10" class="edge">
+<title>proc~read_surf~2&#45;&gt;proc~sort_array2</title>
+<path fill="none" stroke="#cbff00" d="M158.5,-268.72C169.48,-272.92 182.28,-277.82 194.24,-282.4"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="193.01,-285.67 203.6,-285.98 195.51,-279.14 193.01,-285.67"/>
+</g>
+<!-- proc~trans_surf_tab -->
+<g id="program~~test_surfile~~CallsGraph_node16" class="node">
+<title>proc~trans_surf_tab</title>
+<g id="a_program~~test_surfile~~CallsGraph_node16"><a xlink:href="../proc/trans_surf_tab.html" xlink:title="trans_surf_tab">
+<polygon fill="#d9534f" stroke="#d9534f" points="277,-230 195,-230 195,-206 277,-206 277,-230"/>
+<text text-anchor="middle" x="236" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">trans_surf_tab</text>
+</a>
+</g>
+</g>
+<!-- proc~read_surf~2&#45;&gt;proc~trans_surf_tab -->
+<g id="program~~test_surfile~~CallsGraph_edge11" class="edge">
+<title>proc~read_surf~2&#45;&gt;proc~trans_surf_tab</title>
+<path fill="none" stroke="#cbff00" d="M158.5,-247.28C169.48,-243.08 182.28,-238.18 194.24,-233.6"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="195.51,-236.86 203.6,-230.02 193.01,-230.33 195.51,-236.86"/>
+</g>
+<!-- proc~f_c_string -->
+<g id="program~~test_surfile~~CallsGraph_node10" class="node">
+<title>proc~f_c_string</title>
+<g id="a_program~~test_surfile~~CallsGraph_node10"><a xlink:href="../proc/f_c_string.html" xlink:title="f_c_string">
+<polygon fill="#d9534f" stroke="#d9534f" points="421,-24 362,-24 362,0 421,0 421,-24"/>
+<text text-anchor="middle" x="391.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">f_c_string</text>
+</a>
+</g>
+</g>
+<!-- proc~scal2surf&#45;&gt;proc~f_c_string -->
+<g id="program~~test_surfile~~CallsGraph_edge12" class="edge">
+<title>proc~scal2surf&#45;&gt;proc~f_c_string</title>
+<path fill="none" stroke="#00ff66" d="M263.74,-12C288.11,-12 324.4,-12 351.92,-12"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="351.99,-15.5 361.99,-12 351.99,-8.5 351.99,-15.5"/>
+</g>
+<!-- proc~c_f_string -->
+<g id="program~~test_surfile~~CallsGraph_node8" class="node">
+<title>proc~c_f_string</title>
+<g id="a_program~~test_surfile~~CallsGraph_node8"><a xlink:href="../proc/c_f_string.html" xlink:title="c_f_string">
+<polygon fill="#d9534f" stroke="#d9534f" points="565,-471 506,-471 506,-447 565,-447 565,-471"/>
+<text text-anchor="middle" x="535.5" y="-456.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">c_f_string</text>
+</a>
+</g>
+</g>
+<!-- proc~trans_surf_txt&#45;&gt;proc~c_f_string -->
+<g id="program~~test_surfile~~CallsGraph_edge13" class="edge">
+<title>proc~trans_surf_txt&#45;&gt;proc~c_f_string</title>
+<path fill="none" stroke="#0066ff" d="M430.55,-487.55C450.79,-481.99 475.62,-475.17 495.94,-469.59"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="497.09,-472.9 505.81,-466.88 495.24,-466.15 497.09,-472.9"/>
+</g>
+<!-- proc~trans_surf_txt&#45;&gt;proc~empty -->
+<g id="program~~test_surfile~~CallsGraph_edge14" class="edge">
+<title>proc~trans_surf_txt&#45;&gt;proc~empty</title>
+<path fill="none" stroke="#0066ff" d="M430.7,-498.16C474.94,-498.35 547.29,-498.66 590.71,-498.85"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="590.81,-502.35 600.82,-498.89 590.84,-495.35 590.81,-502.35"/>
+</g>
+<!-- proc~trans_surf_txt&#45;&gt;proc~get_unit -->
+<g id="program~~test_surfile~~CallsGraph_edge15" class="edge">
+<title>proc~trans_surf_txt&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#0066ff" d="M430.81,-493.23C444.95,-489.59 459.97,-483.21 470,-472 506.89,-430.79 526.54,-258.26 532.51,-196.28"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="536.02,-196.34 533.46,-186.06 529.05,-195.69 536.02,-196.34"/>
+</g>
+<!-- proc~write_surf&#45;&gt;proc~scal2surf -->
+<g id="program~~test_surfile~~CallsGraph_edge19" class="edge">
+<title>proc~write_surf&#45;&gt;proc~scal2surf</title>
+<path fill="none" stroke="#cc00ff" d="M135.58,-123.77C144.76,-102.87 165.91,-59.96 195,-33 196.47,-31.64 198.04,-30.34 199.68,-29.11"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="201.84,-31.88 208.3,-23.48 198.01,-26.02 201.84,-31.88"/>
+</g>
+<!-- proc~build_surf -->
+<g id="program~~test_surfile~~CallsGraph_node7" class="node">
+<title>proc~build_surf</title>
+<g id="a_program~~test_surfile~~CallsGraph_node7"><a xlink:href="../proc/build_surf.html" xlink:title="build_surf">
+<polygon fill="#d9534f" stroke="#d9534f" points="265.5,-66 206.5,-66 206.5,-42 265.5,-42 265.5,-66"/>
+<text text-anchor="middle" x="236" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">build_surf</text>
+</a>
+</g>
+</g>
+<!-- proc~write_surf&#45;&gt;proc~build_surf -->
+<g id="program~~test_surfile~~CallsGraph_edge16" class="edge">
+<title>proc~write_surf&#45;&gt;proc~build_surf</title>
+<path fill="none" stroke="#cc00ff" d="M141.54,-123.72C153.75,-110.6 174.43,-89.7 195,-75 196.81,-73.7 198.72,-72.44 200.67,-71.21"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="202.55,-74.16 209.41,-66.09 199.01,-68.12 202.55,-74.16"/>
+</g>
+<!-- proc~write_surf&#45;&gt;proc~get_unit -->
+<g id="program~~test_surfile~~CallsGraph_edge17" class="edge">
+<title>proc~write_surf&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#cc00ff" d="M159.26,-136.65C217.96,-138.27 355.65,-143.63 470,-160 479.23,-161.32 489.11,-163.22 498.29,-165.19"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="497.77,-168.66 508.29,-167.42 499.3,-161.83 497.77,-168.66"/>
+</g>
+<!-- proc~write_surf&#45;&gt;proc~lower -->
+<g id="program~~test_surfile~~CallsGraph_edge18" class="edge">
+<title>proc~write_surf&#45;&gt;proc~lower</title>
+<path fill="none" stroke="#cc00ff" d="M159.06,-146.93C171.48,-151.69 186.17,-157.31 199.31,-162.34"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="198.39,-165.74 208.98,-166.04 200.9,-159.2 198.39,-165.74"/>
+</g>
+<!-- proc~surf2scal -->
+<g id="program~~test_surfile~~CallsGraph_node15" class="node">
+<title>proc~surf2scal</title>
+<g id="a_program~~test_surfile~~CallsGraph_node15"><a xlink:href="../proc/surf2scal.html" xlink:title="surf2scal">
+<polygon fill="#d9534f" stroke="#d9534f" points="419,-430 364,-430 364,-406 419,-406 419,-430"/>
+<text text-anchor="middle" x="391.5" y="-415.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">surf2scal</text>
+</a>
+</g>
+</g>
+<!-- proc~write_surf&#45;&gt;proc~surf2scal -->
+<g id="program~~test_surfile~~CallsGraph_edge20" class="edge">
+<title>proc~write_surf&#45;&gt;proc~surf2scal</title>
+<path fill="none" stroke="#cc00ff" d="M133.68,-148.12C143.35,-184.33 173.08,-290.92 195,-319 233.68,-368.56 255.71,-371.12 313,-397 325.96,-402.85 340.89,-407.38 354.17,-410.7"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="353.41,-414.12 363.95,-413.01 355.02,-407.3 353.41,-414.12"/>
+</g>
+<!-- proc~write_surffile -->
+<g id="program~~test_surfile~~CallsGraph_node17" class="node">
+<title>proc~write_surffile</title>
+<g id="a_program~~test_surfile~~CallsGraph_node17"><a xlink:href="../proc/write_surffile.html" xlink:title="write_surffile">
+<polygon fill="#d9534f" stroke="#d9534f" points="272.5,-108 199.5,-108 199.5,-84 272.5,-84 272.5,-108"/>
+<text text-anchor="middle" x="236" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_surffile</text>
+</a>
+</g>
+</g>
+<!-- proc~write_surf&#45;&gt;proc~write_surffile -->
+<g id="program~~test_surfile~~CallsGraph_edge21" class="edge">
+<title>proc~write_surf&#45;&gt;proc~write_surffile</title>
+<path fill="none" stroke="#cc00ff" d="M159.06,-125.07C169.82,-120.95 182.29,-116.18 193.97,-111.71"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="195.45,-114.89 203.54,-108.04 192.95,-108.35 195.45,-114.89"/>
+</g>
+<!-- proc~unit2iuc -->
+<g id="program~~test_surfile~~CallsGraph_node22" class="node">
+<title>proc~unit2iuc</title>
+<g id="a_program~~test_surfile~~CallsGraph_node22"><a xlink:href="../proc/unit2iuc.html" xlink:title="unit2IUc">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="418.5,-70 364.5,-70 364.5,-46 418.5,-46 418.5,-70"/>
+<text text-anchor="middle" x="391.5" y="-55.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">unit2IUc</text>
+</a>
+</g>
+</g>
+<!-- proc~build_surf&#45;&gt;proc~unit2iuc -->
+<g id="program~~test_surfile~~CallsGraph_edge22" class="edge">
+<title>proc~build_surf&#45;&gt;proc~unit2iuc</title>
+<path fill="none" stroke="#ff0000" d="M265.51,-54.74C290.54,-55.4 327.08,-56.35 354.19,-57.05"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="354.35,-60.56 364.44,-57.32 354.54,-53.56 354.35,-60.56"/>
+</g>
+<!-- proc~c_f_string&#45;&gt;proc~empty -->
+<g id="program~~test_surfile~~CallsGraph_edge23" class="edge">
+<title>proc~c_f_string&#45;&gt;proc~empty</title>
+<path fill="none" stroke="#ff8b00" d="M563.65,-471C572.39,-474.86 582.2,-479.2 591.44,-483.28"/>
+<polygon fill="#ff8b00" stroke="#ff8b00" points="590.24,-486.58 600.8,-487.42 593.07,-480.18 590.24,-486.58"/>
+</g>
+<!-- proc~open_surffile&#45;&gt;proc~trans_surf_txt -->
+<g id="program~~test_surfile~~CallsGraph_edge26" class="edge">
+<title>proc~open_surffile&#45;&gt;proc~trans_surf_txt</title>
+<path fill="none" stroke="#00b9ff" d="M262.42,-450.11C277.06,-456.9 295.9,-465.32 313,-472 322.52,-475.72 332.81,-479.4 342.69,-482.77"/>
+<polygon fill="#00b9ff" stroke="#00b9ff" points="341.8,-486.16 352.39,-486.03 344.03,-479.53 341.8,-486.16"/>
+</g>
+<!-- proc~open_surffile&#45;&gt;proc~get_unit -->
+<g id="program~~test_surfile~~CallsGraph_edge24" class="edge">
+<title>proc~open_surffile&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#00b9ff" d="M271.28,-450.11C320.81,-465.22 412.75,-483.99 470,-439 508.48,-408.76 526.87,-254.57 532.53,-196.32"/>
+<polygon fill="#00b9ff" stroke="#00b9ff" points="536.04,-196.3 533.49,-186.01 529.08,-195.64 536.04,-196.3"/>
+</g>
+<!-- proc~open_surffile&#45;&gt;proc~surf2scal -->
+<g id="program~~test_surfile~~CallsGraph_edge25" class="edge">
+<title>proc~open_surffile&#45;&gt;proc~surf2scal</title>
+<path fill="none" stroke="#00b9ff" d="M273.38,-433.26C297.74,-430.09 329.68,-425.92 354.05,-422.75"/>
+<polygon fill="#00b9ff" stroke="#00b9ff" points="354.53,-426.22 363.99,-421.45 353.62,-419.28 354.53,-426.22"/>
+</g>
+<!-- proc~change_array_order -->
+<g id="program~~test_surfile~~CallsGraph_node18" class="node">
+<title>proc~change_array_order</title>
+<g id="a_program~~test_surfile~~CallsGraph_node18"><a xlink:href="../proc/change_array_order.html" xlink:title="change_array_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="446.5,-226 336.5,-226 336.5,-202 446.5,-202 446.5,-226"/>
+<text text-anchor="middle" x="391.5" y="-211.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">change_array_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~change_array_order -->
+<g id="program~~test_surfile~~CallsGraph_edge27" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~change_array_order</title>
+<path fill="none" stroke="#002eff" d="M257.55,-285.88C263.99,-281.76 270.98,-276.94 277,-272 294.73,-257.44 293.23,-246.64 313,-235 317.39,-232.42 322.11,-230.14 326.97,-228.14"/>
+<polygon fill="#002eff" stroke="#002eff" points="328.3,-231.38 336.45,-224.62 325.86,-224.82 328.3,-231.38"/>
+</g>
+<!-- proc~init_order -->
+<g id="program~~test_surfile~~CallsGraph_node19" class="node">
+<title>proc~init_order</title>
+<g id="a_program~~test_surfile~~CallsGraph_node19"><a xlink:href="../proc/init_order.html" xlink:title="init_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="420.5,-388 362.5,-388 362.5,-364 420.5,-364 420.5,-388"/>
+<text text-anchor="middle" x="391.5" y="-373.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">init_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~init_order -->
+<g id="program~~test_surfile~~CallsGraph_edge28" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~init_order</title>
+<path fill="none" stroke="#002eff" d="M249.97,-310.2C264.34,-323.08 288.69,-343.14 313,-355 325.26,-360.98 339.47,-365.46 352.34,-368.71"/>
+<polygon fill="#002eff" stroke="#002eff" points="351.79,-372.17 362.32,-371.06 353.39,-365.36 351.79,-372.17"/>
+</g>
+<!-- proc~sort_array_integer_with_order -->
+<g id="program~~test_surfile~~CallsGraph_node20" class="node">
+<title>proc~sort_array_integer_with_order</title>
+<g id="a_program~~test_surfile~~CallsGraph_node20"><a xlink:href="../proc/sort_array_integer_with_order.html" xlink:title="sort_array_integer_with_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="470,-328 313,-328 313,-304 470,-304 470,-328"/>
+<text text-anchor="middle" x="391.5" y="-313.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_array_integer_with_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~sort_array_integer_with_order -->
+<g id="program~~test_surfile~~CallsGraph_edge29" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~sort_array_integer_with_order</title>
+<path fill="none" stroke="#002eff" d="M269.55,-301.82C279.52,-302.99 291,-304.33 302.83,-305.72"/>
+<polygon fill="#002eff" stroke="#002eff" points="302.49,-309.2 312.83,-306.89 303.31,-302.25 302.49,-309.2"/>
+</g>
+<!-- proc~sort_array_real_with_order -->
+<g id="program~~test_surfile~~CallsGraph_node21" class="node">
+<title>proc~sort_array_real_with_order</title>
+<g id="a_program~~test_surfile~~CallsGraph_node21"><a xlink:href="../proc/sort_array_real_with_order.html" xlink:title="sort_array_real_with_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="462.5,-268 320.5,-268 320.5,-244 462.5,-244 462.5,-268"/>
+<text text-anchor="middle" x="391.5" y="-253.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_array_real_with_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~sort_array_real_with_order -->
+<g id="program~~test_surfile~~CallsGraph_edge30" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~sort_array_real_with_order</title>
+<path fill="none" stroke="#002eff" d="M269.55,-289.09C289.1,-283.74 314.45,-276.81 336.89,-270.67"/>
+<polygon fill="#002eff" stroke="#002eff" points="337.91,-274.02 346.64,-268 336.07,-267.27 337.91,-274.02"/>
+</g>
+<!-- proc~surf2scal&#45;&gt;proc~c_f_string -->
+<g id="program~~test_surfile~~CallsGraph_edge31" class="edge">
+<title>proc~surf2scal&#45;&gt;proc~c_f_string</title>
+<path fill="none" stroke="#5c00ff" d="M419.21,-425.71C440.96,-431.99 471.94,-440.94 496.31,-447.97"/>
+<polygon fill="#5c00ff" stroke="#5c00ff" points="495.38,-451.35 505.96,-450.76 497.33,-444.62 495.38,-451.35"/>
+</g>
+<!-- proc~unit2iuf -->
+<g id="program~~test_surfile~~CallsGraph_node23" class="node">
+<title>proc~unit2iuf</title>
+<g id="a_program~~test_surfile~~CallsGraph_node23"><a xlink:href="../proc/unit2iuf.html" xlink:title="unit2IUf">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="562.5,-107 508.5,-107 508.5,-83 562.5,-83 562.5,-107"/>
+<text text-anchor="middle" x="535.5" y="-92.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">unit2IUf</text>
+</a>
+</g>
+</g>
+<!-- proc~surf2scal&#45;&gt;proc~unit2iuf -->
+<g id="program~~test_surfile~~CallsGraph_edge32" class="edge">
+<title>proc~surf2scal&#45;&gt;proc~unit2iuf</title>
+<path fill="none" stroke="#5c00ff" d="M419.32,-417.83C436.32,-416.21 457.41,-411.17 470,-397 542.8,-315.05 473.44,-257.67 506,-153 509.93,-140.37 516.29,-127.07 522,-116.4"/>
+<polygon fill="#5c00ff" stroke="#5c00ff" points="525.18,-117.87 526.98,-107.43 519.06,-114.47 525.18,-117.87"/>
+</g>
+<!-- proc~trans_surf_tab&#45;&gt;proc~unit2iuc -->
+<g id="program~~test_surfile~~CallsGraph_edge33" class="edge">
+<title>proc~trans_surf_tab&#45;&gt;proc~unit2iuc</title>
+<path fill="none" stroke="#e700ff" d="M263.77,-205.88C268.39,-203.26 272.99,-200.27 277,-197 299.6,-178.55 349.87,-112.71 375.23,-78.69"/>
+<polygon fill="#e700ff" stroke="#e700ff" points="378.25,-80.5 381.4,-70.39 372.63,-76.33 378.25,-80.5"/>
+</g>
+<!-- proc~write_surffile&#45;&gt;proc~get_unit -->
+<g id="program~~test_surfile~~CallsGraph_edge34" class="edge">
+<title>proc~write_surffile&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff008b" d="M272.87,-93.92C320,-92.52 404.44,-94.68 470,-122 487.64,-129.35 504.35,-143.08 516.34,-154.59"/>
+<polygon fill="#ff008b" stroke="#ff008b" points="513.95,-157.15 523.5,-161.74 518.9,-152.2 513.95,-157.15"/>
+</g>
+<!-- proc~sort_array_integer_with_order&#45;&gt;proc~sort_array_integer_with_order -->
+<g id="program~~test_surfile~~CallsGraph_edge35" class="edge">
+<title>proc~sort_array_integer_with_order&#45;&gt;proc~sort_array_integer_with_order</title>
+<path fill="none" stroke="#00ff00" d="M367.69,-328.01C359.38,-336.97 367.31,-346 391.5,-346 406.24,-346 414.94,-342.65 417.61,-338"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="420.97,-336.97 415.31,-328.01 414.15,-338.54 420.97,-336.97"/>
+</g>
+<!-- proc~sort_array_real_with_order&#45;&gt;proc~sort_array_real_with_order -->
+<g id="program~~test_surfile~~CallsGraph_edge36" class="edge">
+<title>proc~sort_array_real_with_order&#45;&gt;proc~sort_array_real_with_order</title>
+<path fill="none" stroke="#00ffff" d="M367.69,-268.01C359.38,-276.97 367.31,-286 391.5,-286 406.24,-286 414.94,-282.65 417.61,-278"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="420.97,-276.97 415.31,-268.01 414.15,-278.54 420.97,-276.97"/>
+</g>
+<!-- proc~unit2iuc&#45;&gt;proc~unit2iuf -->
+<g id="program~~test_surfile~~CallsGraph_edge37" class="edge">
+<title>proc~unit2iuc&#45;&gt;proc~unit2iuf</title>
+<path fill="none" stroke="#0000ff" d="M418.54,-64.79C440.92,-70.62 473.42,-79.09 498.33,-85.57"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="497.58,-89 508.14,-88.13 499.34,-82.22 497.58,-89"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panprogramtest_surfileCallsGraph = svgPanZoom('#programtest_surfileCallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~3"></span>
+              integer(kind=I4)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-j~2"></span>
+              integer(kind=I4)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>j</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-scal"></span>
+              type(<a href='../type/scale_surf.html'>SCALE_SURF</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>scal</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>object <a href="../type/scale_surf.html">SCALE_SURF</a>, fortran type version</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-surf"></span>
+              type(<a href='../type/obj_surf.html'>OBJ_SURF</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>surf</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>object <a href="../type/obj_surf.html">OBJ_SURF</a>,         c type version</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tab"></span>
+              real(kind=R8),
+            </td>
+            <td>
+              dimension(:,:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>tab</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>height array</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">program </span><span class="n">test_surfile</span>
+<span class="k">use </span><span class="n">data_arch</span>
+<span class="k">use </span><span class="n">surfile</span>
+<span class="k">implicit none</span>
+
+<span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tab</span><span class="w">  </span><span class="c">!! *height array*</span>
+<span class="k">type</span><span class="p">(</span><span class="n">SCALE_SURF</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">scal</span><span class="w">                           </span><span class="c">!! *object [[SCALE_SURF]], fortran type version*</span>
+<span class="k">type</span><span class="p">(</span><span class="n">OBJ_SURF</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">surf</span><span class="w">                           </span><span class="c">!! *object [[OBJ_SURF]],         c type version*</span>
+
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span>
+
+<span class="w">   </span><span class="c">! --- reads a xyz ascii file, writes the corresponding &quot;sur&quot; file and dumps the header</span>
+<span class="w">   </span><span class="k">call </span><span class="n">init_scal</span><span class="p">(</span><span class="n">scal</span><span class="p">)</span><span class="w">                          </span><span class="c">! creates an empty surface type (fortran form)</span>
+
+<span class="w">   </span><span class="k">call </span><span class="n">read_surf</span><span class="p">(</span><span class="n">nom_fic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sur/600x300.dat&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!  in; three columns in ascii format : x y f(x,y); no header; tab separation</span>
+<span class="w">                    </span><span class="n">tab_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab</span><span class="p">,</span><span class="w">               </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! out; array containing the surface</span>
+<span class="w">                     </span><span class="n">scal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scal</span><span class="p">)</span><span class="w">                </span><span class="c">! out; surface type containing some informations like length, width, etc.</span>
+
+<span class="w">   </span><span class="k">call </span><span class="n">write_surf</span><span class="p">(</span><span class="n">nom_fic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;out/600x300_dat_to_not-scaled.sur&quot;</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!    in; filename of the &quot;.sur&quot; to be created</span>
+<span class="w">                     </span><span class="n">tab_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab</span><span class="p">,</span><span class="w">                                  </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!    in; surface array</span>
+<span class="w">                      </span><span class="n">scal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scal</span><span class="p">)</span><span class="w">                                   </span><span class="c">! inout; surface type</span>
+
+<span class="w">   </span><span class="k">call </span><span class="n">scal2surf</span><span class="p">(</span><span class="n">scal</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">)</span><span class="w">                                        </span><span class="c">!        surface type transformation: fortran form to c form</span>
+<span class="w">   </span><span class="k">call </span><span class="n">trans_surf_txt</span><span class="p">(</span><span class="n">surf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">surf</span><span class="p">,</span><span class="w">                                </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!    in; dumps the surface header ...</span>
+<span class="w">                    </span><span class="n">fichier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;out/600x300_dat_to_not-scaled.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!    in; ... in a specified file ...</span>
+<span class="w">                        </span><span class="n">xyz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.)</span><span class="w">                               </span><span class="c">!    in; ... and no f(x,y) dump.</span>
+
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! --- reads a &quot;sur&quot; file, writes its scaled form in a &quot;sur&quot; file and a xyz file</span>
+<span class="w">   </span><span class="k">call </span><span class="n">read_surf</span><span class="p">(</span><span class="n">nom_fic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sur/600x300.sur&quot;</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!  in; Digital Surf format</span>
+<span class="w">                       </span><span class="n">mu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1._R8</span><span class="p">,</span><span class="w">              </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!  in; data will be centered</span>
+<span class="w">                       </span><span class="n">sq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1._R8</span><span class="p">,</span><span class="w">              </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!  in; data will be normalized (with the standard deviation)</span>
+<span class="w">                    </span><span class="n">tab_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab</span><span class="p">,</span><span class="w">                </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! out; array containing the surface</span>
+<span class="w">                     </span><span class="n">scal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scal</span><span class="p">)</span><span class="w">                 </span><span class="c">! out; surface type containing some informations like length, width, etc.</span>
+
+<span class="w">   </span><span class="k">call </span><span class="n">write_surf</span><span class="p">(</span><span class="n">nom_fic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;out/600x300_resu_scaled.sur&quot;</span><span class="p">,</span><span class="w">       </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!    in; filename of the &quot;.sur&quot; to be created</span>
+<span class="w">                     </span><span class="n">tab_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab</span><span class="p">,</span><span class="w">                                 </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!    in; surface array</span>
+<span class="w">                      </span><span class="n">scal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scal</span><span class="p">)</span><span class="w">                                  </span><span class="c">! inout; surface type</span>
+
+<span class="w">   </span><span class="k">call </span><span class="n">write_surf</span><span class="p">(</span><span class="n">nom_fic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;out/600x300_resu_scaled.dat&quot;</span><span class="p">,</span><span class="w">       </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!    in; filename of the ascii &quot;.dat&quot; to be created</span>
+<span class="w">                     </span><span class="n">tab_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab</span><span class="p">,</span><span class="w">                                 </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!    in; surface array</span>
+<span class="w">                      </span><span class="n">scal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scal</span><span class="p">)</span><span class="w">                                  </span><span class="c">! inout; surface type</span>
+
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! --- creates a surface and writes a &quot;.sur&quot; file</span>
+<span class="w">   </span><span class="k">allocate</span><span class="p">(</span><span class="n">tab</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span><span class="mi">300</span><span class="p">))</span>
+<span class="w">   </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span>
+<span class="w">         </span><span class="n">tab</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.e+9</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="mi">6</span><span class="w"> </span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">PI_R8</span><span class="o">*</span><span class="n">i</span><span class="o">/</span><span class="mi">600</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">PI_R8</span><span class="o">*</span><span class="n">j</span><span class="o">/</span><span class="mi">300</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="mf">1.e+8</span>
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">   enddo</span>
+
+<span class="k">   call </span><span class="n">init_scal</span><span class="p">(</span><span class="n">scal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scal</span><span class="p">,</span><span class="w">      </span><span class="p">&amp;</span><span class="w">           </span><span class="c">! out; creates a surface type, containing ...</span>
+<span class="w">                    </span><span class="n">nx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w">       </span><span class="p">&amp;</span><span class="w">           </span><span class="c">!  in; ... the number of points along x ...</span>
+<span class="w">                    </span><span class="n">ny</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">       </span><span class="p">&amp;</span><span class="w">           </span><span class="c">!  in; ... the number of points along y ...</span>
+<span class="w">                    </span><span class="n">lx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0e-3_R8</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">           </span><span class="c">!  in; ... the length (default unit : m) ...</span>
+<span class="w">                    </span><span class="n">ly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5e-3_R8</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">           </span><span class="c">!  in; ... the width ...</span>
+<span class="w">                </span><span class="n">unit_z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Pa&#39;</span><span class="w">       </span><span class="p">)</span><span class="w">           </span><span class="c">!  in; ... and the unit along z.</span>
+
+<span class="w">   </span><span class="k">call </span><span class="n">write_surf</span><span class="p">(</span><span class="n">nom_fic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;out/cos.sur&quot;</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!    in; filename of the &quot;.sur&quot; to be created</span>
+<span class="w">                     </span><span class="n">tab_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab</span><span class="p">,</span><span class="w">            </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!    in; surface array</span>
+<span class="w">                      </span><span class="n">scal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scal</span><span class="p">)</span><span class="w">              </span><span class="c">! inout; surface type</span>
+
+<span class="w">   </span><span class="k">call </span><span class="n">read_surf</span><span class="p">(</span><span class="n">nom_fic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;out/cos.sur&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">    </span><span class="c">!  in; Digital Surf format</span>
+<span class="w">                    </span><span class="n">tab_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab</span><span class="p">,</span><span class="w">           </span><span class="p">&amp;</span><span class="w">    </span><span class="c">! out; array containing the surface</span>
+<span class="w">                     </span><span class="n">scal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scal</span><span class="p">)</span><span class="w">               </span><span class="c">! out; surface type containing some informations like length, width, etc.</span>
+<span class="w">   </span><span class="k">call </span><span class="n">scal2surf</span><span class="p">(</span><span class="n">scal</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">)</span><span class="w">                   </span><span class="c">!      surface type transformation: fortran form to c form</span>
+<span class="w">   </span><span class="k">call </span><span class="n">trans_surf_txt</span><span class="p">(</span><span class="n">surf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">surf</span><span class="p">,</span><span class="w">          </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! in; dumps the surface header ...</span>
+<span class="w">                    </span><span class="n">fichier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;out/cos.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! in; ... in a specified file ...</span>
+<span class="w">                        </span><span class="n">xyz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.)</span><span class="w">          </span><span class="c">! in; ... and no f(x,y) dump.</span>
+
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">tab</span><span class="w"> </span><span class="p">)</span>
+
+<span class="k">stop</span>
+<span class="k">endprogram </span><span class="n">test_surfile</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

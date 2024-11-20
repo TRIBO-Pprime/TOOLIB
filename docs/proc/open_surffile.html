@@ -1,0 +1,698 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>open_surffile &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>open_surffile
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.0% of total for procedures.">24 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/mod_surfile.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_surfile.f90.html'>mod_surfile.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/surfile.html'>surfile</a></li>
+            <li class="breadcrumb-item active" aria-current="page">open_surffile</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/open_surffile.html#src">open_surffile</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  subroutine open_surffile(fichier, surf, scal, dump)  
+</h2>
+    
+
+    <div class="alert alert-info">
+<p class="alert-title h4">Note</p>
+<p>Subroutine that opens a <code>.sur</code> file and transfers it contents into an object <a href="../type/obj_surf.html">OBJ_SURF</a></p>
+</div>
+<div class="alert alert-warning">
+<p class="alert-title h4">Warning</p>
+<p>By default here, the heights are not written with <code>dump=.true.</code></p>
+</div>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fichier~2"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fichier</strong></td>
+            <td>
+                <p><em>file to be read</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-surf~5"></span>
+              type(<a href='../type/obj_surf.html'>OBJ_SURF</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>surf</strong></td>
+            <td>
+                <p><em>object that will contain the file infos and heights</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-scal~5"></span>
+              type(<a href='../type/scale_surf.html'>SCALE_SURF</a>),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>scal</strong></td>
+            <td>
+                <p><em>object <a href="../type/scale_surf.html">SCALE_SURF</a></em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dump"></span>
+              logical(kind=I4),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dump</strong></td>
+            <td>
+                <p><em>whether to transform the data in a text file</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~open_surffile~~CallsGraph Pages: 1 -->
+<svg id="procopen_surffileCallsGraph" width="381pt" height="154pt"
+ viewBox="0.00 0.00 381.00 154.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~open_surffile~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 150)">
+<title>proc~~open_surffile~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-150 377,-150 377,4 -4,4"/>
+<!-- proc~open_surffile -->
+<g id="proc~~open_surffile~~CallsGraph_node1" class="node">
+<title>proc~open_surffile</title>
+<polygon fill="none" stroke="black" points="74,-106 0,-106 0,-82 74,-82 74,-106"/>
+<text text-anchor="middle" x="37" y="-91.6" font-family="Helvetica,sans-Serif" font-size="10.50">open_surffile</text>
+</g>
+<!-- proc~get_unit -->
+<g id="proc~~open_surffile~~CallsGraph_node2" class="node">
+<title>proc~get_unit</title>
+<g id="a_proc~~open_surffile~~CallsGraph_node2"><a xlink:href="../proc/get_unit.html" xlink:title="get_unit">
+<polygon fill="#d9534f" stroke="#d9534f" points="280.5,-146 226.5,-146 226.5,-122 280.5,-122 280.5,-146"/>
+<text text-anchor="middle" x="253.5" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_unit</text>
+</a>
+</g>
+</g>
+<!-- proc~open_surffile&#45;&gt;proc~get_unit -->
+<g id="proc~~open_surffile~~CallsGraph_edge1" class="edge">
+<title>proc~open_surffile&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M74.36,-105.76C85.68,-109.12 98.28,-112.52 110,-115 145.78,-122.56 187.28,-127.69 216.23,-130.69"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="216,-134.19 226.3,-131.71 216.7,-127.22 216,-134.19"/>
+</g>
+<!-- proc~surf2scal -->
+<g id="proc~~open_surffile~~CallsGraph_node3" class="node">
+<title>proc~surf2scal</title>
+<g id="a_proc~~open_surffile~~CallsGraph_node3"><a xlink:href="../proc/surf2scal.html" xlink:title="surf2scal">
+<polygon fill="#d9534f" stroke="#d9534f" points="176.5,-64 121.5,-64 121.5,-40 176.5,-40 176.5,-64"/>
+<text text-anchor="middle" x="149" y="-49.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">surf2scal</text>
+</a>
+</g>
+</g>
+<!-- proc~open_surffile&#45;&gt;proc~surf2scal -->
+<g id="proc~~open_surffile~~CallsGraph_edge2" class="edge">
+<title>proc~open_surffile&#45;&gt;proc~surf2scal</title>
+<path fill="none" stroke="#ff0000" d="M69.52,-81.96C82.7,-76.93 98.1,-71.05 111.74,-65.84"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="113.22,-69.03 121.31,-62.19 110.72,-62.49 113.22,-69.03"/>
+</g>
+<!-- proc~trans_surf_txt -->
+<g id="proc~~open_surffile~~CallsGraph_node4" class="node">
+<title>proc~trans_surf_txt</title>
+<g id="a_proc~~open_surffile~~CallsGraph_node4"><a xlink:href="../proc/trans_surf_txt.html" xlink:title="trans_surf_txt">
+<polygon fill="#d9534f" stroke="#d9534f" points="188,-106 110,-106 110,-82 188,-82 188,-106"/>
+<text text-anchor="middle" x="149" y="-91.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">trans_surf_txt</text>
+</a>
+</g>
+</g>
+<!-- proc~open_surffile&#45;&gt;proc~trans_surf_txt -->
+<g id="proc~~open_surffile~~CallsGraph_edge3" class="edge">
+<title>proc~open_surffile&#45;&gt;proc~trans_surf_txt</title>
+<path fill="none" stroke="#ff0000" d="M74.02,-94C82.13,-94 90.86,-94 99.39,-94"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="99.63,-97.5 109.63,-94 99.63,-90.5 99.63,-97.5"/>
+</g>
+<!-- proc~c_f_string -->
+<g id="proc~~open_surffile~~CallsGraph_node5" class="node">
+<title>proc~c_f_string</title>
+<g id="a_proc~~open_surffile~~CallsGraph_node5"><a xlink:href="../proc/c_f_string.html" xlink:title="c_f_string">
+<polygon fill="#d9534f" stroke="#d9534f" points="283,-66 224,-66 224,-42 283,-42 283,-66"/>
+<text text-anchor="middle" x="253.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">c_f_string</text>
+</a>
+</g>
+</g>
+<!-- proc~surf2scal&#45;&gt;proc~c_f_string -->
+<g id="proc~~open_surffile~~CallsGraph_edge4" class="edge">
+<title>proc~surf2scal&#45;&gt;proc~c_f_string</title>
+<path fill="none" stroke="#00ff00" d="M176.66,-52.52C187.97,-52.74 201.37,-53 213.74,-53.24"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="213.75,-56.74 223.81,-53.44 213.88,-49.75 213.75,-56.74"/>
+</g>
+<!-- proc~unit2iuf -->
+<g id="proc~~open_surffile~~CallsGraph_node7" class="node">
+<title>proc~unit2iuf</title>
+<g id="a_proc~~open_surffile~~CallsGraph_node7"><a xlink:href="../proc/unit2iuf.html" xlink:title="unit2IUf">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="280.5,-24 226.5,-24 226.5,0 280.5,0 280.5,-24"/>
+<text text-anchor="middle" x="253.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">unit2IUf</text>
+</a>
+</g>
+</g>
+<!-- proc~surf2scal&#45;&gt;proc~unit2iuf -->
+<g id="proc~~open_surffile~~CallsGraph_edge5" class="edge">
+<title>proc~surf2scal&#45;&gt;proc~unit2iuf</title>
+<path fill="none" stroke="#00ff00" d="M176.66,-41.59C188.86,-36.84 203.49,-31.13 216.63,-26"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="218.28,-29.11 226.33,-22.21 215.74,-22.59 218.28,-29.11"/>
+</g>
+<!-- proc~trans_surf_txt&#45;&gt;proc~get_unit -->
+<g id="proc~~open_surffile~~CallsGraph_edge8" class="edge">
+<title>proc~trans_surf_txt&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#0000ff" d="M180.75,-106C192.09,-110.42 205.02,-115.47 216.76,-120.05"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="215.68,-123.39 226.27,-123.76 218.23,-116.87 215.68,-123.39"/>
+</g>
+<!-- proc~trans_surf_txt&#45;&gt;proc~c_f_string -->
+<g id="proc~~open_surffile~~CallsGraph_edge6" class="edge">
+<title>proc~trans_surf_txt&#45;&gt;proc~c_f_string</title>
+<path fill="none" stroke="#0000ff" d="M180.75,-82C191.33,-77.87 203.31,-73.2 214.41,-68.87"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="215.83,-72.07 223.87,-65.17 213.28,-65.55 215.83,-72.07"/>
+</g>
+<!-- proc~empty -->
+<g id="proc~~open_surffile~~CallsGraph_node6" class="node">
+<title>proc~empty</title>
+<g id="a_proc~~open_surffile~~CallsGraph_node6"><a xlink:href="../proc/empty.html" xlink:title="empty">
+<polygon fill="#d9534f" stroke="#d9534f" points="373,-86 319,-86 319,-62 373,-62 373,-86"/>
+<text text-anchor="middle" x="346" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">empty</text>
+</a>
+</g>
+</g>
+<!-- proc~trans_surf_txt&#45;&gt;proc~empty -->
+<g id="proc~~open_surffile~~CallsGraph_edge7" class="edge">
+<title>proc~trans_surf_txt&#45;&gt;proc~empty</title>
+<path fill="none" stroke="#0000ff" d="M188.06,-90.1C223.02,-86.51 274.45,-81.24 308.81,-77.71"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="309.29,-81.18 318.88,-76.68 308.58,-74.22 309.29,-81.18"/>
+</g>
+<!-- proc~c_f_string&#45;&gt;proc~empty -->
+<g id="proc~~open_surffile~~CallsGraph_edge9" class="edge">
+<title>proc~c_f_string&#45;&gt;proc~empty</title>
+<path fill="none" stroke="#ff0000" d="M283.13,-60.33C291.32,-62.14 300.35,-64.13 308.93,-66.03"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="308.18,-69.45 318.7,-68.19 309.69,-62.61 308.18,-69.45"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~open_surffile~~CalledByGraph Pages: 1 -->
+<svg id="procopen_surffileCalledByGraph" width="276pt" height="32pt"
+ viewBox="0.00 0.00 276.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~open_surffile~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~open_surffile~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 272,-28 272,4 -4,4"/>
+<!-- proc~open_surffile -->
+<g id="proc~~open_surffile~~CalledByGraph_node1" class="node">
+<title>proc~open_surffile</title>
+<polygon fill="none" stroke="black" points="268,-24 194,-24 194,0 268,0 268,-24"/>
+<text text-anchor="middle" x="231" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">open_surffile</text>
+</g>
+<!-- proc~read_surf~2 -->
+<g id="proc~~open_surffile~~CalledByGraph_node2" class="node">
+<title>proc~read_surf~2</title>
+<g id="a_proc~~open_surffile~~CalledByGraph_node2"><a xlink:href="../proc/read_surf~2.html" xlink:title="read_surf">
+<polygon fill="#d9534f" stroke="#d9534f" points="158,-24 100,-24 100,0 158,0 158,-24"/>
+<text text-anchor="middle" x="129" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">read_surf</text>
+</a>
+</g>
+</g>
+<!-- proc~read_surf~2&#45;&gt;proc~open_surffile -->
+<g id="proc~~open_surffile~~CalledByGraph_edge1" class="edge">
+<title>proc~read_surf~2&#45;&gt;proc~open_surffile</title>
+<path fill="none" stroke="#ff0000" d="M158.12,-12C166.09,-12 174.99,-12 183.73,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="183.86,-15.5 193.86,-12 183.86,-8.5 183.86,-15.5"/>
+</g>
+<!-- program~test_surfile -->
+<g id="proc~~open_surffile~~CalledByGraph_node3" class="node">
+<title>program~test_surfile</title>
+<g id="a_proc~~open_surffile~~CalledByGraph_node3"><a xlink:href="../program/test_surfile.html" xlink:title="test_surfile">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_surfile</text>
+</a>
+</g>
+</g>
+<!-- program~test_surfile&#45;&gt;proc~read_surf~2 -->
+<g id="proc~~open_surffile~~CalledByGraph_edge2" class="edge">
+<title>program~test_surfile&#45;&gt;proc~read_surf~2</title>
+<path fill="none" stroke="#ff0000" d="M64.11,-12C72.26,-12 81.15,-12 89.64,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="89.71,-15.5 99.71,-12 89.71,-8.5 89.71,-15.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">subroutine </span><span class="n">open_surffile</span><span class="p">(</span><span class="n">fichier</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">,</span><span class="w"> </span><span class="n">scal</span><span class="p">,</span><span class="w"> </span><span class="n">dump</span><span class="p">)</span>
+<span class="w">   </span><span class="k">implicit none</span>
+<span class="k">   </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">fichier</span><span class="w">         </span><span class="c">!! *file to be read*</span>
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">OBJ_SURF</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">surf</span><span class="w">            </span><span class="c">!! *object that will contain the file infos and heights*</span>
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">SCALE_SURF</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">scal</span><span class="w">            </span><span class="c">!! *object [[SCALE_SURF]]*</span>
+<span class="w">   </span><span class="kt">logical</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dump</span><span class="w">   </span><span class="c">!! *whether to transform the data in a text file*</span>
+
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">k</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">scal_x</span><span class="p">,</span><span class="w"> </span><span class="n">scal_y</span><span class="p">,</span><span class="w"> </span><span class="n">scal_z</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_CHAR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">charact</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">get_unit</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">      </span><span class="k">open</span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="nb">trim</span><span class="p">(</span><span class="n">fichier</span><span class="p">),</span><span class="w">     </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!</span>
+<span class="w">               </span><span class="n">form</span><span class="o">=</span><span class="s1">&#39;unformatted&#39;</span><span class="p">,</span><span class="w">     </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!</span>
+<span class="w">               </span><span class="nb">access</span><span class="o">=</span><span class="s2">&quot;stream&quot;</span><span class="p">,</span><span class="w">        </span><span class="p">&amp;</span><span class="w"> </span><span class="c">! beware the &quot;frecord-marker&quot; in other modes</span>
+<span class="w">               </span><span class="n">action</span><span class="o">=</span><span class="s2">&quot;read&quot;</span><span class="p">,</span><span class="w">          </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!</span>
+<span class="w">               </span><span class="n">position</span><span class="o">=</span><span class="s2">&quot;rewind&quot;</span><span class="p">,</span><span class="w">      </span><span class="p">&amp;</span><span class="w"> </span><span class="c">!</span>
+<span class="w">               </span><span class="n">convert</span><span class="o">=</span><span class="s1">&#39;little_endian&#39;</span><span class="p">,&amp;</span><span class="w"> </span><span class="c">!</span>
+<span class="w">               </span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;old&#39;</span><span class="p">)</span>
+
+<span class="w">         </span><span class="k">read</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w">  </span><span class="n">surf</span><span class="p">%</span><span class="n">signature</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="k">format</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">nobjects</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">version</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="k">type</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">object_name</span><span class="p">,</span><span class="w">                </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">surf</span><span class="p">%</span><span class="n">operator_name</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">material_code</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">acquisition</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="nb">range</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">special_points</span><span class="p">,</span><span class="w">            </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">surf</span><span class="p">%</span><span class="n">absolute</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">reserved</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">pointsize</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">zmin</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">zmax</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">xres</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">yres</span><span class="p">,</span><span class="w">             </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">surf</span><span class="p">%</span><span class="n">nofpoints</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">dx</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">dy</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">dz</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">xaxis</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">yaxis</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">zaxis</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">dx_unit</span><span class="p">,</span><span class="w">          </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">surf</span><span class="p">%</span><span class="n">dy_unit</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">dz_unit</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">xlength_unit</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">ylength_unit</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">zlength_unit</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">surf</span><span class="p">%</span><span class="n">xunit_ratio</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">yunit_ratio</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">zunit_ratio</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">imprint</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">inversion</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">leveling</span><span class="p">,</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">surf</span><span class="p">%</span><span class="n">obsolete</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">seconds</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">minutes</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">hours</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">day</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">month</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">dayof</span><span class="p">,</span><span class="w">   </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">surf</span><span class="p">%</span><span class="n">measurement_duration</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">obsolete2</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">comment_size</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">private_size</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">client_zone</span><span class="p">,</span><span class="w">    </span><span class="p">&amp;</span>
+<span class="w">                  </span><span class="n">surf</span><span class="p">%</span><span class="n">XOffset</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">YOffset</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">ZOffset</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">reservedzone</span>
+
+<span class="w">         </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">comment_size</span>
+<span class="w">            </span><span class="k">read</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="n">charact</span>
+<span class="w">         </span><span class="k">enddo</span>
+
+<span class="k">         allocate</span><span class="p">(</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">val</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">surf</span><span class="p">%</span><span class="n">nofpoints</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">         </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">nofpoints</span>
+<span class="w">            </span><span class="k">read</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="n">surf</span><span class="p">%</span><span class="n">val</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">         </span><span class="k">enddo</span>
+
+<span class="k">      close</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">surf2scal</span><span class="p">(</span><span class="n">surf</span><span class="p">,</span><span class="w"> </span><span class="n">scal</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">dump</span><span class="p">).</span><span class="nb">and</span><span class="p">.</span><span class="n">dump</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">trans_surf_txt</span><span class="p">(</span><span class="n">surf</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">fichier</span><span class="p">)</span><span class="o">//</span><span class="s1">&#39;.txt&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">xyz</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.)</span>
+
+<span class="w">   </span><span class="k">return</span>
+<span class="k">   endsubroutine </span><span class="n">open_surffile</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

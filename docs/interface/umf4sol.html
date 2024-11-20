@@ -1,0 +1,994 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>umf4sol &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>umf4sol
+      <small>Interface</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title="<p> 0.0% of total for procedures.</p>Including implementation: 51 statements,  0.1% of total for procedures.">3 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/umfpack.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/umfpack.f90.html'>umfpack.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/mumfpack.html'>mumfpack</a></li>
+            <li class="breadcrumb-item active" aria-current="page">umf4sol</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#modprocs-0"
+         aria-expanded="false" aria-controls="modprocs-0">
+         <h4 class="card-header bg-primary text-white">Module Procedures</h4>
+      </a>
+      <div id="modprocs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../interface/umf4sol.html#moduleprocedure-umf4sol">umf4sol</a>
+            <a class="list-group-item" href="../interface/umf4sol.html#moduleprocedure-umf4sol_ip">umf4sol_ip</a>
+            <a class="list-group-item" href="../interface/umf4sol.html#moduleprocedure-umf4zsol">umf4zsol</a>
+            <a class="list-group-item" href="../interface/umf4sol.html#moduleprocedure-umf4zsol_ip">umf4zsol_ip</a>
+            <a class="list-group-item" href="../interface/umf4sol.html#moduleprocedure-umf4csol~2">umf4csol</a>
+            <a class="list-group-item" href="../interface/umf4sol.html#moduleprocedure-umf4csol_ip~2">umf4csol_ip</a>
+        </div>
+      </div>
+    </div>
+
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      <h2>public interface umf4sol</h2>
+      
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Calls</h3>
+          </div>
+          <div class="card-body">
+            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: interface~~umf4sol~~CallsGraph Pages: 1 -->
+<svg id="interfaceumf4solCallsGraph" width="641pt" height="165pt"
+ viewBox="0.00 0.00 641.00 165.21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="interface~~umf4sol~~CallsGraph" class="graph" transform="scale(0.73 0.73) rotate(0) translate(4 221)">
+<title>interface~~umf4sol~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-221 869,-221 869,4 -4,4"/>
+<!-- interface~umf4sol -->
+<g id="interface~~umf4sol~~CallsGraph_node1" class="node">
+<title>interface~umf4sol</title>
+<polygon fill="none" stroke="black" points="54,-144 0,-144 0,-120 54,-120 54,-144"/>
+<text text-anchor="middle" x="27" y="-129.6" font-family="Helvetica,sans-Serif" font-size="10.50">umf4sol</text>
+</g>
+<!-- interface~umf4sol&#45;&gt;interface~umf4sol -->
+<g id="interface~~umf4sol~~CallsGraph_edge2" class="edge">
+<title>interface~umf4sol&#45;&gt;interface~umf4sol</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M11.46,-144.01C6.03,-152.97 11.21,-162 27,-162 36.62,-162 42.3,-158.65 44.05,-154"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="47.49,-153.38 42.54,-144.01 40.57,-154.42 47.49,-153.38"/>
+</g>
+<!-- interface~umf4csol -->
+<g id="interface~~umf4sol~~CallsGraph_node2" class="node">
+<title>interface~umf4csol</title>
+<g id="a_interface~~umf4sol~~CallsGraph_node2"><a xlink:href="../interface/umf4csol.html" xlink:title="umf4csol">
+<polygon fill="#a7506f" stroke="#a7506f" points="265,-184 210,-184 210,-160 265,-160 265,-184"/>
+<text text-anchor="middle" x="237.5" y="-169.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4csol</text>
+</a>
+</g>
+</g>
+<!-- interface~umf4sol&#45;&gt;interface~umf4csol -->
+<g id="interface~~umf4sol~~CallsGraph_edge1" class="edge">
+<title>interface~umf4sol&#45;&gt;interface~umf4csol</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M42.15,-144.15C54.04,-153.51 71.93,-165.72 90,-171 126.25,-181.59 169.74,-180.23 199.87,-177.22"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="200.38,-180.69 209.94,-176.11 199.61,-173.73 200.38,-180.69"/>
+</g>
+<!-- interface~umf4zsol -->
+<g id="interface~~umf4sol~~CallsGraph_node3" class="node">
+<title>interface~umf4zsol</title>
+<g id="a_interface~~umf4sol~~CallsGraph_node3"><a xlink:href="../interface/umf4zsol.html" xlink:title="umf4zsol">
+<polygon fill="#a7506f" stroke="#a7506f" points="149.5,-144 94.5,-144 94.5,-120 149.5,-120 149.5,-144"/>
+<text text-anchor="middle" x="122" y="-129.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4zsol</text>
+</a>
+</g>
+</g>
+<!-- interface~umf4sol&#45;&gt;interface~umf4zsol -->
+<g id="interface~~umf4sol~~CallsGraph_edge3" class="edge">
+<title>interface~umf4sol&#45;&gt;interface~umf4zsol</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M54.4,-132C63.65,-132 74.21,-132 84.15,-132"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="84.21,-135.5 94.21,-132 84.21,-128.5 84.21,-135.5"/>
+</g>
+<!-- proc~umf4csol_ip -->
+<g id="interface~~umf4sol~~CallsGraph_node4" class="node">
+<title>proc~umf4csol_ip</title>
+<g id="a_interface~~umf4sol~~CallsGraph_node4"><a xlink:href="../proc/umf4csol_ip.html" xlink:title="umf4csol_ip">
+<polygon fill="#d9534f" stroke="#d9534f" points="410.5,-174 340.5,-174 340.5,-150 410.5,-150 410.5,-174"/>
+<text text-anchor="middle" x="375.5" y="-159.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4csol_ip</text>
+</a>
+</g>
+</g>
+<!-- interface~umf4sol&#45;&gt;proc~umf4csol_ip -->
+<g id="interface~~umf4sol~~CallsGraph_edge4" class="edge">
+<title>interface~umf4sol&#45;&gt;proc~umf4csol_ip</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M37.62,-144.03C48.79,-157.15 68.47,-177.79 90,-189 130.37,-210.01 144.76,-206.08 190,-211 231.97,-215.56 244.1,-221.46 285,-211 308.68,-204.94 332.82,-191.19 350.06,-179.78"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="352.12,-182.62 358.41,-174.09 348.17,-176.84 352.12,-182.62"/>
+</g>
+<!-- proc~umf4sol_ip -->
+<g id="interface~~umf4sol~~CallsGraph_node5" class="node">
+<title>proc~umf4sol_ip</title>
+<g id="a_interface~~umf4sol~~CallsGraph_node5"><a xlink:href="../proc/umf4sol_ip.html" xlink:title="umf4sol_ip">
+<polygon fill="#d9534f" stroke="#d9534f" points="154,-63 90,-63 90,-39 154,-39 154,-63"/>
+<text text-anchor="middle" x="122" y="-48.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4sol_ip</text>
+</a>
+</g>
+</g>
+<!-- interface~umf4sol&#45;&gt;proc~umf4sol_ip -->
+<g id="interface~~umf4sol~~CallsGraph_edge5" class="edge">
+<title>interface~umf4sol&#45;&gt;proc~umf4sol_ip</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M42.12,-119.7C57.37,-106.42 81.84,-85.11 99.48,-69.74"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="101.8,-72.36 107.05,-63.15 97.21,-67.08 101.8,-72.36"/>
+</g>
+<!-- proc~umf4zsol_ip -->
+<g id="interface~~umf4sol~~CallsGraph_node6" class="node">
+<title>proc~umf4zsol_ip</title>
+<g id="a_interface~~umf4sol~~CallsGraph_node6"><a xlink:href="../proc/umf4zsol_ip.html" xlink:title="umf4zsol_ip">
+<polygon fill="#d9534f" stroke="#d9534f" points="272.5,-104 202.5,-104 202.5,-80 272.5,-80 272.5,-104"/>
+<text text-anchor="middle" x="237.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umf4zsol_ip</text>
+</a>
+</g>
+</g>
+<!-- interface~umf4sol&#45;&gt;proc~umf4zsol_ip -->
+<g id="interface~~umf4sol~~CallsGraph_edge6" class="edge">
+<title>interface~umf4sol&#45;&gt;proc~umf4zsol_ip</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M54.22,-121.84C65.14,-117.94 78.04,-113.77 90,-111 123.82,-103.16 162.84,-98.3 192.1,-95.46"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="192.78,-98.91 202.41,-94.5 192.13,-91.94 192.78,-98.91"/>
+</g>
+<!-- interface~umf4csol&#45;&gt;interface~umf4csol -->
+<g id="interface~~umf4sol~~CallsGraph_edge7" class="edge">
+<title>interface~umf4csol&#45;&gt;interface~umf4csol</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M218.65,-184.01C212.07,-192.97 218.35,-202 237.5,-202 249.17,-202 256.06,-198.65 258.17,-194"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="261.59,-193.22 256.35,-184.01 254.7,-194.48 261.59,-193.22"/>
+</g>
+<!-- interface~umf4csol&#45;&gt;proc~umf4csol_ip -->
+<g id="interface~~umf4sol~~CallsGraph_edge8" class="edge">
+<title>interface~umf4csol&#45;&gt;proc~umf4csol_ip</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M265.05,-170.05C283.51,-168.69 308.58,-166.85 330.06,-165.27"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="330.56,-168.74 340.28,-164.52 330.05,-161.76 330.56,-168.74"/>
+</g>
+<!-- interface~umf4zsol&#45;&gt;interface~umf4csol -->
+<g id="interface~~umf4sol~~CallsGraph_edge9" class="edge">
+<title>interface~umf4zsol&#45;&gt;interface~umf4csol</title>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M149.61,-141.38C164.59,-146.66 183.51,-153.32 199.87,-159.09"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="199.07,-162.52 209.66,-162.54 201.39,-155.92 199.07,-162.52"/>
+</g>
+<!-- interface~umf4zsol&#45;&gt;interface~umf4zsol -->
+<g id="interface~~umf4sol~~CallsGraph_edge10" class="edge">
+<title>interface~umf4zsol&#45;&gt;interface~umf4zsol</title>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M106.46,-144.01C101.03,-152.97 106.21,-162 122,-162 131.62,-162 137.3,-158.65 139.05,-154"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="142.49,-153.38 137.54,-144.01 135.57,-154.42 142.49,-153.38"/>
+</g>
+<!-- interface~umf4zsol&#45;&gt;proc~umf4csol_ip -->
+<g id="interface~~umf4sol~~CallsGraph_edge11" class="edge">
+<title>interface~umf4zsol&#45;&gt;proc~umf4csol_ip</title>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M149.66,-135.08C181.78,-138.8 237.34,-145.28 285,-151 299.63,-152.76 315.61,-154.71 329.96,-156.48"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="329.73,-159.97 340.08,-157.72 330.58,-153.03 329.73,-159.97"/>
+</g>
+<!-- interface~umf4zsol&#45;&gt;proc~umf4zsol_ip -->
+<g id="interface~~umf4sol~~CallsGraph_edge12" class="edge">
+<title>interface~umf4zsol&#45;&gt;proc~umf4zsol_ip</title>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M149.61,-122.62C162.39,-118.12 178.04,-112.6 192.51,-107.5"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="194.03,-110.68 202.3,-104.05 191.71,-104.08 194.03,-110.68"/>
+</g>
+<!-- proc~s_umfpack_ci_solve -->
+<g id="interface~~umf4sol~~CallsGraph_node9" class="node">
+<title>proc~s_umfpack_ci_solve</title>
+<g id="a_interface~~umf4sol~~CallsGraph_node9"><a xlink:href="../proc/s_umfpack_ci_solve.html" xlink:title="s_umfpack_ci_solve">
+<polygon fill="#d9534f" stroke="#d9534f" points="575,-104 466,-104 466,-80 575,-80 575,-104"/>
+<text text-anchor="middle" x="520.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">s_umfpack_ci_solve</text>
+</a>
+</g>
+</g>
+<!-- proc~umf4csol_ip&#45;&gt;proc~s_umfpack_ci_solve -->
+<g id="interface~~umf4sol~~CallsGraph_edge13" class="edge">
+<title>proc~umf4csol_ip&#45;&gt;proc~s_umfpack_ci_solve</title>
+<path fill="none" stroke="#00ff66" d="M401.08,-149.97C424.41,-138.55 459.67,-121.29 485.65,-108.57"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="487.32,-111.65 494.76,-104.11 484.24,-105.36 487.32,-111.65"/>
+</g>
+<!-- interface~s_umfpack_solve -->
+<g id="interface~~umf4sol~~CallsGraph_node7" class="node">
+<title>interface~s_umfpack_solve</title>
+<g id="a_interface~~umf4sol~~CallsGraph_node7"><a xlink:href="../interface/s_umfpack_solve.html" xlink:title="s_umfpack_solve">
+<polygon fill="#a7506f" stroke="#a7506f" points="285,-62 190,-62 190,-38 285,-38 285,-62"/>
+<text text-anchor="middle" x="237.5" y="-47.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">s_umfpack_solve</text>
+</a>
+</g>
+</g>
+<!-- proc~umf4sol_ip&#45;&gt;interface~s_umfpack_solve -->
+<g id="interface~~umf4sol~~CallsGraph_edge14" class="edge">
+<title>proc~umf4sol_ip&#45;&gt;interface~s_umfpack_solve</title>
+<path fill="none" stroke="#0066ff" d="M154.01,-50.73C161.94,-50.66 170.71,-50.58 179.5,-50.5"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="179.79,-54 189.76,-50.41 179.73,-47 179.79,-54"/>
+</g>
+<!-- interface~s_umfpack_zi_solve -->
+<g id="interface~~umf4sol~~CallsGraph_node8" class="node">
+<title>interface~s_umfpack_zi_solve</title>
+<g id="a_interface~~umf4sol~~CallsGraph_node8"><a xlink:href="../interface/s_umfpack_zi_solve.html" xlink:title="s_umfpack_zi_solve">
+<polygon fill="#a7506f" stroke="#a7506f" points="430,-104 321,-104 321,-80 430,-80 430,-104"/>
+<text text-anchor="middle" x="375.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">s_umfpack_zi_solve</text>
+</a>
+</g>
+</g>
+<!-- proc~umf4zsol_ip&#45;&gt;interface~s_umfpack_zi_solve -->
+<g id="interface~~umf4sol~~CallsGraph_edge15" class="edge">
+<title>proc~umf4zsol_ip&#45;&gt;interface~s_umfpack_zi_solve</title>
+<path fill="none" stroke="#cc00ff" d="M272.82,-92C284.31,-92 297.51,-92 310.51,-92"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="310.87,-95.5 320.87,-92 310.87,-88.5 310.87,-95.5"/>
+</g>
+<!-- interface~s_umfpack_solve&#45;&gt;interface~s_umfpack_zi_solve -->
+<g id="interface~~umf4sol~~CallsGraph_edge16" class="edge">
+<title>interface~s_umfpack_solve&#45;&gt;interface~s_umfpack_zi_solve</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M277.47,-62.04C292.55,-66.69 309.98,-72.07 325.86,-76.98"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="324.93,-80.36 335.52,-79.96 327,-73.67 324.93,-80.36"/>
+</g>
+<!-- interface~s_umfpack_solve&#45;&gt;proc~s_umfpack_ci_solve -->
+<g id="interface~~umf4sol~~CallsGraph_edge17" class="edge">
+<title>interface~s_umfpack_solve&#45;&gt;proc~s_umfpack_ci_solve</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M285.16,-53.52C324.07,-56.84 380.88,-62.58 430,-71 440.72,-72.84 452.07,-75.19 462.96,-77.64"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="462.27,-81.07 472.8,-79.91 463.85,-74.25 462.27,-81.07"/>
+</g>
+<!-- proc~s_umfpack_di_solve -->
+<g id="interface~~umf4sol~~CallsGraph_node10" class="node">
+<title>proc~s_umfpack_di_solve</title>
+<g id="a_interface~~umf4sol~~CallsGraph_node10"><a xlink:href="../proc/s_umfpack_di_solve.html" xlink:title="s_umfpack_di_solve">
+<polygon fill="#d9534f" stroke="#d9534f" points="430,-24 321,-24 321,0 430,0 430,-24"/>
+<text text-anchor="middle" x="375.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">s_umfpack_di_solve</text>
+</a>
+</g>
+</g>
+<!-- interface~s_umfpack_solve&#45;&gt;proc~s_umfpack_di_solve -->
+<g id="interface~~umf4sol~~CallsGraph_edge18" class="edge">
+<title>interface~s_umfpack_solve&#45;&gt;proc~s_umfpack_di_solve</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M281.53,-37.98C294.18,-34.44 308.17,-30.53 321.37,-26.84"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="322.59,-30.14 331.28,-24.08 320.71,-23.4 322.59,-30.14"/>
+</g>
+<!-- interface~s_umfpack_zi_solve&#45;&gt;interface~s_umfpack_zi_solve -->
+<g id="interface~~umf4sol~~CallsGraph_edge19" class="edge">
+<title>interface~s_umfpack_zi_solve&#45;&gt;interface~s_umfpack_zi_solve</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M352.68,-104.01C344.71,-112.97 352.32,-122 375.5,-122 389.63,-122 397.97,-118.65 400.53,-114"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="403.89,-113.02 398.32,-104.01 397.06,-114.53 403.89,-113.02"/>
+</g>
+<!-- interface~s_umfpack_zi_solve&#45;&gt;proc~s_umfpack_ci_solve -->
+<g id="interface~~umf4sol~~CallsGraph_edge20" class="edge">
+<title>interface~s_umfpack_zi_solve&#45;&gt;proc~s_umfpack_ci_solve</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M430.15,-92C438.38,-92 446.94,-92 455.37,-92"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="455.54,-95.5 465.54,-92 455.54,-88.5 455.54,-95.5"/>
+</g>
+<!-- proc~umfpack_ci_solve -->
+<g id="interface~~umf4sol~~CallsGraph_node11" class="node">
+<title>proc~umfpack_ci_solve</title>
+<g id="a_interface~~umf4sol~~CallsGraph_node11"><a xlink:href="../proc/umfpack_ci_solve.html" xlink:title="umfpack_ci_solve">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="714,-104 617,-104 617,-80 714,-80 714,-104"/>
+<text text-anchor="middle" x="665.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_ci_solve</text>
+</a>
+</g>
+</g>
+<!-- proc~s_umfpack_ci_solve&#45;&gt;proc~umfpack_ci_solve -->
+<g id="interface~~umf4sol~~CallsGraph_edge21" class="edge">
+<title>proc~s_umfpack_ci_solve&#45;&gt;proc~umfpack_ci_solve</title>
+<path fill="none" stroke="#0000ff" d="M575.15,-92C585.38,-92 596.12,-92 606.47,-92"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="606.66,-95.5 616.66,-92 606.66,-88.5 606.66,-95.5"/>
+</g>
+<!-- proc~umfpack_di_solve -->
+<g id="interface~~umf4sol~~CallsGraph_node13" class="node">
+<title>proc~umfpack_di_solve</title>
+<g id="a_interface~~umf4sol~~CallsGraph_node13"><a xlink:href="../proc/umfpack_di_solve.html" xlink:title="umfpack_di_solve">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="569.5,-24 471.5,-24 471.5,0 569.5,0 569.5,-24"/>
+<text text-anchor="middle" x="520.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">umfpack_di_solve</text>
+</a>
+</g>
+</g>
+<!-- proc~s_umfpack_di_solve&#45;&gt;proc~umfpack_di_solve -->
+<g id="interface~~umf4sol~~CallsGraph_edge22" class="edge">
+<title>proc~s_umfpack_di_solve&#45;&gt;proc~umfpack_di_solve</title>
+<path fill="none" stroke="#ff0000" d="M430.15,-12C440.26,-12 450.87,-12 461.11,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="461.2,-15.5 471.2,-12 461.2,-8.5 461.2,-15.5"/>
+</g>
+<!-- interface~c_umfpack_zi_solve -->
+<g id="interface~~umf4sol~~CallsGraph_node12" class="node">
+<title>interface~c_umfpack_zi_solve</title>
+<g id="a_interface~~umf4sol~~CallsGraph_node12"><a xlink:href="../interface/c_umfpack_zi_solve.html" xlink:title="c_umfpack_zi_solve">
+<polygon fill="#a7506f" stroke="#a7506f" points="865,-104 756,-104 756,-80 865,-80 865,-104"/>
+<text text-anchor="middle" x="810.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">c_umfpack_zi_solve</text>
+</a>
+</g>
+</g>
+<!-- proc~umfpack_ci_solve&#45;&gt;interface~c_umfpack_zi_solve -->
+<g id="interface~~umf4sol~~CallsGraph_edge23" class="edge">
+<title>proc~umfpack_ci_solve&#45;&gt;interface~c_umfpack_zi_solve</title>
+<path fill="none" stroke="#00ffff" d="M714.12,-92C724.21,-92 735.03,-92 745.62,-92"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="745.67,-95.5 755.67,-92 745.67,-88.5 745.67,-95.5"/>
+</g>
+<!-- interface~c_umfpack_di_solve -->
+<g id="interface~~umf4sol~~CallsGraph_node14" class="node">
+<title>interface~c_umfpack_di_solve</title>
+<g id="a_interface~~umf4sol~~CallsGraph_node14"><a xlink:href="../interface/c_umfpack_di_solve.html" xlink:title="c_umfpack_di_solve">
+<polygon fill="#a7506f" stroke="#a7506f" points="720,-24 611,-24 611,0 720,0 720,-24"/>
+<text text-anchor="middle" x="665.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">c_umfpack_di_solve</text>
+</a>
+</g>
+</g>
+<!-- proc~umfpack_di_solve&#45;&gt;interface~c_umfpack_di_solve -->
+<g id="interface~~umf4sol~~CallsGraph_edge24" class="edge">
+<title>proc~umfpack_di_solve&#45;&gt;interface~c_umfpack_di_solve</title>
+<path fill="none" stroke="#00ffff" d="M569.51,-12C579.6,-12 590.38,-12 600.94,-12"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="600.95,-15.5 610.95,-12 600.95,-8.5 600.95,-15.5"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var paninterfaceumf4solCallsGraph = svgPanZoom('#interfaceumf4solCallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+<br>
+
+
+        <h2>Module Procedures</h2>
+            <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="interface-umf4sol"></span> <h3>public  interface <a href='umf4sol.html'>umf4sol</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-umf4sol_ip"></span> <h3>public  subroutine <a href='../proc/umf4sol_ip.html'>umf4sol_ip</a>(sys, x, b, Numeric, Control, Info)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sys~18"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sys</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~34"></span>
+              real(kind=r8),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong>(*)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-b~13"></span>
+              real(kind=r8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>b</strong>(*)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-numeric~63"></span>
+              integer(kind=ip)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Numeric</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-control~73"></span>
+              real(kind=r8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Control</strong>(0:UMFPACK_CONTROL-1)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~51"></span>
+              real(kind=r8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Info</strong>(0:UMFPACK_INFO-1)</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="interface-umf4zsol"></span> <h3>public  interface <a href='umf4zsol.html'>umf4zsol</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-umf4zsol_ip"></span> <h3>public  subroutine <a href='../proc/umf4zsol_ip.html'>umf4zsol_ip</a>(sys, x, xz, b, bz, Numeric, Control, Info)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sys~19"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sys</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~35"></span>
+              real(kind=r8),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong>(*)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xz~4"></span>
+              real(kind=r8),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xz</strong>(*)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-b~14"></span>
+              real(kind=r8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>b</strong>(*)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-bz~4"></span>
+              real(kind=r8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>bz</strong>(*)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-numeric~64"></span>
+              integer(kind=ip)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Numeric</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-control~74"></span>
+              real(kind=r8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Control</strong>(0:UMFPACK_CONTROL-1)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~52"></span>
+              real(kind=r8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Info</strong>(0:UMFPACK_INFO-1)</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="interface-umf4csol"></span> <h3>public  interface <a href='umf4csol.html'>umf4csol</a>()  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+    <em>None</em>
+
+    </div>
+  </div>
+
+            <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-umf4csol_ip"></span> <h3>public  subroutine <a href='../proc/umf4csol_ip.html'>umf4csol_ip</a>(sys, x, b, Numeric, Control, Info)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sys~20"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sys</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~36"></span>
+              complex(kind=r8),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong>(*)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-b~15"></span>
+              complex(kind=r8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>b</strong>(*)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-numeric~65"></span>
+              integer(kind=ip)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Numeric</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-control~75"></span>
+              real(kind=r8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Control</strong>(0:UMFPACK_CONTROL-1)</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~53"></span>
+              real(kind=r8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Info</strong>(0:UMFPACK_INFO-1)</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+</div>
+  </div>
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

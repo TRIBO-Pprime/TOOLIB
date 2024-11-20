@@ -1,0 +1,1080 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>SULU_ENV &ndash; TOOLIB </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>SULU_ENV
+      <small>Derived Type</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title="<p> 5.3% of total for derived types.</p>Including implementation: 33 statements,  2.5% of total for derived types.">33 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/superlu.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/superlu.f90.html'>superlu.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/sulu_wrapper.html'>sulu_wrapper</a></li>
+            <li class="breadcrumb-item active" aria-current="page">SULU_ENV</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../type/sulu_env.html#variable-cc">CC</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-glu">Glu</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-rr">RR</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-a_elt">a_elt</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-b~2">b</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-berr">berr</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-equed">equed</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-etree">etree</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-ferr">ferr</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-first">first</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-info~12">info</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-irow">irow</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-jptr">jptr</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-lwork">lwork</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-mem_usage">mem_usage</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-n~23">n</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-nrhs">nrhs</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-nz">nz</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-options">options</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-perm_c">perm_c</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-perm_r">perm_r</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-rcond">rcond</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-rpg">rpg</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-sma">sma</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-smb">smb</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-sml">sml</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-smu">smu</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-smx">smx</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-stat">stat</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-work">work</a>
+            <a class="list-group-item" href="../type/sulu_env.html#variable-x~21">x</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../type/sulu_env.html#src">SULU_ENV</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      <h2 id="type-def-statement">
+        type, public :: SULU_ENV</h2>
+    <p><span style="color:green">Global type for <em>SuperLU</em> which covers all the stuff needed</span></p>
+<br>      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Inherits</h3>
+        </div>
+        <div class="card-body">
+          <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: type~~sulu_env~~InheritsGraph Pages: 1 -->
+<svg id="typesulu_envInheritsGraph" width="641pt" height="276pt"
+ viewBox="0.00 0.00 641.00 275.61" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="type~~sulu_env~~InheritsGraph" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 295.26)">
+<title>type~~sulu_env~~InheritsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-295.26 692,-295.26 692,4 -4,4"/>
+<!-- type~sulu_env -->
+<g id="type~~sulu_env~~InheritsGraph_node1" class="node">
+<title>type~sulu_env</title>
+<polygon fill="none" stroke="black" points="688,-126.26 621,-126.26 621,-102.26 688,-102.26 688,-126.26"/>
+<text text-anchor="middle" x="654.5" y="-111.86" font-family="Helvetica,sans-Serif" font-size="10.50">SULU_ENV</text>
+</g>
+<!-- C_PTR -->
+<g id="type~~sulu_env~~InheritsGraph_node2" class="node">
+<title>C_PTR</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-133.26 0,-133.26 0,-109.26 54,-109.26 54,-133.26"/>
+<text text-anchor="middle" x="27" y="-118.86" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">C_PTR</text>
+</g>
+<!-- type~sulu_env&#45;&gt;C_PTR -->
+<g id="type~~sulu_env~~InheritsGraph_edge1" class="edge">
+<title>type~sulu_env&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M647.95,-126.34C640.22,-141.66 624.68,-167.61 603,-180.26 403.53,-296.63 282.6,-323.11 84,-205.26"/>
+<text text-anchor="middle" x="279.5" y="-283.66" font-family="Helvetica,sans-Serif" font-size="9.50">work</text>
+</g>
+<!-- type~globallu_t -->
+<g id="type~~sulu_env~~InheritsGraph_node3" class="node">
+<title>type~globallu_t</title>
+<g id="a_type~~sulu_env~~InheritsGraph_node3"><a xlink:href="../type/globallu_t.html" xlink:title="GLOBALLU_T">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="451,-189.26 370,-189.26 370,-165.26 451,-165.26 451,-189.26"/>
+<text text-anchor="middle" x="410.5" y="-174.86" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">GLOBALLU_T</text>
+</a>
+</g>
+</g>
+<!-- type~sulu_env&#45;&gt;type~globallu_t -->
+<g id="type~~sulu_env~~InheritsGraph_edge5" class="edge">
+<title>type~sulu_env&#45;&gt;type~globallu_t</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M633.99,-126.49C624.87,-131.73 613.69,-137.5 603,-141.26 556.42,-157.65 500.71,-167.05 461.42,-172.11"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="460.79,-168.66 451.29,-173.36 461.65,-175.6 460.79,-168.66"/>
+<text text-anchor="middle" x="547.5" y="-168.66" font-family="Helvetica,sans-Serif" font-size="9.50">Glu</text>
+</g>
+<!-- type~mem_usage_t -->
+<g id="type~~sulu_env~~InheritsGraph_node4" class="node">
+<title>type~mem_usage_t</title>
+<g id="a_type~~sulu_env~~InheritsGraph_node4"><a xlink:href="../type/mem_usage_t.html" xlink:title="MEM_USAGE_T">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="456.5,-147.26 364.5,-147.26 364.5,-123.26 456.5,-123.26 456.5,-147.26"/>
+<text text-anchor="middle" x="410.5" y="-132.86" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">MEM_USAGE_T</text>
+</a>
+</g>
+</g>
+<!-- type~sulu_env&#45;&gt;type~mem_usage_t -->
+<g id="type~~sulu_env~~InheritsGraph_edge6" class="edge">
+<title>type~sulu_env&#45;&gt;type~mem_usage_t</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M620.86,-117.09C581.44,-120.51 514.5,-126.32 466.93,-130.45"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="466.45,-126.98 456.79,-131.33 467.05,-133.95 466.45,-126.98"/>
+<text text-anchor="middle" x="547.5" y="-129.66" font-family="Helvetica,sans-Serif" font-size="9.50">mem_usage</text>
+</g>
+<!-- type~superlu_options_t -->
+<g id="type~~sulu_env~~InheritsGraph_node5" class="node">
+<title>type~superlu_options_t</title>
+<g id="a_type~~sulu_env~~InheritsGraph_node5"><a xlink:href="../type/superlu_options_t.html" xlink:title="SUPERLU_OPTIONS_T">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="474,-105.26 347,-105.26 347,-81.26 474,-81.26 474,-105.26"/>
+<text text-anchor="middle" x="410.5" y="-90.86" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SUPERLU_OPTIONS_T</text>
+</a>
+</g>
+</g>
+<!-- type~sulu_env&#45;&gt;type~superlu_options_t -->
+<g id="type~~sulu_env~~InheritsGraph_edge2" class="edge">
+<title>type~sulu_env&#45;&gt;type~superlu_options_t</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M620.77,-106.32C614.88,-105.12 608.78,-104.03 603,-103.26 564.11,-98.04 520.44,-95.51 484.63,-94.29"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="484.37,-90.78 474.27,-93.97 484.15,-97.78 484.37,-90.78"/>
+<text text-anchor="middle" x="547.5" y="-105.66" font-family="Helvetica,sans-Serif" font-size="9.50">options</text>
+</g>
+<!-- type~superlustat_t -->
+<g id="type~~sulu_env~~InheritsGraph_node6" class="node">
+<title>type~superlustat_t</title>
+<g id="a_type~~sulu_env~~InheritsGraph_node6"><a xlink:href="../type/superlustat_t.html" xlink:title="SUPERLUSTAT_T">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="329,-66.26 230,-66.26 230,-42.26 329,-42.26 329,-66.26"/>
+<text text-anchor="middle" x="279.5" y="-51.86" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SUPERLUSTAT_T</text>
+</a>
+</g>
+</g>
+<!-- type~sulu_env&#45;&gt;type~superlustat_t -->
+<g id="type~~sulu_env~~InheritsGraph_edge4" class="edge">
+<title>type~sulu_env&#45;&gt;type~superlustat_t</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M639.56,-101.98C629.97,-94.3 616.57,-85 603,-80.26 514.93,-49.45 405.36,-47.68 339.28,-50.23"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="338.9,-46.74 329.06,-50.67 339.2,-53.73 338.9,-46.74"/>
+<text text-anchor="middle" x="547.5" y="-82.66" font-family="Helvetica,sans-Serif" font-size="9.50">stat</text>
+</g>
+<!-- type~supermatrix -->
+<g id="type~~sulu_env~~InheritsGraph_node7" class="node">
+<title>type~supermatrix</title>
+<g id="a_type~~sulu_env~~InheritsGraph_node7"><a xlink:href="../type/supermatrix.html" xlink:title="SUPERMATRIX">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="323,-26.26 236,-26.26 236,-2.26 323,-2.26 323,-26.26"/>
+<text text-anchor="middle" x="279.5" y="-11.86" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">SUPERMATRIX</text>
+</a>
+</g>
+</g>
+<!-- type~sulu_env&#45;&gt;type~supermatrix -->
+<g id="type~~sulu_env~~InheritsGraph_edge3" class="edge">
+<title>type~sulu_env&#45;&gt;type~supermatrix</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M649.02,-102.17C642.05,-85.26 626.88,-55.07 603,-41.26 518.58,7.59 400.37,2.61 333,-5.66"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="332.51,-2.2 323.04,-6.96 333.41,-9.14 332.51,-2.2"/>
+<text text-anchor="middle" x="547.5" y="-43.66" font-family="Helvetica,sans-Serif" font-size="9.50">sma, smb, smx, sml, smu</text>
+</g>
+<!-- type~globallu_t&#45;&gt;C_PTR -->
+<g id="type~~sulu_env~~InheritsGraph_edge7" class="edge">
+<title>type~globallu_t&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M369.91,-179.06C312.78,-181.95 203.98,-188.52 112,-200.26 99.46,-201.86 95.15,-211.22 84,-205.26"/>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M82,-205.26C58.51,-191.32 43.48,-162.72 35.4,-142.79"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="38.61,-141.39 31.79,-133.28 32.06,-143.87 38.61,-141.39"/>
+<text text-anchor="middle" x="162" y="-202.66" font-family="Helvetica,sans-Serif" font-size="9.50">lusup, ucol</text>
+</g>
+<!-- type~expheader -->
+<g id="type~~sulu_env~~InheritsGraph_node8" class="node">
+<title>type~expheader</title>
+<g id="a_type~~sulu_env~~InheritsGraph_node8"><a xlink:href="../type/expheader.html" xlink:title="EXPHEADER">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="200,-150.26 124,-150.26 124,-126.26 200,-126.26 200,-150.26"/>
+<text text-anchor="middle" x="162" y="-135.86" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">EXPHEADER</text>
+</a>
+</g>
+</g>
+<!-- type~globallu_t&#45;&gt;type~expheader -->
+<g id="type~~sulu_env~~InheritsGraph_edge8" class="edge">
+<title>type~globallu_t&#45;&gt;type~expheader</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M369.84,-169.54C356.85,-167.1 342.32,-164.46 329,-162.26 289.04,-155.65 243.49,-149.13 210.23,-144.57"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="210.7,-141.1 200.32,-143.21 209.75,-148.03 210.7,-141.1"/>
+<text text-anchor="middle" x="279.5" y="-164.66" font-family="Helvetica,sans-Serif" font-size="9.50">expanders</text>
+</g>
+<!-- type~lu_stack_t -->
+<g id="type~~sulu_env~~InheritsGraph_node9" class="node">
+<title>type~lu_stack_t</title>
+<g id="a_type~~sulu_env~~InheritsGraph_node9"><a xlink:href="../type/lu_stack_t.html" xlink:title="LU_STACK_T">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="201.5,-108.26 122.5,-108.26 122.5,-84.26 201.5,-84.26 201.5,-108.26"/>
+<text text-anchor="middle" x="162" y="-93.86" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">LU_STACK_T</text>
+</a>
+</g>
+</g>
+<!-- type~globallu_t&#45;&gt;type~lu_stack_t -->
+<g id="type~~sulu_env~~InheritsGraph_edge9" class="edge">
+<title>type~globallu_t&#45;&gt;type~lu_stack_t</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M369.81,-167.8C361.84,-164.86 353.82,-161.08 347,-156.26 336.4,-148.76 339.98,-140.19 329,-133.26 293.66,-110.95 246.66,-102 211.69,-98.46"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="211.99,-94.97 201.71,-97.56 211.36,-101.94 211.99,-94.97"/>
+<text text-anchor="middle" x="279.5" y="-135.66" font-family="Helvetica,sans-Serif" font-size="9.50">stack</text>
+</g>
+<!-- type~superlustat_t&#45;&gt;C_PTR -->
+<g id="type~~sulu_env~~InheritsGraph_edge10" class="edge">
+<title>type~superlustat_t&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M234.54,-42.23C192.45,-33.4 128.88,-27.4 84,-56.26"/>
+<text text-anchor="middle" x="162" y="-44.66" font-family="Helvetica,sans-Serif" font-size="9.50">panel_histo, utime, ops</text>
+</g>
+<!-- type~supermatrix&#45;&gt;C_PTR -->
+<g id="type~~sulu_env~~InheritsGraph_edge11" class="edge">
+<title>type~supermatrix&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#ff00ff" stroke-dasharray="5,2" d="M235.66,-6.24C200.48,-1.82 150.37,-0.63 112,-20.26 93.95,-29.49 100.6,-44.62 84,-56.26"/>
+<path fill="none" stroke="#ff00ff" stroke-dasharray="5,2" d="M82,-56.26C64.82,-67.59 50.25,-86.02 40.6,-100.36"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="37.45,-98.78 34.98,-109.09 43.34,-102.57 37.45,-98.78"/>
+<text text-anchor="middle" x="162" y="-22.66" font-family="Helvetica,sans-Serif" font-size="9.50">Store</text>
+</g>
+<!-- type~expheader&#45;&gt;C_PTR -->
+<g id="type~~sulu_env~~InheritsGraph_edge12" class="edge">
+<title>type~expheader&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M123.95,-133.52C105.36,-131.15 82.92,-128.28 64.42,-125.91"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="64.68,-122.42 54.32,-124.62 63.79,-129.36 64.68,-122.42"/>
+<text text-anchor="middle" x="83" y="-130.66" font-family="Helvetica,sans-Serif" font-size="9.50">mem</text>
+</g>
+<!-- type~lu_stack_t&#45;&gt;C_PTR -->
+<g id="type~~sulu_env~~InheritsGraph_edge13" class="edge">
+<title>type~lu_stack_t&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M122.41,-102.99C106.75,-105.77 88.5,-109.09 72,-112.26 69.36,-112.76 66.64,-113.3 63.9,-113.84"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="63.15,-110.42 54.04,-115.82 64.53,-117.28 63.15,-110.42"/>
+<text text-anchor="middle" x="83" y="-114.66" font-family="Helvetica,sans-Serif" font-size="9.50">array</text>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var pantypesulu_envInheritsGraph = svgPanZoom('#typesulu_envInheritsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#InheritsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="InheritsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="178pt" height="32pt"
+ viewBox="0.00 0.00 177.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 173.5,-28 173.5,4 -4,4"/>
+<!-- Type -->
+<g id="node1" class="node">
+<title>Type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="169.5,-24 72.5,-24 72.5,0 169.5,0 169.5,-24"/>
+<text text-anchor="middle" x="121" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a derived type to the parent type which it
+extends. Dashed arrows point from a derived type to the other
+types it contains as a components, with a label listing the name(s) of
+said component(s).
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    <br>
+
+    <section>
+    <h2>Components</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cc"></span>
+              real(kind=C_DOUBLE),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable, dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>CC</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>column scale factors for A</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-glu"></span>
+              type(<a href='globallu_t.html'>GLOBALLU_T</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>Glu</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>first, an output with the whole stuff LU; next, an input for other resolutions with same sparsity</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rr"></span>
+              real(kind=C_DOUBLE),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable, dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>RR</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p>*row scale factors for A *</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a_elt"></span>
+              real(kind=R8),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), pointer
+            </td>
+            <td>::</td>
+            <td><strong>a_elt</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>CC system matrix: points to <a href="../type/mat_solv.html#variable-a_elt~2">a_elt</a></em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-b~2"></span>
+              real(kind=R8),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), pointer
+            </td>
+            <td>::</td>
+            <td><strong>b</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>right hand side: points to <a href="../type/mat_solv.html#variable-b~3">b</a></em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-berr"></span>
+              real(kind=C_DOUBLE),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable, dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>berr</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>componentwise relative backward error of each solution</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-equed"></span>
+              character(kind=C_CHAR, len=1),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>equed</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>form of equilibration</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-etree"></span>
+              integer(kind=C_INT),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable, dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>etree</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>Elimination tree</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ferr"></span>
+              real(kind=C_DOUBLE),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable, dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>ferr</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>estimated forward error bound for each solution vector</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-first"></span>
+              logical(kind=I4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>first</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>if <code>false</code> the system has been factorized at least once</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~12"></span>
+              integer(kind=C_INT),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>info</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>info returned by <a href="../interface/dgssvx.html">dgssvx</a></em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-irow"></span>
+              integer(kind=I4),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), pointer
+            </td>
+            <td>::</td>
+            <td><strong>irow</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>matrix line of an a_elt element: points to <a href="../type/mat_solv.html#variable-irow~2">irow</a></em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-jptr"></span>
+              integer(kind=I4),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), pointer
+            </td>
+            <td>::</td>
+            <td><strong>jptr</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>matrix column pointers: points to <a href="../type/mat_solv.html#variable-jptr~2">jptr</a></em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lwork"></span>
+              integer(kind=C_INT),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lwork</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>size of workspace, not used here</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mem_usage"></span>
+              type(<a href='mem_usage_t.html'>MEM_USAGE_T</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mem_usage</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>memory usage statistics</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~23"></span>
+              integer(kind=C_INT),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>system size</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nrhs"></span>
+              integer(kind=C_INT),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nrhs</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>number of right hand sides</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nz"></span>
+              integer(kind=C_INT),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nz</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>number on non-zero entries</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-options"></span>
+              type(<a href='superlu_options_t.html'>SUPERLU_OPTIONS_T</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>options</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>LU controls</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-perm_c"></span>
+              integer(kind=C_INT),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable, dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>perm_c</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>If A-&gt;Stype = <code>SLU_NC</code>, Column permutation vector of size A-&gt;ncol</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-perm_r"></span>
+              integer(kind=C_INT),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable, dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>perm_r</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>If A-&gt;Stype = <code>SLU_NC</code>, row permutation vector of size A-&gt;nrow</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rcond"></span>
+              real(kind=C_DOUBLE),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable, dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>rcond</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>estimate of the reciprocal condition number of the matrix A</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rpg"></span>
+              real(kind=C_DOUBLE),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable, dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>rpg</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>reciprocal pivot growth factor</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sma"></span>
+              type(<a href='supermatrix.html'>SUPERMATRIX</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sma</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>Matrix A in A</em>X=B*</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-smb"></span>
+              type(<a href='supermatrix.html'>SUPERMATRIX</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>smb</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>On entry, the right hand side matrix</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sml"></span>
+              type(<a href='supermatrix.html'>SUPERMATRIX</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sml</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>factor L from the factorization</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-smu"></span>
+              type(<a href='supermatrix.html'>SUPERMATRIX</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>smu</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>factor U from the factorization</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-smx"></span>
+              type(<a href='supermatrix.html'>SUPERMATRIX</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>smx</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>olution matrix to the original system</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-stat"></span>
+              type(<a href='superlustat_t.html'>SUPERLUSTAT_T</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stat</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>statistics on runtime and floating-point operation count</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-work"></span>
+              type(C_PTR),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>work</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>User supplied workspace</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~21"></span>
+              real(kind=R8),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable, dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                <p><em>solution</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+
+
+
+    <section>
+    <h3><span class="anchor" id="src"></span>Source Code</h3>
+    <div class="hl codehilite"><pre><span></span><span class="k">type </span><span class="n">SULU_ENV</span>
+<span class="c">!! &lt;span style=&quot;color:green&quot;&gt;Global type for *SuperLU* which covers all the stuff needed&lt;/span&gt;</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span><span class="w">      </span><span class="c">!! *system size*</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nrhs</span><span class="w">   </span><span class="c">!! *number of right hand sides*</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nz</span><span class="w">     </span><span class="c">!! *number on non-zero entries*</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">info</span><span class="w">   </span><span class="c">!! *info returned by [[dgssvx]]*</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lwork</span><span class="w">  </span><span class="c">!! *size of workspace, not used here*</span>
+
+<span class="w">   </span><span class="kt">logical</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">first</span><span class="w">  </span><span class="c">!! *if ```false``` the system has been factorized at least once*</span>
+
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">pointer</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">b</span><span class="w">   </span><span class="c">!! *right hand side: points to [[MAT_SOLV:b]]*</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="w">   </span><span class="c">!! *solution*</span>
+
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w">    </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a_elt</span><span class="w">   </span><span class="c">!! *CC system matrix: points to [[MAT_SOLV:a_elt]]*</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">irow</span><span class="w">    </span><span class="c">!! *matrix line of an a_elt element: points to [[MAT_SOLV:irow]]*</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">jptr</span><span class="w">    </span><span class="c">!! *matrix column pointers: points to [[MAT_SOLV:jptr]]*</span>
+
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ferr</span><span class="w">   </span><span class="c">!! *estimated forward error bound for each solution vector*</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">berr</span><span class="w">   </span><span class="c">!! *componentwise relative backward error of each solution*</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">RR</span><span class="w">     </span><span class="c">!! *row scale factors for A *</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">CC</span><span class="w">     </span><span class="c">!!*column scale factors for A*</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rpg</span><span class="w">    </span><span class="c">!! *reciprocal pivot growth factor*</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_DOUBLE</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rcond</span><span class="w">  </span><span class="c">!!*estimate of the reciprocal condition number of the matrix A*</span>
+
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">perm_c</span><span class="w"> </span><span class="c">!!*If A-&gt;Stype = ```SLU_NC```, Column permutation vector of size A-&gt;ncol*</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">perm_r</span><span class="w"> </span><span class="c">!!*If A-&gt;Stype = ```SLU_NC```, row permutation vector of size A-&gt;nrow*</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_INT</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">etree</span><span class="w">  </span><span class="c">!! *Elimination tree*</span>
+
+<span class="w">   </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">kind</span><span class="o">=</span><span class="kt">C_CHAR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">equed</span><span class="w"> </span><span class="c">!! *form of equilibration*</span>
+
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="kt">C_PTR</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">work</span><span class="w">                    </span><span class="c">!! *User supplied workspace*</span>
+
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">SUPERLU_OPTIONS_T</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">options</span><span class="w">     </span><span class="c">!! *LU controls*</span>
+
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">sma</span><span class="w"> </span><span class="c">!! *Matrix A in A*X=B*</span>
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">smb</span><span class="w"> </span><span class="c">!! *On entry, the right hand side matrix*</span>
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">smx</span><span class="w"> </span><span class="c">!! *olution matrix to the original system*</span>
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">sml</span><span class="w"> </span><span class="c">!! *factor L from the factorization*</span>
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">SUPERMATRIX</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">smu</span><span class="w"> </span><span class="c">!! *factor U from the factorization*</span>
+
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">SUPERLUSTAT_T</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">stat</span><span class="w"> </span><span class="c">!! *statistics on runtime and floating-point operation count*</span>
+
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">GLOBALLU_T</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">Glu</span><span class="w">  </span><span class="c">!! *first, an output with the whole stuff LU; next, an input for other resolutions with same sparsity*</span>
+
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">MEM_USAGE_T</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">mem_usage</span><span class="w"> </span><span class="c">!! *memory usage statistics*</span>
+<span class="k">endtype </span><span class="n">SULU_ENV</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

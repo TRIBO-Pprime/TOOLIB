@@ -1,0 +1,919 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>qrsolv &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>qrsolv
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">79 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/mod_minpack.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_minpack.f90.html'>mod_minpack.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/minpack.html'>minpack</a></li>
+            <li class="breadcrumb-item active" aria-current="page">qrsolv</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/qrsolv.html#src">qrsolv</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine qrsolv(n, r, ldr, ipvt, diag, qtb, x, sdiag)  
+</h2>
+    
+
+    <p>QRSOLV solves a rectangular linear system A*x=b in the least squares sense.</p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~63"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r~10"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r</strong>(ldr,n)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldr~2"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ldr</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ipvt~9"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ipvt</strong>(n)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-diag~13"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>diag</strong>(n)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qtb~3"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>qtb</strong>(n)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~60"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong>(n)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sdiag~2"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sdiag</strong>(n)</td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~qrsolv~~CalledByGraph Pages: 1 -->
+<svg id="procqrsolvCalledByGraph" width="561pt" height="242pt"
+ viewBox="0.00 0.00 561.00 242.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~qrsolv~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 238)">
+<title>proc~~qrsolv~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-238 557,-238 557,4 -4,4"/>
+<!-- proc~qrsolv -->
+<g id="proc~~qrsolv~~CalledByGraph_node1" class="node">
+<title>proc~qrsolv</title>
+<polygon fill="none" stroke="black" points="553,-140 499,-140 499,-116 553,-116 553,-140"/>
+<text text-anchor="middle" x="526" y="-125.6" font-family="Helvetica,sans-Serif" font-size="10.50">qrsolv</text>
+</g>
+<!-- proc~lmpar -->
+<g id="proc~~qrsolv~~CalledByGraph_node2" class="node">
+<title>proc~lmpar</title>
+<g id="a_proc~~qrsolv~~CalledByGraph_node2"><a xlink:href="../proc/lmpar.html" xlink:title="lmpar">
+<polygon fill="#d9534f" stroke="#d9534f" points="463,-140 409,-140 409,-116 463,-116 463,-140"/>
+<text text-anchor="middle" x="436" y="-125.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmpar</text>
+</a>
+</g>
+</g>
+<!-- proc~lmpar&#45;&gt;proc~qrsolv -->
+<g id="proc~~qrsolv~~CalledByGraph_edge1" class="edge">
+<title>proc~lmpar&#45;&gt;proc~qrsolv</title>
+<path fill="none" stroke="#ff0000" d="M463.4,-128C471.39,-128 480.31,-128 488.82,-128"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="488.92,-131.5 498.92,-128 488.92,-124.5 488.92,-131.5"/>
+</g>
+<!-- proc~lmder -->
+<g id="proc~~qrsolv~~CalledByGraph_node3" class="node">
+<title>proc~lmder</title>
+<g id="a_proc~~qrsolv~~CalledByGraph_node3"><a xlink:href="../proc/lmder.html" xlink:title="lmder">
+<polygon fill="#d9534f" stroke="#d9534f" points="373,-187 319,-187 319,-163 373,-163 373,-187"/>
+<text text-anchor="middle" x="346" y="-172.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmder</text>
+</a>
+</g>
+</g>
+<!-- proc~lmder&#45;&gt;proc~lmpar -->
+<g id="proc~~qrsolv~~CalledByGraph_edge2" class="edge">
+<title>proc~lmder&#45;&gt;proc~lmpar</title>
+<path fill="none" stroke="#ff0000" d="M369.66,-162.9C379.93,-157.41 392.24,-150.84 403.39,-144.88"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="405.24,-147.86 412.41,-140.06 401.94,-141.69 405.24,-147.86"/>
+</g>
+<!-- proc~lmdif -->
+<g id="proc~~qrsolv~~CalledByGraph_node4" class="node">
+<title>proc~lmdif</title>
+<g id="a_proc~~qrsolv~~CalledByGraph_node4"><a xlink:href="../proc/lmdif.html" xlink:title="lmdif">
+<polygon fill="#d9534f" stroke="#d9534f" points="373,-140 319,-140 319,-116 373,-116 373,-140"/>
+<text text-anchor="middle" x="346" y="-125.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmdif</text>
+</a>
+</g>
+</g>
+<!-- proc~lmdif&#45;&gt;proc~lmpar -->
+<g id="proc~~qrsolv~~CalledByGraph_edge3" class="edge">
+<title>proc~lmdif&#45;&gt;proc~lmpar</title>
+<path fill="none" stroke="#ff0000" d="M373.4,-128C381.39,-128 390.31,-128 398.82,-128"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="398.92,-131.5 408.92,-128 398.92,-124.5 398.92,-131.5"/>
+</g>
+<!-- proc~lmstr -->
+<g id="proc~~qrsolv~~CalledByGraph_node5" class="node">
+<title>proc~lmstr</title>
+<g id="a_proc~~qrsolv~~CalledByGraph_node5"><a xlink:href="../proc/lmstr.html" xlink:title="lmstr">
+<polygon fill="#d9534f" stroke="#d9534f" points="373,-77 319,-77 319,-53 373,-53 373,-77"/>
+<text text-anchor="middle" x="346" y="-62.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmstr</text>
+</a>
+</g>
+</g>
+<!-- proc~lmstr&#45;&gt;proc~lmpar -->
+<g id="proc~~qrsolv~~CalledByGraph_edge4" class="edge">
+<title>proc~lmstr&#45;&gt;proc~lmpar</title>
+<path fill="none" stroke="#ff0000" d="M363.97,-77.15C376.99,-86.47 395.18,-99.49 409.89,-110.02"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="407.92,-112.91 418.08,-115.89 411.99,-107.22 407.92,-112.91"/>
+</g>
+<!-- proc~lmder1 -->
+<g id="proc~~qrsolv~~CalledByGraph_node6" class="node">
+<title>proc~lmder1</title>
+<g id="a_proc~~qrsolv~~CalledByGraph_node6"><a xlink:href="../proc/lmder1.html" xlink:title="lmder1">
+<polygon fill="#d9534f" stroke="#d9534f" points="283,-192 229,-192 229,-168 283,-168 283,-192"/>
+<text text-anchor="middle" x="256" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmder1</text>
+</a>
+</g>
+</g>
+<!-- proc~lmder1&#45;&gt;proc~lmder -->
+<g id="proc~~qrsolv~~CalledByGraph_edge5" class="edge">
+<title>proc~lmder1&#45;&gt;proc~lmder</title>
+<path fill="none" stroke="#ff0000" d="M283.4,-178.5C291.39,-178.05 300.31,-177.54 308.82,-177.06"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="309.13,-180.54 318.92,-176.48 308.74,-173.55 309.13,-180.54"/>
+</g>
+<!-- proc~lmdif1 -->
+<g id="proc~~qrsolv~~CalledByGraph_node7" class="node">
+<title>proc~lmdif1</title>
+<g id="a_proc~~qrsolv~~CalledByGraph_node7"><a xlink:href="../proc/lmdif1.html" xlink:title="lmdif1">
+<polygon fill="#d9534f" stroke="#d9534f" points="283,-140 229,-140 229,-116 283,-116 283,-140"/>
+<text text-anchor="middle" x="256" y="-125.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmdif1</text>
+</a>
+</g>
+</g>
+<!-- proc~lmdif1&#45;&gt;proc~lmdif -->
+<g id="proc~~qrsolv~~CalledByGraph_edge6" class="edge">
+<title>proc~lmdif1&#45;&gt;proc~lmdif</title>
+<path fill="none" stroke="#00ff00" d="M283.4,-128C291.39,-128 300.31,-128 308.82,-128"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="308.92,-131.5 318.92,-128 308.92,-124.5 308.92,-131.5"/>
+</g>
+<!-- proc~lmstr1 -->
+<g id="proc~~qrsolv~~CalledByGraph_node8" class="node">
+<title>proc~lmstr1</title>
+<g id="a_proc~~qrsolv~~CalledByGraph_node8"><a xlink:href="../proc/lmstr1.html" xlink:title="lmstr1">
+<polygon fill="#d9534f" stroke="#d9534f" points="283,-66 229,-66 229,-42 283,-42 283,-66"/>
+<text text-anchor="middle" x="256" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmstr1</text>
+</a>
+</g>
+</g>
+<!-- proc~lmstr1&#45;&gt;proc~lmstr -->
+<g id="proc~~qrsolv~~CalledByGraph_edge7" class="edge">
+<title>proc~lmstr1&#45;&gt;proc~lmstr</title>
+<path fill="none" stroke="#0000ff" d="M283.4,-57.3C291.39,-58.3 300.31,-59.41 308.82,-60.48"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="308.56,-63.97 318.92,-61.74 309.43,-57.03 308.56,-63.97"/>
+</g>
+<!-- proc~lmder1_2_test -->
+<g id="proc~~qrsolv~~CalledByGraph_node9" class="node">
+<title>proc~lmder1_2_test</title>
+<g id="a_proc~~qrsolv~~CalledByGraph_node9"><a xlink:href="../proc/lmder1_2_test.html" xlink:title="lmder1_2_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="193,-234 112,-234 112,-210 193,-210 193,-234"/>
+<text text-anchor="middle" x="152.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmder1_2_test</text>
+</a>
+</g>
+</g>
+<!-- proc~lmder1_2_test&#45;&gt;proc~lmder1 -->
+<g id="proc~~qrsolv~~CalledByGraph_edge8" class="edge">
+<title>proc~lmder1_2_test&#45;&gt;proc~lmder1</title>
+<path fill="none" stroke="#ff0000" d="M182.59,-209.96C194.05,-205.22 207.33,-199.73 219.36,-194.75"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="220.78,-197.95 228.68,-190.89 218.11,-191.48 220.78,-197.95"/>
+</g>
+<!-- proc~lmder1_test -->
+<g id="proc~~qrsolv~~CalledByGraph_node10" class="node">
+<title>proc~lmder1_test</title>
+<g id="a_proc~~qrsolv~~CalledByGraph_node10"><a xlink:href="../proc/lmder1_test.html" xlink:title="lmder1_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="187,-192 118,-192 118,-168 187,-168 187,-192"/>
+<text text-anchor="middle" x="152.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmder1_test</text>
+</a>
+</g>
+</g>
+<!-- proc~lmder1_test&#45;&gt;proc~lmder1 -->
+<g id="proc~~qrsolv~~CalledByGraph_edge9" class="edge">
+<title>proc~lmder1_test&#45;&gt;proc~lmder1</title>
+<path fill="none" stroke="#ff0000" d="M187.02,-180C197.24,-180 208.52,-180 218.9,-180"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="218.91,-183.5 228.91,-180 218.91,-176.5 218.91,-183.5"/>
+</g>
+<!-- proc~lmdif1_2_test -->
+<g id="proc~~qrsolv~~CalledByGraph_node11" class="node">
+<title>proc~lmdif1_2_test</title>
+<g id="a_proc~~qrsolv~~CalledByGraph_node11"><a xlink:href="../proc/lmdif1_2_test.html" xlink:title="lmdif1_2_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="190.5,-150 114.5,-150 114.5,-126 190.5,-126 190.5,-150"/>
+<text text-anchor="middle" x="152.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmdif1_2_test</text>
+</a>
+</g>
+</g>
+<!-- proc~lmdif1_2_test&#45;&gt;proc~lmdif1 -->
+<g id="proc~~qrsolv~~CalledByGraph_edge10" class="edge">
+<title>proc~lmdif1_2_test&#45;&gt;proc~lmdif1</title>
+<path fill="none" stroke="#00ff00" d="M190.72,-134.33C199.93,-133.43 209.78,-132.46 218.93,-131.55"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="219.29,-135.04 228.89,-130.57 218.6,-128.07 219.29,-135.04"/>
+</g>
+<!-- proc~lmdif1_test -->
+<g id="proc~~qrsolv~~CalledByGraph_node12" class="node">
+<title>proc~lmdif1_test</title>
+<g id="a_proc~~qrsolv~~CalledByGraph_node12"><a xlink:href="../proc/lmdif1_test.html" xlink:title="lmdif1_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="184.5,-108 120.5,-108 120.5,-84 184.5,-84 184.5,-108"/>
+<text text-anchor="middle" x="152.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmdif1_test</text>
+</a>
+</g>
+</g>
+<!-- proc~lmdif1_test&#45;&gt;proc~lmdif1 -->
+<g id="proc~~qrsolv~~CalledByGraph_edge11" class="edge">
+<title>proc~lmdif1_test&#45;&gt;proc~lmdif1</title>
+<path fill="none" stroke="#00ff00" d="M184.5,-105.77C195.51,-109.24 207.98,-113.17 219.34,-116.76"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="218.38,-120.12 228.97,-119.79 220.48,-113.45 218.38,-120.12"/>
+</g>
+<!-- proc~lmstr1_2_test -->
+<g id="proc~~qrsolv~~CalledByGraph_node13" class="node">
+<title>proc~lmstr1_2_test</title>
+<g id="a_proc~~qrsolv~~CalledByGraph_node13"><a xlink:href="../proc/lmstr1_2_test.html" xlink:title="lmstr1_2_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="191,-66 114,-66 114,-42 191,-42 191,-66"/>
+<text text-anchor="middle" x="152.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmstr1_2_test</text>
+</a>
+</g>
+</g>
+<!-- proc~lmstr1_2_test&#45;&gt;proc~lmstr1 -->
+<g id="proc~~qrsolv~~CalledByGraph_edge12" class="edge">
+<title>proc~lmstr1_2_test&#45;&gt;proc~lmstr1</title>
+<path fill="none" stroke="#0000ff" d="M191.01,-54C200.02,-54 209.63,-54 218.59,-54"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="218.73,-57.5 228.73,-54 218.73,-50.5 218.73,-57.5"/>
+</g>
+<!-- proc~lmstr1_test -->
+<g id="proc~~qrsolv~~CalledByGraph_node14" class="node">
+<title>proc~lmstr1_test</title>
+<g id="a_proc~~qrsolv~~CalledByGraph_node14"><a xlink:href="../proc/lmstr1_test.html" xlink:title="lmstr1_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="185,-24 120,-24 120,0 185,0 185,-24"/>
+<text text-anchor="middle" x="152.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmstr1_test</text>
+</a>
+</g>
+</g>
+<!-- proc~lmstr1_test&#45;&gt;proc~lmstr1 -->
+<g id="proc~~qrsolv~~CalledByGraph_edge13" class="edge">
+<title>proc~lmstr1_test&#45;&gt;proc~lmstr1</title>
+<path fill="none" stroke="#0000ff" d="M182.59,-24.04C194.05,-28.78 207.33,-34.27 219.36,-39.25"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="218.11,-42.52 228.68,-43.11 220.78,-36.05 218.11,-42.52"/>
+</g>
+<!-- program~test_minpack -->
+<g id="proc~~qrsolv~~CalledByGraph_node15" class="node">
+<title>program~test_minpack</title>
+<g id="a_proc~~qrsolv~~CalledByGraph_node15"><a xlink:href="../program/test_minpack.html" xlink:title="test_minpack">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="76,-129 0,-129 0,-105 76,-105 76,-129"/>
+<text text-anchor="middle" x="38" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_minpack</text>
+</a>
+</g>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmder1_2_test -->
+<g id="proc~~qrsolv~~CalledByGraph_edge14" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmder1_2_test</title>
+<path fill="none" stroke="#ff0000" d="M47.29,-129.09C59.75,-146.62 84.78,-179.35 112,-201 113.55,-202.23 115.18,-203.43 116.87,-204.58"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="115.22,-207.68 125.57,-209.98 118.91,-201.73 115.22,-207.68"/>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmder1_test -->
+<g id="proc~~qrsolv~~CalledByGraph_edge15" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmder1_test</title>
+<path fill="none" stroke="#ffff00" d="M59.66,-129.13C74.22,-137.62 94.22,-149.16 112,-159 114.4,-160.33 116.89,-161.69 119.4,-163.05"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="117.99,-166.26 128.45,-167.91 121.3,-160.1 117.99,-166.26"/>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmdif1_2_test -->
+<g id="proc~~qrsolv~~CalledByGraph_edge16" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmdif1_2_test</title>
+<path fill="none" stroke="#00ff00" d="M76.15,-123.93C85.17,-125.62 94.94,-127.44 104.36,-129.2"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="103.92,-132.68 114.39,-131.07 105.2,-125.8 103.92,-132.68"/>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmdif1_test -->
+<g id="proc~~qrsolv~~CalledByGraph_edge17" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmdif1_test</title>
+<path fill="none" stroke="#00ffff" d="M76.15,-110.07C87.12,-108.02 99.2,-105.76 110.41,-103.67"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="111.22,-107.08 120.41,-101.8 109.93,-100.2 111.22,-107.08"/>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmstr1_2_test -->
+<g id="proc~~qrsolv~~CalledByGraph_edge18" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmstr1_2_test</title>
+<path fill="none" stroke="#0000ff" d="M59.66,-104.87C74.22,-96.38 94.22,-84.84 112,-75 114.4,-73.67 116.89,-72.31 119.4,-70.95"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="121.3,-73.9 128.45,-66.09 117.99,-67.74 121.3,-73.9"/>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmstr1_test -->
+<g id="proc~~qrsolv~~CalledByGraph_edge19" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmstr1_test</title>
+<path fill="none" stroke="#ff00ff" d="M47.29,-104.91C59.75,-87.38 84.78,-54.65 112,-33 113.55,-31.77 115.18,-30.57 116.87,-29.42"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="118.91,-32.27 125.57,-24.02 115.22,-26.32 118.91,-32.27"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">subroutine </span><span class="n">qrsolv</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">ldr</span><span class="p">,</span><span class="w"> </span><span class="n">ipvt</span><span class="p">,</span><span class="w"> </span><span class="n">diag</span><span class="p">,</span><span class="w"> </span><span class="n">qtb</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">sdiag</span><span class="w"> </span><span class="p">)</span>
+
+<span class="c">!*****************************************************************************80</span>
+<span class="c">!</span>
+<span class="c">!! QRSOLV solves a rectangular linear system A*x=b in the least squares sense.</span>
+<span class="c">!</span>
+<span class="c">!  Discussion:</span>
+<span class="c">!</span>
+<span class="c">!    Given an M by N matrix A, an N by N diagonal matrix D,</span>
+<span class="c">!    and an M-vector B, the problem is to determine an X which</span>
+<span class="c">!    solves the system</span>
+<span class="c">!</span>
+<span class="c">!      A*X = B</span>
+<span class="c">!      D*X = 0</span>
+<span class="c">!</span>
+<span class="c">!    in the least squares sense.</span>
+<span class="c">!</span>
+<span class="c">!    This function completes the solution of the problem</span>
+<span class="c">!    if it is provided with the necessary information from the</span>
+<span class="c">!    QR factorization, with column pivoting, of A.  That is, if</span>
+<span class="c">!    Q*P = Q*R, where P is a permutation matrix, Q has orthogonal</span>
+<span class="c">!    columns, and R is an upper triangular matrix with diagonal</span>
+<span class="c">!    elements of nonincreasing magnitude, then QRSOLV expects</span>
+<span class="c">!    the full upper triangle of R, the permutation matrix p,</span>
+<span class="c">!    and the first N components of Q&#39;*B.</span>
+<span class="c">!</span>
+<span class="c">!    The system is then equivalent to</span>
+<span class="c">!</span>
+<span class="c">!      R*Z = Q&#39;*B</span>
+<span class="c">!      P&#39;*D*P*Z = 0</span>
+<span class="c">!</span>
+<span class="c">!    where X = P*Z.  If this system does not have full rank,</span>
+<span class="c">!    then a least squares solution is obtained.  On output QRSOLV</span>
+<span class="c">!    also provides an upper triangular matrix S such that</span>
+<span class="c">!</span>
+<span class="c">!      P&#39;*(A&#39;*A + D*D)*P = S&#39;*S.</span>
+<span class="c">!</span>
+<span class="c">!    S is computed within QRSOLV and may be of separate interest.</span>
+<span class="c">!</span>
+<span class="c">!  Licensing:</span>
+<span class="c">!</span>
+<span class="c">!    This code may freely be copied, modified, and used for any purpose.</span>
+<span class="c">!</span>
+<span class="c">!  Modified:</span>
+<span class="c">!</span>
+<span class="c">!    06 April 2010</span>
+<span class="c">!</span>
+<span class="c">!  Author:</span>
+<span class="c">!</span>
+<span class="c">!    Original FORTRAN77 version by Jorge More, Burton Garbow, Kenneth Hillstrom.</span>
+<span class="c">!    FORTRAN90 version by John Burkardt.</span>
+<span class="c">!</span>
+<span class="c">!  Reference:</span>
+<span class="c">!</span>
+<span class="c">!    Jorge More, Burton Garbow, Kenneth Hillstrom,</span>
+<span class="c">!    User Guide for MINPACK-1,</span>
+<span class="c">!    Technical Report ANL-80-74,</span>
+<span class="c">!    Argonne National Laboratory, 1980.</span>
+<span class="c">!</span>
+<span class="c">!  Parameters:</span>
+<span class="c">!</span>
+<span class="c">!    Input, integer ( kind = 4 ) N, the order of R.</span>
+<span class="c">!</span>
+<span class="c">!    Input/output, real ( kind = 8 ) R(LDR,N), the N by N matrix.</span>
+<span class="c">!    On input the full upper triangle must contain the full upper triangle</span>
+<span class="c">!    of the matrix R.  On output the full upper triangle is unaltered, and</span>
+<span class="c">!    the strict lower triangle contains the strict upper triangle</span>
+<span class="c">!    (transposed) of the upper triangular matrix S.</span>
+<span class="c">!</span>
+<span class="c">!    Input, integer ( kind = 4 ) LDR, the leading dimension of R, which must be</span>
+<span class="c">!    at least N.</span>
+<span class="c">!</span>
+<span class="c">!    Input, integer ( kind = 4 ) IPVT(N), defines the permutation matrix P such</span>
+<span class="c">!    that A*P = Q*R.  Column J of P is column IPVT(J) of the identity matrix.</span>
+<span class="c">!</span>
+<span class="c">!    Input, real ( kind = 8 ) DIAG(N), the diagonal elements of the matrix D.</span>
+<span class="c">!</span>
+<span class="c">!    Input, real ( kind = 8 ) QTB(N), the first N elements of the vector Q&#39;*B.</span>
+<span class="c">!</span>
+<span class="c">!    Output, real ( kind = 8 ) X(N), the least squares solution.</span>
+<span class="c">!</span>
+<span class="c">!    Output, real ( kind = 8 ) SDIAG(N), the diagonal elements of the upper</span>
+<span class="c">!    triangular matrix S.</span>
+<span class="c">!</span>
+<span class="w">  </span><span class="k">implicit none</span>
+
+<span class="k">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">ldr</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">n</span>
+
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">c</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">cotan</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">diag</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">i</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">ipvt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">j</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">k</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">l</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">nsing</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">qtb</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">qtbpj</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">r</span><span class="p">(</span><span class="n">ldr</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">s</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">sdiag</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">sum2</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">t</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">temp</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">wa</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">!  Copy R and Q&#39;*B to preserve input and initialize S.</span>
+<span class="c">!</span>
+<span class="c">!  In particular, save the diagonal elements of R in X.</span>
+<span class="c">!</span>
+<span class="w">  </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="n">r</span><span class="p">(</span><span class="n">j</span><span class="p">:</span><span class="n">n</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">:</span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="n">x</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+<span class="w">  </span><span class="k">end do</span>
+
+<span class="k">  </span><span class="n">wa</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">qtb</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">!  Eliminate the diagonal matrix D using a Givens rotation.</span>
+<span class="c">!</span>
+<span class="w">  </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="c">!</span>
+<span class="c">!  Prepare the row of D to be eliminated, locating the</span>
+<span class="c">!  diagonal element using P from the QR factorization.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipvt</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">diag</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">      </span><span class="n">sdiag</span><span class="p">(</span><span class="n">j</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0D+00</span>
+<span class="w">      </span><span class="n">sdiag</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diag</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">!  The transformations to eliminate the row of D</span>
+<span class="c">!  modify only a single element of Q&#39;*B</span>
+<span class="c">!  beyond the first N, which is initially zero.</span>
+<span class="c">!</span>
+<span class="w">      </span><span class="n">qtbpj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0D+00</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="c">!</span>
+<span class="c">!  Determine a Givens rotation which eliminates the</span>
+<span class="c">!  appropriate element in the current row of D.</span>
+<span class="c">!</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">sdiag</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">          if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">abs</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">r</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nb">abs</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">sdiag</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">cotan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">sdiag</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">            </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5D+00</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">sqrt</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">0.25D+00</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.25D+00</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cotan</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cotan</span>
+<span class="w">          </span><span class="k">else</span>
+<span class="k">            </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdiag</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">r</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+<span class="w">            </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5D+00</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">sqrt</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">0.25D+00</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.25D+00</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">t</span>
+<span class="w">          </span><span class="k">end if</span>
+<span class="c">!</span>
+<span class="c">!  Compute the modified diagonal element of R and</span>
+<span class="c">!  the modified element of (Q&#39;*B,0).</span>
+<span class="c">!</span>
+<span class="w">          </span><span class="n">r</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sdiag</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">          </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">wa</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">qtbpj</span>
+<span class="w">          </span><span class="n">qtbpj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">wa</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">qtbpj</span>
+<span class="w">          </span><span class="n">wa</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span>
+<span class="c">!</span>
+<span class="c">!  Accumulate the tranformation in the row of S.</span>
+<span class="c">!</span>
+<span class="w">          </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">            </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sdiag</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">            </span><span class="n">sdiag</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sdiag</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">            </span><span class="n">r</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span>
+<span class="w">          </span><span class="k">end do</span>
+
+<span class="k">        end if</span>
+
+<span class="k">      end do</span>
+
+<span class="k">    end if</span>
+<span class="c">!</span>
+<span class="c">!  Store the diagonal element of S and restore</span>
+<span class="c">!  the corresponding diagonal element of R.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="n">sdiag</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+<span class="w">    </span><span class="n">r</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">end do</span>
+<span class="c">!</span>
+<span class="c">!  Solve the triangular system for Z.  If the system is</span>
+<span class="c">!  singular, then obtain a least squares solution.</span>
+<span class="c">!</span>
+<span class="w">  </span><span class="n">nsing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span>
+
+<span class="w">  </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">sdiag</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">nsing</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">nsing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">nsing</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">wa</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0D+00</span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">  end do</span>
+
+<span class="k">  do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nsing</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span>
+<span class="w">    </span><span class="n">sum2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">dot_product</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">wa</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">nsing</span><span class="p">),</span><span class="w"> </span><span class="n">r</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">nsing</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="n">wa</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">wa</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sum2</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">sdiag</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">  </span><span class="k">end do</span>
+<span class="c">!</span>
+<span class="c">!  Permute the components of Z back to components of X.</span>
+<span class="c">!</span>
+<span class="w">  </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipvt</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">    </span><span class="n">x</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wa</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">  </span><span class="k">end do</span>
+
+<span class="k">  return</span>
+<span class="k">endsubroutine </span><span class="n">qrsolv</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

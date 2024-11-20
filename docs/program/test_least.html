@@ -1,0 +1,1679 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>test_least &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>test_least      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> Arthur Francisco</li>
+            <li class="list-inline-item" id="meta-date"><i class="fa fa-calendar-o"></i> 15 mai 2012</li>
+            <li class="list-inline-item" id="meta-version"><i class="fa fa-barcode"></i> 1.0</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 6.7% of total for programs.">126 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/prg.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/prg.f90~2.html'>prg.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">test_least</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/test_least.html#variable-jf">Jf</a>
+            <a class="list-group-item" href="../program/test_least.html#variable-beta">beta</a>
+            <a class="list-group-item" href="../program/test_least.html#variable-hij">hij</a>
+            <a class="list-group-item" href="../program/test_least.html#variable-info~3">info</a>
+            <a class="list-group-item" href="../program/test_least.html#variable-n1">n1</a>
+            <a class="list-group-item" href="../program/test_least.html#variable-n2">n2</a>
+            <a class="list-group-item" href="../program/test_least.html#variable-vec_xy">vec_xy</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#funcs-0"
+         aria-expanded="false" aria-controls="funcs-0">
+         <h4 class="card-header bg-primary text-white">Functions</h4>
+      </a>
+      <div id="funcs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/test_least.html#proc-autocov_impo">autocov_impo</a>
+            <a class="list-group-item" href="../program/test_least.html#proc-df">df</a>
+            <a class="list-group-item" href="../program/test_least.html#proc-f">f</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/test_least.html#proc-calc_jf">calc_Jf</a>
+            <a class="list-group-item" href="../program/test_least.html#proc-calc_imp_acf">calc_imp_acf</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/test_least.html#src">test_least</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/data_arch.html'>data_arch</a></li>
+                  <li class="list-inline-item"><a href='../module/least_squares.html'>least_squares</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: program~~test_least~~UsesGraph Pages: 1 -->
+<svg id="programtest_leastUsesGraph" width="491pt" height="60pt"
+ viewBox="0.00 0.00 491.00 60.29" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~test_least~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 56.29)">
+<title>program~~test_least~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-56.29 487,-56.29 487,4 -4,4"/>
+<!-- program~test_least -->
+<g id="program~~test_least~~UsesGraph_node1" class="node">
+<title>program~test_least</title>
+<polygon fill="none" stroke="black" points="483,-44 425,-44 425,-20 483,-20 483,-44"/>
+<text text-anchor="middle" x="454" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50">test_least</text>
+</g>
+<!-- module~data_arch -->
+<g id="program~~test_least~~UsesGraph_node2" class="node">
+<title>module~data_arch</title>
+<g id="a_program~~test_least~~UsesGraph_node2"><a xlink:href="../module/data_arch.html" xlink:title="data_arch">
+<polygon fill="#337ab7" stroke="#337ab7" points="184,-44 123,-44 123,-20 184,-20 184,-44"/>
+<text text-anchor="middle" x="153.5" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">data_arch</text>
+</a>
+</g>
+</g>
+<!-- program~test_least&#45;&gt;module~data_arch -->
+<g id="program~~test_least~~UsesGraph_edge1" class="edge">
+<title>program~test_least&#45;&gt;module~data_arch</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M424.9,-36.65C385.48,-42.74 311.47,-52.57 248,-52"/>
+</g>
+<!-- module~least_squares -->
+<g id="program~~test_least~~UsesGraph_node3" class="node">
+<title>module~least_squares</title>
+<g id="a_program~~test_least~~UsesGraph_node3"><a xlink:href="../module/least_squares.html" xlink:title="least_squares">
+<polygon fill="#337ab7" stroke="#337ab7" points="389,-24 310,-24 310,0 389,0 389,-24"/>
+<text text-anchor="middle" x="349.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">least_squares</text>
+</a>
+</g>
+</g>
+<!-- program~test_least&#45;&gt;module~least_squares -->
+<g id="program~~test_least~~UsesGraph_edge2" class="edge">
+<title>program~test_least&#45;&gt;module~least_squares</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M424.99,-26.53C416.98,-24.97 408.01,-23.22 399.14,-21.49"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="399.72,-18.04 389.23,-19.56 398.38,-24.91 399.72,-18.04"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="program~~test_least~~UsesGraph_node4" class="node">
+<title>iso_fortran_env</title>
+<g id="a_program~~test_least~~UsesGraph_node4"><a xlink:href="http://fortranwiki.org/fortran/show/iso_fortran_env" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="87,-44 0,-44 0,-20 87,-20 87,-44"/>
+<text text-anchor="middle" x="43.5" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~data_arch&#45;&gt;iso_fortran_env -->
+<g id="program~~test_least~~UsesGraph_edge3" class="edge">
+<title>module~data_arch&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M122.99,-32C115.09,-32 106.3,-32 97.55,-32"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="97.34,-28.5 87.34,-32 97.34,-35.5 97.34,-28.5"/>
+</g>
+<!-- module~least_squares&#45;&gt;module~data_arch -->
+<g id="program~~test_least~~UsesGraph_edge5" class="edge">
+<title>module~least_squares&#45;&gt;module~data_arch</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M330.47,-24.11C310.98,-35.98 278.61,-52.28 248,-52"/>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M246,-52C228.79,-51.84 210.18,-48.4 194.26,-44.41"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="194.79,-40.93 184.23,-41.74 192.99,-47.7 194.79,-40.93"/>
+</g>
+<!-- module~cholesky -->
+<g id="program~~test_least~~UsesGraph_node5" class="node">
+<title>module~cholesky</title>
+<g id="a_program~~test_least~~UsesGraph_node5"><a xlink:href="../module/cholesky.html" xlink:title="cholesky">
+<polygon fill="#337ab7" stroke="#337ab7" points="274,-24 220,-24 220,0 274,0 274,-24"/>
+<text text-anchor="middle" x="247" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cholesky</text>
+</a>
+</g>
+</g>
+<!-- module~least_squares&#45;&gt;module~cholesky -->
+<g id="program~~test_least~~UsesGraph_edge4" class="edge">
+<title>module~least_squares&#45;&gt;module~cholesky</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M309.93,-12C301.52,-12 292.66,-12 284.34,-12"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="284.18,-8.5 274.18,-12 284.18,-15.5 284.18,-8.5"/>
+</g>
+<!-- module~cholesky&#45;&gt;module~data_arch -->
+<g id="program~~test_least~~UsesGraph_edge6" class="edge">
+<title>module~cholesky&#45;&gt;module~data_arch</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M219.53,-17.78C211.57,-19.53 202.65,-21.48 194.03,-23.36"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="193.14,-19.97 184.12,-25.53 194.64,-26.81 193.14,-19.97"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <p><span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+<strong>Least squares, linear and non linear. Example of use.</strong>
+</span></p>
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: program~~test_least~~CallsGraph Pages: 1 -->
+<svg id="programtest_leastCallsGraph" width="461pt" height="158pt"
+ viewBox="0.00 0.00 461.00 158.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~test_least~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 154)">
+<title>program~~test_least~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-154 457,-154 457,4 -4,4"/>
+<!-- program~test_least -->
+<g id="program~~test_least~~CallsGraph_node1" class="node">
+<title>program~test_least</title>
+<polygon fill="none" stroke="black" points="58,-87 0,-87 0,-63 58,-63 58,-87"/>
+<text text-anchor="middle" x="29" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50">test_least</text>
+</g>
+<!-- proc~calc_imp_acf -->
+<g id="program~~test_least~~CallsGraph_node2" class="node">
+<title>proc~calc_imp_acf</title>
+<g id="a_program~~test_least~~CallsGraph_node2"><a xlink:href="../proc/calc_imp_acf.html" xlink:title="calc_imp_acf">
+<polygon fill="#d9534f" stroke="#d9534f" points="338,-150 263,-150 263,-126 338,-126 338,-150"/>
+<text text-anchor="middle" x="300.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">calc_imp_acf</text>
+</a>
+</g>
+</g>
+<!-- program~test_least&#45;&gt;proc~calc_imp_acf -->
+<g id="program~~test_least~~CallsGraph_edge1" class="edge">
+<title>program~test_least&#45;&gt;proc~calc_imp_acf</title>
+<path fill="none" stroke="#ff0000" d="M44.17,-87.21C56.47,-97.05 75.21,-110.33 94,-117 146.14,-135.52 210.07,-139.34 252.64,-139.46"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="252.73,-142.96 262.72,-139.42 252.71,-135.96 252.73,-142.96"/>
+</g>
+<!-- proc~calc_jf -->
+<g id="program~~test_least~~CallsGraph_node3" class="node">
+<title>proc~calc_jf</title>
+<g id="a_program~~test_least~~CallsGraph_node3"><a xlink:href="../proc/calc_jf.html" xlink:title="calc_Jf">
+<polygon fill="#d9534f" stroke="#d9534f" points="187.5,-108 133.5,-108 133.5,-84 187.5,-84 187.5,-108"/>
+<text text-anchor="middle" x="160.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">calc_Jf</text>
+</a>
+</g>
+</g>
+<!-- program~test_least&#45;&gt;proc~calc_jf -->
+<g id="program~~test_least~~CallsGraph_edge2" class="edge">
+<title>program~test_least&#45;&gt;proc~calc_jf</title>
+<path fill="none" stroke="#ff0000" d="M58.1,-79.56C77.19,-82.65 102.62,-86.78 123.24,-90.12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="122.79,-93.59 133.22,-91.74 123.91,-86.68 122.79,-93.59"/>
+</g>
+<!-- proc~moindres_carres -->
+<g id="program~~test_least~~CallsGraph_node4" class="node">
+<title>proc~moindres_carres</title>
+<g id="a_program~~test_least~~CallsGraph_node4"><a xlink:href="../proc/moindres_carres.html" xlink:title="moindres_carres">
+<polygon fill="#d9534f" stroke="#d9534f" points="207,-66 114,-66 114,-42 207,-42 207,-66"/>
+<text text-anchor="middle" x="160.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">moindres_carres</text>
+</a>
+</g>
+</g>
+<!-- program~test_least&#45;&gt;proc~moindres_carres -->
+<g id="program~~test_least~~CallsGraph_edge3" class="edge">
+<title>program~test_least&#45;&gt;proc~moindres_carres</title>
+<path fill="none" stroke="#ff0000" d="M58.1,-70.44C71.46,-68.28 87.93,-65.61 103.68,-63.05"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="104.58,-66.45 113.89,-61.4 103.46,-59.54 104.58,-66.45"/>
+</g>
+<!-- proc~moindres_carres_lineaire -->
+<g id="program~~test_least~~CallsGraph_node5" class="node">
+<title>proc~moindres_carres_lineaire</title>
+<g id="a_program~~test_least~~CallsGraph_node5"><a xlink:href="../proc/moindres_carres_lineaire.html" xlink:title="moindres_carres_lineaire">
+<polygon fill="#d9534f" stroke="#d9534f" points="227,-24 94,-24 94,0 227,0 227,-24"/>
+<text text-anchor="middle" x="160.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">moindres_carres_lineaire</text>
+</a>
+</g>
+</g>
+<!-- program~test_least&#45;&gt;proc~moindres_carres_lineaire -->
+<g id="program~~test_least~~CallsGraph_edge4" class="edge">
+<title>program~test_least&#45;&gt;proc~moindres_carres_lineaire</title>
+<path fill="none" stroke="#ff0000" d="M45.85,-62.84C58.39,-53.68 76.61,-41.3 94,-33 98.05,-31.07 102.32,-29.25 106.66,-27.55"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="108.04,-30.77 116.22,-24.04 105.63,-24.2 108.04,-30.77"/>
+</g>
+<!-- proc~autocov_impo -->
+<g id="program~~test_least~~CallsGraph_node6" class="node">
+<title>proc~autocov_impo</title>
+<g id="a_program~~test_least~~CallsGraph_node6"><a xlink:href="../proc/autocov_impo.html" xlink:title="autocov_impo">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="453,-129 374,-129 374,-105 453,-105 453,-129"/>
+<text text-anchor="middle" x="413.5" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">autocov_impo</text>
+</a>
+</g>
+</g>
+<!-- proc~calc_imp_acf&#45;&gt;proc~autocov_impo -->
+<g id="program~~test_least~~CallsGraph_edge5" class="edge">
+<title>proc~calc_imp_acf&#45;&gt;proc~autocov_impo</title>
+<path fill="none" stroke="#ff0000" d="M338.15,-131.07C346.41,-129.5 355.31,-127.82 363.97,-126.18"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="364.81,-129.59 373.98,-124.29 363.5,-122.71 364.81,-129.59"/>
+</g>
+<!-- proc~df -->
+<g id="program~~test_least~~CallsGraph_node9" class="node">
+<title>proc~df</title>
+<g id="a_program~~test_least~~CallsGraph_node9"><a xlink:href="../proc/df.html" xlink:title="df">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="327.5,-108 273.5,-108 273.5,-84 327.5,-84 327.5,-108"/>
+<text text-anchor="middle" x="300.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">df</text>
+</a>
+</g>
+</g>
+<!-- proc~calc_jf&#45;&gt;proc~df -->
+<g id="program~~test_least~~CallsGraph_edge6" class="edge">
+<title>proc~calc_jf&#45;&gt;proc~df</title>
+<path fill="none" stroke="#7fff00" d="M187.78,-96C209.17,-96 239.59,-96 263.29,-96"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="263.32,-99.5 273.32,-96 263.32,-92.5 263.32,-99.5"/>
+</g>
+<!-- proc~choldc -->
+<g id="program~~test_least~~CallsGraph_node7" class="node">
+<title>proc~choldc</title>
+<g id="a_program~~test_least~~CallsGraph_node7"><a xlink:href="../proc/choldc.html" xlink:title="choldc">
+<polygon fill="#d9534f" stroke="#d9534f" points="327.5,-66 273.5,-66 273.5,-42 327.5,-42 327.5,-66"/>
+<text text-anchor="middle" x="300.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">choldc</text>
+</a>
+</g>
+</g>
+<!-- proc~moindres_carres&#45;&gt;proc~choldc -->
+<g id="program~~test_least~~CallsGraph_edge7" class="edge">
+<title>proc~moindres_carres&#45;&gt;proc~choldc</title>
+<path fill="none" stroke="#00ffff" d="M207.07,-54C225.27,-54 245.95,-54 263.12,-54"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="263.3,-57.5 273.3,-54 263.3,-50.5 263.3,-57.5"/>
+</g>
+<!-- proc~cholsl -->
+<g id="program~~test_least~~CallsGraph_node8" class="node">
+<title>proc~cholsl</title>
+<g id="a_program~~test_least~~CallsGraph_node8"><a xlink:href="../proc/cholsl.html" xlink:title="cholsl">
+<polygon fill="#d9534f" stroke="#d9534f" points="327.5,-24 273.5,-24 273.5,0 327.5,0 327.5,-24"/>
+<text text-anchor="middle" x="300.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cholsl</text>
+</a>
+</g>
+</g>
+<!-- proc~moindres_carres&#45;&gt;proc~cholsl -->
+<g id="program~~test_least~~CallsGraph_edge8" class="edge">
+<title>proc~moindres_carres&#45;&gt;proc~cholsl</title>
+<path fill="none" stroke="#00ffff" d="M201.05,-41.96C220.85,-35.94 244.64,-28.7 263.87,-22.84"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="264.92,-26.18 273.47,-19.92 262.88,-19.49 264.92,-26.18"/>
+</g>
+<!-- proc~moindres_carres_lineaire&#45;&gt;proc~choldc -->
+<g id="program~~test_least~~CallsGraph_edge9" class="edge">
+<title>proc~moindres_carres_lineaire&#45;&gt;proc~choldc</title>
+<path fill="none" stroke="#7f00ff" d="M201.05,-24.04C220.85,-30.06 244.64,-37.3 263.87,-43.16"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="262.88,-46.51 273.47,-46.08 264.92,-39.82 262.88,-46.51"/>
+</g>
+<!-- proc~moindres_carres_lineaire&#45;&gt;proc~cholsl -->
+<g id="program~~test_least~~CallsGraph_edge10" class="edge">
+<title>proc~moindres_carres_lineaire&#45;&gt;proc~cholsl</title>
+<path fill="none" stroke="#7f00ff" d="M227.27,-12C239.68,-12 252.24,-12 263.32,-12"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="263.44,-15.5 273.44,-12 263.44,-8.5 263.44,-15.5"/>
+</g>
+<!-- proc~df&#45;&gt;proc~autocov_impo -->
+<g id="program~~test_least~~CallsGraph_edge11" class="edge">
+<title>proc~df&#45;&gt;proc~autocov_impo</title>
+<path fill="none" stroke="#7f00ff" d="M327.52,-100.92C338.34,-102.97 351.27,-105.42 363.74,-107.77"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="363.11,-111.22 373.59,-109.64 364.41,-104.34 363.11,-111.22"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-jf"></span>
+              real(kind=R8),
+            </td>
+            <td>
+              dimension(:,:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>Jf</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-beta"></span>
+              real(kind=R8),
+            </td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>beta</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hij"></span>
+              real(kind=R8),
+            </td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>hij</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~3"></span>
+              integer(kind=I4)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>info</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n1"></span>
+              integer(kind=I4)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n2"></span>
+              integer(kind=I4)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec_xy"></span>
+              real(kind=R8),
+            </td>
+            <td>
+              dimension(:,:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>vec_xy</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+ 
+    <section>
+    <h2>Functions</h2>
+      <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-autocov_impo"></span> <h3> function <a href='../proc/autocov_impo.html'>autocov_impo</a>(xi, xj, tau1, tau2, alpha, ang)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Function that returns <script type="math/tex"> \exp \left(\alpha \sqrt{\left(\frac{x}{\tau_1}\right)^2+
+                                                        \left(\frac{y}{\tau_2}\right)^2}
+                                      \right) </script>
+</p><a href="../proc/autocov_impo.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xi~3"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xi</strong></td>
+            <td>
+<p><em><script type="math/tex">x</script> coordinate</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xj"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xj</strong></td>
+            <td>
+<p><em><script type="math/tex">y</script> coordinate</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tau1"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tau1</strong></td>
+            <td>
+<p><em>correlation length along <script type="math/tex">x</script></em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tau2"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tau2</strong></td>
+            <td>
+<p><em>correlation length along <script type="math/tex">y</script></em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-alpha"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>alpha</strong></td>
+            <td>
+<p><em>log(z)</em> where <em>z</em> is often 0.2</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ang"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ang</strong></td>
+            <td>
+<p><em>angle</em> (rad)</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=r8)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+      <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-df"></span> <h3> function <a href='../proc/df.html'>df</a>(xi, yi, var, nb_var, ivar, typ)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Kind of particular 2D autocorrelation function. Numerical derivatives.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xi~2"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xi</strong></td>
+            <td>
+<p><em>x coordinates</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-yi~2"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>yi</strong></td>
+            <td>
+<p><em>y coordinates</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-var~2"></span>
+              real(kind=R8),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(1:nb_var)
+            </td>
+            <td>::</td>
+            <td><strong>var</strong></td>
+            <td>
+<p><em>parameter vector</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nb_var~2"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nb_var</strong></td>
+            <td>
+<p><em>number of parameters</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ivar"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ivar</strong></td>
+            <td>
+<p><em>ith parameter</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-typ~2"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>typ</strong></td>
+            <td>
+<p><em>not used here</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=r8)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+      <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-f"></span> <h3> function <a href='../proc/f.html'>f</a>(xi, yi, var, nb_var, typ)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Kind of particular 2D autocorrelation function</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xi"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xi</strong></td>
+            <td>
+<p><em>x coordinates</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-yi"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>yi</strong></td>
+            <td>
+<p><em>y coordinates</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-var"></span>
+              real(kind=R8),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(1:nb_var)
+            </td>
+            <td>::</td>
+            <td><strong>var</strong></td>
+            <td>
+<p><em>parameter vector</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nb_var"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nb_var</strong></td>
+            <td>
+<p><em>number of parameters</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-typ"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>typ</strong></td>
+            <td>
+<p><em>not used here</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>real(kind=r8)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+    </section>
+    <br>
+
+
+    <section>
+    <h2>Subroutines</h2>
+      <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-calc_jf"></span> <h3> subroutine <a href='../proc/calc_jf.html'>calc_Jf</a>(long, larg, nb_var, vec_xy, var, Jf)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Determine the Jacobian matrix of f</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-long"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>long</strong></td>
+            <td>
+<p><em>number of points along x</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-larg"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>larg</strong></td>
+            <td>
+<p><em>number of points along y</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nb_var~3"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nb_var</strong></td>
+            <td>
+<p><em>number of parameters to be determined</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec_xy~2"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(1:long * larg, 1:2)
+            </td>
+            <td>::</td>
+            <td><strong>vec_xy</strong></td>
+            <td>
+<p><em>x and y coordinates of evaluation points</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-var~3"></span>
+              real(kind=R8),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(1:nb_var)
+            </td>
+            <td>::</td>
+            <td><strong>var</strong></td>
+            <td>
+<p><em>parameters vector</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-jf~2"></span>
+              real(kind=R8),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              dimension(1:long * larg, 1:nb_var)
+            </td>
+            <td>::</td>
+            <td><strong>Jf</strong></td>
+            <td>
+<p><em>Jacobian matrix</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+      <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-calc_imp_acf"></span> <h3> subroutine <a href='../proc/calc_imp_acf.html'>calc_imp_acf</a>(long, larg, tau1, tau2, alpha, ang, vec_acf, vec_xy)  
+</h3></div>
+    <div class="card-body">
+          
+  <p>Function that returns the theoretical autocorrelation function in an array.<br/>
+ The autocorrelation function is supposed to be obtained from a real surface which must be periodic
+ or nearly periodic (because of the use of FFTs).
+ In addition, the surface is supposed to be 0 mean and normalized (<script type="math/tex">\sigma = 1 </script>),
+ therefore <em>acf</em> is zero-mean and normalized so that its max value is 1.<br/></p><a href="../proc/calc_imp_acf.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-long~2"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>long</strong></td>
+            <td>
+<p><em>surface acf width</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-larg~2"></span>
+              integer(kind=I4),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>larg</strong></td>
+            <td>
+<p><em>surface acf height</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tau1~2"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tau1</strong></td>
+            <td>
+<p><em>first correlation length</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tau2~2"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tau2</strong></td>
+            <td>
+<p><em>surface second correlation length</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-alpha~2"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>alpha</strong></td>
+            <td>
+<p><em>parameter that controls the expondential decrease</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ang~2"></span>
+              real(kind=R8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ang</strong></td>
+            <td>
+<p><em>acf ellipsis angle</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec_acf"></span>
+              real(kind=R8),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              dimension(1:long * larg)
+            </td>
+            <td>::</td>
+            <td><strong>vec_acf</strong></td>
+            <td>
+<p><em>resulting acf</em></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec_xy~3"></span>
+              real(kind=R8),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              dimension(1:long * larg, 1:2)
+            </td>
+            <td>::</td>
+            <td><strong>vec_xy</strong></td>
+            <td>
+<p><em>points coordinates</em></p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+    </section>    
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">program </span><span class="n">test_least</span>
+<span class="k">use </span><span class="n">data_arch</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">I4</span><span class="p">,</span><span class="w"> </span><span class="n">R8</span><span class="p">,</span><span class="w"> </span><span class="n">PI_R8</span>
+<span class="k">use </span><span class="n">least_squares</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">moindres_carres</span><span class="p">,</span><span class="w"> </span><span class="n">moindres_carres_lineaire</span>
+<span class="k">implicit none</span>
+
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="n">info</span>
+
+<span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">hij</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span>
+
+<span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vec_xy</span><span class="p">,</span><span class="w"> </span><span class="n">Jf</span>
+
+<span class="w">   </span><span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">128</span>
+<span class="w">   </span><span class="n">n2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">128</span>
+
+<span class="w">   </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">hij</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n2</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">   </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">vec_xy</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">beta</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">call </span><span class="n">calc_imp_acf</span><span class="p">(</span><span class="w"> </span><span class="nb">long</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w">                            </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                      </span><span class="n">larg</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w">                            </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                      </span><span class="n">tau1</span><span class="w">    </span><span class="o">=</span><span class="w">  </span><span class="mf">0.3_R8</span><span class="p">,</span><span class="w">                       </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                      </span><span class="n">tau2</span><span class="w">    </span><span class="o">=</span><span class="w">  </span><span class="mf">0.1_R8</span><span class="p">,</span><span class="w">                       </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                      </span><span class="n">alpha</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">0.2_R8</span><span class="p">,</span><span class="w">                       </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                      </span><span class="n">ang</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">PI_R8</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">6.</span><span class="p">,</span><span class="w">                    </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                      </span><span class="n">vec_xy</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">vec_xy</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">),</span><span class="w">        </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                      </span><span class="n">vec_acf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hij</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n2</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">                  </span><span class="c">!</span>
+
+<span class="w">   </span><span class="n">beta</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">]</span>
+
+<span class="w">   </span><span class="k">call </span><span class="n">moindres_carres</span><span class="p">(</span><span class="w"> </span><span class="n">nb_var</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">                       </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                         </span><span class="n">nb_pts</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w">                 </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                         </span><span class="n">hij</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">hij</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n2</span><span class="p">),</span><span class="w">          </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                         </span><span class="n">vec_xy</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">vec_xy</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                         </span><span class="n">beta</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">beta</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">),</span><span class="w">               </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                         </span><span class="n">f</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">,</span><span class="w">                       </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                         </span><span class="n">df</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="p">,</span><span class="w">                      </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                         </span><span class="n">typ</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;no_type&#39;</span><span class="p">,</span><span class="w">               </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                         </span><span class="n">eps</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="mf">0.001_R8</span><span class="p">,</span><span class="w">                </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                         </span><span class="n">relax</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5_R8</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                         </span><span class="n">nb_var_der</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">                       </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                         </span><span class="n">info</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="p">)</span><span class="w">                      </span><span class="c">!</span>
+
+<span class="w">   </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Non linear approach to a non linear problem. Solution is 0.3 0.1 +/-0.5&#39;</span>
+<span class="w">   </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">beta</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">beta</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="nb">mod</span><span class="p">(</span><span class="n">beta</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">PI_R8</span><span class="p">))</span>
+
+<span class="w">   </span><span class="c">!=======================================================</span>
+
+<span class="w">   </span><span class="k">allocate</span><span class="p">(</span><span class="w"> </span><span class="n">Jf</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">   </span><span class="n">beta</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">]</span>
+
+<span class="w">   </span><span class="k">call </span><span class="n">calc_Jf</span><span class="p">(</span><span class="w"> </span><span class="nb">long</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w">                                  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                 </span><span class="n">larg</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w">                                  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                 </span><span class="n">nb_var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">                                   </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                 </span><span class="n">vec_xy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec_xy</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">),</span><span class="w">              </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                 </span><span class="n">var</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">beta</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">),</span><span class="w">                           </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                 </span><span class="n">Jf</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">Jf</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">                    </span><span class="c">!</span>
+
+<span class="w">   </span><span class="k">call </span><span class="n">moindres_carres_lineaire</span><span class="p">(</span><span class="w"> </span><span class="n">nb_var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                                  </span><span class="n">nb_pts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w">            </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                                  </span><span class="n">hij</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">hij</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n2</span><span class="p">),</span><span class="w">     </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                                  </span><span class="n">beta</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">beta</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">),</span><span class="w">          </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                                  </span><span class="n">Jf</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">Jf</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="c">!</span>
+
+<span class="w">   </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Linear approach to a non linear problem. Solution is 0.3 0.1 +/-0.5&#39;</span>
+<span class="w">   </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">beta</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">beta</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="nb">mod</span><span class="p">(</span><span class="n">beta</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">PI_R8</span><span class="p">))</span>
+
+<span class="w">   </span><span class="c">!=======================================================</span>
+
+<span class="w">   </span><span class="k">deallocate</span><span class="p">(</span><span class="w"> </span><span class="n">hij</span><span class="p">,</span><span class="w"> </span><span class="n">vec_xy</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">Jf</span><span class="w"> </span><span class="p">)</span>
+
+<span class="k">contains</span>
+
+<span class="k">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">)</span><span class="w"> </span><span class="k">function </span><span class="n">f</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="w"> </span><span class="n">yi</span><span class="p">,</span><span class="w"> </span><span class="n">var</span><span class="p">,</span><span class="w"> </span><span class="n">nb_var</span><span class="p">,</span><span class="w"> </span><span class="n">typ</span><span class="p">)</span>
+<span class="w">   </span><span class="c">!! Kind of particular 2D autocorrelation function</span>
+<span class="w">   </span><span class="k">use </span><span class="n">data_arch</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">I4</span><span class="p">,</span><span class="w"> </span><span class="n">R8</span>
+<span class="w">   </span><span class="k">implicit none</span>
+<span class="k">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="w">   </span><span class="p">)</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">nb_var</span><span class="w"> </span><span class="c">!! *number of parameters*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="w">   </span><span class="p">)</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">xi</span><span class="w">     </span><span class="c">!! *x coordinates*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="w">   </span><span class="p">)</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">yi</span><span class="w">     </span><span class="c">!! *y coordinates*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nb_var</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">var</span><span class="w">    </span><span class="c">!! *parameter vector*</span>
+<span class="w">   </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">                         </span><span class="kd">::</span><span class="w"> </span><span class="n">typ</span><span class="w">    </span><span class="c">!! *not used here*</span>
+
+<span class="w">      </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">autocov_impo</span><span class="p">(</span><span class="n">xi</span><span class="o">=</span><span class="n">xi</span><span class="p">,</span><span class="w"> </span><span class="n">xj</span><span class="o">=</span><span class="n">yi</span><span class="p">,</span><span class="w"> </span><span class="n">tau1</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">tau2</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">alpha</span><span class="o">=-</span><span class="mf">0.2_R8</span><span class="p">,</span><span class="w"> </span><span class="n">ang</span><span class="o">=</span><span class="n">var</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="w">   </span><span class="k">return</span>
+<span class="k">   endfunction </span><span class="n">f</span>
+
+
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">)</span><span class="w"> </span><span class="k">function </span><span class="n">df</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="w"> </span><span class="n">yi</span><span class="p">,</span><span class="w"> </span><span class="n">var</span><span class="p">,</span><span class="w"> </span><span class="n">nb_var</span><span class="p">,</span><span class="w"> </span><span class="n">ivar</span><span class="p">,</span><span class="w"> </span><span class="n">typ</span><span class="p">)</span>
+<span class="w">   </span><span class="c">!! Kind of particular 2D autocorrelation function. Numerical derivatives.</span>
+<span class="w">   </span><span class="k">use </span><span class="n">data_arch</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">I4</span><span class="p">,</span><span class="w"> </span><span class="n">R8</span>
+<span class="w">   </span><span class="k">implicit none</span>
+<span class="k">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="w">   </span><span class="p">)</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">nb_var</span><span class="w"> </span><span class="c">!! *number of parameters*</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="w">   </span><span class="p">)</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">ivar</span><span class="w">   </span><span class="c">!! *ith parameter*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="w">   </span><span class="p">)</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">xi</span><span class="w">     </span><span class="c">!! *x coordinates*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="w">   </span><span class="p">)</span><span class="w">                      </span><span class="kd">::</span><span class="w"> </span><span class="n">yi</span><span class="w">     </span><span class="c">!! *y coordinates*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nb_var</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">var</span><span class="w">    </span><span class="c">!! *parameter vector*</span>
+<span class="w">   </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">                         </span><span class="kd">::</span><span class="w"> </span><span class="n">typ</span><span class="w">    </span><span class="c">!! *not used here*</span>
+
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span><span class="p">,</span><span class="w"> </span><span class="n">v3</span><span class="p">,</span><span class="w"> </span><span class="n">dv1</span><span class="p">,</span><span class="w"> </span><span class="n">dv2</span><span class="p">,</span><span class="w"> </span><span class="n">dv3</span>
+
+<span class="w">      </span><span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">var</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">dv1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.001</span><span class="w"> </span><span class="c">!v1 / 100</span>
+<span class="w">      </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">var</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">dv2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.001</span><span class="w"> </span><span class="c">!v2 / 100</span>
+<span class="w">      </span><span class="n">v3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">var</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">dv3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.100</span><span class="w"> </span><span class="c">!v3 / 100</span>
+
+<span class="w">      </span><span class="k">select case</span><span class="p">(</span><span class="n">ivar</span><span class="p">)</span>
+
+<span class="w">         </span><span class="k">case</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="w">            </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">autocov_impo</span><span class="p">(</span><span class="n">xi</span><span class="o">=</span><span class="n">xi</span><span class="p">,</span><span class="w"> </span><span class="n">xj</span><span class="o">=</span><span class="n">yi</span><span class="p">,</span><span class="w"> </span><span class="n">tau1</span><span class="o">=</span><span class="n">v1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dv1</span><span class="p">,</span><span class="w"> </span><span class="n">tau2</span><span class="o">=</span><span class="n">v2</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=-</span><span class="mf">0.2_R8</span><span class="p">,</span><span class="w"> </span><span class="n">ang</span><span class="o">=</span><span class="n">v3</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w">        </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                   </span><span class="n">autocov_impo</span><span class="p">(</span><span class="n">xi</span><span class="o">=</span><span class="n">xi</span><span class="p">,</span><span class="w"> </span><span class="n">xj</span><span class="o">=</span><span class="n">yi</span><span class="p">,</span><span class="w"> </span><span class="n">tau1</span><span class="o">=</span><span class="n">v1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dv1</span><span class="p">,</span><span class="w"> </span><span class="n">tau2</span><span class="o">=</span><span class="n">v2</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=-</span><span class="mf">0.2_R8</span><span class="p">,</span><span class="w"> </span><span class="n">ang</span><span class="o">=</span><span class="n">v3</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">dv1</span><span class="w">     </span><span class="c">!</span>
+
+<span class="w">         </span><span class="k">case</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="w">            </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">autocov_impo</span><span class="p">(</span><span class="n">xi</span><span class="o">=</span><span class="n">xi</span><span class="p">,</span><span class="w"> </span><span class="n">xj</span><span class="o">=</span><span class="n">yi</span><span class="p">,</span><span class="w"> </span><span class="n">tau1</span><span class="o">=</span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">tau2</span><span class="o">=</span><span class="n">v2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dv2</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=-</span><span class="mf">0.2_R8</span><span class="p">,</span><span class="w"> </span><span class="n">ang</span><span class="o">=</span><span class="n">v3</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w">        </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                   </span><span class="n">autocov_impo</span><span class="p">(</span><span class="n">xi</span><span class="o">=</span><span class="n">xi</span><span class="p">,</span><span class="w"> </span><span class="n">xj</span><span class="o">=</span><span class="n">yi</span><span class="p">,</span><span class="w"> </span><span class="n">tau1</span><span class="o">=</span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">tau2</span><span class="o">=</span><span class="n">v2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dv2</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=-</span><span class="mf">0.2_R8</span><span class="p">,</span><span class="w"> </span><span class="n">ang</span><span class="o">=</span><span class="n">v3</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">dv2</span><span class="w">     </span><span class="c">!</span>
+
+<span class="w">         </span><span class="k">case</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="w">            </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">autocov_impo</span><span class="p">(</span><span class="n">xi</span><span class="o">=</span><span class="n">xi</span><span class="p">,</span><span class="w"> </span><span class="n">xj</span><span class="o">=</span><span class="n">yi</span><span class="p">,</span><span class="w"> </span><span class="n">tau1</span><span class="o">=</span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">tau2</span><span class="o">=</span><span class="n">v2</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=-</span><span class="mf">0.2_R8</span><span class="p">,</span><span class="w"> </span><span class="n">ang</span><span class="o">=</span><span class="n">v3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dv3</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w">        </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                   </span><span class="n">autocov_impo</span><span class="p">(</span><span class="n">xi</span><span class="o">=</span><span class="n">xi</span><span class="p">,</span><span class="w"> </span><span class="n">xj</span><span class="o">=</span><span class="n">yi</span><span class="p">,</span><span class="w"> </span><span class="n">tau1</span><span class="o">=</span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">tau2</span><span class="o">=</span><span class="n">v2</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=-</span><span class="mf">0.2_R8</span><span class="p">,</span><span class="w"> </span><span class="n">ang</span><span class="o">=</span><span class="n">v3</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dv3</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">dv3</span><span class="w">     </span><span class="c">!</span>
+
+<span class="w">      </span><span class="k">endselect</span>
+
+<span class="k">   return</span>
+<span class="k">   endfunction </span><span class="n">df</span>
+
+
+<span class="w">   </span><span class="k">subroutine </span><span class="n">calc_Jf</span><span class="p">(</span><span class="nb">long</span><span class="p">,</span><span class="w"> </span><span class="n">larg</span><span class="p">,</span><span class="w"> </span><span class="n">nb_var</span><span class="p">,</span><span class="w"> </span><span class="n">vec_xy</span><span class="p">,</span><span class="w"> </span><span class="n">var</span><span class="p">,</span><span class="w"> </span><span class="n">Jf</span><span class="p">)</span>
+<span class="w">   </span><span class="c">!! Determine the Jacobian matrix of f</span>
+<span class="w">   </span><span class="k">implicit none</span>
+<span class="k">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">long</span><span class="w">     </span><span class="c">!! *number of points along x*</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">larg</span><span class="w">     </span><span class="c">!! *number of points along y*</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">nb_var</span><span class="w">   </span><span class="c">!! *number of parameters to be determined*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="w">   </span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">long</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">larg</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">vec_xy</span><span class="w">   </span><span class="c">!! *x and y coordinates of evaluation points*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="w">  </span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">long</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">larg</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">nb_var</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">Jf</span><span class="w">       </span><span class="c">!! *Jacobian matrix*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">nb_var</span><span class="p">)</span><span class="w">                </span><span class="kd">::</span><span class="w"> </span><span class="n">var</span><span class="w">      </span><span class="c">!! *parameters vector*</span>
+
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">ivar</span>
+
+<span class="w">      </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">larg</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">long</span>
+
+<span class="nb">         </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">         </span><span class="k">do </span><span class="n">ivar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">nb_var</span>
+
+<span class="w">            </span><span class="n">Jf</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">ivar</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="p">(</span><span class="w"> </span><span class="n">xi</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">vec_xy</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                              </span><span class="n">yi</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">vec_xy</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w">  </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                              </span><span class="n">var</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">var</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">),</span><span class="w">      </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                              </span><span class="n">nb_var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">             </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                              </span><span class="n">ivar</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">ivar</span><span class="p">,</span><span class="w">          </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                              </span><span class="n">typ</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;no_type&quot;</span><span class="p">)</span><span class="w">        </span><span class="c">!</span>
+<span class="w">         </span><span class="k">enddo</span>
+
+<span class="k">      enddo</span>
+<span class="k">      enddo</span>
+
+<span class="k">   return</span>
+<span class="k">   endsubroutine </span><span class="n">calc_Jf</span>
+
+
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">)</span><span class="w"> </span><span class="k">function </span><span class="n">autocov_impo</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="w"> </span><span class="n">xj</span><span class="p">,</span><span class="w"> </span><span class="n">tau1</span><span class="p">,</span><span class="w"> </span><span class="n">tau2</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">ang</span><span class="p">)</span>
+<span class="w">   </span><span class="c">!================================================================================================</span>
+<span class="w">   </span><span class="c">!&lt;@note Function that returns \( \exp \left(\alpha \sqrt{\left(\frac{x}{\tau_1}\right)^2+</span>
+<span class="w">   </span><span class="c">!&lt;                                                        \left(\frac{y}{\tau_2}\right)^2}</span>
+<span class="w">   </span><span class="c">!&lt;                                      \right) \)</span>
+<span class="w">   </span><span class="c">!&lt;</span>
+<span class="w">   </span><span class="c">!&lt;@endnote</span>
+<span class="w">   </span><span class="c">!------------------------------------------------------------------------------------------------</span>
+<span class="w">   </span><span class="k">implicit none</span>
+<span class="k">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tau1</span><span class="w">   </span><span class="c">!! *correlation length along \(x\)*</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tau2</span><span class="w">   </span><span class="c">!! *correlation length along \(y\)*</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">alpha</span><span class="w">  </span><span class="c">!! *log(z)* where *z* is often 0.2</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">xi</span><span class="w">     </span><span class="c">!! *\(x\) coordinate*</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">xj</span><span class="w">     </span><span class="c">!! *\(y\) coordinate*</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ang</span><span class="w">    </span><span class="c">!! *angle* (rad)</span>
+
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>
+
+<span class="w">      </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">+</span><span class="nb">cos</span><span class="p">(</span><span class="n">ang</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">xi</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">ang</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">xj</span>
+<span class="w">      </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="nb">sin</span><span class="p">(</span><span class="n">ang</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">xi</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="n">ang</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">xj</span>
+
+<span class="w">      </span><span class="n">autocov_impo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">tau1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">tau2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">return</span>
+<span class="k">   endfunction </span><span class="n">autocov_impo</span>
+
+
+<span class="w">   </span><span class="k">subroutine </span><span class="n">calc_imp_acf</span><span class="p">(</span><span class="nb">long</span><span class="p">,</span><span class="w"> </span><span class="n">larg</span><span class="p">,</span><span class="w"> </span><span class="n">tau1</span><span class="p">,</span><span class="w"> </span><span class="n">tau2</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">ang</span><span class="p">,</span><span class="w"> </span><span class="n">vec_acf</span><span class="p">,</span><span class="w"> </span><span class="n">vec_xy</span><span class="p">)</span>
+<span class="w">   </span><span class="c">!================================================================================================</span>
+<span class="w">   </span><span class="c">!&lt;@note Function that returns the theoretical autocorrelation function in an array.&lt;br/&gt;</span>
+<span class="w">   </span><span class="c">!&lt; The autocorrelation function is supposed to be obtained from a real surface which must be periodic</span>
+<span class="w">   </span><span class="c">!&lt; or nearly periodic (because of the use of FFTs).</span>
+<span class="w">   </span><span class="c">!&lt; In addition, the surface is supposed to be 0 mean and normalized (\(\sigma = 1 \)),</span>
+<span class="w">   </span><span class="c">!&lt; therefore *acf* is zero-mean and normalized so that its max value is 1.&lt;br/&gt;</span>
+<span class="w">   </span><span class="c">!&lt;</span>
+<span class="w">   </span><span class="c">!&lt;@endnote</span>
+<span class="w">   </span><span class="c">!------------------------------------------------------------------------------------------------</span>
+<span class="w">   </span><span class="k">implicit none</span>
+<span class="k">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">long</span><span class="w">   </span><span class="c">!! *surface acf width*</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">larg</span><span class="w">   </span><span class="c">!! *surface acf height*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tau1</span><span class="w">   </span><span class="c">!! *first correlation length*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tau2</span><span class="w">   </span><span class="c">!! *surface second correlation length*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">alpha</span><span class="w">  </span><span class="c">!! *parameter that controls the expondential decrease*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ang</span><span class="w">    </span><span class="c">!! *acf ellipsis angle*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">long</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">larg</span><span class="p">),</span><span class="w">      </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vec_acf</span><span class="w">  </span><span class="c">!! *resulting acf*</span>
+<span class="w">   </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">long</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">larg</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vec_xy</span><span class="w">   </span><span class="c">!! *points coordinates*</span>
+
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">long2</span><span class="p">,</span><span class="w"> </span><span class="n">larg2</span>
+<span class="w">      </span><span class="kt">real</span><span class="w">   </span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">xi</span><span class="p">,</span><span class="w"> </span><span class="n">xj</span><span class="p">,</span><span class="w"> </span><span class="n">r</span>
+
+<span class="w">      </span><span class="n">long2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">long</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="n">larg2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">larg</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">      </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">larg</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">long</span>
+
+<span class="nb">         </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">         </span><span class="n">xi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">long2</span><span class="p">,</span><span class="w"> </span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">long</span>
+<span class="nb">         </span><span class="n">xj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">larg2</span><span class="p">,</span><span class="w"> </span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">larg</span>
+
+<span class="w">         </span><span class="n">vec_xy</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xi</span>
+<span class="w">         </span><span class="n">vec_xy</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xj</span>
+
+<span class="w">         </span><span class="k">call </span><span class="nb">random_number</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+<span class="w">         </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.05</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">0.5</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">r</span><span class="p">))</span>
+
+<span class="w">         </span><span class="n">vec_acf</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">autocov_impo</span><span class="p">(</span><span class="w"> </span><span class="n">xi</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">xi</span><span class="p">,</span><span class="w">       </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! IN</span>
+<span class="w">                                        </span><span class="n">xj</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">xj</span><span class="p">,</span><span class="w">       </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! IN</span>
+<span class="w">                                        </span><span class="n">tau1</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">tau1</span><span class="p">,</span><span class="w">     </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! IN</span>
+<span class="w">                                        </span><span class="n">tau2</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">tau2</span><span class="p">,</span><span class="w">     </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! IN</span>
+<span class="w">                                        </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w">    </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! IN</span>
+<span class="w">                                        </span><span class="n">ang</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">ang</span><span class="w"> </span><span class="p">)</span><span class="w">        </span><span class="c">! IN</span>
+
+<span class="w">      </span><span class="k">enddo</span>
+<span class="k">      enddo</span>
+
+<span class="k">   return</span>
+<span class="k">   endsubroutine </span><span class="n">calc_imp_acf</span>
+
+
+<span class="k">endprogram </span><span class="n">test_least</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

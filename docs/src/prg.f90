@@ -1,202 +1,308 @@
-program test_tchebychev
-use data_arch,     only : I4, R8, HIG_R8
-use miscellaneous, only : get_unit
-use tchebychev,    only : least_squares_tcheby, tcheby, coeff_tcheby_vers_monome
+!< author: Arthur Francisco
+!<  version: 1.0.0
+!<  date: November, 18 2024
+!<
+!<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+!<     **Routines to work with FFTs. Example of use**
+!<  </span>
 
+program test_fftw3
+!$ use omp_lib
+use data_arch, only : I4, R8, R4
+use miscellaneous, only : get_unit
+use fftw3
 implicit none
 
-integer(kind = I4) :: i, iu, nbvar
 
-integer(kind = I4), parameter :: n1 = 1024, n2 = 512, i1 = 9, i2 = 11
+integer(kind=I4) :: i, k
+integer(kind=I4) :: ni
+integer(kind=I4) :: nj
+integer(kind=I4) :: nb_iter
+real(kind=R8)    :: error
+real(kind=R4)    :: t1, t2
 
-real(kind=R8), allocatable, dimension(:,:) :: tab_height, tab_result
-real(kind=R8), allocatable, dimension(:)   :: tab_coef1, tab_coef2
+real(kind=R8),    dimension(:,:), allocatable :: tab     !! real array containing the information to process
+real(kind=R8),    dimension(:,:), allocatable :: tabr1   !! real array containing the information to process
+real(kind=R8),    dimension(:,:), allocatable :: tabr2   !! real array containing the information to process
+complex(kind=R8), dimension(:,:), allocatable :: tab1    !! input array ```FORWARD```,  output array ```BACKWARD```
+complex(kind=R8), dimension(:,:), allocatable :: tab2    !! input array ```BACKWARD```, output array ```FORWARD```
 
-character(len=128) :: str
+   ! COMPLEX -> COMPLEX -> COMPLEX
 
-   nbvar = (i1 + 1) * (i2 + 1)
+   !----------------------------------------------------------------------------------------------------------------
+   ! multithread activation
+   !----------------------------------------------------------------------------------------------------------------
+   NB_THREADS_FFT = omp_get_max_threads()
+   call fftw_plan_with_nthreads(nthreads = NB_THREADS_FFT)
 
-   allocate( tab_height(1:n1, 1:n2) ) ; tab_height(1:n1, 1:n2) = HIG_R8
-   allocate( tab_result(1:n1, 1:n2) ) ; tab_result(1:n1, 1:n2) = HIG_R8
+   ! first case: random array forward, then backward transformed
+   ! The difference ```error``` between original and processed data is calculated
+   ni = 4096
+   nj = 4096
 
-   allocate( tab_coef1(1:nbvar) ) ; tab_coef1(1:nbvar) = HIG_R8
-   allocate( tab_coef2(1:nbvar) ) ; tab_coef2(1:nbvar) = HIG_R8
+   allocate( tab( 1:ni, 1:nj) )
+   allocate( tab1(1:ni, 1:nj),  tab2(1:ni, 1:nj) )
 
-   call genere_surf_poly( long1    = n1,                        &  !
-                          long2    = n2,                        &  !
-                          deg1     = i1,                        &  !
-                          deg2     = i2,                        &  !
-                          tab_out  = tab_height(1:n1, 1:n2),    &  !
-                          tab_coef = tab_coef1(1:nbvar) )          !
+   call init_fftw3( long = ni, larg = nj )
 
-   call least_squares_tcheby( tab_in  = tab_height(1:n1, 1:n2),   &  !
-                              tab_out = tab_result(1:n1, 1:n2),   &  !
-                              long1   = n1,                       &  !
-                              long2   = n2,                       &  !
-                              nvarx   = i1,                       &  !
-                              nvary   = i2,                       &  !
-                              verif   = .true.,                   &  !
-                         multi_thread = .true.)                      !
+      call random_number( harvest = tab(1:ni, 1:nj) )
+      tab1(1:ni, 1:nj) = cmplx( tab(1:ni, 1:nj), 0._R8, kind = R8 )
 
-   write(*, *)
-   write(*, *) 'If the surface is well approximated, the differences are very small.'
-   write(*, *) 'Indeed, the approximated surface is a polynomial of the same degree along x, y as the approximating one.'
-   write(*, *) 'Result :', sum( abs(tab_result - tab_height) )
+      call calc_fftw3( sens = FORWARD,  tab_in = tab1, tab_ou = tab2, long = ni, larg = nj )
+      call calc_fftw3( sens = BACKWARD, tab_in = tab2, tab_ou = tab1, long = ni, larg = nj )
 
-   write(*, *)
-   write(*, *) 'If the translation from Tchebychev to ordinary polynomial is well carried out,'
-   write(*, *) 'there should be no big difference between the two surfaces.'
+      error = 100*maxval( abs( (tab(1:ni, 1:nj) - real(tab1(1:ni, 1:nj), kind = R8)) / tab(1:ni, 1:nj) ) )
 
-   call get_unit(iu)
-   open(iu, file = 'verif_tcheby_vers_monome.txt')
-      write(str, '(a,i3.3,a)') '(', nbvar,'E18.8,a)'
-      read(iu, trim(str)) ( tab_coef2(i), i = 1, nbvar )
-   close(iu)
+      write(*, *) 'C-C-C error = ', error
 
-   call convert_to_poly ( long1    = n1,                        &  !
-                          long2    = n2,                        &  !
-                          deg1     = i1,                        &  !
-                          deg2     = i2,                        &  !
-                          tab_coef = tab_coef2(1:nbvar),        &  !
-                          tab_out  = tab_height(1:n1, 1:n2) )      !
+   call end_fftw3()
 
-   write(*, *) 'Max. abs. diff. :', maxval( abs((tab_result - tab_height)/(1._R8 + tab_height) ) )
+   deallocate( tab, tab1, tab2 )
 
-   write(*, *)
-   write(*, *) 'Given the fact that the reference surface is made of the product of two polynomials,'
-   write(*, *) 'the coefficients found must be the same as the imposed ones.'
-   write(*, *) 'Max. abs. diff. :', maxval( abs((tab_coef1 - tab_coef2)/tab_coef1) )
+   ! second case: height array forward, then backward transformed
+   ! The difference between original and processed data can be assessed with the resulting "600x300_FB.dat"
+   ni = 600
+   nj = 300
 
-   deallocate( tab_height, tab_result, tab_coef1, tab_coef2 )
+   call read_surf( nom_fic = "./sur/600x300.dat", tab_s = tab, nx = ni, ny = nj )
 
+   allocate( tab1(1:ni, 1:nj),  tab2(1:ni, 1:nj) ) ; tab1(1:ni, 1:nj) = cmplx( tab(1:ni, 1:nj), 0._R8, kind=R8)
+
+   call cpu_time(t1)
+
+   call init_fftw3( long = ni, larg = nj )
+
+      call calc_fftw3( sens = FORWARD,  tab_in = tab1, tab_ou = tab2, long = ni, larg = nj )
+      call calc_fftw3( sens = BACKWARD, tab_in = tab2, tab_ou = tab1, long = ni, larg = nj )
+
+   call end_fftw3()
+
+   call cpu_time(t2)
+
+   write(*,*) t2-t1
+
+   tab(1:ni, 1:nj) = real( tab1(1:ni, 1:nj), kind = R8 )
+   call save_surf( nom_fic = "./sur/600x300_FB_comp.dat", tab_s = tab, nx = ni, ny = nj )
+
+   deallocate( tab, tab1, tab2 )
+
+   !----------------------------------------------------------------------------------------------------------------
+   ! multithread deactivation
+   ! ```NB_THREADS_MAX``` are simultaneously computed on random 512x512 arrays
+   ! The difference ```error``` between original and processed data is calculated
+   call fftw_plan_with_nthreads( nthreads = 1 )
+
+   ni = 0512
+   nj = 0512
+   nb_iter = 100
+
+   allocate( tab( 1:ni, 1:nj) )
+   allocate( tab1(1:ni, 1:nj),  tab2(1:ni, 1:nj) )
+   call get_unit(k)
+
+   open( unit = k, file = "out/error_comp.txt" )
+
+   NB_THREADS_FFT = omp_get_max_threads()
+
+   call tab_init_fftw3(long = ni, larg = nj, plan_flag = FFTW_MEASURE)
+
+   !$OMP PARALLEL DEFAULT(SHARED) NUM_THREADS(NB_THREADS_FFT)
+
+   !$OMP DO SCHEDULE (STATIC, NB_ITER/NB_THREADS_FFT) PRIVATE(tab, tab1, tab2)
+   do i = 1, nb_iter
+
+      call random_number( harvest = tab(1:ni, 1:nj) )
+
+      tab(1:ni, 1:nj) = tab(1:ni, 1:nj) + 1._R8
+
+      tab1(1:ni, 1:nj) = cmplx( tab(1:ni, 1:nj), 0._R8, kind = R8 )
+      call tab_calc_fftw3( sens = FORWARD,  tab_in = tab1, tab_ou = tab2, long = ni, larg = nj )
+      call tab_calc_fftw3( sens = BACKWARD, tab_in = tab2, tab_ou = tab1, long = ni, larg = nj )
+      error = 100*maxval( abs( (tab(1:ni, 1:nj) - real(tab1(1:ni, 1:nj), kind = R8)) / tab(1:ni, 1:nj) ) )
+      write(k,*) error
+
+   enddo
+   !$OMP END DO
+
+   !$OMP END PARALLEL
+
+   call tab_end_fftw3()
+
+   close(k)
+   deallocate( tab, tab1, tab2 )
+
+
+   ! REAL -> COMPLEX -> REAL
+
+   !----------------------------------------------------------------------------------------------------------------
+   ! multithread activation
+   !----------------------------------------------------------------------------------------------------------------
+   NB_THREADS_FFT = omp_get_max_threads()
+   call fftw_plan_with_nthreads(nthreads = NB_THREADS_FFT)
+
+   ! first case: random array forward, then backward transformed
+   ! The difference ```error``` between original and processed data is calculated
+   ni = 4096
+   nj = 4096
+
+   allocate( tab( 1:ni, 1:nj) )
+   allocate( tabr1(1:ni, 1:nj), tabr2(1:ni, 1:nj) )
+   allocate( tab2(1:ni, 1:nj) )
+
+   call init_fftw3_real( long = ni, larg = nj, plan_flag = FFTW_ESTIMATE )
+
+      call random_number( harvest = tab(1:ni, 1:nj) )
+
+      tabr1(1:ni, 1:nj) = tab(1:ni, 1:nj)
+
+      call calc_fftw3_real_fwd( tab_in = tabr1, tab_ou = tab2, long = ni, larg = nj )
+      call calc_fftw3_real_bwd( tab_in = tab2, tab_ou = tabr2, long = ni, larg = nj )
+
+      error = 100*maxval( abs( (tab(1:ni, 1:nj) - real(tabr2(1:ni, 1:nj), kind = R8)) / tab(1:ni, 1:nj) ) )
+
+      write(*, *) 'R-C-R: error = ', error
+
+   call end_fftw3()
+
+   deallocate( tab, tabr1, tabr2, tab2 )
+
+
+   ! second case: height array forward, then backward transformed
+   ! The difference between original and processed data can be assessed with the resulting "600x300_FB.dat"
+   ni = 600
+   nj = 300
+
+   call read_surf( nom_fic = "./sur/600x300.dat", tab_s = tab, nx = ni, ny = nj )
+
+   allocate( tabr1(1:ni, 1:nj),  tab2(1:ni, 1:nj) ) ; tabr1(1:ni, 1:nj) = tab(1:ni, 1:nj)
+
+   call cpu_time(t1)
+
+   call init_fftw3_real( long = ni, larg = nj, plan_flag = FFTW_ESTIMATE )
+
+      call calc_fftw3_real_fwd( tab_in = tabr1, tab_ou = tab2,  long = ni, larg = nj )
+      call calc_fftw3_real_bwd( tab_in = tab2,  tab_ou = tabr1, long = ni, larg = nj )
+
+   call end_fftw3()
+
+   call cpu_time(t2)
+
+   write(*,*) t2-t1
+
+   tab(1:ni, 1:nj) = tabr1(1:ni, 1:nj)
+
+   call save_surf( nom_fic = "./sur/600x300_FB_real.dat", tab_s = tab, nx = ni, ny = nj )
+
+   deallocate( tab, tabr1, tab2 )
+
+   !----------------------------------------------------------------------------------------------------------------
+   ! multithread deactivation
+   ! ```NB_THREADS_MAX``` are simultaneously computed on random 512x512 arrays
+   ! The difference ```error``` between original and processed data is calculated
+
+   call fftw_plan_with_nthreads( nthreads = 1 )
+
+   ni = 0512
+   nj = 0512
+   nb_iter = 100
+
+   allocate( tab( 1:ni, 1:nj) )
+   allocate( tab2( 1:ni, 1:nj) )
+   allocate( tabr1(1:ni, 1:nj),  tabr2(1:ni, 1:nj) )
+
+   call get_unit(k)
+
+   open( unit = k, file = "out/error_real.txt" )
+
+   NB_THREADS_FFT = omp_get_max_threads()
+
+   call tab_init_fftw3_real( long = ni, larg = nj, plan_flag = FFTW_MEASURE )
+
+   !$OMP PARALLEL DEFAULT(SHARED) NUM_THREADS(NB_THREADS_FFT)
+
+   !$OMP DO SCHEDULE (STATIC, NB_ITER/NB_THREADS_FFT) PRIVATE(tab, tabr1, tabr2, tab2)
+   do i = 1, nb_iter
+
+      call random_number( harvest = tab(1:ni, 1:nj) )
+
+      tab(1:ni, 1:nj) = tab(1:ni, 1:nj) + 1._R8
+
+      tabr1(1:ni, 1:nj) = tab(1:ni, 1:nj)
+
+      call tab_calc_fftw3_real_fwd( tab_in = tabr1, tab_ou = tab2, long = ni, larg = nj )
+      call tab_calc_fftw3_real_bwd( tab_in = tab2, tab_ou = tabr2, long = ni, larg = nj )
+      error = 100*maxval( abs( (tab(1:ni, 1:nj) - tabr2(1:ni, 1:nj)) / tab(1:ni, 1:nj) ) )
+
+      write(k,*) error
+
+   enddo
+   !$OMP END DO
+
+   !$OMP END PARALLEL
+
+   call tab_end_fftw3_real()
+
+   close(k)
+   deallocate( tab, tabr1, tabr2, tab2 )
+
+stop
 contains
 
-   !==================================================================================================
-   subroutine convert_to_poly(long1, long2, deg1, deg2, tab_coef, tab_out)
-   !! Génération d'une surface polynômiale pour vérification des procédures d'approximation
+   !=========================================================================================
+   subroutine read_surf(nom_fic, tab_s, nx, ny)
+   !! Subroutine that opens a surface file ```.dat```
    implicit none
-   integer(kind=I4), intent(in )                                     :: long1    !! *taille x*
-   integer(kind=I4), intent(in )                                     :: long2    !! *taille y*
-   integer(kind=I4), intent(in )                                     :: deg1     !! *degré selon x*
-   integer(kind=I4), intent(in )                                     :: deg2     !! *degré selon y*
-   real   (kind=R8), intent(in ), dimension(1:(deg1+1) * (deg2+1))   :: tab_coef !! *tableau des coefficients*
-   real   (kind=R8), intent(out), dimension(1:long1, 1:long2)        :: tab_out  !! *tableau résultant : surface*
+   character(len=*), intent(in )                               :: nom_fic  !! *file name*
+   integer(kind=I4), intent(in )                               :: nx       !! *number of pixels along x*
+   integer(kind=I4), intent(in )                               :: ny       !! *number of pixels along y*
+   real   (kind=R8), intent(out), dimension(:,:), allocatable  :: tab_s    !! *height array*
 
-      real(kind=R8)    :: xi, xj
-      integer(kind=I4) :: i, j, k1, k2, k1k2
+      integer(kind=I4) :: i, j, k
+      real(kind=R8)    :: x, y
 
-      tab_out = 0._R8
-      do j = 1, long2
-         xj = -1. + (j - 1) * 2. / (long2 - 1)
+      allocate( tab_s(1:nx, 1:ny) )
 
-         do i = 1, long1
-            xi = -1. + (i - 1) * 2. / (long1 - 1)
+      call get_unit(k)
 
-            k1k2 = 0
-            do k2 = 0, deg2
-            do k1 = 0, deg1
+      open( unit = k, file = trim(nom_fic), status = 'old')
 
-               k1k2 = k1k2 + 1
-               tab_out(i, j) = tab_out(i, j) + tab_coef(k1k2) * (xi ** k1) * (xj ** k2)
-
-            enddo
+         do i = 1, nx
+            do j = 1, ny
+               read(k, *) x, y, tab_s(i, j)
             enddo
          enddo
 
-      enddo
+      close(k)
 
    return
-   endsubroutine convert_to_poly
+   endsubroutine read_surf
 
 
-   subroutine genere_surf_poly(long1, long2, deg1, deg2, tab_out, tab_coef)
-   !! génère une surface
+   !=========================================================================================
+   subroutine save_surf(nom_fic, tab_s, nx, ny)
+   !! Subroutine that saves a surface file ```.dat```
    implicit none
-   integer(kind=I4), intent(in )                                     :: long1    !! *taille x*
-   integer(kind=I4), intent(in )                                     :: long2    !! *taille y*
-   integer(kind=I4), intent(in )                                     :: deg1     !! *degré selon x*
-   integer(kind=I4), intent(in )                                     :: deg2     !! *degré selon y*
-   real   (kind=R8), intent(out), dimension(1:long1, 1:long2)        :: tab_out  !! *tableau résultant : surface*
-   real   (kind=R8), intent(out), dimension(1:(deg1+1) * (deg2+1))   :: tab_coef !! *tableau des coefficients*
+   character(len=*), intent(in)                          :: nom_fic  !! *file name*
+   integer(kind=I4), intent(in)                          :: nx       !! *number of pixels along x*
+   integer(kind=I4), intent(in)                          :: ny       !! *number of pixels along y*
+   real   (kind=R8), intent(in), dimension(1:nx, 1:ny)   :: tab_s    !! *height array*
 
-      real(kind=R8)    :: xi, xj
-      integer(kind=I4) :: i, j, ij, k1, k2, k1k2
+      integer(kind=I4) :: i, j, k
 
-      real(kind=R8), dimension(0:deg1) :: ai
-      real(kind=R8), dimension(0:deg2) :: aj
+      call get_unit(k)
 
-      real(kind=R8), dimension(0:deg1) :: ai_m
+      open( unit = k, file = trim(nom_fic), status = 'unknown')
 
-      real(kind=R8), dimension(1:long1) :: val_xi_t
-      real(kind=R8), dimension(1:long1) :: val_xi_m
-
-      call random_number( ai(0:deg1) )
-      call random_number( aj(0:deg2) )
-
-      ai = +9 * ai - 4._R8
-      aj = -5 * aj + 8._R8
-      ! =========================== SIMPLE CHECK =====================================================
-
-      ! A combination of Tchebychev polynomials must
-      ! yield the same results as a classical polynomial
-      !--------------------------------------------
-      val_xi_t = 0._R8
-      do i = 1, long1
-         xi = -1. + (i - 1) * 2. / (long1 - 1)
-
-         do k1 = 0, deg1
-            val_xi_t(i) = val_xi_t(i) + ai(k1) * tcheby(n = k1, x = xi)
-         enddo
-      enddo
-      !--------------------------------------------
-      ! Towards equivalent classical polynomial
-      call coeff_tcheby_vers_monome(coeff_t = ai(0:deg1), coeff_m = ai_m(0:deg1), deg = deg1)
-
-      val_xi_m = 0._R8
-      do i = 1, long1
-         xi = -1. + (i - 1) * 2. / (long1 - 1)
-
-         do k1 = 0, deg1
-            val_xi_m(i) = val_xi_m(i) + ai_m(k1) * (xi**k1)
-         enddo
-      enddo
-      !--------------------------------------------
-      write(*,*) 'Equivalence of Tchebychev and classical polynomials'
-      write(*,*) 'Difference must be negligible'
-      write(*,*) ' Diff = ', maxval( abs( val_xi_m - val_xi_t ) )
-      !--------------------------------------------
-      ! =========================== END SIMPLE CHECK ==================================================
-
-      tab_coef = 0._R8
-      ij = 0
-      do j = 0, deg2
-         do i = 0, deg1
-            ij = ij + 1
-            tab_coef(ij) = ai(i) * aj(j)
-         enddo
-      enddo
-
-      tab_out = 0._R8
-      do j = 1, long2
-         xj = -1. + (j - 1)* 2. / (long2 - 1)
-
-         do i = 1, long1
-            xi = -1. + (i - 1) * 2. / (long1 - 1)
-
-            k1k2 = 0
-            do k2 = 0, deg2
-            do k1 = 0, deg1
-
-               k1k2 = k1k2 + 1
-               tab_out(i, j) = tab_out(i, j) + tab_coef(k1k2) * (xi ** k1) * (xj ** k2)
-
-            enddo
+         do i = 1, nx
+            do j = 1, ny
+               write(k, *) i, j, tab_s(i, j)
             enddo
          enddo
 
-      enddo
+      close(k)
 
    return
-   endsubroutine genere_surf_poly
+   endsubroutine save_surf
 
-endprogram test_tchebychev
+endprogram test_fftw3
+

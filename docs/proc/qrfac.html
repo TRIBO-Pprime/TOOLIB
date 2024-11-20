@@ -1,0 +1,1141 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>qrfac &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>qrfac
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">77 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/mod_minpack.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_minpack.f90.html'>mod_minpack.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/minpack.html'>minpack</a></li>
+            <li class="breadcrumb-item active" aria-current="page">qrfac</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/qrfac.html#src">qrfac</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine qrfac(m, n, a, lda, pivot, ipvt, lipvt, rdiag, acnorm)  
+</h2>
+    
+
+    <p>QRFAC computes a QR factorization using Householder transformations.</p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m~32"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>m</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~62"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a~4"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>a</strong>(lda,n)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lda~2"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lda</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-pivot~7"></span>
+              logical
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>pivot</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ipvt~8"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ipvt</strong>(lipvt)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-lipvt~2"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>lipvt</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-rdiag~2"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>rdiag</strong>(n)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-acnorm~2"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>acnorm</strong>(n)</td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~qrfac~~CallsGraph Pages: 1 -->
+<svg id="procqrfacCallsGraph" width="152pt" height="32pt"
+ viewBox="0.00 0.00 152.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~qrfac~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~qrfac~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 148,-28 148,4 -4,4"/>
+<!-- proc~qrfac -->
+<g id="proc~~qrfac~~CallsGraph_node1" class="node">
+<title>proc~qrfac</title>
+<polygon fill="none" stroke="black" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">qrfac</text>
+</g>
+<!-- proc~enorm -->
+<g id="proc~~qrfac~~CallsGraph_node2" class="node">
+<title>proc~enorm</title>
+<g id="a_proc~~qrfac~~CallsGraph_node2"><a xlink:href="../proc/enorm.html" xlink:title="enorm">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="144,-24 90,-24 90,0 144,0 144,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">enorm</text>
+</a>
+</g>
+</g>
+<!-- proc~qrfac&#45;&gt;proc~enorm -->
+<g id="proc~~qrfac~~CallsGraph_edge1" class="edge">
+<title>proc~qrfac&#45;&gt;proc~enorm</title>
+<path fill="none" stroke="#ff0000" d="M54.4,-12C62.39,-12 71.31,-12 79.82,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="79.92,-15.5 89.92,-12 79.92,-8.5 79.92,-15.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~qrfac~~CalledByGraph Pages: 1 -->
+<svg id="procqrfacCalledByGraph" width="481pt" height="366pt"
+ viewBox="0.00 0.00 481.00 366.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~qrfac~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 362)">
+<title>proc~~qrfac~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-362 477,-362 477,4 -4,4"/>
+<!-- proc~qrfac -->
+<g id="proc~~qrfac~~CalledByGraph_node1" class="node">
+<title>proc~qrfac</title>
+<polygon fill="none" stroke="black" points="473,-253 419,-253 419,-229 473,-229 473,-253"/>
+<text text-anchor="middle" x="446" y="-238.6" font-family="Helvetica,sans-Serif" font-size="10.50">qrfac</text>
+</g>
+<!-- proc~hybrd -->
+<g id="proc~~qrfac~~CalledByGraph_node2" class="node">
+<title>proc~hybrd</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node2"><a xlink:href="../proc/hybrd.html" xlink:title="hybrd">
+<polygon fill="#d9534f" stroke="#d9534f" points="383,-316 329,-316 329,-292 383,-292 383,-316"/>
+<text text-anchor="middle" x="356" y="-301.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hybrd</text>
+</a>
+</g>
+</g>
+<!-- proc~hybrd&#45;&gt;proc~qrfac -->
+<g id="proc~~qrfac~~CalledByGraph_edge1" class="edge">
+<title>proc~hybrd&#45;&gt;proc~qrfac</title>
+<path fill="none" stroke="#ff0000" d="M373.97,-291.85C386.99,-282.53 405.18,-269.51 419.89,-258.98"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="421.99,-261.78 428.08,-253.11 417.92,-256.09 421.99,-261.78"/>
+</g>
+<!-- proc~hybrj -->
+<g id="proc~~qrfac~~CalledByGraph_node3" class="node">
+<title>proc~hybrj</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node3"><a xlink:href="../proc/hybrj.html" xlink:title="hybrj">
+<polygon fill="#d9534f" stroke="#d9534f" points="383,-274 329,-274 329,-250 383,-250 383,-274"/>
+<text text-anchor="middle" x="356" y="-259.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hybrj</text>
+</a>
+</g>
+</g>
+<!-- proc~hybrj&#45;&gt;proc~qrfac -->
+<g id="proc~~qrfac~~CalledByGraph_edge2" class="edge">
+<title>proc~hybrj&#45;&gt;proc~qrfac</title>
+<path fill="none" stroke="#ff0000" d="M383.4,-255.7C391.48,-253.77 400.51,-251.62 409.1,-249.57"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="410,-252.95 418.92,-247.22 408.38,-246.14 410,-252.95"/>
+</g>
+<!-- proc~lmder -->
+<g id="proc~~qrfac~~CalledByGraph_node4" class="node">
+<title>proc~lmder</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node4"><a xlink:href="../proc/lmder.html" xlink:title="lmder">
+<polygon fill="#d9534f" stroke="#d9534f" points="383,-232 329,-232 329,-208 383,-208 383,-232"/>
+<text text-anchor="middle" x="356" y="-217.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmder</text>
+</a>
+</g>
+</g>
+<!-- proc~lmder&#45;&gt;proc~qrfac -->
+<g id="proc~~qrfac~~CalledByGraph_edge3" class="edge">
+<title>proc~lmder&#45;&gt;proc~qrfac</title>
+<path fill="none" stroke="#ff0000" d="M383.4,-226.3C391.48,-228.23 400.51,-230.38 409.1,-232.43"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="408.38,-235.86 418.92,-234.78 410,-229.05 408.38,-235.86"/>
+</g>
+<!-- proc~lmdif -->
+<g id="proc~~qrfac~~CalledByGraph_node5" class="node">
+<title>proc~lmdif</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node5"><a xlink:href="../proc/lmdif.html" xlink:title="lmdif">
+<polygon fill="#d9534f" stroke="#d9534f" points="383,-170 329,-170 329,-146 383,-146 383,-170"/>
+<text text-anchor="middle" x="356" y="-155.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmdif</text>
+</a>
+</g>
+</g>
+<!-- proc~lmdif&#45;&gt;proc~qrfac -->
+<g id="proc~~qrfac~~CalledByGraph_edge4" class="edge">
+<title>proc~lmdif&#45;&gt;proc~qrfac</title>
+<path fill="none" stroke="#ff0000" d="M369.98,-170.25C384.37,-183.81 407.74,-205.86 424.58,-221.74"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="422.57,-224.66 432.25,-228.97 427.37,-219.57 422.57,-224.66"/>
+</g>
+<!-- proc~lmstr -->
+<g id="proc~~qrfac~~CalledByGraph_node6" class="node">
+<title>proc~lmstr</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node6"><a xlink:href="../proc/lmstr.html" xlink:title="lmstr">
+<polygon fill="#d9534f" stroke="#d9534f" points="383,-107 329,-107 329,-83 383,-83 383,-107"/>
+<text text-anchor="middle" x="356" y="-92.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmstr</text>
+</a>
+</g>
+</g>
+<!-- proc~lmstr&#45;&gt;proc~qrfac -->
+<g id="proc~~qrfac~~CalledByGraph_edge5" class="edge">
+<title>proc~lmstr&#45;&gt;proc~qrfac</title>
+<path fill="none" stroke="#ff0000" d="M364.56,-107.1C369.78,-115.47 376.86,-126.89 383,-137 400.42,-165.67 420.21,-199 432.65,-220.05"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="429.71,-221.96 437.81,-228.79 435.74,-218.4 429.71,-221.96"/>
+</g>
+<!-- proc~qform_test -->
+<g id="proc~~qrfac~~CalledByGraph_node7" class="node">
+<title>proc~qform_test</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node7"><a xlink:href="../proc/qform_test.html" xlink:title="qform_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="293,-358 229,-358 229,-334 293,-334 293,-358"/>
+<text text-anchor="middle" x="261" y="-343.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">qform_test</text>
+</a>
+</g>
+</g>
+<!-- proc~qform_test&#45;&gt;proc~qrfac -->
+<g id="proc~~qrfac~~CalledByGraph_edge6" class="edge">
+<title>proc~qform_test&#45;&gt;proc~qrfac</title>
+<path fill="none" stroke="#ff0000" d="M293.06,-346.83C318.93,-346.13 355.79,-341.81 383,-325 407.27,-310 425.14,-281.69 435.3,-262.11"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="438.49,-263.55 439.78,-253.04 432.21,-260.45 438.49,-263.55"/>
+</g>
+<!-- proc~hybrd1 -->
+<g id="proc~~qrfac~~CalledByGraph_node8" class="node">
+<title>proc~hybrd1</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node8"><a xlink:href="../proc/hybrd1.html" xlink:title="hybrd1">
+<polygon fill="#d9534f" stroke="#d9534f" points="288,-316 234,-316 234,-292 288,-292 288,-316"/>
+<text text-anchor="middle" x="261" y="-301.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hybrd1</text>
+</a>
+</g>
+</g>
+<!-- proc~hybrd1&#45;&gt;proc~hybrd -->
+<g id="proc~~qrfac~~CalledByGraph_edge7" class="edge">
+<title>proc~hybrd1&#45;&gt;proc~hybrd</title>
+<path fill="none" stroke="#ff0000" d="M288.4,-304C297.81,-304 308.57,-304 318.66,-304"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="318.85,-307.5 328.85,-304 318.85,-300.5 318.85,-307.5"/>
+</g>
+<!-- proc~hybrj1 -->
+<g id="proc~~qrfac~~CalledByGraph_node9" class="node">
+<title>proc~hybrj1</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node9"><a xlink:href="../proc/hybrj1.html" xlink:title="hybrj1">
+<polygon fill="#d9534f" stroke="#d9534f" points="288,-274 234,-274 234,-250 288,-250 288,-274"/>
+<text text-anchor="middle" x="261" y="-259.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hybrj1</text>
+</a>
+</g>
+</g>
+<!-- proc~hybrj1&#45;&gt;proc~hybrj -->
+<g id="proc~~qrfac~~CalledByGraph_edge8" class="edge">
+<title>proc~hybrj1&#45;&gt;proc~hybrj</title>
+<path fill="none" stroke="#ffff00" d="M288.4,-262C297.81,-262 308.57,-262 318.66,-262"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="318.85,-265.5 328.85,-262 318.85,-258.5 318.85,-265.5"/>
+</g>
+<!-- proc~lmder1 -->
+<g id="proc~~qrfac~~CalledByGraph_node10" class="node">
+<title>proc~lmder1</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node10"><a xlink:href="../proc/lmder1.html" xlink:title="lmder1">
+<polygon fill="#d9534f" stroke="#d9534f" points="288,-232 234,-232 234,-208 288,-208 288,-232"/>
+<text text-anchor="middle" x="261" y="-217.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmder1</text>
+</a>
+</g>
+</g>
+<!-- proc~lmder1&#45;&gt;proc~lmder -->
+<g id="proc~~qrfac~~CalledByGraph_edge9" class="edge">
+<title>proc~lmder1&#45;&gt;proc~lmder</title>
+<path fill="none" stroke="#00ff00" d="M288.4,-220C297.81,-220 308.57,-220 318.66,-220"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="318.85,-223.5 328.85,-220 318.85,-216.5 318.85,-223.5"/>
+</g>
+<!-- proc~lmdif1 -->
+<g id="proc~~qrfac~~CalledByGraph_node11" class="node">
+<title>proc~lmdif1</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node11"><a xlink:href="../proc/lmdif1.html" xlink:title="lmdif1">
+<polygon fill="#d9534f" stroke="#d9534f" points="288,-150 234,-150 234,-126 288,-126 288,-150"/>
+<text text-anchor="middle" x="261" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmdif1</text>
+</a>
+</g>
+</g>
+<!-- proc~lmdif1&#45;&gt;proc~lmdif -->
+<g id="proc~~qrfac~~CalledByGraph_edge10" class="edge">
+<title>proc~lmdif1&#45;&gt;proc~lmdif</title>
+<path fill="none" stroke="#00ffff" d="M288.4,-143.68C297.91,-145.72 308.8,-148.06 318.98,-150.25"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="318.34,-153.7 328.85,-152.38 319.81,-146.85 318.34,-153.7"/>
+</g>
+<!-- proc~lmstr1 -->
+<g id="proc~~qrfac~~CalledByGraph_node12" class="node">
+<title>proc~lmstr1</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node12"><a xlink:href="../proc/lmstr1.html" xlink:title="lmstr1">
+<polygon fill="#d9534f" stroke="#d9534f" points="288,-66 234,-66 234,-42 288,-42 288,-66"/>
+<text text-anchor="middle" x="261" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmstr1</text>
+</a>
+</g>
+</g>
+<!-- proc~lmstr1&#45;&gt;proc~lmstr -->
+<g id="proc~~qrfac~~CalledByGraph_edge11" class="edge">
+<title>proc~lmstr1&#45;&gt;proc~lmstr</title>
+<path fill="none" stroke="#0000ff" d="M288.4,-65.64C298.1,-69.92 309.25,-74.83 319.62,-79.4"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="318.29,-82.64 328.85,-83.47 321.12,-76.24 318.29,-82.64"/>
+</g>
+<!-- program~test_minpack -->
+<g id="proc~~qrfac~~CalledByGraph_node13" class="node">
+<title>program~test_minpack</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node13"><a xlink:href="../program/test_minpack.html" xlink:title="test_minpack">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="76,-192 0,-192 0,-168 76,-168 76,-192"/>
+<text text-anchor="middle" x="38" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_minpack</text>
+</a>
+</g>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~qform_test -->
+<g id="proc~~qrfac~~CalledByGraph_edge12" class="edge">
+<title>program~test_minpack&#45;&gt;proc~qform_test</title>
+<path fill="none" stroke="#ff00ff" d="M41.12,-192.41C46.77,-221.39 65.11,-293.61 112,-327 142.81,-348.94 186.61,-352.03 218.57,-350.64"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="219.14,-354.11 228.92,-350.02 218.72,-347.13 219.14,-354.11"/>
+</g>
+<!-- proc~hybrd1_test -->
+<g id="proc~~qrfac~~CalledByGraph_node14" class="node">
+<title>proc~hybrd1_test</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node14"><a xlink:href="../proc/hybrd1_test.html" xlink:title="hybrd1_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="187,-318 118,-318 118,-294 187,-294 187,-318"/>
+<text text-anchor="middle" x="152.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hybrd1_test</text>
+</a>
+</g>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~hybrd1_test -->
+<g id="proc~~qrfac~~CalledByGraph_edge21" class="edge">
+<title>program~test_minpack&#45;&gt;proc~hybrd1_test</title>
+<path fill="none" stroke="#ff0000" d="M44.93,-192.09C55.78,-213.19 80.62,-257.14 112,-285 113.28,-286.13 114.63,-287.23 116.03,-288.28"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="114.17,-291.25 124.44,-293.85 118.04,-285.41 114.17,-291.25"/>
+</g>
+<!-- proc~hybrj1_test -->
+<g id="proc~~qrfac~~CalledByGraph_node15" class="node">
+<title>proc~hybrj1_test</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node15"><a xlink:href="../proc/hybrj1_test.html" xlink:title="hybrj1_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="185,-276 120,-276 120,-252 185,-252 185,-276"/>
+<text text-anchor="middle" x="152.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hybrj1_test</text>
+</a>
+</g>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~hybrj1_test -->
+<g id="proc~~qrfac~~CalledByGraph_edge22" class="edge">
+<title>program~test_minpack&#45;&gt;proc~hybrj1_test</title>
+<path fill="none" stroke="#ffbf00" d="M51.22,-192.06C65.18,-205.47 89.07,-227.3 112,-243 113.87,-244.28 115.84,-245.55 117.84,-246.78"/>
+<polygon fill="#ffbf00" stroke="#ffbf00" points="116.36,-249.97 126.77,-251.94 119.86,-243.91 116.36,-249.97"/>
+</g>
+<!-- proc~lmder1_2_test -->
+<g id="proc~~qrfac~~CalledByGraph_node16" class="node">
+<title>proc~lmder1_2_test</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node16"><a xlink:href="../proc/lmder1_2_test.html" xlink:title="lmder1_2_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="193,-234 112,-234 112,-210 193,-210 193,-234"/>
+<text text-anchor="middle" x="152.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmder1_2_test</text>
+</a>
+</g>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmder1_2_test -->
+<g id="proc~~qrfac~~CalledByGraph_edge23" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmder1_2_test</title>
+<path fill="none" stroke="#7fff00" d="M71.24,-192.04C83.24,-196.52 97.04,-201.67 109.78,-206.42"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="108.66,-209.74 119.26,-209.96 111.11,-203.19 108.66,-209.74"/>
+</g>
+<!-- proc~lmder1_test -->
+<g id="proc~~qrfac~~CalledByGraph_node17" class="node">
+<title>proc~lmder1_test</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node17"><a xlink:href="../proc/lmder1_test.html" xlink:title="lmder1_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="187,-192 118,-192 118,-168 187,-168 187,-192"/>
+<text text-anchor="middle" x="152.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmder1_test</text>
+</a>
+</g>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmder1_test -->
+<g id="proc~~qrfac~~CalledByGraph_edge24" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmder1_test</title>
+<path fill="none" stroke="#00ff3f" d="M76.15,-180C86.23,-180 97.24,-180 107.65,-180"/>
+<polygon fill="#00ff3f" stroke="#00ff3f" points="107.81,-183.5 117.81,-180 107.81,-176.5 107.81,-183.5"/>
+</g>
+<!-- proc~lmdif1_2_test -->
+<g id="proc~~qrfac~~CalledByGraph_node18" class="node">
+<title>proc~lmdif1_2_test</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node18"><a xlink:href="../proc/lmdif1_2_test.html" xlink:title="lmdif1_2_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="190.5,-150 114.5,-150 114.5,-126 190.5,-126 190.5,-150"/>
+<text text-anchor="middle" x="152.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmdif1_2_test</text>
+</a>
+</g>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmdif1_2_test -->
+<g id="proc~~qrfac~~CalledByGraph_edge25" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmdif1_2_test</title>
+<path fill="none" stroke="#00ffff" d="M71.24,-167.96C83.24,-163.48 97.04,-158.33 109.78,-153.58"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="111.11,-156.81 119.26,-150.04 108.66,-150.26 111.11,-156.81"/>
+</g>
+<!-- proc~lmdif1_test -->
+<g id="proc~~qrfac~~CalledByGraph_node19" class="node">
+<title>proc~lmdif1_test</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node19"><a xlink:href="../proc/lmdif1_test.html" xlink:title="lmdif1_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="184.5,-108 120.5,-108 120.5,-84 184.5,-84 184.5,-108"/>
+<text text-anchor="middle" x="152.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmdif1_test</text>
+</a>
+</g>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmdif1_test -->
+<g id="proc~~qrfac~~CalledByGraph_edge26" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmdif1_test</title>
+<path fill="none" stroke="#003fff" d="M51.22,-167.94C65.18,-154.53 89.07,-132.7 112,-117 113.87,-115.72 115.84,-114.45 117.84,-113.22"/>
+<polygon fill="#003fff" stroke="#003fff" points="119.86,-116.09 126.77,-108.06 116.36,-110.03 119.86,-116.09"/>
+</g>
+<!-- proc~lmstr1_2_test -->
+<g id="proc~~qrfac~~CalledByGraph_node20" class="node">
+<title>proc~lmstr1_2_test</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node20"><a xlink:href="../proc/lmstr1_2_test.html" xlink:title="lmstr1_2_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="191,-66 114,-66 114,-42 191,-42 191,-66"/>
+<text text-anchor="middle" x="152.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmstr1_2_test</text>
+</a>
+</g>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmstr1_2_test -->
+<g id="proc~~qrfac~~CalledByGraph_edge27" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmstr1_2_test</title>
+<path fill="none" stroke="#7f00ff" d="M44.93,-167.91C55.78,-146.81 80.62,-102.86 112,-75 113.28,-73.87 114.63,-72.77 116.03,-71.72"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="118.04,-74.59 124.44,-66.15 114.17,-68.75 118.04,-74.59"/>
+</g>
+<!-- proc~lmstr1_test -->
+<g id="proc~~qrfac~~CalledByGraph_node21" class="node">
+<title>proc~lmstr1_test</title>
+<g id="a_proc~~qrfac~~CalledByGraph_node21"><a xlink:href="../proc/lmstr1_test.html" xlink:title="lmstr1_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="185,-24 120,-24 120,0 185,0 185,-24"/>
+<text text-anchor="middle" x="152.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmstr1_test</text>
+</a>
+</g>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmstr1_test -->
+<g id="proc~~qrfac~~CalledByGraph_edge28" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmstr1_test</title>
+<path fill="none" stroke="#ff00bf" d="M42.25,-167.84C50.06,-140.59 72.27,-73.85 112,-33 112.91,-32.06 113.88,-31.15 114.88,-30.28"/>
+<polygon fill="#ff00bf" stroke="#ff00bf" points="117.19,-32.93 123.21,-24.21 113.07,-27.27 117.19,-32.93"/>
+</g>
+<!-- proc~hybrd1_test&#45;&gt;proc~hybrd1 -->
+<g id="proc~~qrfac~~CalledByGraph_edge13" class="edge">
+<title>proc~hybrd1_test&#45;&gt;proc~hybrd1</title>
+<path fill="none" stroke="#ff0000" d="M187.2,-305.37C198.89,-305.15 212.03,-304.9 223.91,-304.68"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="224.01,-308.18 233.95,-304.49 223.88,-301.18 224.01,-308.18"/>
+</g>
+<!-- proc~hybrj1_test&#45;&gt;proc~hybrj1 -->
+<g id="proc~~qrfac~~CalledByGraph_edge14" class="edge">
+<title>proc~hybrj1_test&#45;&gt;proc~hybrj1</title>
+<path fill="none" stroke="#ffff00" d="M185.17,-263.41C197.24,-263.18 211.09,-262.92 223.57,-262.68"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="223.73,-266.18 233.66,-262.49 223.6,-259.18 223.73,-266.18"/>
+</g>
+<!-- proc~lmder1_2_test&#45;&gt;proc~lmder1 -->
+<g id="proc~~qrfac~~CalledByGraph_edge15" class="edge">
+<title>proc~lmder1_2_test&#45;&gt;proc~lmder1</title>
+<path fill="none" stroke="#00ff00" d="M193.16,-221.26C203.15,-221.07 213.82,-220.87 223.64,-220.68"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="223.95,-224.18 233.88,-220.49 223.82,-217.18 223.95,-224.18"/>
+</g>
+<!-- proc~lmder1_test&#45;&gt;proc~lmder1 -->
+<g id="proc~~qrfac~~CalledByGraph_edge16" class="edge">
+<title>proc~lmder1_test&#45;&gt;proc~lmder1</title>
+<path fill="none" stroke="#00ff00" d="M185.45,-192C197.64,-196.58 211.6,-201.82 224.12,-206.53"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="223.21,-209.92 233.8,-210.16 225.67,-203.37 223.21,-209.92"/>
+</g>
+<!-- proc~lmdif1_2_test&#45;&gt;proc~lmdif1 -->
+<g id="proc~~qrfac~~CalledByGraph_edge17" class="edge">
+<title>proc~lmdif1_2_test&#45;&gt;proc~lmdif1</title>
+<path fill="none" stroke="#00ffff" d="M190.75,-138C201.46,-138 213.11,-138 223.76,-138"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="223.99,-141.5 233.99,-138 223.99,-134.5 223.99,-141.5"/>
+</g>
+<!-- proc~lmdif1_test&#45;&gt;proc~lmdif1 -->
+<g id="proc~~qrfac~~CalledByGraph_edge18" class="edge">
+<title>proc~lmdif1_test&#45;&gt;proc~lmdif1</title>
+<path fill="none" stroke="#00ffff" d="M184.02,-108.04C196.56,-112.98 211.17,-118.74 224.21,-123.88"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="223.22,-127.26 233.81,-127.67 225.79,-120.75 223.22,-127.26"/>
+</g>
+<!-- proc~lmstr1_2_test&#45;&gt;proc~lmstr1 -->
+<g id="proc~~qrfac~~CalledByGraph_edge19" class="edge">
+<title>proc~lmstr1_2_test&#45;&gt;proc~lmstr1</title>
+<path fill="none" stroke="#0000ff" d="M191.05,-54C201.65,-54 213.16,-54 223.69,-54"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="223.81,-57.5 233.81,-54 223.81,-50.5 223.81,-57.5"/>
+</g>
+<!-- proc~lmstr1_test&#45;&gt;proc~lmstr1 -->
+<g id="proc~~qrfac~~CalledByGraph_edge20" class="edge">
+<title>proc~lmstr1_test&#45;&gt;proc~lmstr1</title>
+<path fill="none" stroke="#0000ff" d="M184.02,-24.04C196.56,-28.98 211.17,-34.74 224.21,-39.88"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="223.22,-43.26 233.81,-43.67 225.79,-36.75 223.22,-43.26"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">subroutine </span><span class="n">qrfac</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">lda</span><span class="p">,</span><span class="w"> </span><span class="n">pivot</span><span class="p">,</span><span class="w"> </span><span class="n">ipvt</span><span class="p">,</span><span class="w"> </span><span class="n">lipvt</span><span class="p">,</span><span class="w"> </span><span class="n">rdiag</span><span class="p">,</span><span class="w"> </span><span class="n">acnorm</span><span class="w"> </span><span class="p">)</span>
+
+<span class="c">!*****************************************************************************80</span>
+<span class="c">!</span>
+<span class="c">!! QRFAC computes a QR factorization using Householder transformations.</span>
+<span class="c">!</span>
+<span class="c">!  Discussion:</span>
+<span class="c">!</span>
+<span class="c">!    This function uses Householder transformations with optional column</span>
+<span class="c">!    pivoting to compute a QR factorization of the</span>
+<span class="c">!    M by N matrix A.  That is, QRFAC determines an orthogonal</span>
+<span class="c">!    matrix Q, a permutation matrix P, and an upper trapezoidal</span>
+<span class="c">!    matrix R with diagonal elements of nonincreasing magnitude,</span>
+<span class="c">!    such that A*P = Q*R.</span>
+<span class="c">!</span>
+<span class="c">!    The Householder transformation for column K, K = 1,2,...,min(M,N),</span>
+<span class="c">!    is of the form</span>
+<span class="c">!</span>
+<span class="c">!      I - ( 1 / U(K) ) * U * U&#39;</span>
+<span class="c">!</span>
+<span class="c">!    where U has zeros in the first K-1 positions.</span>
+<span class="c">!</span>
+<span class="c">!    The form of this transformation and the method of pivoting first</span>
+<span class="c">!    appeared in the corresponding LINPACK routine.</span>
+<span class="c">!</span>
+<span class="c">!  Licensing:</span>
+<span class="c">!</span>
+<span class="c">!    This code may freely be copied, modified, and used for any purpose.</span>
+<span class="c">!</span>
+<span class="c">!  Modified:</span>
+<span class="c">!</span>
+<span class="c">!    06 April 2010</span>
+<span class="c">!</span>
+<span class="c">!  Author:</span>
+<span class="c">!</span>
+<span class="c">!    Original FORTRAN77 version by Jorge More, Burton Garbow, Kenneth Hillstrom.</span>
+<span class="c">!    FORTRAN90 version by John Burkardt.</span>
+<span class="c">!</span>
+<span class="c">!  Reference:</span>
+<span class="c">!</span>
+<span class="c">!    Jorge More, Burton Garbow, Kenneth Hillstrom,</span>
+<span class="c">!    User Guide for MINPACK-1,</span>
+<span class="c">!    Technical Report ANL-80-74,</span>
+<span class="c">!    Argonne National Laboratory, 1980.</span>
+<span class="c">!</span>
+<span class="c">!  Parameters:</span>
+<span class="c">!</span>
+<span class="c">!    Input, integer ( kind = 4 ) M, the number of rows of A.</span>
+<span class="c">!</span>
+<span class="c">!    Input, integer ( kind = 4 ) N, the number of columns of A.</span>
+<span class="c">!</span>
+<span class="c">!    Input/output, real ( kind = 8 ) A(LDA,N), the M by N array.</span>
+<span class="c">!    On input, A contains the matrix for which the QR factorization is to</span>
+<span class="c">!    be computed.  On output, the strict upper trapezoidal part of A contains</span>
+<span class="c">!    the strict upper trapezoidal part of R, and the lower trapezoidal</span>
+<span class="c">!    part of A contains a factored form of Q, the non-trivial elements of</span>
+<span class="c">!    the U vectors described above.</span>
+<span class="c">!</span>
+<span class="c">!    Input, integer ( kind = 4 ) LDA, the leading dimension of A, which must</span>
+<span class="c">!    be no less than M.</span>
+<span class="c">!</span>
+<span class="c">!    Input, logical PIVOT, is TRUE if column pivoting is to be carried out.</span>
+<span class="c">!</span>
+<span class="c">!    Output, integer ( kind = 4 ) IPVT(LIPVT), defines the permutation matrix P</span>
+<span class="c">!    such that A*P = Q*R.  Column J of P is column IPVT(J) of the identity</span>
+<span class="c">!    matrix.  If PIVOT is false, IPVT is not referenced.</span>
+<span class="c">!</span>
+<span class="c">!    Input, integer ( kind = 4 ) LIPVT, the dimension of IPVT, which should</span>
+<span class="c">!    be N if pivoting is used.</span>
+<span class="c">!</span>
+<span class="c">!    Output, real ( kind = 8 ) RDIAG(N), contains the diagonal elements of R.</span>
+<span class="c">!</span>
+<span class="c">!    Output, real ( kind = 8 ) ACNORM(N), the norms of the corresponding</span>
+<span class="c">!    columns of the input matrix A.  If this information is not needed,</span>
+<span class="c">!    then ACNORM can coincide with RDIAG.</span>
+<span class="c">!</span>
+<span class="w">  </span><span class="k">implicit none</span>
+
+<span class="k">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">lda</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">lipvt</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">m</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">n</span>
+
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">lda</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">acnorm</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">ajnorm</span>
+<span class="c">!~   real ( kind = 8 ) enorm</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">epsmch</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">i</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">i4_temp</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">ipvt</span><span class="p">(</span><span class="n">lipvt</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">j</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">k</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">kmax</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">minmn</span>
+<span class="w">  </span><span class="kt">logical </span><span class="n">pivot</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">r8_temp</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">rdiag</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">temp</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">wa</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="w">  </span><span class="n">epsmch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">epsilon</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">epsmch</span><span class="w"> </span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">!  Compute the initial column norms and initialize several arrays.</span>
+<span class="c">!</span>
+<span class="w">  </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="n">acnorm</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enorm</span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">end do</span>
+
+<span class="k">  </span><span class="n">rdiag</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">acnorm</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="n">wa</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">acnorm</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">pivot</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">      </span><span class="n">ipvt</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span>
+<span class="w">    </span><span class="k">end do</span>
+<span class="k">  end if</span>
+<span class="c">!</span>
+<span class="c">!  Reduce A to R with Householder transformations.</span>
+<span class="c">!</span>
+<span class="w">  </span><span class="n">minmn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">min</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">  </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">minmn</span>
+<span class="c">!</span>
+<span class="c">!  Bring the column of largest norm into the pivot position.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">pivot</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">      </span><span class="n">kmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span>
+
+<span class="w">      </span><span class="k">do </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">rdiag</span><span class="p">(</span><span class="n">kmax</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">rdiag</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">kmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">      end do</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">kmax</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">        </span><span class="n">r8_temp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+<span class="w">        </span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">,</span><span class="n">kmax</span><span class="p">)</span>
+<span class="w">        </span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">,</span><span class="n">kmax</span><span class="p">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">r8_temp</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">rdiag</span><span class="p">(</span><span class="n">kmax</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rdiag</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">        </span><span class="n">wa</span><span class="p">(</span><span class="n">kmax</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wa</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">i4_temp</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">ipvt</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">        </span><span class="n">ipvt</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">ipvt</span><span class="p">(</span><span class="n">kmax</span><span class="p">)</span>
+<span class="w">        </span><span class="n">ipvt</span><span class="p">(</span><span class="n">kmax</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i4_temp</span>
+
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="k">    end if</span>
+<span class="c">!</span>
+<span class="c">!  Compute the Householder transformation to reduce the</span>
+<span class="c">!  J-th column of A to a multiple of the J-th unit vector.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="n">ajnorm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enorm</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="o">-</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ajnorm</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">ajnorm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">ajnorm</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="k">      </span><span class="n">a</span><span class="p">(</span><span class="n">j</span><span class="p">:</span><span class="n">m</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">j</span><span class="p">:</span><span class="n">m</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">ajnorm</span>
+<span class="w">      </span><span class="n">a</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0D+00</span>
+<span class="c">!</span>
+<span class="c">!  Apply the transformation to the remaining columns and update the norms.</span>
+<span class="c">!</span>
+<span class="w">      </span><span class="k">do </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+
+<span class="w">        </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">dot_product</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">j</span><span class="p">:</span><span class="n">m</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">j</span><span class="p">:</span><span class="n">m</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">a</span><span class="p">(</span><span class="n">j</span><span class="p">:</span><span class="n">m</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">j</span><span class="p">:</span><span class="n">m</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">j</span><span class="p">:</span><span class="n">m</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">pivot</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">rdiag</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">          </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">rdiag</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">          </span><span class="n">rdiag</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rdiag</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">sqrt</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">max</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0D+00</span><span class="o">-</span><span class="n">temp</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">0.05D+00</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">rdiag</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">wa</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">epsmch</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">rdiag</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enorm</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="o">-</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">            </span><span class="n">wa</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rdiag</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="w">          </span><span class="k">end if</span>
+
+<span class="k">        end if</span>
+
+<span class="k">      end do</span>
+
+<span class="k">    end if</span>
+
+<span class="k">    </span><span class="n">rdiag</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ajnorm</span>
+
+<span class="w">  </span><span class="k">end do</span>
+
+<span class="k">  return</span>
+<span class="k">endsubroutine </span><span class="n">qrfac</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

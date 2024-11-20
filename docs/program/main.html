@@ -1,0 +1,1053 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>main &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>main      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> Arthur Francisco</li>
+            <li class="list-inline-item" id="meta-date"><i class="fa fa-calendar-o"></i> feb, 24 2023</li>
+            <li class="list-inline-item" id="meta-version"><i class="fa fa-barcode"></i> 1.0.1</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 4.1% of total for programs.">78 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/prg.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/prg.f90~4.html'>prg.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">main</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/main.html#variable-i~13">i</a>
+            <a class="list-group-item" href="../program/main.html#variable-k~6">k</a>
+            <a class="list-group-item" href="../program/main.html#variable-n~22">n</a>
+            <a class="list-group-item" href="../program/main.html#variable-r~3">r</a>
+            <a class="list-group-item" href="../program/main.html#variable-u10">u10</a>
+            <a class="list-group-item" href="../program/main.html#variable-u20">u20</a>
+            <a class="list-group-item" href="../program/main.html#variable-vec_int1">vec_int1</a>
+            <a class="list-group-item" href="../program/main.html#variable-vec_int2">vec_int2</a>
+            <a class="list-group-item" href="../program/main.html#variable-vec_order">vec_order</a>
+            <a class="list-group-item" href="../program/main.html#variable-vec_real1">vec_real1</a>
+            <a class="list-group-item" href="../program/main.html#variable-vec_real2">vec_real2</a>
+            <a class="list-group-item" href="../program/main.html#variable-vec_sol_int1">vec_sol_int1</a>
+            <a class="list-group-item" href="../program/main.html#variable-vec_sol_int2">vec_sol_int2</a>
+            <a class="list-group-item" href="../program/main.html#variable-vec_sol_order">vec_sol_order</a>
+            <a class="list-group-item" href="../program/main.html#variable-vec_sol_real1">vec_sol_real1</a>
+            <a class="list-group-item" href="../program/main.html#variable-vec_sol_real2">vec_sol_real2</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/main.html#src">main</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/data_arch.html'>data_arch</a></li>
+                  <li class="list-inline-item"><a href='../module/sort_arrays.html'>sort_arrays</a></li>
+                  <li class="list-inline-item"><a href='../module/miscellaneous.html'>miscellaneous</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: program~~main~~UsesGraph Pages: 1 -->
+<svg id="programmainUsesGraph" width="398pt" height="87pt"
+ viewBox="0.00 0.00 398.00 87.26" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~main~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 83.26)">
+<title>program~~main~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-83.26 394,-83.26 394,4 -4,4"/>
+<!-- program~main -->
+<g id="program~~main~~UsesGraph_node1" class="node">
+<title>program~main</title>
+<polygon fill="none" stroke="black" points="390,-66 336,-66 336,-42 390,-42 390,-66"/>
+<text text-anchor="middle" x="363" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">main</text>
+</g>
+<!-- module~data_arch -->
+<g id="program~~main~~UsesGraph_node2" class="node">
+<title>module~data_arch</title>
+<g id="a_program~~main~~UsesGraph_node2"><a xlink:href="../module/data_arch.html" xlink:title="data_arch">
+<polygon fill="#337ab7" stroke="#337ab7" points="184,-66 123,-66 123,-42 184,-42 184,-66"/>
+<text text-anchor="middle" x="153.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">data_arch</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;module~data_arch -->
+<g id="program~~main~~UsesGraph_edge1" class="edge">
+<title>program~main&#45;&gt;module~data_arch</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M335.94,-64.94C325.04,-68.96 312.11,-73 300,-75 264.92,-80.78 255.13,-80.49 220,-75 211.35,-73.65 202.28,-71.35 193.75,-68.75"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="194.62,-65.36 184.03,-65.61 192.47,-72.02 194.62,-65.36"/>
+</g>
+<!-- module~miscellaneous -->
+<g id="program~~main~~UsesGraph_node3" class="node">
+<title>module~miscellaneous</title>
+<g id="a_program~~main~~UsesGraph_node3"><a xlink:href="../module/miscellaneous.html" xlink:title="miscellaneous">
+<polygon fill="#337ab7" stroke="#337ab7" points="300,-66 220,-66 220,-42 300,-42 300,-66"/>
+<text text-anchor="middle" x="260" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">miscellaneous</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;module~miscellaneous -->
+<g id="program~~main~~UsesGraph_edge2" class="edge">
+<title>program~main&#45;&gt;module~miscellaneous</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M335.99,-54C328.18,-54 319.33,-54 310.52,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="310.27,-50.5 300.27,-54 310.27,-57.5 310.27,-50.5"/>
+</g>
+<!-- module~sort_arrays -->
+<g id="program~~main~~UsesGraph_node4" class="node">
+<title>module~sort_arrays</title>
+<g id="a_program~~main~~UsesGraph_node4"><a xlink:href="../module/sort_arrays.html" xlink:title="sort_arrays">
+<polygon fill="#337ab7" stroke="#337ab7" points="293.5,-24 226.5,-24 226.5,0 293.5,0 293.5,-24"/>
+<text text-anchor="middle" x="260" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_arrays</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;module~sort_arrays -->
+<g id="program~~main~~UsesGraph_edge3" class="edge">
+<title>program~main&#45;&gt;module~sort_arrays</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M335.99,-43.18C324.92,-38.58 311.78,-33.12 299.62,-28.06"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="300.71,-24.72 290.13,-24.11 298.02,-31.18 300.71,-24.72"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="program~~main~~UsesGraph_node5" class="node">
+<title>iso_fortran_env</title>
+<g id="a_program~~main~~UsesGraph_node5"><a xlink:href="http://fortranwiki.org/fortran/show/iso_fortran_env" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="87,-66 0,-66 0,-42 87,-42 87,-66"/>
+<text text-anchor="middle" x="43.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~data_arch&#45;&gt;iso_fortran_env -->
+<g id="program~~main~~UsesGraph_edge4" class="edge">
+<title>module~data_arch&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M122.99,-54C115.09,-54 106.3,-54 97.55,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="97.34,-50.5 87.34,-54 97.34,-57.5 97.34,-50.5"/>
+</g>
+<!-- module~miscellaneous&#45;&gt;module~data_arch -->
+<g id="program~~main~~UsesGraph_edge5" class="edge">
+<title>module~miscellaneous&#45;&gt;module~data_arch</title>
+<path fill="none" stroke="#00ff00" stroke-dasharray="5,2" d="M219.79,-54C211.48,-54 202.71,-54 194.38,-54"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="194.13,-50.5 184.13,-54 194.13,-57.5 194.13,-50.5"/>
+</g>
+<!-- module~sort_arrays&#45;&gt;module~data_arch -->
+<g id="program~~main~~UsesGraph_edge6" class="edge">
+<title>module~sort_arrays&#45;&gt;module~data_arch</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M229.05,-24.04C218.03,-28.47 205.37,-33.55 193.65,-38.26"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="192.06,-35.13 184.09,-42.11 194.67,-41.63 192.06,-35.13"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <p><span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
+   <strong>Various routines to sort real/integer arrays. Example of use.</strong>
+</span></p>
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: program~~main~~CallsGraph Pages: 1 -->
+<svg id="programmainCallsGraph" width="358pt" height="233pt"
+ viewBox="0.00 0.00 358.00 233.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~main~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 229)">
+<title>program~~main~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-229 354,-229 354,4 -4,4"/>
+<!-- program~main -->
+<g id="program~~main~~CallsGraph_node1" class="node">
+<title>program~main</title>
+<polygon fill="none" stroke="black" points="54,-185 0,-185 0,-161 54,-161 54,-185"/>
+<text text-anchor="middle" x="27" y="-170.6" font-family="Helvetica,sans-Serif" font-size="10.50">main</text>
+</g>
+<!-- proc~get_unit -->
+<g id="program~~main~~CallsGraph_node2" class="node">
+<title>proc~get_unit</title>
+<g id="a_program~~main~~CallsGraph_node2"><a xlink:href="../proc/get_unit.html" xlink:title="get_unit">
+<polygon fill="#d9534f" stroke="#d9534f" points="150.5,-225 96.5,-225 96.5,-201 150.5,-201 150.5,-225"/>
+<text text-anchor="middle" x="123.5" y="-210.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_unit</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;proc~get_unit -->
+<g id="program~~main~~CallsGraph_edge1" class="edge">
+<title>program~main&#45;&gt;proc~get_unit</title>
+<path fill="none" stroke="#ff0000" d="M54.07,-184.04C64.21,-188.33 76,-193.32 86.9,-197.93"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="85.61,-201.19 96.18,-201.86 88.34,-194.74 85.61,-201.19"/>
+</g>
+<!-- proc~init_order -->
+<g id="program~~main~~CallsGraph_node3" class="node">
+<title>proc~init_order</title>
+<g id="a_program~~main~~CallsGraph_node3"><a xlink:href="../proc/init_order.html" xlink:title="init_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="300.5,-186 242.5,-186 242.5,-162 300.5,-162 300.5,-186"/>
+<text text-anchor="middle" x="271.5" y="-171.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">init_order</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;proc~init_order -->
+<g id="program~~main~~CallsGraph_edge2" class="edge">
+<title>program~main&#45;&gt;proc~init_order</title>
+<path fill="none" stroke="#ff0000" d="M54.41,-173.11C97.39,-173.29 182.63,-173.64 232.24,-173.84"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="232.24,-177.34 242.25,-173.88 232.27,-170.34 232.24,-177.34"/>
+</g>
+<!-- proc~sort_array2 -->
+<g id="program~~main~~CallsGraph_node4" class="node">
+<title>proc~sort_array2</title>
+<g id="a_program~~main~~CallsGraph_node4"><a xlink:href="../proc/sort_array2.html" xlink:title="sort_array2">
+<polygon fill="#d9534f" stroke="#d9534f" points="157,-144 90,-144 90,-120 157,-120 157,-144"/>
+<text text-anchor="middle" x="123.5" y="-129.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_array2</text>
+</a>
+</g>
+</g>
+<!-- program~main&#45;&gt;proc~sort_array2 -->
+<g id="program~~main~~CallsGraph_edge3" class="edge">
+<title>program~main&#45;&gt;proc~sort_array2</title>
+<path fill="none" stroke="#ff0000" d="M54.07,-161.69C63.69,-157.51 74.79,-152.7 85.21,-148.18"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="86.75,-151.33 94.53,-144.14 83.96,-144.91 86.75,-151.33"/>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~init_order -->
+<g id="program~~main~~CallsGraph_edge5" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~init_order</title>
+<path fill="none" stroke="#0000ff" d="M157.19,-142.26C168.51,-145.75 181.29,-149.62 193,-153 205.89,-156.72 220.05,-160.61 232.69,-164.02"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="231.89,-167.43 242.46,-166.64 233.7,-160.67 231.89,-167.43"/>
+</g>
+<!-- proc~change_array_order -->
+<g id="program~~main~~CallsGraph_node5" class="node">
+<title>proc~change_array_order</title>
+<g id="a_program~~main~~CallsGraph_node5"><a xlink:href="../proc/change_array_order.html" xlink:title="change_array_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="326.5,-144 216.5,-144 216.5,-120 326.5,-120 326.5,-144"/>
+<text text-anchor="middle" x="271.5" y="-129.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">change_array_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~change_array_order -->
+<g id="program~~main~~CallsGraph_edge4" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~change_array_order</title>
+<path fill="none" stroke="#0000ff" d="M157.27,-132C171.68,-132 189.13,-132 205.98,-132"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="206.35,-135.5 216.35,-132 206.35,-128.5 206.35,-135.5"/>
+</g>
+<!-- proc~sort_array_integer_with_order -->
+<g id="program~~main~~CallsGraph_node6" class="node">
+<title>proc~sort_array_integer_with_order</title>
+<g id="a_program~~main~~CallsGraph_node6"><a xlink:href="../proc/sort_array_integer_with_order.html" xlink:title="sort_array_integer_with_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="350,-84 193,-84 193,-60 350,-60 350,-84"/>
+<text text-anchor="middle" x="271.5" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_array_integer_with_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~sort_array_integer_with_order -->
+<g id="program~~main~~CallsGraph_edge6" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~sort_array_integer_with_order</title>
+<path fill="none" stroke="#0000ff" d="M154.05,-119.86C176.41,-110.67 207.32,-97.96 231.68,-87.95"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="233.08,-91.16 241,-84.12 230.42,-84.69 233.08,-91.16"/>
+</g>
+<!-- proc~sort_array_real_with_order -->
+<g id="program~~main~~CallsGraph_node7" class="node">
+<title>proc~sort_array_real_with_order</title>
+<g id="a_program~~main~~CallsGraph_node7"><a xlink:href="../proc/sort_array_real_with_order.html" xlink:title="sort_array_real_with_order">
+<polygon fill="#d9534f" stroke="#d9534f" points="342.5,-24 200.5,-24 200.5,0 342.5,0 342.5,-24"/>
+<text text-anchor="middle" x="271.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sort_array_real_with_order</text>
+</a>
+</g>
+</g>
+<!-- proc~sort_array2&#45;&gt;proc~sort_array_real_with_order -->
+<g id="program~~main~~CallsGraph_edge7" class="edge">
+<title>proc~sort_array2&#45;&gt;proc~sort_array_real_with_order</title>
+<path fill="none" stroke="#0000ff" d="M132.34,-119.96C143.94,-102.88 167.11,-71.41 193,-51 204.22,-42.16 217.76,-34.52 230.36,-28.4"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="232.18,-31.41 239.76,-24.02 229.22,-25.07 232.18,-31.41"/>
+</g>
+<!-- proc~sort_array_integer_with_order&#45;&gt;proc~sort_array_integer_with_order -->
+<g id="program~~main~~CallsGraph_edge8" class="edge">
+<title>proc~sort_array_integer_with_order&#45;&gt;proc~sort_array_integer_with_order</title>
+<path fill="none" stroke="#00ff00" d="M247.03,-84.01C238.48,-92.97 246.64,-102 271.5,-102 286.65,-102 295.6,-98.65 298.34,-94"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="301.68,-92.94 295.97,-84.01 294.87,-94.55 301.68,-92.94"/>
+</g>
+<!-- proc~sort_array_real_with_order&#45;&gt;proc~sort_array_real_with_order -->
+<g id="program~~main~~CallsGraph_edge9" class="edge">
+<title>proc~sort_array_real_with_order&#45;&gt;proc~sort_array_real_with_order</title>
+<path fill="none" stroke="#0000ff" d="M247.03,-24.01C238.48,-32.97 246.64,-42 271.5,-42 286.65,-42 295.6,-38.65 298.34,-34"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="301.68,-32.94 295.97,-24.01 294.87,-34.55 301.68,-32.94"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-i~13"></span>
+              integer(kind=I4)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-k~6"></span>
+              integer(kind=I4)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>k</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~22"></span>
+              integer(kind=I4),
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+<td> =</td>
+                <td>100</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r~3"></span>
+              real(kind=R8)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-u10"></span>
+              integer(kind=I4)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>u10</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-u20"></span>
+              integer(kind=I4)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>u20</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec_int1"></span>
+              integer(kind=I4),
+            </td>
+            <td>
+              dimension(n)
+            </td>
+            <td>::</td>
+            <td><strong>vec_int1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec_int2"></span>
+              integer(kind=I4),
+            </td>
+            <td>
+              dimension(n)
+            </td>
+            <td>::</td>
+            <td><strong>vec_int2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec_order"></span>
+              integer(kind=I4),
+            </td>
+            <td>
+              dimension(n)
+            </td>
+            <td>::</td>
+            <td><strong>vec_order</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec_real1"></span>
+              real(kind=R8),
+            </td>
+            <td>
+              dimension(n)
+            </td>
+            <td>::</td>
+            <td><strong>vec_real1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec_real2"></span>
+              real(kind=R8),
+            </td>
+            <td>
+              dimension(n)
+            </td>
+            <td>::</td>
+            <td><strong>vec_real2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec_sol_int1"></span>
+              integer(kind=I4),
+            </td>
+            <td>
+              dimension(n)
+            </td>
+            <td>::</td>
+            <td><strong>vec_sol_int1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec_sol_int2"></span>
+              integer(kind=I4),
+            </td>
+            <td>
+              dimension(n)
+            </td>
+            <td>::</td>
+            <td><strong>vec_sol_int2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec_sol_order"></span>
+              integer(kind=I4),
+            </td>
+            <td>
+              dimension(n)
+            </td>
+            <td>::</td>
+            <td><strong>vec_sol_order</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec_sol_real1"></span>
+              real(kind=R8),
+            </td>
+            <td>
+              dimension(n)
+            </td>
+            <td>::</td>
+            <td><strong>vec_sol_real1</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vec_sol_real2"></span>
+              real(kind=R8),
+            </td>
+            <td>
+              dimension(n)
+            </td>
+            <td>::</td>
+            <td><strong>vec_sol_real2</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">program </span><span class="n">main</span>
+<span class="k">use </span><span class="n">data_arch</span><span class="p">,</span><span class="w">     </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">I4</span><span class="p">,</span><span class="w"> </span><span class="n">R8</span>
+<span class="k">use </span><span class="n">miscellaneous</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">get_unit</span>
+<span class="k">use </span><span class="n">sort_arrays</span><span class="p">,</span><span class="w">   </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">sort_array2</span><span class="p">,</span><span class="w"> </span><span class="n">init_order</span>
+<span class="k">implicit none</span>
+
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span>
+
+<span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w">    </span><span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vec_real1</span><span class="p">,</span><span class="w">     </span><span class="n">vec_real2</span>
+<span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">),</span><span class="w">    </span><span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vec_sol_real1</span><span class="p">,</span><span class="w"> </span><span class="n">vec_sol_real2</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vec_int1</span><span class="p">,</span><span class="w">      </span><span class="n">vec_int2</span><span class="p">,</span><span class="w">     </span><span class="n">vec_order</span>
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">vec_sol_int1</span><span class="p">,</span><span class="w">  </span><span class="n">vec_sol_int2</span><span class="p">,</span><span class="w"> </span><span class="n">vec_sol_order</span>
+
+<span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">I4</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="n">u20</span>
+<span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">R8</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">r</span>
+
+<span class="c">!=============== Sort an integer vector, and other vectors with the same order</span>
+
+<span class="c">! ------------- get non ordered vectors</span>
+<span class="k">call </span><span class="n">get_unit</span><span class="p">(</span><span class="n">u10</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">open</span><span class="p">(</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;try/non_ordered_vec.csv&#39;</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">read</span><span class="p">(</span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="c">! column name</span>
+<span class="w">   </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">      </span><span class="k">read</span><span class="p">(</span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">vec_int1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">vec_real1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                   </span><span class="n">vec_int2</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">vec_real2</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">k</span><span class="w">  </span><span class="c">!</span>
+<span class="w">   </span><span class="k">enddo</span>
+
+<span class="k">close</span><span class="p">(</span><span class="n">u10</span><span class="p">)</span>
+
+<span class="c">! ------------- sort with respect to the first column (integer values)</span>
+<span class="k">call </span><span class="n">sort_array2</span><span class="p">(</span><span class="n">tab_inout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec_int1</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="w">           </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                      </span><span class="n">tab1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec_real1</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="w">          </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                      </span><span class="n">tab2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec_int2</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="w">           </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                      </span><span class="n">tab3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec_real2</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w">      </span><span class="c">!</span>
+
+<span class="c">! ------------- get solution</span>
+<span class="k">call </span><span class="n">get_unit</span><span class="p">(</span><span class="n">u10</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">open</span><span class="p">(</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;try/ordered_vec_col1_int.csv&#39;</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">read</span><span class="p">(</span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="c">! column name</span>
+<span class="w">   </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">      </span><span class="k">read</span><span class="p">(</span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">vec_sol_int1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">vec_sol_real1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                   </span><span class="n">vec_sol_int2</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">vec_sol_real2</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">k</span><span class="w">  </span><span class="c">!</span>
+<span class="w">   </span><span class="k">enddo</span>
+
+<span class="k">close</span><span class="p">(</span><span class="n">u10</span><span class="p">)</span>
+
+<span class="c">! ------------- compare</span>
+<span class="k">call </span><span class="n">get_unit</span><span class="p">(</span><span class="n">u20</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">open</span><span class="p">(</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u20</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;out/res_ordered_vec_col1_int.csv&#39;</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">u20</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">vec_int1</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">vec_sol_int1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">vec_real1</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">vec_sol_real1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                   </span><span class="n">vec_int2</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">vec_sol_int2</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">vec_real2</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">vec_sol_real2</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">   </span><span class="k">enddo</span>
+<span class="w">   </span><span class="c">!----------------------------- REMARK --------------------------------------</span>
+<span class="w">   </span><span class="c">! As the sorted vector is integers, some values may be identical, leading to</span>
+<span class="w">   </span><span class="c">! several possibilities for the subsequently sorted vectors. Look elements</span>
+<span class="w">   </span><span class="c">! 9 and 10 for example.</span>
+<span class="w">   </span><span class="c">!---------------------------------------------------------------------------</span>
+
+<span class="k">close</span><span class="p">(</span><span class="n">u20</span><span class="p">)</span>
+
+<span class="c">!=============== Sort a real vector, and other vectors with the same order</span>
+
+<span class="c">! ------------- get non ordered vectors</span>
+<span class="k">call </span><span class="n">get_unit</span><span class="p">(</span><span class="n">u10</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">open</span><span class="p">(</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;try/non_ordered_vec.csv&#39;</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">read</span><span class="p">(</span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="c">! column name</span>
+<span class="w">   </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">      </span><span class="k">read</span><span class="p">(</span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">vec_int1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">vec_real1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                   </span><span class="n">vec_int2</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">vec_real2</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">k</span><span class="w">  </span><span class="c">!</span>
+<span class="w">   </span><span class="k">enddo</span>
+
+<span class="k">close</span><span class="p">(</span><span class="n">u10</span><span class="p">)</span>
+
+
+<span class="c">! ------------- sort with respect to the second column (real values)</span>
+<span class="k">call </span><span class="n">sort_array2</span><span class="p">(</span><span class="n">tab_inout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec_real1</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="w">          </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                      </span><span class="n">tab1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec_int1</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="w">           </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                      </span><span class="n">tab2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec_int2</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="w">           </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                      </span><span class="n">tab3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec_real2</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w">      </span><span class="c">!</span>
+
+
+<span class="c">! ------------- get solution</span>
+<span class="k">call </span><span class="n">get_unit</span><span class="p">(</span><span class="n">u10</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">open</span><span class="p">(</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;try/ordered_vec_col2_real.csv&#39;</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">read</span><span class="p">(</span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="c">! column name</span>
+<span class="w">   </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">      </span><span class="k">read</span><span class="p">(</span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">vec_sol_int1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">vec_sol_real1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                   </span><span class="n">vec_sol_int2</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">vec_sol_real2</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">k</span><span class="w">  </span><span class="c">!</span>
+<span class="w">   </span><span class="k">enddo</span>
+
+<span class="k">close</span><span class="p">(</span><span class="n">u10</span><span class="p">)</span>
+
+<span class="c">! ------------- compare</span>
+<span class="k">call </span><span class="n">get_unit</span><span class="p">(</span><span class="n">u20</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">open</span><span class="p">(</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u20</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;out/res_ordered_vec_col2_real.csv&#39;</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">u20</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">vec_int1</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">vec_sol_int1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">vec_real1</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">vec_sol_real1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                   </span><span class="n">vec_int2</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">vec_sol_int2</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">vec_real2</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">vec_sol_real2</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w">     </span><span class="c">!</span>
+<span class="w">   </span><span class="k">enddo</span>
+
+<span class="k">close</span><span class="p">(</span><span class="n">u20</span><span class="p">)</span>
+
+<span class="c">!=============== Sort a real vector and return the order vector</span>
+
+<span class="c">! ------------- get non ordered vectors</span>
+<span class="k">call </span><span class="n">get_unit</span><span class="p">(</span><span class="n">u10</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">open</span><span class="p">(</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;try/non_ordered_vec.csv&#39;</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">read</span><span class="p">(</span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="c">! column name</span>
+<span class="w">   </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">      </span><span class="k">read</span><span class="p">(</span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">vec_real1</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">k</span>
+<span class="w">   </span><span class="k">enddo</span>
+
+<span class="k">close</span><span class="p">(</span><span class="n">u10</span><span class="p">)</span>
+
+
+<span class="c">! ------------- sort with respect to the second column (real values, same case as above)</span>
+<span class="k">call </span><span class="n">init_order</span><span class="p">(</span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec_order</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+
+<span class="k">call </span><span class="n">sort_array2</span><span class="p">(</span><span class="n">tab_inout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec_real1</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="w">          </span><span class="p">&amp;</span><span class="w">  </span><span class="c">!</span>
+<span class="w">                      </span><span class="n">tab0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec_order</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w">      </span><span class="c">!</span>
+
+<span class="c">! ------------- get solution of order</span>
+<span class="k">call </span><span class="n">get_unit</span><span class="p">(</span><span class="n">u10</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">open</span><span class="p">(</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;try/ordered_vec_col2_real.csv&#39;</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">read</span><span class="p">(</span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="c">! column name</span>
+<span class="w">   </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">      </span><span class="k">read</span><span class="p">(</span><span class="n">u10</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">vec_sol_order</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">   </span><span class="k">enddo</span>
+
+<span class="k">close</span><span class="p">(</span><span class="n">u10</span><span class="p">)</span>
+
+<span class="c">! ------------- compare</span>
+<span class="k">call </span><span class="n">get_unit</span><span class="p">(</span><span class="n">u20</span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">open</span><span class="p">(</span><span class="w"> </span><span class="n">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u20</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;out/res_order_vec.csv&#39;</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">   </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">      </span><span class="k">write</span><span class="p">(</span><span class="n">u20</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">vec_order</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">vec_sol_order</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">   </span><span class="k">enddo</span>
+
+<span class="k">close</span><span class="p">(</span><span class="n">u20</span><span class="p">)</span>
+
+<span class="k">stop</span>
+
+<span class="k">endprogram </span><span class="n">main</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1412 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>lmder &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>lmder
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.3% of total for procedures.">243 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/mod_minpack.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_minpack.f90.html'>mod_minpack.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/minpack.html'>minpack</a></li>
+            <li class="breadcrumb-item active" aria-current="page">lmder</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/lmder.html#src">lmder</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  subroutine lmder(fcn, m, n, x, fvec, fjac, ldfjac, ftol, xtol, gtol, maxfev, diag, mode, factor, nprint, info, nfev, njev, ipvt, qtf)  
+</h2>
+    
+
+    <p>LMDER minimizes M functions in N variables by the Levenberg-Marquardt method.</p>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fcn~7"></span>
+              real
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fcn</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m~25"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>m</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~54"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~53"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong>(n)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fvec~26"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fvec</strong>(m)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-fjac~18"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>fjac</strong>(ldfjac,n)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ldfjac~18"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ldfjac</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ftol"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ftol</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xtol~5"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xtol</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-gtol"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>gtol</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-maxfev~5"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>maxfev</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-diag~6"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>diag</strong>(n)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-mode~7"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>mode</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-factor~5"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>factor</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nprint~5"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nprint</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~18"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>info</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nfev~5"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nfev</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-njev~3"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>njev</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ipvt"></span>
+              integer(kind=4)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ipvt</strong>(n)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-qtf~5"></span>
+              real(kind=8)
+            </td>
+<td></td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>qtf</strong>(n)</td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~lmder~~CallsGraph Pages: 1 -->
+<svg id="proclmderCallsGraph" width="242pt" height="86pt"
+ viewBox="0.00 0.00 242.00 85.93" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~lmder~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 81.93)">
+<title>proc~~lmder~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-81.93 238,-81.93 238,4 -4,4"/>
+<!-- proc~lmder -->
+<g id="proc~~lmder~~CallsGraph_node1" class="node">
+<title>proc~lmder</title>
+<polygon fill="none" stroke="black" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
+<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">lmder</text>
+</g>
+<!-- proc~enorm -->
+<g id="proc~~lmder~~CallsGraph_node2" class="node">
+<title>proc~enorm</title>
+<g id="a_proc~~lmder~~CallsGraph_node2"><a xlink:href="../proc/enorm.html" xlink:title="enorm">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="234,-66 180,-66 180,-42 234,-42 234,-66"/>
+<text text-anchor="middle" x="207" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">enorm</text>
+</a>
+</g>
+</g>
+<!-- proc~lmder&#45;&gt;proc~enorm -->
+<g id="proc~~lmder~~CallsGraph_edge1" class="edge">
+<title>proc~lmder&#45;&gt;proc~enorm</title>
+<path fill="none" stroke="#ff0000" d="M54.06,-64.94C64.96,-68.96 77.89,-73 90,-75 113.68,-78.9 120.32,-78.9 144,-75 152.7,-73.57 161.83,-71.07 170.32,-68.29"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="171.64,-71.54 179.94,-64.94 169.34,-64.93 171.64,-71.54"/>
+</g>
+<!-- proc~lmpar -->
+<g id="proc~~lmder~~CallsGraph_node3" class="node">
+<title>proc~lmpar</title>
+<g id="a_proc~~lmder~~CallsGraph_node3"><a xlink:href="../proc/lmpar.html" xlink:title="lmpar">
+<polygon fill="#d9534f" stroke="#d9534f" points="144,-24 90,-24 90,0 144,0 144,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmpar</text>
+</a>
+</g>
+</g>
+<!-- proc~lmder&#45;&gt;proc~lmpar -->
+<g id="proc~~lmder~~CallsGraph_edge2" class="edge">
+<title>proc~lmder&#45;&gt;proc~lmpar</title>
+<path fill="none" stroke="#ff0000" d="M53.45,-41.85C62.21,-37.67 72.17,-32.92 81.52,-28.46"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="83.09,-31.59 90.6,-24.12 80.07,-25.27 83.09,-31.59"/>
+</g>
+<!-- proc~qrfac -->
+<g id="proc~~lmder~~CallsGraph_node4" class="node">
+<title>proc~qrfac</title>
+<g id="a_proc~~lmder~~CallsGraph_node4"><a xlink:href="../proc/qrfac.html" xlink:title="qrfac">
+<polygon fill="#d9534f" stroke="#d9534f" points="144,-66 90,-66 90,-42 144,-42 144,-66"/>
+<text text-anchor="middle" x="117" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">qrfac</text>
+</a>
+</g>
+</g>
+<!-- proc~lmder&#45;&gt;proc~qrfac -->
+<g id="proc~~lmder~~CallsGraph_edge3" class="edge">
+<title>proc~lmder&#45;&gt;proc~qrfac</title>
+<path fill="none" stroke="#ff0000" d="M54.4,-54C62.39,-54 71.31,-54 79.82,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="79.92,-57.5 89.92,-54 79.92,-50.5 79.92,-57.5"/>
+</g>
+<!-- proc~lmpar&#45;&gt;proc~enorm -->
+<g id="proc~~lmder~~CallsGraph_edge4" class="edge">
+<title>proc~lmpar&#45;&gt;proc~enorm</title>
+<path fill="none" stroke="#00ff00" d="M143.45,-24.15C152.21,-28.33 162.17,-33.08 171.52,-37.54"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="170.07,-40.73 180.6,-41.88 173.09,-34.41 170.07,-40.73"/>
+</g>
+<!-- proc~qrsolv -->
+<g id="proc~~lmder~~CallsGraph_node5" class="node">
+<title>proc~qrsolv</title>
+<g id="a_proc~~lmder~~CallsGraph_node5"><a xlink:href="../proc/qrsolv.html" xlink:title="qrsolv">
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 180,-24 180,0 234,0 234,-24"/>
+<text text-anchor="middle" x="207" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">qrsolv</text>
+</a>
+</g>
+</g>
+<!-- proc~lmpar&#45;&gt;proc~qrsolv -->
+<g id="proc~~lmder~~CallsGraph_edge5" class="edge">
+<title>proc~lmpar&#45;&gt;proc~qrsolv</title>
+<path fill="none" stroke="#00ff00" d="M144.4,-12C152.39,-12 161.31,-12 169.82,-12"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="169.92,-15.5 179.92,-12 169.92,-8.5 169.92,-15.5"/>
+</g>
+<!-- proc~qrfac&#45;&gt;proc~enorm -->
+<g id="proc~~lmder~~CallsGraph_edge6" class="edge">
+<title>proc~qrfac&#45;&gt;proc~enorm</title>
+<path fill="none" stroke="#0000ff" d="M144.4,-54C152.39,-54 161.31,-54 169.82,-54"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="169.92,-57.5 179.92,-54 169.92,-50.5 169.92,-57.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~lmder~~CalledByGraph Pages: 1 -->
+<svg id="proclmderCalledByGraph" width="381pt" height="74pt"
+ viewBox="0.00 0.00 381.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~lmder~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<title>proc~~lmder~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-70 377,-70 377,4 -4,4"/>
+<!-- proc~lmder -->
+<g id="proc~~lmder~~CalledByGraph_node1" class="node">
+<title>proc~lmder</title>
+<polygon fill="none" stroke="black" points="373,-45 319,-45 319,-21 373,-21 373,-45"/>
+<text text-anchor="middle" x="346" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">lmder</text>
+</g>
+<!-- proc~lmder1 -->
+<g id="proc~~lmder~~CalledByGraph_node2" class="node">
+<title>proc~lmder1</title>
+<g id="a_proc~~lmder~~CalledByGraph_node2"><a xlink:href="../proc/lmder1.html" xlink:title="lmder1">
+<polygon fill="#d9534f" stroke="#d9534f" points="283,-45 229,-45 229,-21 283,-21 283,-45"/>
+<text text-anchor="middle" x="256" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmder1</text>
+</a>
+</g>
+</g>
+<!-- proc~lmder1&#45;&gt;proc~lmder -->
+<g id="proc~~lmder~~CalledByGraph_edge1" class="edge">
+<title>proc~lmder1&#45;&gt;proc~lmder</title>
+<path fill="none" stroke="#ff0000" d="M283.4,-33C291.39,-33 300.31,-33 308.82,-33"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="308.92,-36.5 318.92,-33 308.92,-29.5 308.92,-36.5"/>
+</g>
+<!-- proc~lmder1_2_test -->
+<g id="proc~~lmder~~CalledByGraph_node3" class="node">
+<title>proc~lmder1_2_test</title>
+<g id="a_proc~~lmder~~CalledByGraph_node3"><a xlink:href="../proc/lmder1_2_test.html" xlink:title="lmder1_2_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="193,-66 112,-66 112,-42 193,-42 193,-66"/>
+<text text-anchor="middle" x="152.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmder1_2_test</text>
+</a>
+</g>
+</g>
+<!-- proc~lmder1_2_test&#45;&gt;proc~lmder1 -->
+<g id="proc~~lmder~~CalledByGraph_edge2" class="edge">
+<title>proc~lmder1_2_test&#45;&gt;proc~lmder1</title>
+<path fill="none" stroke="#ff0000" d="M193.03,-45.82C201.58,-44.05 210.58,-42.19 218.98,-40.45"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="219.79,-43.86 228.87,-38.41 218.37,-37.01 219.79,-43.86"/>
+</g>
+<!-- proc~lmder1_test -->
+<g id="proc~~lmder~~CalledByGraph_node4" class="node">
+<title>proc~lmder1_test</title>
+<g id="a_proc~~lmder~~CalledByGraph_node4"><a xlink:href="../proc/lmder1_test.html" xlink:title="lmder1_test">
+<polygon fill="#d9534f" stroke="#d9534f" points="187,-24 118,-24 118,0 187,0 187,-24"/>
+<text text-anchor="middle" x="152.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lmder1_test</text>
+</a>
+</g>
+</g>
+<!-- proc~lmder1_test&#45;&gt;proc~lmder1 -->
+<g id="proc~~lmder~~CalledByGraph_edge3" class="edge">
+<title>proc~lmder1_test&#45;&gt;proc~lmder1</title>
+<path fill="none" stroke="#ff0000" d="M187.02,-18.93C197.24,-21.05 208.52,-23.38 218.9,-25.53"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="218.41,-29 228.91,-27.6 219.83,-22.15 218.41,-29"/>
+</g>
+<!-- program~test_minpack -->
+<g id="proc~~lmder~~CalledByGraph_node5" class="node">
+<title>program~test_minpack</title>
+<g id="a_proc~~lmder~~CalledByGraph_node5"><a xlink:href="../program/test_minpack.html" xlink:title="test_minpack">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="76,-45 0,-45 0,-21 76,-21 76,-45"/>
+<text text-anchor="middle" x="38" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_minpack</text>
+</a>
+</g>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmder1_2_test -->
+<g id="proc~~lmder~~CalledByGraph_edge4" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmder1_2_test</title>
+<path fill="none" stroke="#ff0000" d="M76.15,-39.93C84.34,-41.46 93.14,-43.11 101.73,-44.71"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="101.21,-48.17 111.68,-46.57 102.49,-41.29 101.21,-48.17"/>
+</g>
+<!-- program~test_minpack&#45;&gt;proc~lmder1_test -->
+<g id="proc~~lmder~~CalledByGraph_edge5" class="edge">
+<title>program~test_minpack&#45;&gt;proc~lmder1_test</title>
+<path fill="none" stroke="#00ffff" d="M76.15,-26.07C86.33,-24.16 97.47,-22.09 107.98,-20.12"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="108.62,-23.56 117.81,-18.29 107.33,-16.68 108.62,-23.56"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">subroutine </span><span class="n">lmder</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">fcn</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">fvec</span><span class="p">,</span><span class="w"> </span><span class="n">fjac</span><span class="p">,</span><span class="w"> </span><span class="n">ldfjac</span><span class="p">,</span><span class="w"> </span><span class="n">ftol</span><span class="p">,</span><span class="w"> </span><span class="n">xtol</span><span class="p">,</span><span class="w"> </span><span class="n">gtol</span><span class="p">,</span><span class="w"> </span><span class="n">maxfev</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">  </span><span class="n">diag</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="n">factor</span><span class="p">,</span><span class="w"> </span><span class="n">nprint</span><span class="p">,</span><span class="w"> </span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">nfev</span><span class="p">,</span><span class="w"> </span><span class="n">njev</span><span class="p">,</span><span class="w"> </span><span class="n">ipvt</span><span class="p">,</span><span class="w"> </span><span class="n">qtf</span><span class="w"> </span><span class="p">)</span>
+
+<span class="c">!*****************************************************************************80</span>
+<span class="c">!</span>
+<span class="c">!! LMDER minimizes M functions in N variables by the Levenberg-Marquardt method.</span>
+<span class="c">!</span>
+<span class="c">!  Discussion:</span>
+<span class="c">!</span>
+<span class="c">!    LMDER minimizes the sum of the squares of M nonlinear functions in</span>
+<span class="c">!    N variables by a modification of the Levenberg-Marquardt algorithm.</span>
+<span class="c">!    The user must provide a subroutine which calculates the functions</span>
+<span class="c">!    and the jacobian.</span>
+<span class="c">!</span>
+<span class="c">!  Licensing:</span>
+<span class="c">!</span>
+<span class="c">!    This code may freely be copied, modified, and used for any purpose.</span>
+<span class="c">!</span>
+<span class="c">!  Modified:</span>
+<span class="c">!</span>
+<span class="c">!    06 April 2010</span>
+<span class="c">!</span>
+<span class="c">!  Author:</span>
+<span class="c">!</span>
+<span class="c">!    Original FORTRAN77 version by Jorge More, Burton Garbow, Kenneth Hillstrom.</span>
+<span class="c">!    FORTRAN90 version by John Burkardt.</span>
+<span class="c">!</span>
+<span class="c">!  Reference:</span>
+<span class="c">!</span>
+<span class="c">!    Jorge More, Burton Garbow, Kenneth Hillstrom,</span>
+<span class="c">!    User Guide for MINPACK-1,</span>
+<span class="c">!    Technical Report ANL-80-74,</span>
+<span class="c">!    Argonne National Laboratory, 1980.</span>
+<span class="c">!</span>
+<span class="c">!  Parameters:</span>
+<span class="c">!</span>
+<span class="c">!    Input, external FCN, the name of the user-supplied subroutine which</span>
+<span class="c">!    calculates the functions and the jacobian.  FCN should have the form:</span>
+<span class="c">!      subroutine fcn ( m, n, x, fvec, fjac, ldfjac, iflag )</span>
+<span class="c">!      integer ( kind = 4 ) ldfjac</span>
+<span class="c">!      integer ( kind = 4 ) n</span>
+<span class="c">!      real ( kind = 8 ) fjac(ldfjac,n)</span>
+<span class="c">!      real ( kind = 8 ) fvec(m)</span>
+<span class="c">!      integer ( kind = 4 ) iflag</span>
+<span class="c">!      real ( kind = 8 ) x(n)</span>
+<span class="c">!</span>
+<span class="c">!    If IFLAG = 0 on input, then FCN is only being called to allow the user</span>
+<span class="c">!    to print out the current iterate.</span>
+<span class="c">!    If IFLAG = 1 on input, FCN should calculate the functions at X and</span>
+<span class="c">!    return this vector in FVEC.</span>
+<span class="c">!    If IFLAG = 2 on input, FCN should calculate the jacobian at X and</span>
+<span class="c">!    return this matrix in FJAC.</span>
+<span class="c">!    To terminate the algorithm, FCN may set IFLAG negative on return.</span>
+<span class="c">!</span>
+<span class="c">!    Input, integer ( kind = 4 ) M, is the number of functions.</span>
+<span class="c">!</span>
+<span class="c">!    Input, integer ( kind = 4 ) N, is the number of variables.</span>
+<span class="c">!    N must not exceed M.</span>
+<span class="c">!</span>
+<span class="c">!    Input/output, real ( kind = 8 ) X(N).  On input, X must contain an initial</span>
+<span class="c">!    estimate of the solution vector.  On output X contains the final</span>
+<span class="c">!    estimate of the solution vector.</span>
+<span class="c">!</span>
+<span class="c">!    Output, real ( kind = 8 ) FVEC(M), the functions evaluated at the output X.</span>
+<span class="c">!</span>
+<span class="c">!    Output, real ( kind = 8 ) FJAC(LDFJAC,N), an M by N array.  The upper</span>
+<span class="c">!    N by N submatrix of FJAC contains an upper triangular matrix R with</span>
+<span class="c">!    diagonal elements of nonincreasing magnitude such that</span>
+<span class="c">!      P&#39; * ( JAC&#39; * JAC ) * P = R&#39; * R,</span>
+<span class="c">!    where P is a permutation matrix and JAC is the final calculated jacobian.</span>
+<span class="c">!    Column J of P is column IPVT(J) of the identity matrix.  The lower</span>
+<span class="c">!    trapezoidal part of FJAC contains information generated during</span>
+<span class="c">!    the computation of R.</span>
+<span class="c">!</span>
+<span class="c">!    Input, integer ( kind = 4 ) LDFJAC, the leading dimension of FJAC.</span>
+<span class="c">!    LDFJAC must be at least M.</span>
+<span class="c">!</span>
+<span class="c">!    Input, real ( kind = 8 ) FTOL.  Termination occurs when both the actual</span>
+<span class="c">!    and predicted relative reductions in the sum of squares are at most FTOL.</span>
+<span class="c">!    Therefore, FTOL measures the relative error desired in the sum of</span>
+<span class="c">!    squares.  FTOL should be nonnegative.</span>
+<span class="c">!</span>
+<span class="c">!    Input, real ( kind = 8 ) XTOL.  Termination occurs when the relative error</span>
+<span class="c">!    between two consecutive iterates is at most XTOL.  XTOL should be</span>
+<span class="c">!    nonnegative.</span>
+<span class="c">!</span>
+<span class="c">!    Input, real ( kind = 8 ) GTOL.  Termination occurs when the cosine of the</span>
+<span class="c">!    angle between FVEC and any column of the jacobian is at most GTOL in</span>
+<span class="c">!    absolute value.  Therefore, GTOL measures the orthogonality desired</span>
+<span class="c">!    between the function vector and the columns of the jacobian.  GTOL should</span>
+<span class="c">!    be nonnegative.</span>
+<span class="c">!</span>
+<span class="c">!    Input, integer ( kind = 4 ) MAXFEV.  Termination occurs when the number of</span>
+<span class="c">!    calls to FCN with IFLAG = 1 is at least MAXFEV by the end of an iteration.</span>
+<span class="c">!</span>
+<span class="c">!    Input/output, real ( kind = 8 ) DIAG(N).  If MODE = 1, then DIAG is set</span>
+<span class="c">!    internally.  If MODE = 2, then DIAG must contain positive entries that</span>
+<span class="c">!    serve as multiplicative scale factors for the variables.</span>
+<span class="c">!</span>
+<span class="c">!    Input, integer ( kind = 4 ) MODE, scaling option.</span>
+<span class="c">!    1, variables will be scaled internally.</span>
+<span class="c">!    2, scaling is specified by the input DIAG vector.</span>
+<span class="c">!</span>
+<span class="c">!    Input, real ( kind = 8 ) FACTOR, determines the initial step bound.  This</span>
+<span class="c">!    bound is set to the product of FACTOR and the euclidean norm of DIAG*X if</span>
+<span class="c">!    nonzero, or else to FACTOR itself.  In most cases, FACTOR should lie</span>
+<span class="c">!    in the interval (0.1, 100) with 100 the recommended value.</span>
+<span class="c">!</span>
+<span class="c">!    Input, integer ( kind = 4 ) NPRINT, enables controlled printing of iterates</span>
+<span class="c">!    if it is positive.  In this case, FCN is called with IFLAG = 0 at the</span>
+<span class="c">!    beginning of the first iteration and every NPRINT iterations thereafter</span>
+<span class="c">!    and immediately prior to return, with X and FVEC available</span>
+<span class="c">!    for printing.  If NPRINT is not positive, no special calls</span>
+<span class="c">!    of FCN with IFLAG = 0 are made.</span>
+<span class="c">!</span>
+<span class="c">!    Output, integer ( kind = 4 ) INFO, error flag.  If the user has terminated</span>
+<span class="c">!    execution, INFO is set to the (negative) value of IFLAG. See description</span>
+<span class="c">!    of FCN.  Otherwise, INFO is set as follows:</span>
+<span class="c">!    0, improper input parameters.</span>
+<span class="c">!    1, both actual and predicted relative reductions in the sum of</span>
+<span class="c">!       squares are at most FTOL.</span>
+<span class="c">!    2, relative error between two consecutive iterates is at most XTOL.</span>
+<span class="c">!    3, conditions for INFO = 1 and INFO = 2 both hold.</span>
+<span class="c">!    4, the cosine of the angle between FVEC and any column of the jacobian</span>
+<span class="c">!       is at most GTOL in absolute value.</span>
+<span class="c">!    5, number of calls to FCN with IFLAG = 1 has reached MAXFEV.</span>
+<span class="c">!    6, FTOL is too small.  No further reduction in the sum of squares</span>
+<span class="c">!       is possible.</span>
+<span class="c">!    7, XTOL is too small.  No further improvement in the approximate</span>
+<span class="c">!       solution X is possible.</span>
+<span class="c">!    8, GTOL is too small.  FVEC is orthogonal to the columns of the</span>
+<span class="c">!       jacobian to machine precision.</span>
+<span class="c">!</span>
+<span class="c">!    Output, integer ( kind = 4 ) NFEV, the number of calls to FCN with</span>
+<span class="c">!    IFLAG = 1.</span>
+<span class="c">!</span>
+<span class="c">!    Output, integer ( kind = 4 ) NJEV, the number of calls to FCN with</span>
+<span class="c">!    IFLAG = 2.</span>
+<span class="c">!</span>
+<span class="c">!    Output, integer ( kind = 4 ) IPVT(N), defines a permutation matrix P</span>
+<span class="c">!    such that JAC*P = Q*R, where JAC is the final calculated jacobian, Q is</span>
+<span class="c">!    orthogonal (not stored), and R is upper triangular with diagonal</span>
+<span class="c">!    elements of nonincreasing magnitude.  Column J of P is column</span>
+<span class="c">!    IPVT(J) of the identity matrix.</span>
+<span class="c">!</span>
+<span class="c">!    Output, real ( kind = 8 ) QTF(N), contains the first N elements of Q&#39;*FVEC.</span>
+<span class="c">!</span>
+<span class="w">  </span><span class="k">implicit none</span>
+
+<span class="k">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">ldfjac</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">m</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">n</span>
+
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">actred</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">delta</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">diag</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">dirder</span>
+<span class="c">!~   real ( kind = 8 ) enorm</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">epsmch</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">factor</span>
+<span class="w">  </span><span class="k">external </span><span class="n">fcn</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">fjac</span><span class="p">(</span><span class="n">ldfjac</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">fnorm</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">fnorm1</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">ftol</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">fvec</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">gnorm</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">gtol</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">i</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">iflag</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">info</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">ipvt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">iter</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">j</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">l</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">maxfev</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">mode</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">nfev</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">njev</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">nprint</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">par</span>
+<span class="w">  </span><span class="kt">logical </span><span class="n">pivot</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">pnorm</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">prered</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">qtf</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">ratio</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">sum2</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">temp</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">temp1</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">temp2</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">wa1</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">wa2</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">wa3</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">wa4</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">xnorm</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">real</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">xtol</span>
+
+<span class="w">  </span><span class="n">epsmch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">epsilon</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">epsmch</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">  </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="n">iflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="n">nfev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="n">njev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="c">!</span>
+<span class="c">!  Check the input parameters for errors.</span>
+<span class="c">!</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">300</span>
+<span class="w">  </span><span class="k">end if</span>
+
+<span class="k">  if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">300</span>
+<span class="w">  </span><span class="k">end if</span>
+
+<span class="k">  if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ldfjac</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">    </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">ftol</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">xtol</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">gtol</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">     </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">maxfev</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">factor</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">300</span>
+<span class="w">  </span><span class="k">end if</span>
+
+<span class="k">  if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">diag</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">300</span>
+<span class="w">      </span><span class="k">end if</span>
+<span class="k">    end do</span>
+<span class="k">  end if</span>
+<span class="c">!</span>
+<span class="c">!  Evaluate the function at the starting point and calculate its norm.</span>
+<span class="c">!</span>
+<span class="w">  </span><span class="n">iflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="k">call </span><span class="n">fcn</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">fvec</span><span class="p">,</span><span class="w"> </span><span class="n">fjac</span><span class="p">,</span><span class="w"> </span><span class="n">ldfjac</span><span class="p">,</span><span class="w"> </span><span class="n">iflag</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="n">nfev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">iflag</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">300</span>
+<span class="w">  </span><span class="k">end if</span>
+
+<span class="k">  </span><span class="n">fnorm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enorm</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">fvec</span><span class="w"> </span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">!  Initialize Levenberg-Marquardt parameter and iteration counter.</span>
+<span class="c">!</span>
+<span class="w">  </span><span class="n">par</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0D+00</span>
+<span class="w">  </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="c">!</span>
+<span class="c">!  Beginning of the outer loop.</span>
+<span class="c">!</span>
+<span class="mi">30</span><span class="w">   </span><span class="k">continue</span>
+<span class="c">!</span>
+<span class="c">!  Calculate the jacobian matrix.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="n">iflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="k">call </span><span class="n">fcn</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">fvec</span><span class="p">,</span><span class="w"> </span><span class="n">fjac</span><span class="p">,</span><span class="w"> </span><span class="n">ldfjac</span><span class="p">,</span><span class="w"> </span><span class="n">iflag</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">njev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">njev</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">iflag</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">300</span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="c">!</span>
+<span class="c">!  If requested, call FCN to enable printing of iterates.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nprint</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">iflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">mod</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">nprint</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">fcn</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">fvec</span><span class="p">,</span><span class="w"> </span><span class="n">fjac</span><span class="p">,</span><span class="w"> </span><span class="n">ldfjac</span><span class="p">,</span><span class="w"> </span><span class="n">iflag</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="k">end if</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">iflag</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">300</span>
+<span class="w">      </span><span class="k">end if</span>
+<span class="k">    end if</span>
+<span class="c">!</span>
+<span class="c">!  Compute the QR factorization of the jacobian.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="n">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">    </span><span class="k">call </span><span class="n">qrfac</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">fjac</span><span class="p">,</span><span class="w"> </span><span class="n">ldfjac</span><span class="p">,</span><span class="w"> </span><span class="n">pivot</span><span class="p">,</span><span class="w"> </span><span class="n">ipvt</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">wa1</span><span class="p">,</span><span class="w"> </span><span class="n">wa2</span><span class="w"> </span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">!  On the first iteration and if mode is 1, scale according</span>
+<span class="c">!  to the norms of the columns of the initial jacobian.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">diag</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wa2</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span>
+<span class="w">        </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">wa2</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">diag</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0D+00</span>
+<span class="w">          </span><span class="k">end if</span>
+<span class="k">        end do</span>
+<span class="k">      end if</span>
+<span class="c">!</span>
+<span class="c">!  On the first iteration, calculate the norm of the scaled X</span>
+<span class="c">!  and initialize the step bound DELTA.</span>
+<span class="c">!</span>
+<span class="w">      </span><span class="n">wa3</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diag</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span>
+
+<span class="w">      </span><span class="n">xnorm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enorm</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">wa3</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factor</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">xnorm</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factor</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="k">    end if</span>
+<span class="c">!</span>
+<span class="c">!  Form Q&#39;*FVEC and store the first N components in QTF.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="n">wa4</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fvec</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">fjac</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">sum2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">dot_product</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">wa4</span><span class="p">(</span><span class="n">j</span><span class="p">:</span><span class="n">m</span><span class="p">),</span><span class="w"> </span><span class="n">fjac</span><span class="p">(</span><span class="n">j</span><span class="p">:</span><span class="n">m</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sum2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fjac</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+<span class="w">        </span><span class="n">wa4</span><span class="p">(</span><span class="n">j</span><span class="p">:</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wa4</span><span class="p">(</span><span class="n">j</span><span class="p">:</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fjac</span><span class="p">(</span><span class="n">j</span><span class="p">:</span><span class="n">m</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">temp</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="k">      </span><span class="n">fjac</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wa1</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">      </span><span class="n">qtf</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wa4</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">end do</span>
+<span class="c">!</span>
+<span class="c">!  Compute the norm of the scaled gradient.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="n">gnorm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0D+00</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">fnorm</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">      do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">        </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipvt</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">wa2</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">          </span><span class="n">sum2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">dot_product</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">qtf</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">j</span><span class="p">),</span><span class="w"> </span><span class="n">fjac</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fnorm</span>
+<span class="w">          </span><span class="n">gnorm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">max</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">gnorm</span><span class="p">,</span><span class="w"> </span><span class="nb">abs</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">sum2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">wa2</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">      end do</span>
+
+<span class="k">    end if</span>
+<span class="c">!</span>
+<span class="c">!  Test for convergence of the gradient norm.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">gnorm</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">gtol</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">      </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">300</span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="c">!</span>
+<span class="c">!  Rescale if necessary.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">        </span><span class="n">diag</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">max</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">diag</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="w"> </span><span class="n">wa2</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="k">end do</span>
+<span class="k">    end if</span>
+<span class="c">!</span>
+<span class="c">!  Beginning of the inner loop.</span>
+<span class="c">!</span>
+<span class="mi">200</span><span class="w">    </span><span class="k">continue</span>
+<span class="c">!</span>
+<span class="c">!  Determine the Levenberg-Marquardt parameter.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">call </span><span class="n">lmpar</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">fjac</span><span class="p">,</span><span class="w"> </span><span class="n">ldfjac</span><span class="p">,</span><span class="w"> </span><span class="n">ipvt</span><span class="p">,</span><span class="w"> </span><span class="n">diag</span><span class="p">,</span><span class="w"> </span><span class="n">qtf</span><span class="p">,</span><span class="w"> </span><span class="n">delta</span><span class="p">,</span><span class="w"> </span><span class="n">par</span><span class="p">,</span><span class="w"> </span><span class="n">wa1</span><span class="p">,</span><span class="w"> </span><span class="n">wa2</span><span class="w"> </span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">!  Store the direction p and x + p. calculate the norm of p.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="n">wa1</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">wa1</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="n">wa2</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">wa1</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="n">wa3</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diag</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">wa1</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">pnorm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enorm</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">wa3</span><span class="w"> </span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">!  On the first iteration, adjust the initial step bound.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">min</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">delta</span><span class="p">,</span><span class="w"> </span><span class="n">pnorm</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="c">!</span>
+<span class="c">!  Evaluate the function at x + p and calculate its norm.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="n">iflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">call </span><span class="n">fcn</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">wa2</span><span class="p">,</span><span class="w"> </span><span class="n">wa4</span><span class="p">,</span><span class="w"> </span><span class="n">fjac</span><span class="p">,</span><span class="w"> </span><span class="n">ldfjac</span><span class="p">,</span><span class="w"> </span><span class="n">iflag</span><span class="w"> </span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">nfev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nfev</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">iflag</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">300</span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    </span><span class="n">fnorm1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enorm</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">wa4</span><span class="w"> </span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">!  Compute the scaled actual reduction.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="n">actred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0D+00</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">0.1D+00</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fnorm1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">fnorm</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">actred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0D+00</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">fnorm1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fnorm</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="c">!</span>
+<span class="c">!  Compute the scaled predicted reduction and</span>
+<span class="c">!  the scaled directional derivative.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span>
+<span class="w">      </span><span class="n">wa3</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0D+00</span>
+<span class="w">      </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ipvt</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="w">      </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wa1</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="w">      </span><span class="n">wa3</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wa3</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fjac</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">temp</span>
+<span class="w">    </span><span class="k">end do</span>
+
+<span class="k">    </span><span class="n">temp1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enorm</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">wa3</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fnorm</span>
+<span class="w">    </span><span class="n">temp2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">sqrt</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pnorm</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fnorm</span>
+<span class="w">    </span><span class="n">prered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp1</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">temp2</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0.5D+00</span>
+<span class="w">    </span><span class="n">dirder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">temp1</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">temp2</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">)</span>
+<span class="c">!</span>
+<span class="c">!  Compute the ratio of the actual to the predicted reduction.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">prered</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">actred</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">prered</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">      </span><span class="n">ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0D+00</span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="c">!</span>
+<span class="c">!  Update the step bound.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ratio</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">0.25D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">actred</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5D+00</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">actred</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5D+00</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dirder</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">dirder</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5D+00</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">actred</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">0.1D+00</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fnorm1</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">fnorm</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.1D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1D+00</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="k">      </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">min</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">delta</span><span class="p">,</span><span class="w"> </span><span class="n">pnorm</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0.1D+00</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="n">par</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">temp</span>
+
+<span class="w">    </span><span class="k">else</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0.0D+00</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">ratio</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">0.75D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0D+00</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pnorm</span>
+<span class="w">        </span><span class="n">par</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5D+00</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">par</span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="k">    end if</span>
+<span class="c">!</span>
+<span class="c">!  Successful iteration.</span>
+<span class="c">!</span>
+<span class="c">!  Update X, FVEC, and their norms.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">0.0001D+00</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">ratio</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wa2</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span>
+<span class="w">      </span><span class="n">wa2</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diag</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">)</span>
+<span class="w">      </span><span class="n">fvec</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wa4</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">)</span>
+<span class="w">      </span><span class="n">xnorm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enorm</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">wa2</span><span class="w"> </span><span class="p">)</span>
+<span class="w">      </span><span class="n">fnorm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fnorm1</span>
+<span class="w">      </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="c">!</span>
+<span class="c">!  Tests for convergence.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">abs</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">actred</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">ftol</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">prered</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">ftol</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="mf">0.5D+00</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ratio</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">1.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">xtol</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">xnorm</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">abs</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">actred</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">ftol</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">prered</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">ftol</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="mf">0.5D+00</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ratio</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">1.0D+00</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">300</span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="c">!</span>
+<span class="c">!  Tests for termination and stringent tolerances.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">nfev</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">maxfev</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">abs</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">actred</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">epsmch</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">prered</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">epsmch</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="mf">0.5D+00</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ratio</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">1.0D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">epsmch</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">xnorm</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">gnorm</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">epsmch</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">300</span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="c">!</span>
+<span class="c">!  End of the inner loop. repeat if iteration unsuccessful.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ratio</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.0001D+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">200</span>
+<span class="w">    </span><span class="k">end if</span>
+<span class="c">!</span>
+<span class="c">!  End of the outer loop.</span>
+<span class="c">!</span>
+<span class="w">    </span><span class="k">go</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">30</span>
+
+<span class="w">  </span><span class="mi">300</span><span class="w"> </span><span class="k">continue</span>
+<span class="c">!</span>
+<span class="c">!  Termination, either normal or user imposed.</span>
+<span class="c">!</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">iflag</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iflag</span>
+<span class="w">  </span><span class="k">end if</span>
+
+<span class="k">  </span><span class="n">iflag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nprint</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">    call </span><span class="n">fcn</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">fvec</span><span class="p">,</span><span class="w"> </span><span class="n">fjac</span><span class="p">,</span><span class="w"> </span><span class="n">ldfjac</span><span class="p">,</span><span class="w"> </span><span class="n">iflag</span><span class="w"> </span><span class="p">)</span>
+<span class="w">  </span><span class="k">end if</span>
+
+<span class="k">  return</span>
+<span class="k">endsubroutine </span><span class="n">lmder</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1165 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="TOOLIB – Tools for various needs">
+    <meta name="author" content="Arthur Francisco" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>pikaia &ndash; TOOLIB</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+      <link href="../css/user.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">TOOLIB </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/absint.html">Abstract Interfaces</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>pikaia
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 0.1% of total for procedures.">118 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/mod_pikaia_oop.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/mod_pikaia_oop.f90.html'>mod_pikaia_oop.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/pikaia_oop.html'>pikaia_oop</a></li>
+            <li class="breadcrumb-item active" aria-current="page">pikaia</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/pikaia.html#src">pikaia</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private  subroutine pikaia(me, x, f, status, omp)  
+</h2>
+    
+
+    <p>Optimization (maximization) of user-supplied &ldquo;fitness&rdquo; function
+  over n-dimensional parameter space x using a basic genetic
+  algorithm method.</p>
+<p>Genetic algorithms are heuristic search techniques that
+  incorporate in a computational setting, the biological notion
+  of evolution by means of natural selection.  This subroutine
+  implements the three basic operations of selection, crossover,
+  and mutation, operating on &ldquo;genotypes&rdquo; encoded as strings.</p>
+<p>Version 1.2 differs from version 1.0 (December 1995) in that
+  it includes (1) two-point crossover, (2) creep mutation, and
+  (3) dynamical adjustment of the mutation rate based on metric
+  distance in parameter space.</p>
+<h1 id="authors">Authors</h1>
+<ul>
+<li>Paul Charbonneau &amp; Barry Knapp
+     (High Altitude Observatory, National Center for Atmospheric Research)
+     Version 1.2 [ 2002 April 3 ]</li>
+<li>Jacob Williams : 3/8/3015 : Refactoring and some new features.</li>
+</ul>
+<h1 id="references">References</h1>
+<ul>
+<li>Charbonneau, Paul. &ldquo;An introduction to genetic algorithms for
+     numerical optimization&rdquo;, NCAR Technical Note TN-450+IA
+     (April 2002)</li>
+<li>Charbonneau, Paul. &ldquo;Release Notes for PIKAIA 1.2&rdquo;,
+     NCAR Technical Note TN-451+STR (April 2002)</li>
+<li>Charbonneau, Paul, and Knapp, Barry. &ldquo;A User&rsquo;s Guide
+     to PIKAIA 1.0&rdquo; NCAR Technical Note TN-418+IA
+     (December 1995)</li>
+<li>Goldberg, David E.  Genetic Algorithms in Search, Optimization,
+     &amp; Machine Learning.  Addison-Wesley, 1989.</li>
+<li>Davis, Lawrence, ed.  Handbook of Genetic Algorithms.
+     Van Nostrand Reinhold, 1991.</li>
+</ul>
+
+    <h3>Type Bound</h3>
+    <p><a href='../type/pikaia_class.html'>pikaia_class</a></p>
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-me~12"></span>
+              class(<a href='../type/pikaia_class.html'>pikaia_class</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>me</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~70"></span>
+              real(kind=wp),
+            </td>
+<td>intent(inout),</td>
+              <td></td>            <td>
+              dimension(:)
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+            <td>
+                <p>Input - initial guess for solution vector.
+Output - the &ldquo;fittest&rdquo; (optimal) solution found,
+i.e., the solution which maximizes the fitness function.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-f~9"></span>
+              real(kind=wp),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>f</strong></td>
+            <td>
+                <p>the (scalar) value of the fitness function at x</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-status~59"></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>status</strong></td>
+            <td>
+                <p>an indicator of the success or failure
+of the call to pikaia (0=success; non-zero=failure)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-omp"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>omp</strong></td>
+            <td>
+                <p>if OpenMP is being used</p>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~pikaia~~CallsGraph Pages: 1 -->
+<svg id="procpikaiaCallsGraph" width="641pt" height="354pt"
+ viewBox="0.00 0.00 641.00 353.87" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~pikaia~~CallsGraph" class="graph" transform="scale(0.63 0.63) rotate(0) translate(4 558)">
+<title>proc~~pikaia~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-558 1014,-558 1014,4 -4,4"/>
+<!-- proc~pikaia -->
+<g id="proc~~pikaia~~CallsGraph_node1" class="node">
+<title>proc~pikaia</title>
+<polygon fill="none" stroke="black" points="107,-289 0,-289 0,-265 107,-265 107,-289"/>
+<text text-anchor="middle" x="53.5" y="-274.6" font-family="Helvetica,sans-Serif" font-size="10.50">pikaia_class%pikaia</text>
+</g>
+<!-- proc~adjmut -->
+<g id="proc~~pikaia~~CallsGraph_node2" class="node">
+<title>proc~adjmut</title>
+<g id="a_proc~~pikaia~~CallsGraph_node2"><a xlink:href="../proc/adjmut.html" xlink:title="pikaia_class%adjmut">
+<polygon fill="#d9534f" stroke="#d9534f" points="273.5,-554 161.5,-554 161.5,-530 273.5,-530 273.5,-554"/>
+<text text-anchor="middle" x="217.5" y="-539.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%adjmut</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~adjmut -->
+<g id="proc~~pikaia~~CallsGraph_edge1" class="edge">
+<title>proc~pikaia&#45;&gt;proc~adjmut</title>
+<path fill="none" stroke="#ff0000" d="M55.44,-289.09C59.11,-327.75 75.72,-449.69 143,-516 146.64,-519.59 150.81,-522.69 155.27,-525.36"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="153.66,-528.46 164.14,-529.98 156.9,-522.26 153.66,-528.46"/>
+</g>
+<!-- proc~cross -->
+<g id="proc~~pikaia~~CallsGraph_node3" class="node">
+<title>proc~cross</title>
+<g id="a_proc~~pikaia~~CallsGraph_node3"><a xlink:href="../proc/cross.html" xlink:title="pikaia_class%cross">
+<polygon fill="#d9534f" stroke="#d9534f" points="270,-188 165,-188 165,-164 270,-164 270,-188"/>
+<text text-anchor="middle" x="217.5" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%cross</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~cross -->
+<g id="proc~~pikaia~~CallsGraph_edge2" class="edge">
+<title>proc~pikaia&#45;&gt;proc~cross</title>
+<path fill="none" stroke="#ff0000" d="M64.65,-264.82C79.89,-247.29 110.4,-215.09 143,-197 146.89,-194.84 151.02,-192.89 155.27,-191.12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="156.58,-194.37 164.69,-187.55 154.1,-187.82 156.58,-194.37"/>
+</g>
+<!-- proc~decode -->
+<g id="proc~~pikaia~~CallsGraph_node4" class="node">
+<title>proc~decode</title>
+<g id="a_proc~~pikaia~~CallsGraph_node4"><a xlink:href="../proc/decode.html" xlink:title="pikaia_class%decode">
+<polygon fill="#d9534f" stroke="#d9534f" points="275,-474 160,-474 160,-450 275,-450 275,-474"/>
+<text text-anchor="middle" x="217.5" y="-459.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%decode</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~decode -->
+<g id="proc~~pikaia~~CallsGraph_edge3" class="edge">
+<title>proc~pikaia&#45;&gt;proc~decode</title>
+<path fill="none" stroke="#ff0000" d="M57.6,-289.43C65.9,-320.06 91.56,-399.65 143,-441 145.45,-442.97 148.09,-444.76 150.84,-446.38"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="149.48,-449.62 159.99,-451.01 152.64,-443.37 149.48,-449.62"/>
+</g>
+<!-- proc~encode -->
+<g id="proc~~pikaia~~CallsGraph_node5" class="node">
+<title>proc~encode</title>
+<g id="a_proc~~pikaia~~CallsGraph_node5"><a xlink:href="../proc/encode.html" xlink:title="pikaia_class%encode">
+<polygon fill="#d9534f" stroke="#d9534f" points="275,-432 160,-432 160,-408 275,-408 275,-432"/>
+<text text-anchor="middle" x="217.5" y="-417.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%encode</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~encode -->
+<g id="proc~~pikaia~~CallsGraph_edge4" class="edge">
+<title>proc~pikaia&#45;&gt;proc~encode</title>
+<path fill="none" stroke="#ff0000" d="M59.88,-289.12C71.43,-313.7 100.99,-369.59 143,-399 145.4,-400.68 147.92,-402.22 150.54,-403.64"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="149.21,-406.88 159.74,-408.02 152.21,-400.56 149.21,-406.88"/>
+</g>
+<!-- proc~func_wrapper -->
+<g id="proc~~pikaia~~CallsGraph_node6" class="node">
+<title>proc~func_wrapper</title>
+<g id="a_proc~~pikaia~~CallsGraph_node6"><a xlink:href="../proc/func_wrapper.html" xlink:title="pikaia_class%func_wrapper">
+<polygon fill="#d9534f" stroke="#d9534f" points="473,-421 328,-421 328,-397 473,-397 473,-421"/>
+<text text-anchor="middle" x="400.5" y="-406.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%func_wrapper</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~func_wrapper -->
+<g id="proc~~pikaia~~CallsGraph_edge5" class="edge">
+<title>proc~pikaia&#45;&gt;proc~func_wrapper</title>
+<path fill="none" stroke="#ff0000" d="M55.34,-289.14C58.62,-326.12 74.09,-437.6 143,-483 198.3,-519.43 228.76,-502.66 292,-483 326.42,-472.3 359.57,-446.32 379.74,-428.19"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="382.34,-430.55 387.31,-421.2 377.59,-425.41 382.34,-430.55"/>
+</g>
+<!-- proc~genrep -->
+<g id="proc~~pikaia~~CallsGraph_node7" class="node">
+<title>proc~genrep</title>
+<g id="a_proc~~pikaia~~CallsGraph_node7"><a xlink:href="../proc/genrep.html" xlink:title="pikaia_class%genrep">
+<polygon fill="#d9534f" stroke="#d9534f" points="274,-348 161,-348 161,-324 274,-324 274,-348"/>
+<text text-anchor="middle" x="217.5" y="-333.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%genrep</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~genrep -->
+<g id="proc~~pikaia~~CallsGraph_edge6" class="edge">
+<title>proc~pikaia&#45;&gt;proc~genrep</title>
+<path fill="none" stroke="#ff0000" d="M86.4,-289.04C103.22,-295.35 124.2,-303.17 143,-310 152.54,-313.47 162.8,-317.13 172.54,-320.59"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="171.46,-323.92 182.06,-323.95 173.79,-317.32 171.46,-323.92"/>
+</g>
+<!-- proc~mutate -->
+<g id="proc~~pikaia~~CallsGraph_node8" class="node">
+<title>proc~mutate</title>
+<g id="a_proc~~pikaia~~CallsGraph_node8"><a xlink:href="../proc/mutate.html" xlink:title="pikaia_class%mutate">
+<polygon fill="#d9534f" stroke="#d9534f" points="273.5,-104 161.5,-104 161.5,-80 273.5,-80 273.5,-104"/>
+<text text-anchor="middle" x="217.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%mutate</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~mutate -->
+<g id="proc~~pikaia~~CallsGraph_edge7" class="edge">
+<title>proc~pikaia&#45;&gt;proc~mutate</title>
+<path fill="none" stroke="#ff0000" d="M57.6,-264.57C65.9,-233.94 91.56,-154.35 143,-113 145.91,-110.66 149.07,-108.58 152.39,-106.73"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="153.99,-109.85 161.49,-102.36 150.96,-103.54 153.99,-109.85"/>
+</g>
+<!-- proc~newpop -->
+<g id="proc~~pikaia~~CallsGraph_node9" class="node">
+<title>proc~newpop</title>
+<g id="a_proc~~pikaia~~CallsGraph_node9"><a xlink:href="../proc/newpop.html" xlink:title="pikaia_class%newpop">
+<polygon fill="#d9534f" stroke="#d9534f" points="276,-390 159,-390 159,-366 276,-366 276,-390"/>
+<text text-anchor="middle" x="217.5" y="-375.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%newpop</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~newpop -->
+<g id="proc~~pikaia~~CallsGraph_edge8" class="edge">
+<title>proc~pikaia&#45;&gt;proc~newpop</title>
+<path fill="none" stroke="#ff0000" d="M64.65,-289.18C79.89,-306.71 110.4,-338.91 143,-357 146.43,-358.9 150.04,-360.64 153.75,-362.24"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="152.55,-365.53 163.14,-365.9 155.1,-359.01 152.55,-365.53"/>
+</g>
+<!-- proc~report -->
+<g id="proc~~pikaia~~CallsGraph_node10" class="node">
+<title>proc~report</title>
+<g id="a_proc~~pikaia~~CallsGraph_node10"><a xlink:href="../proc/report.html" xlink:title="pikaia_class%report">
+<polygon fill="#d9534f" stroke="#d9534f" points="271.5,-230 163.5,-230 163.5,-206 271.5,-206 271.5,-230"/>
+<text text-anchor="middle" x="217.5" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%report</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~report -->
+<g id="proc~~pikaia~~CallsGraph_edge9" class="edge">
+<title>proc~pikaia&#45;&gt;proc~report</title>
+<path fill="none" stroke="#ff0000" d="M86.4,-264.96C103.22,-258.65 124.2,-250.83 143,-244 152.54,-240.53 162.8,-236.87 172.54,-233.41"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="173.79,-236.68 182.06,-230.05 171.46,-230.08 173.79,-236.68"/>
+</g>
+<!-- proc~rninit -->
+<g id="proc~~pikaia~~CallsGraph_node11" class="node">
+<title>proc~rninit</title>
+<g id="a_proc~~pikaia~~CallsGraph_node11"><a xlink:href="../proc/rninit.html" xlink:title="pikaia_class%rninit">
+<polygon fill="#d9534f" stroke="#d9534f" points="452,-229 349,-229 349,-205 452,-205 452,-229"/>
+<text text-anchor="middle" x="400.5" y="-214.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%rninit</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~rninit -->
+<g id="proc~~pikaia~~CallsGraph_edge10" class="edge">
+<title>proc~pikaia&#45;&gt;proc~rninit</title>
+<path fill="none" stroke="#ff0000" d="M107.44,-269.2C155.64,-261.94 228.74,-250.53 292,-239 307.22,-236.23 323.6,-233 338.88,-229.88"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="339.64,-233.3 348.73,-227.86 338.23,-226.44 339.64,-233.3"/>
+</g>
+<!-- proc~rnkpop -->
+<g id="proc~~pikaia~~CallsGraph_node12" class="node">
+<title>proc~rnkpop</title>
+<g id="a_proc~~pikaia~~CallsGraph_node12"><a xlink:href="../proc/rnkpop.html" xlink:title="pikaia_class%rnkpop">
+<polygon fill="#d9534f" stroke="#d9534f" points="456.5,-359 344.5,-359 344.5,-335 456.5,-335 456.5,-359"/>
+<text text-anchor="middle" x="400.5" y="-344.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%rnkpop</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~rnkpop -->
+<g id="proc~~pikaia~~CallsGraph_edge11" class="edge">
+<title>proc~pikaia&#45;&gt;proc~rnkpop</title>
+<path fill="none" stroke="#ff0000" d="M107.23,-283.43C155.61,-289.8 229.1,-300.67 292,-315 312.53,-319.68 334.9,-326.11 353.89,-331.99"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="352.9,-335.34 363.49,-335 354.99,-328.67 352.9,-335.34"/>
+</g>
+<!-- proc~select_parents -->
+<g id="proc~~pikaia~~CallsGraph_node13" class="node">
+<title>proc~select_parents</title>
+<g id="a_proc~~pikaia~~CallsGraph_node13"><a xlink:href="../proc/select_parents.html" xlink:title="pikaia_class%select_parents">
+<polygon fill="#d9534f" stroke="#d9534f" points="292,-24 143,-24 143,0 292,0 292,-24"/>
+<text text-anchor="middle" x="217.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%select_parents</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~select_parents -->
+<g id="proc~~pikaia~~CallsGraph_edge12" class="edge">
+<title>proc~pikaia&#45;&gt;proc~select_parents</title>
+<path fill="none" stroke="#ff0000" d="M55.44,-264.91C59.11,-226.25 75.72,-104.31 143,-38 146.64,-34.41 150.81,-31.31 155.27,-28.64"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="156.9,-31.74 164.14,-24.02 153.66,-25.54 156.9,-31.74"/>
+</g>
+<!-- proc~stdrep -->
+<g id="proc~~pikaia~~CallsGraph_node14" class="node">
+<title>proc~stdrep</title>
+<g id="a_proc~~pikaia~~CallsGraph_node14"><a xlink:href="../proc/stdrep.html" xlink:title="pikaia_class%stdrep">
+<polygon fill="#d9534f" stroke="#d9534f" points="272,-146 163,-146 163,-122 272,-122 272,-146"/>
+<text text-anchor="middle" x="217.5" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%stdrep</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~stdrep -->
+<g id="proc~~pikaia~~CallsGraph_edge13" class="edge">
+<title>proc~pikaia&#45;&gt;proc~stdrep</title>
+<path fill="none" stroke="#ff0000" d="M59.88,-264.88C71.43,-240.3 100.99,-184.41 143,-155 146.27,-152.71 149.79,-150.67 153.45,-148.85"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="155.02,-151.98 162.78,-144.77 152.21,-145.57 155.02,-151.98"/>
+</g>
+<!-- proc~urand -->
+<g id="proc~~pikaia~~CallsGraph_node15" class="node">
+<title>proc~urand</title>
+<g id="a_proc~~pikaia~~CallsGraph_node15"><a xlink:href="../proc/urand.html" xlink:title="pikaia_class%urand">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="454,-107 347,-107 347,-83 454,-83 454,-107"/>
+<text text-anchor="middle" x="400.5" y="-92.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%urand</text>
+</a>
+</g>
+</g>
+<!-- proc~pikaia&#45;&gt;proc~urand -->
+<g id="proc~~pikaia~~CallsGraph_edge14" class="edge">
+<title>proc~pikaia&#45;&gt;proc~urand</title>
+<path fill="none" stroke="#ff0000" d="M55.34,-264.86C58.62,-227.88 74.09,-116.4 143,-71 211.04,-26.18 312.12,-57.3 364.77,-78.98"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="363.45,-82.22 374.02,-82.89 366.18,-75.77 363.45,-82.22"/>
+</g>
+<!-- proc~cross&#45;&gt;proc~urand -->
+<g id="proc~~pikaia~~CallsGraph_edge15" class="edge">
+<title>proc~cross&#45;&gt;proc~urand</title>
+<path fill="none" stroke="#ff6d00" d="M266.89,-163.9C275.37,-161.29 284.03,-158.31 292,-155 320.5,-143.16 351.04,-125.59 372.26,-112.52"/>
+<polygon fill="#ff6d00" stroke="#ff6d00" points="374.12,-115.49 380.75,-107.23 370.42,-109.55 374.12,-115.49"/>
+</g>
+<!-- proc~mutate&#45;&gt;proc~urand -->
+<g id="proc~~pikaia~~CallsGraph_edge16" class="edge">
+<title>proc~mutate&#45;&gt;proc~urand</title>
+<path fill="none" stroke="#00ff91" d="M273.79,-92.92C293.62,-93.25 316.13,-93.62 336.56,-93.96"/>
+<polygon fill="#00ff91" stroke="#00ff91" points="336.66,-97.46 346.72,-94.13 336.78,-90.46 336.66,-97.46"/>
+</g>
+<!-- proc~newpop&#45;&gt;proc~func_wrapper -->
+<g id="proc~~pikaia~~CallsGraph_edge17" class="edge">
+<title>proc~newpop&#45;&gt;proc~func_wrapper</title>
+<path fill="none" stroke="#00ffff" d="M276.27,-387.89C289.97,-390.24 304.83,-392.79 319.33,-395.27"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="318.84,-398.74 329.29,-396.98 320.03,-391.84 318.84,-398.74"/>
+</g>
+<!-- proc~newpop&#45;&gt;proc~rnkpop -->
+<g id="proc~~pikaia~~CallsGraph_edge18" class="edge">
+<title>proc~newpop&#45;&gt;proc~rnkpop</title>
+<path fill="none" stroke="#00ffff" d="M276.27,-368.11C294.77,-364.94 315.39,-361.41 334.38,-358.15"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="335.17,-361.57 344.44,-356.43 333.99,-354.67 335.17,-361.57"/>
+</g>
+<!-- none~initialize -->
+<g id="proc~~pikaia~~CallsGraph_node16" class="node">
+<title>none~initialize</title>
+<g id="a_proc~~pikaia~~CallsGraph_node16"><a xlink:href="../type/mt19937.html#boundprocedure-initialize" xlink:title="mt19937%initialize">
+<polygon fill="#a7506f" stroke="#a7506f" points="632,-209 531,-209 531,-185 632,-185 632,-209"/>
+<text text-anchor="middle" x="581.5" y="-194.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mt19937%initialize</text>
+</a>
+</g>
+</g>
+<!-- proc~rninit&#45;&gt;none~initialize -->
+<g id="proc~~pikaia~~CallsGraph_edge19" class="edge">
+<title>proc~rninit&#45;&gt;none~initialize</title>
+<path fill="none" stroke="#0024ff" d="M452.32,-211.32C473.65,-208.94 498.61,-206.15 520.81,-203.67"/>
+<polygon fill="#0024ff" stroke="#0024ff" points="521.25,-207.14 530.79,-202.55 520.47,-200.19 521.25,-207.14"/>
+</g>
+<!-- proc~rqsort -->
+<g id="proc~~pikaia~~CallsGraph_node18" class="node">
+<title>proc~rqsort</title>
+<g id="a_proc~~pikaia~~CallsGraph_node18"><a xlink:href="../proc/rqsort.html" xlink:title="rqsort">
+<polygon fill="#d9534f" stroke="#d9534f" points="608.5,-359 554.5,-359 554.5,-335 608.5,-335 608.5,-359"/>
+<text text-anchor="middle" x="581.5" y="-344.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rqsort</text>
+</a>
+</g>
+</g>
+<!-- proc~rnkpop&#45;&gt;proc~rqsort -->
+<g id="proc~~pikaia~~CallsGraph_edge20" class="edge">
+<title>proc~rnkpop&#45;&gt;proc~rqsort</title>
+<path fill="none" stroke="#4800ff" d="M456.67,-347C485.07,-347 518.91,-347 544.03,-347"/>
+<polygon fill="#4800ff" stroke="#4800ff" points="544.22,-350.5 554.22,-347 544.22,-343.5 544.22,-350.5"/>
+</g>
+<!-- proc~select_parents&#45;&gt;proc~urand -->
+<g id="proc~~pikaia~~CallsGraph_edge21" class="edge">
+<title>proc~select_parents&#45;&gt;proc~urand</title>
+<path fill="none" stroke="#b600ff" d="M255.93,-24.04C267.62,-28.12 280.47,-32.94 292,-38 319.13,-49.91 348.79,-65.88 370.08,-77.88"/>
+<polygon fill="#b600ff" stroke="#b600ff" points="368.52,-81.02 378.94,-82.93 371.98,-74.94 368.52,-81.02"/>
+</g>
+<!-- proc~stdrep&#45;&gt;proc~urand -->
+<g id="proc~~pikaia~~CallsGraph_edge22" class="edge">
+<title>proc~stdrep&#45;&gt;proc~urand</title>
+<path fill="none" stroke="#ff00da" d="M272.32,-122.4C292.65,-118.02 315.95,-113 337.01,-108.46"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="337.79,-111.88 346.83,-106.35 336.31,-105.03 337.79,-111.88"/>
+</g>
+<!-- proc~genrand64_real1 -->
+<g id="proc~~pikaia~~CallsGraph_node17" class="node">
+<title>proc~genrand64_real1</title>
+<g id="a_proc~~pikaia~~CallsGraph_node17"><a xlink:href="../proc/genrand64_real1.html" xlink:title="mt19937%genrand64_real1">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="654,-110 509,-110 509,-86 654,-86 654,-110"/>
+<text text-anchor="middle" x="581.5" y="-95.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mt19937%genrand64_real1</text>
+</a>
+</g>
+</g>
+<!-- proc~urand&#45;&gt;proc~genrand64_real1 -->
+<g id="proc~~pikaia~~CallsGraph_edge23" class="edge">
+<title>proc~urand&#45;&gt;proc~genrand64_real1</title>
+<path fill="none" stroke="#ff006d" d="M454.24,-95.88C468.15,-96.12 483.49,-96.37 498.55,-96.63"/>
+<polygon fill="#ff006d" stroke="#ff006d" points="498.85,-100.13 508.9,-96.8 498.96,-93.13 498.85,-100.13"/>
+</g>
+<!-- proc~init_by_array64 -->
+<g id="proc~~pikaia~~CallsGraph_node20" class="node">
+<title>proc~init_by_array64</title>
+<g id="a_proc~~pikaia~~CallsGraph_node20"><a xlink:href="../proc/init_by_array64.html" xlink:title="mt19937%init_by_array64">
+<polygon fill="#d9534f" stroke="#d9534f" points="833,-167 696,-167 696,-143 833,-143 833,-167"/>
+<text text-anchor="middle" x="764.5" y="-152.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mt19937%init_by_array64</text>
+</a>
+</g>
+</g>
+<!-- none~initialize&#45;&gt;proc~init_by_array64 -->
+<g id="proc~~pikaia~~CallsGraph_edge24" class="edge">
+<title>none~initialize&#45;&gt;proc~init_by_array64</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M632.44,-185.41C653.86,-180.44 679.1,-174.58 701.69,-169.34"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="702.57,-172.73 711.52,-167.06 700.98,-165.91 702.57,-172.73"/>
+</g>
+<!-- proc~init_genrand64 -->
+<g id="proc~~pikaia~~CallsGraph_node21" class="node">
+<title>proc~init_genrand64</title>
+<g id="a_proc~~pikaia~~CallsGraph_node21"><a xlink:href="../proc/init_genrand64.html" xlink:title="mt19937%init_genrand64">
+<polygon fill="#d9534f" stroke="#d9534f" points="1010,-167 875,-167 875,-143 1010,-143 1010,-167"/>
+<text text-anchor="middle" x="942.5" y="-152.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mt19937%init_genrand64</text>
+</a>
+</g>
+</g>
+<!-- none~initialize&#45;&gt;proc~init_genrand64 -->
+<g id="proc~~pikaia~~CallsGraph_edge25" class="edge">
+<title>none~initialize&#45;&gt;proc~init_genrand64</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M623.34,-209.05C674.68,-222.24 765.05,-238.91 839,-218 869.47,-209.39 899.79,-188.89 919.45,-173.6"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="921.82,-176.18 927.45,-167.21 917.46,-170.71 921.82,-176.18"/>
+</g>
+<!-- proc~init_genrand64_i4 -->
+<g id="proc~~pikaia~~CallsGraph_node22" class="node">
+<title>proc~init_genrand64_i4</title>
+<g id="a_proc~~pikaia~~CallsGraph_node22"><a xlink:href="../proc/init_genrand64_i4.html" xlink:title="mt19937%init_genrand64_i4">
+<polygon fill="#d9534f" stroke="#d9534f" points="839,-209 690,-209 690,-185 839,-185 839,-209"/>
+<text text-anchor="middle" x="764.5" y="-194.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mt19937%init_genrand64_i4</text>
+</a>
+</g>
+</g>
+<!-- none~initialize&#45;&gt;proc~init_genrand64_i4 -->
+<g id="proc~~pikaia~~CallsGraph_edge26" class="edge">
+<title>none~initialize&#45;&gt;proc~init_genrand64_i4</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M632.44,-190.89C646.94,-190.4 663.2,-190.19 679.2,-190.26"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="679.63,-193.77 689.66,-190.35 679.69,-186.77 679.63,-193.77"/>
+</g>
+<!-- proc~genrand64_int64 -->
+<g id="proc~~pikaia~~CallsGraph_node19" class="node">
+<title>proc~genrand64_int64</title>
+<g id="a_proc~~pikaia~~CallsGraph_node19"><a xlink:href="../proc/genrand64_int64.html" xlink:title="mt19937%genrand64_int64">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="837,-120 692,-120 692,-96 837,-96 837,-120"/>
+<text text-anchor="middle" x="764.5" y="-105.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mt19937%genrand64_int64</text>
+</a>
+</g>
+</g>
+<!-- proc~genrand64_real1&#45;&gt;proc~genrand64_int64 -->
+<g id="proc~~pikaia~~CallsGraph_edge27" class="edge">
+<title>proc~genrand64_real1&#45;&gt;proc~genrand64_int64</title>
+<path fill="none" stroke="#00ff00" d="M654.04,-101.95C663.18,-102.46 672.59,-102.98 681.88,-103.49"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="681.71,-106.99 691.89,-104.04 682.1,-100 681.71,-106.99"/>
+</g>
+<!-- proc~genrand64_int64&#45;&gt;proc~init_genrand64 -->
+<g id="proc~~pikaia~~CallsGraph_edge28" class="edge">
+<title>proc~genrand64_int64&#45;&gt;proc~init_genrand64</title>
+<path fill="none" stroke="#ff0000" d="M810.82,-120.1C833.92,-126.27 862.19,-133.82 886.52,-140.32"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="885.76,-143.74 896.33,-142.94 887.57,-136.98 885.76,-143.74"/>
+</g>
+<!-- proc~init_by_array64&#45;&gt;proc~init_genrand64 -->
+<g id="proc~~pikaia~~CallsGraph_edge29" class="edge">
+<title>proc~init_by_array64&#45;&gt;proc~init_genrand64</title>
+<path fill="none" stroke="#7fff00" d="M833.04,-155C843.4,-155 854.16,-155 864.7,-155"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="864.72,-158.5 874.72,-155 864.72,-151.5 864.72,-158.5"/>
+</g>
+<!-- proc~init_genrand64_i4&#45;&gt;none~initialize -->
+<g id="proc~~pikaia~~CallsGraph_edge30" class="edge">
+<title>proc~init_genrand64_i4&#45;&gt;none~initialize</title>
+<path fill="none" stroke="#7f00ff" d="M689.66,-203.65C674.02,-203.84 657.69,-203.76 642.64,-203.4"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="642.53,-199.9 632.44,-203.11 642.33,-206.89 642.53,-199.9"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panprocpikaiaCallsGraph = svgPanZoom('#procpikaiaCallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~pikaia~~CalledByGraph Pages: 1 -->
+<svg id="procpikaiaCalledByGraph" width="412pt" height="32pt"
+ viewBox="0.00 0.00 412.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~pikaia~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~pikaia~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 408,-28 408,4 -4,4"/>
+<!-- proc~pikaia -->
+<g id="proc~~pikaia~~CalledByGraph_node1" class="node">
+<title>proc~pikaia</title>
+<polygon fill="none" stroke="black" points="404,-24 297,-24 297,0 404,0 404,-24"/>
+<text text-anchor="middle" x="350.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">pikaia_class%pikaia</text>
+</g>
+<!-- proc~solve_with_pikaia -->
+<g id="proc~~pikaia~~CalledByGraph_node2" class="node">
+<title>proc~solve_with_pikaia</title>
+<g id="a_proc~~pikaia~~CalledByGraph_node2"><a xlink:href="../proc/solve_with_pikaia.html" xlink:title="pikaia_class%solve_with_pikaia">
+<polygon fill="#d9534f" stroke="#d9534f" points="261,-24 98,-24 98,0 261,0 261,-24"/>
+<text text-anchor="middle" x="179.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pikaia_class%solve_with_pikaia</text>
+</a>
+</g>
+</g>
+<!-- proc~solve_with_pikaia&#45;&gt;proc~pikaia -->
+<g id="proc~~pikaia~~CalledByGraph_edge1" class="edge">
+<title>proc~solve_with_pikaia&#45;&gt;proc~pikaia</title>
+<path fill="none" stroke="#ff0000" d="M261.04,-12C269.53,-12 278.07,-12 286.32,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="286.59,-15.5 296.59,-12 286.59,-8.5 286.59,-15.5"/>
+</g>
+<!-- program~test_algen -->
+<g id="proc~~pikaia~~CalledByGraph_node3" class="node">
+<title>program~test_algen</title>
+<g id="a_proc~~pikaia~~CalledByGraph_node3"><a xlink:href="../program/test_algen.html" xlink:title="test_algen">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="62,-24 0,-24 0,0 62,0 62,-24"/>
+<text text-anchor="middle" x="31" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_algen</text>
+</a>
+</g>
+</g>
+<!-- program~test_algen&#45;&gt;proc~solve_with_pikaia -->
+<g id="proc~~pikaia~~CalledByGraph_edge2" class="edge">
+<title>program~test_algen&#45;&gt;proc~solve_with_pikaia</title>
+<path fill="none" stroke="#ff0000" d="M62.35,-12C69.97,-12 78.53,-12 87.47,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="87.7,-15.5 97.7,-12 87.7,-8.5 87.7,-15.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="29pt"
+ viewBox="0.00 0.00 641.00 29.32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.92 0.92) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 695.5,-28 695.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="350,-24 228,-24 228,0 350,0 350,-24"/>
+<text text-anchor="middle" x="289" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="504,-24 368,-24 368,0 504,0 504,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="576,-24 522,-24 522,0 576,0 576,-24"/>
+<text text-anchor="middle" x="549" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="691.5,-24 594.5,-24 594.5,0 691.5,0 691.5,-24"/>
+<text text-anchor="middle" x="643" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">pikaia</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">status</span><span class="p">,</span><span class="n">omp</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="w">    </span><span class="c">!subroutine arguments:</span>
+<span class="w">    </span><span class="k">class</span><span class="p">(</span><span class="n">pikaia_class</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">me</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="w">      </span><span class="c">!! Input - initial guess for solution vector.</span>
+<span class="w">                                                     </span><span class="c">!! Output - the &quot;fittest&quot; (optimal) solution found,</span>
+<span class="w">                                                     </span><span class="c">!! i.e., the solution which maximizes the fitness function.</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">                   </span><span class="kd">::</span><span class="w"> </span><span class="n">f</span><span class="w">      </span><span class="c">!! the (scalar) value of the fitness function at x</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">                    </span><span class="kd">::</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="c">!! an indicator of the success or failure</span>
+<span class="w">                                                     </span><span class="c">!! of the call to pikaia (0=success; non-zero=failure)</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">omp</span><span class="w"> </span><span class="c">!! if OpenMP is being used</span>
+
+<span class="w">    </span><span class="c">!Local variables</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="n">ip</span><span class="p">,</span><span class="n">ig</span><span class="p">,</span><span class="n">ip1</span><span class="p">,</span><span class="n">ip2</span><span class="p">,</span><span class="n">new</span><span class="p">,</span><span class="n">newtot</span><span class="p">,</span><span class="n">istart</span><span class="p">,</span><span class="n">i_window</span><span class="p">,</span><span class="n">j</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">current_best_f</span><span class="p">,</span><span class="w"> </span><span class="n">last_best_f</span><span class="p">,</span><span class="w"> </span><span class="n">fguess</span>
+<span class="w">    </span><span class="kt">logical</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">convergence</span>
+<span class="w">    </span><span class="kt">logical</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">use_openmp</span><span class="w"> </span><span class="c">!! if OpenMP is being used</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">n</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ph</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">n</span><span class="p">,</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="p">)</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">oldph</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">n</span><span class="p">,</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="p">)</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">newph</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">n</span><span class="o">*</span><span class="n">me</span><span class="p">%</span><span class="n">nd</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">gn1</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">n</span><span class="o">*</span><span class="n">me</span><span class="p">%</span><span class="n">nd</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">gn2</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="p">)</span><span class="w">           </span><span class="kd">::</span><span class="w"> </span><span class="n">ifit</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="p">)</span><span class="w">           </span><span class="kd">::</span><span class="w"> </span><span class="n">jfit</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="p">)</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">fitns</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">n</span><span class="p">)</span><span class="w">           </span><span class="kd">::</span><span class="w"> </span><span class="n">xguess</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">fits</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">big</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">huge</span><span class="p">(</span><span class="mf">1.0_wp</span><span class="p">)</span><span class="w">    </span><span class="c">!! a large number</span>
+
+<span class="w">    </span><span class="c">!initialize:</span>
+<span class="w">    </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">rninit</span><span class="p">()</span>
+<span class="w">    </span><span class="n">me</span><span class="p">%</span><span class="n">bestft</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">big</span>
+<span class="w">    </span><span class="n">me</span><span class="p">%</span><span class="n">pmutpv</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">big</span>
+<span class="w">    </span><span class="n">me</span><span class="p">%</span><span class="n">pmut</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">pmuti</span><span class="w">  </span><span class="c">!set initial mutation rate (it can change)</span>
+<span class="w">    </span><span class="n">i_window</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="n">last_best_f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">big</span>
+<span class="w">    </span><span class="n">convergence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<span class="w">    </span><span class="n">status</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+
+<span class="w">    </span><span class="c">! if OpenMP is being used:</span>
+<span class="c">!$  use_openmp = .true.</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="w"> </span><span class="n">omp</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">use_openmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">omp</span>
+
+<span class="w">    </span><span class="c">!Handle the initial guess:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">initial_guess_frac</span><span class="o">==</span><span class="mf">0.0_wp</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="w">        </span><span class="c">!initial guess not used (totally random population)</span>
+
+<span class="w">        </span><span class="n">istart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="c">!index to start random population members</span>
+
+<span class="w">    </span><span class="k">else</span>
+
+<span class="w">        </span><span class="c">!use the initial guess:</span>
+
+<span class="w">        </span><span class="n">xguess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span>
+<span class="w">        </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">me</span><span class="p">%</span><span class="n">n</span><span class="w">    </span><span class="c">!make sure they are all within the [0,1] bounds</span>
+<span class="w">            </span><span class="n">xguess</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="w"> </span><span class="mf">0.0_wp</span><span class="p">,</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="mf">1.0_wp</span><span class="p">,</span><span class="n">xguess</span><span class="p">(</span><span class="n">k</span><span class="p">))</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="k">end do</span>
+<span class="k">        call </span><span class="n">me</span><span class="p">%</span><span class="n">ff</span><span class="p">(</span><span class="n">xguess</span><span class="p">,</span><span class="n">fguess</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">!how many elements in the population to set to xguess?:</span>
+<span class="w">        </span><span class="c">! [at least 1, at most n]</span>
+<span class="w">        </span><span class="n">istart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">initial_guess_frac</span><span class="p">)))</span>
+
+<span class="w">        </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">istart</span>
+<span class="w">            </span><span class="n">oldph</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xguess</span>
+<span class="w">            </span><span class="n">fitns</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">fguess</span>
+<span class="w">        </span><span class="k">end do</span>
+
+<span class="k">        </span><span class="n">istart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">istart</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="c">!index to start random population members</span>
+
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="w">    </span><span class="c">!Compute initial (random but bounded) phenotypes</span>
+<span class="w">    </span><span class="k">do </span><span class="n">ip</span><span class="o">=</span><span class="n">istart</span><span class="p">,</span><span class="n">me</span><span class="p">%</span><span class="n">np</span>
+<span class="w">       </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">me</span><span class="p">%</span><span class="n">n</span>
+<span class="w">          </span><span class="n">oldph</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">ip</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">urand</span><span class="p">()</span><span class="w">  </span><span class="c">!from [0,1]</span>
+<span class="w">       </span><span class="k">end do</span>
+<span class="k">    end do</span>
+
+<span class="w">    </span><span class="c">!$omp parallel do private(ip)</span>
+<span class="w">    </span><span class="k">do </span><span class="n">ip</span><span class="o">=</span><span class="n">istart</span><span class="p">,</span><span class="n">me</span><span class="p">%</span><span class="n">np</span>
+<span class="w">       </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">ff</span><span class="p">(</span><span class="n">oldph</span><span class="p">(:,</span><span class="n">ip</span><span class="p">),</span><span class="n">fitns</span><span class="p">(</span><span class="n">ip</span><span class="p">))</span>
+<span class="w">    </span><span class="k">end do</span>
+<span class="w">    </span><span class="c">!$omp end parallel do</span>
+
+<span class="w">    </span><span class="c">!Rank initial population by fitness order</span>
+<span class="w">    </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">rnkpop</span><span class="p">(</span><span class="n">fitns</span><span class="p">,</span><span class="n">ifit</span><span class="p">,</span><span class="n">jfit</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">!Main Generation Loop</span>
+<span class="w">    </span><span class="c">! This is modified from the original for parallelization.</span>
+<span class="w">    </span><span class="c">! Note that, now, in a generation, the population is not changed until</span>
+<span class="w">    </span><span class="c">! all the new members are computed. So only the current members are used</span>
+<span class="w">    </span><span class="c">! in this process.</span>
+<span class="w">    </span><span class="k">do </span><span class="n">ig</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">me</span><span class="p">%</span><span class="n">ngen</span>
+
+<span class="w">        </span><span class="c">!Main Population Loop</span>
+<span class="w">        </span><span class="n">newtot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="k">do </span><span class="n">ip</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="w">            </span><span class="c">!1. pick two parents</span>
+<span class="w">            </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">select_parents</span><span class="p">(</span><span class="n">jfit</span><span class="p">,</span><span class="n">ip1</span><span class="p">,</span><span class="n">ip2</span><span class="p">)</span>
+
+<span class="w">            </span><span class="c">!2. encode parent phenotypes</span>
+<span class="w">            </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="k">encode</span><span class="p">(</span><span class="n">oldph</span><span class="p">(:,</span><span class="n">ip1</span><span class="p">),</span><span class="n">gn1</span><span class="p">)</span>
+<span class="w">            </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="k">encode</span><span class="p">(</span><span class="n">oldph</span><span class="p">(:,</span><span class="n">ip2</span><span class="p">),</span><span class="n">gn2</span><span class="p">)</span>
+
+<span class="w">            </span><span class="c">!3. breed</span>
+<span class="w">            </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">cross</span><span class="p">(</span><span class="n">gn1</span><span class="p">,</span><span class="n">gn2</span><span class="p">)</span>
+<span class="w">            </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">mutate</span><span class="p">(</span><span class="n">gn1</span><span class="p">)</span>
+<span class="w">            </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">mutate</span><span class="p">(</span><span class="n">gn2</span><span class="p">)</span>
+
+<span class="w">            </span><span class="c">!4. decode offspring genotypes</span>
+<span class="w">            </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="k">decode</span><span class="p">(</span><span class="n">gn1</span><span class="p">,</span><span class="n">ph</span><span class="p">(:,</span><span class="mi">1</span><span class="p">,</span><span class="n">ip</span><span class="p">))</span>
+<span class="w">            </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="k">decode</span><span class="p">(</span><span class="n">gn2</span><span class="p">,</span><span class="n">ph</span><span class="p">(:,</span><span class="mi">2</span><span class="p">,</span><span class="n">ip</span><span class="p">))</span>
+
+<span class="w">            </span><span class="c">!5. insert into population</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">irep</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                call </span><span class="n">me</span><span class="p">%</span><span class="n">genrep</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span><span class="n">ph</span><span class="p">(:,:,</span><span class="n">ip</span><span class="p">),</span><span class="n">newph</span><span class="p">)</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="k">                if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">use_openmp</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                    </span><span class="c">! compute all the fitnesses in the parallel</span>
+<span class="w">                    </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">                        </span><span class="c">! compute offspring fitness (with caller&#39;s fitness function)</span>
+<span class="w">                        </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">ff</span><span class="p">(</span><span class="n">ph</span><span class="p">(:,</span><span class="n">j</span><span class="p">,</span><span class="n">ip</span><span class="p">),</span><span class="n">fits</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">ip</span><span class="p">))</span>
+<span class="w">                    </span><span class="k">end do</span>
+<span class="k">                    call </span><span class="n">me</span><span class="p">%</span><span class="n">stdrep</span><span class="p">(</span><span class="n">ph</span><span class="p">(:,:,</span><span class="n">ip</span><span class="p">),</span><span class="n">fits</span><span class="p">(:,</span><span class="n">ip</span><span class="p">),</span><span class="n">oldph</span><span class="p">,</span><span class="n">fitns</span><span class="p">,</span><span class="n">ifit</span><span class="p">,</span><span class="n">jfit</span><span class="p">,</span><span class="n">new</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">newtot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newtot</span><span class="o">+</span><span class="n">new</span>
+<span class="w">               </span><span class="k">end if</span>
+<span class="k">            end if</span>
+
+<span class="k">        end do</span>
+
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">use_openmp</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span><span class="c">!5. insert into population if not already done</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">irep</span><span class="o">/=</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">                </span><span class="c">! compute all the fitnesses in the parallel</span>
+<span class="w">                </span><span class="c">!$omp parallel do private(ip)</span>
+<span class="w">                </span><span class="k">do </span><span class="n">ip</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="o">/</span><span class="mi">2</span>
+<span class="w">                    </span><span class="c">!$omp parallel do private(j)</span>
+<span class="w">                    </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">                        </span><span class="c">! compute offspring fitness (with caller&#39;s fitness function)</span>
+<span class="w">                        </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">ff</span><span class="p">(</span><span class="n">ph</span><span class="p">(:,</span><span class="n">j</span><span class="p">,</span><span class="n">ip</span><span class="p">),</span><span class="n">fits</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">ip</span><span class="p">))</span>
+<span class="w">                    </span><span class="k">end do</span>
+<span class="w">                    </span><span class="c">!$omp end parallel do</span>
+<span class="w">                </span><span class="k">end do</span>
+<span class="w">                </span><span class="c">!$omp end parallel do</span>
+<span class="w">                </span><span class="n">newtot</span><span class="o">=</span><span class="mi">0</span>
+<span class="w">                </span><span class="k">do </span><span class="n">ip</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="o">/</span><span class="mi">2</span>
+<span class="w">                    </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">stdrep</span><span class="p">(</span><span class="n">ph</span><span class="p">(:,:,</span><span class="n">ip</span><span class="p">),</span><span class="n">fits</span><span class="p">(:,</span><span class="n">ip</span><span class="p">),</span><span class="n">oldph</span><span class="p">,</span><span class="n">fitns</span><span class="p">,</span><span class="n">ifit</span><span class="p">,</span><span class="n">jfit</span><span class="p">,</span><span class="n">new</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">newtot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newtot</span><span class="o">+</span><span class="n">new</span>
+<span class="w">                </span><span class="k">end do</span>
+<span class="k">            end if</span>
+<span class="k">        end if</span>
+<span class="w">        </span><span class="c">!End of Main Population Loop</span>
+
+<span class="w">        </span><span class="c">!if running full generational replacement: swap populations</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">irep</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">newpop</span><span class="p">(</span><span class="n">oldph</span><span class="p">,</span><span class="n">newph</span><span class="p">,</span><span class="n">ifit</span><span class="p">,</span><span class="n">jfit</span><span class="p">,</span><span class="n">fitns</span><span class="p">,</span><span class="n">newtot</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">!adjust mutation rate?</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">imut</span><span class="o">==</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]))</span><span class="w"> </span><span class="k">call </span><span class="n">adjmut</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">oldph</span><span class="p">,</span><span class="n">fitns</span><span class="p">,</span><span class="n">ifit</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">!report this iteration:</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">ivrb</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">report</span><span class="p">(</span><span class="n">oldph</span><span class="p">,</span><span class="n">fitns</span><span class="p">,</span><span class="n">ifit</span><span class="p">,</span><span class="n">ig</span><span class="p">,</span><span class="n">newtot</span><span class="p">)</span>
+
+<span class="w">        </span><span class="c">!report (unscaled) x:</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">iter_f</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">            </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">iter_f</span><span class="p">(</span><span class="n">ig</span><span class="p">,</span><span class="n">me</span><span class="p">%</span><span class="n">xl</span><span class="o">+</span><span class="n">me</span><span class="p">%</span><span class="n">del</span><span class="o">*</span><span class="n">oldph</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">me</span><span class="p">%</span><span class="n">n</span><span class="p">,</span><span class="n">ifit</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="p">)),</span><span class="n">fitns</span><span class="p">(</span><span class="n">ifit</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="p">)))</span>
+
+<span class="w">        </span><span class="c">!JW additions: add a convergence criteria</span>
+<span class="w">        </span><span class="c">! [stop if the last convergence_window iterations are all within the convergence_tol]</span>
+<span class="w">        </span><span class="n">current_best_f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fitns</span><span class="p">(</span><span class="n">ifit</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="p">))</span><span class="w">    </span><span class="c">!current iteration best fitness</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">current_best_f</span><span class="o">-</span><span class="n">last_best_f</span><span class="p">)</span><span class="o">&lt;=</span><span class="n">me</span><span class="p">%</span><span class="n">convergence_tol</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span><span class="c">!this solution is within the tol from the previous one</span>
+<span class="w">            </span><span class="n">i_window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i_window</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w">    </span><span class="c">!number of solutions within the convergence tolerance</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">            </span><span class="n">i_window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">    </span><span class="c">!a significantly better solution was found, reset window</span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">i_window</span><span class="o">&gt;=</span><span class="n">me</span><span class="p">%</span><span class="n">convergence_window</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">convergence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<span class="w">            </span><span class="k">exit</span><span class="w"> </span><span class="c">!exit main loop -&gt; convergence</span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">        </span><span class="n">last_best_f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current_best_f</span><span class="w">    </span><span class="c">!to compare with next iteration</span>
+
+<span class="w">    </span><span class="k">end do</span><span class="w">    </span><span class="c">!End of Main Generation Loop</span>
+
+<span class="w">    </span><span class="c">!JW additions:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">ivrb</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">convergence</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            write</span><span class="p">(</span><span class="n">output_unit</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Solution Converged&#39;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">            write</span><span class="p">(</span><span class="n">output_unit</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Iteration Limit Reached&#39;</span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">    end if</span>
+
+<span class="w">    </span><span class="c">!Return best phenotype and its fitness</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">oldph</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">me</span><span class="p">%</span><span class="n">n</span><span class="p">,</span><span class="n">ifit</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="p">))</span>
+<span class="w">    </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fitns</span><span class="p">(</span><span class="n">ifit</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">np</span><span class="p">))</span>
+
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">pikaia</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              TOOLIB
+ was developed by Arthur Francisco<br>              &copy; 2024 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-11-20 15:32 +0100             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
