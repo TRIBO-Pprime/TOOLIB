@@ -98,7 +98,7 @@ public :: tab_init_fftw3, tab_calc_fftw3, tab_end_fftw3, fftw_plan_with_nthreads
               init_fftw3,     calc_fftw3,     end_fftw3,                                              &  !
               init_fftw3_real, calc_fftw3_real_fwd, calc_fftw3_real_bwd,                              &  !
               MULTI_FFTW_ALLOCATED, SINGL_FFTW_ALLOCATED, NB_THREADS_FFT, FFT_DIM,                    &  !
-              apod, PAD_FFT, extend, sample_grid, FFTW_ESTIMATE, FFTW_MEASURE, FFTW_EXHAUSTIVE           !
+              apod, PAD_FFT, extend, FFTW_ESTIMATE, FFTW_MEASURE, FFTW_EXHAUSTIVE                        !
 
 contains
 

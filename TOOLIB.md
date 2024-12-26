@@ -23,6 +23,7 @@ exclude_dir:./DIGIS/src/arch
             ./MSOLV/src/HSL
 include: ./FFTW3/inc
          ./MSOLV/inc
+externalize: true
 favicon: ./img/toolib.png
 project_github: https://github.com/TRIBO-Pprime/TOOLIB
 github: https://github.com/Arthur-Francisco
