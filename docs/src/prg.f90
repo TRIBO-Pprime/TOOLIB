@@ -1,308 +1,83 @@
 !< author: Arthur Francisco
 !<  version: 1.0.0
-!<  date: November, 18 2024
+!<  date: march, 07 2023
 !<
 !<  <span style="color: #337ab7; font-family: cabin; font-size: 1.5em;">
-!<     **Routines to work with FFTs. Example of use**
+!<     **Various subroutines. Example of use.**
 !<  </span>
 
-program test_fftw3
-!$ use omp_lib
-use data_arch, only : I4, R8, R4
-use miscellaneous, only : get_unit
-use fftw3
+program test_data_arch
+use data_arch
+use miscellaneous, only : get_unit, trans_center2corner, trans_corner2center, progress_bar_terminal
 implicit none
 
+   integer(kind=I4) :: uu, i, j
+   integer(kind=I4), parameter :: nx = 11, ny = 11
+   character(len=3) :: snx
 
-integer(kind=I4) :: i, k
-integer(kind=I4) :: ni
-integer(kind=I4) :: nj
-integer(kind=I4) :: nb_iter
-real(kind=R8)    :: error
-real(kind=R4)    :: t1, t2
+   real(kind=R8), dimension(nx, ny) :: array_in, array_out
 
-real(kind=R8),    dimension(:,:), allocatable :: tab     !! real array containing the information to process
-real(kind=R8),    dimension(:,:), allocatable :: tabr1   !! real array containing the information to process
-real(kind=R8),    dimension(:,:), allocatable :: tabr2   !! real array containing the information to process
-complex(kind=R8), dimension(:,:), allocatable :: tab1    !! input array ```FORWARD```,  output array ```BACKWARD```
-complex(kind=R8), dimension(:,:), allocatable :: tab2    !! input array ```BACKWARD```, output array ```FORWARD```
+   call get_unit(uu)
 
-   ! COMPLEX -> COMPLEX -> COMPLEX
+   open( unit = uu, file = 'out/GLOB_VAR_VALUES.txt' )
+      write(uu, '(I9,T40,a)') I4,               'I4'
 
-   !----------------------------------------------------------------------------------------------------------------
-   ! multithread activation
-   !----------------------------------------------------------------------------------------------------------------
-   NB_THREADS_FFT = omp_get_max_threads()
-   call fftw_plan_with_nthreads(nthreads = NB_THREADS_FFT)
+      write(uu, '(I9,T40,a)') I8,               'I8'
+      write(uu, '(I9,T40,a)') R4,               'R4'
+      write(uu, '(I9,T40,a)') R8,               'R8'
+      write(uu, '(I12,T40,a)') HIG_I4,          'HIG_I4'
 
-   ! first case: random array forward, then backward transformed
-   ! The difference ```error``` between original and processed data is calculated
-   ni = 4096
-   nj = 4096
+      write(uu, '(I9,T40,a)') OPU,              'OPU'
+      write(uu, '(I9,T40,a)') IPU,              'IPU'
+      write(uu, '(I9,T40,a)') ERU,              'ERU'
 
-   allocate( tab( 1:ni, 1:nj) )
-   allocate( tab1(1:ni, 1:nj),  tab2(1:ni, 1:nj) )
+      write(uu, '(E20.12,T40,a)') UN,           'UN'
 
-   call init_fftw3( long = ni, larg = nj )
+      write(uu, '(E20.12,T40,a)') PI_R4,        'PI_R4'
+      write(uu, '(E20.12,T40,a)') PI_R8,        'PI_R8'
+      write(uu, '(E20.12,T40,a)') EPS_R4,       'EPS_R4'
+      write(uu, '(E20.12,T40,a)') EPS_R8,       'EPS_R8'
+      write(uu, '(E20.12,T40,a)') HIG_R8,       'HIG_R8'
+      write(uu, '(E20.12,T40,a)') HIG_E8,       'HIG_E8'
+      write(uu, '(E20.12,T40,a)') EPS_E8,       'EPS_E8'
 
-      call random_number( harvest = tab(1:ni, 1:nj) )
-      tab1(1:ni, 1:nj) = cmplx( tab(1:ni, 1:nj), 0._R8, kind = R8 )
+      write(uu, '(I9,T40,a)') EXPO_MAX,         'EXPO_MAX'
 
-      call calc_fftw3( sens = FORWARD,  tab_in = tab1, tab_ou = tab2, long = ni, larg = nj )
-      call calc_fftw3( sens = BACKWARD, tab_in = tab2, tab_ou = tab1, long = ni, larg = nj )
+   close( uu )
 
-      error = 100*maxval( abs( (tab(1:ni, 1:nj) - real(tab1(1:ni, 1:nj), kind = R8)) / tab(1:ni, 1:nj) ) )
+   write(snx, '(I3.3)') nx
 
-      write(*, *) 'C-C-C error = ', error
+   write(*, *) '============== INITIAL ARRAY =================='
+   array_in = reshape( [ ( 0., i = 1, nx * ny ) ], [nx, ny] )
+   array_in( nx/2:nx/2 + 2, ny/2:ny/2 + 2 ) = 1.
 
-   call end_fftw3()
-
-   deallocate( tab, tab1, tab2 )
-
-   ! second case: height array forward, then backward transformed
-   ! The difference between original and processed data can be assessed with the resulting "600x300_FB.dat"
-   ni = 600
-   nj = 300
-
-   call read_surf( nom_fic = "./sur/600x300.dat", tab_s = tab, nx = ni, ny = nj )
-
-   allocate( tab1(1:ni, 1:nj),  tab2(1:ni, 1:nj) ) ; tab1(1:ni, 1:nj) = cmplx( tab(1:ni, 1:nj), 0._R8, kind=R8)
-
-   call cpu_time(t1)
-
-   call init_fftw3( long = ni, larg = nj )
-
-      call calc_fftw3( sens = FORWARD,  tab_in = tab1, tab_ou = tab2, long = ni, larg = nj )
-      call calc_fftw3( sens = BACKWARD, tab_in = tab2, tab_ou = tab1, long = ni, larg = nj )
-
-   call end_fftw3()
-
-   call cpu_time(t2)
-
-   write(*,*) t2-t1
-
-   tab(1:ni, 1:nj) = real( tab1(1:ni, 1:nj), kind = R8 )
-   call save_surf( nom_fic = "./sur/600x300_FB_comp.dat", tab_s = tab, nx = ni, ny = nj )
-
-   deallocate( tab, tab1, tab2 )
-
-   !----------------------------------------------------------------------------------------------------------------
-   ! multithread deactivation
-   ! ```NB_THREADS_MAX``` are simultaneously computed on random 512x512 arrays
-   ! The difference ```error``` between original and processed data is calculated
-   call fftw_plan_with_nthreads( nthreads = 1 )
-
-   ni = 0512
-   nj = 0512
-   nb_iter = 100
-
-   allocate( tab( 1:ni, 1:nj) )
-   allocate( tab1(1:ni, 1:nj),  tab2(1:ni, 1:nj) )
-   call get_unit(k)
-
-   open( unit = k, file = "out/error_comp.txt" )
-
-   NB_THREADS_FFT = omp_get_max_threads()
-
-   call tab_init_fftw3(long = ni, larg = nj, plan_flag = FFTW_MEASURE)
-
-   !$OMP PARALLEL DEFAULT(SHARED) NUM_THREADS(NB_THREADS_FFT)
-
-   !$OMP DO SCHEDULE (STATIC, NB_ITER/NB_THREADS_FFT) PRIVATE(tab, tab1, tab2)
-   do i = 1, nb_iter
-
-      call random_number( harvest = tab(1:ni, 1:nj) )
-
-      tab(1:ni, 1:nj) = tab(1:ni, 1:nj) + 1._R8
-
-      tab1(1:ni, 1:nj) = cmplx( tab(1:ni, 1:nj), 0._R8, kind = R8 )
-      call tab_calc_fftw3( sens = FORWARD,  tab_in = tab1, tab_ou = tab2, long = ni, larg = nj )
-      call tab_calc_fftw3( sens = BACKWARD, tab_in = tab2, tab_ou = tab1, long = ni, larg = nj )
-      error = 100*maxval( abs( (tab(1:ni, 1:nj) - real(tab1(1:ni, 1:nj), kind = R8)) / tab(1:ni, 1:nj) ) )
-      write(k,*) error
-
+   do i = 1, nx
+      write(*, '('//snx//'10I1)') ( int(array_in(i, j)), j = 1, ny )
    enddo
-   !$OMP END DO
 
-   !$OMP END PARALLEL
-
-   call tab_end_fftw3()
-
-   close(k)
-   deallocate( tab, tab1, tab2 )
-
-
-   ! REAL -> COMPLEX -> REAL
-
-   !----------------------------------------------------------------------------------------------------------------
-   ! multithread activation
-   !----------------------------------------------------------------------------------------------------------------
-   NB_THREADS_FFT = omp_get_max_threads()
-   call fftw_plan_with_nthreads(nthreads = NB_THREADS_FFT)
-
-   ! first case: random array forward, then backward transformed
-   ! The difference ```error``` between original and processed data is calculated
-   ni = 4096
-   nj = 4096
-
-   allocate( tab( 1:ni, 1:nj) )
-   allocate( tabr1(1:ni, 1:nj), tabr2(1:ni, 1:nj) )
-   allocate( tab2(1:ni, 1:nj) )
-
-   call init_fftw3_real( long = ni, larg = nj, plan_flag = FFTW_ESTIMATE )
-
-      call random_number( harvest = tab(1:ni, 1:nj) )
-
-      tabr1(1:ni, 1:nj) = tab(1:ni, 1:nj)
-
-      call calc_fftw3_real_fwd( tab_in = tabr1, tab_ou = tab2, long = ni, larg = nj )
-      call calc_fftw3_real_bwd( tab_in = tab2, tab_ou = tabr2, long = ni, larg = nj )
-
-      error = 100*maxval( abs( (tab(1:ni, 1:nj) - real(tabr2(1:ni, 1:nj), kind = R8)) / tab(1:ni, 1:nj) ) )
-
-      write(*, *) 'R-C-R: error = ', error
-
-   call end_fftw3()
-
-   deallocate( tab, tabr1, tabr2, tab2 )
-
-
-   ! second case: height array forward, then backward transformed
-   ! The difference between original and processed data can be assessed with the resulting "600x300_FB.dat"
-   ni = 600
-   nj = 300
-
-   call read_surf( nom_fic = "./sur/600x300.dat", tab_s = tab, nx = ni, ny = nj )
-
-   allocate( tabr1(1:ni, 1:nj),  tab2(1:ni, 1:nj) ) ; tabr1(1:ni, 1:nj) = tab(1:ni, 1:nj)
-
-   call cpu_time(t1)
-
-   call init_fftw3_real( long = ni, larg = nj, plan_flag = FFTW_ESTIMATE )
-
-      call calc_fftw3_real_fwd( tab_in = tabr1, tab_ou = tab2,  long = ni, larg = nj )
-      call calc_fftw3_real_bwd( tab_in = tab2,  tab_ou = tabr1, long = ni, larg = nj )
-
-   call end_fftw3()
-
-   call cpu_time(t2)
-
-   write(*,*) t2-t1
-
-   tab(1:ni, 1:nj) = tabr1(1:ni, 1:nj)
-
-   call save_surf( nom_fic = "./sur/600x300_FB_real.dat", tab_s = tab, nx = ni, ny = nj )
-
-   deallocate( tab, tabr1, tab2 )
-
-   !----------------------------------------------------------------------------------------------------------------
-   ! multithread deactivation
-   ! ```NB_THREADS_MAX``` are simultaneously computed on random 512x512 arrays
-   ! The difference ```error``` between original and processed data is calculated
-
-   call fftw_plan_with_nthreads( nthreads = 1 )
-
-   ni = 0512
-   nj = 0512
-   nb_iter = 100
-
-   allocate( tab( 1:ni, 1:nj) )
-   allocate( tab2( 1:ni, 1:nj) )
-   allocate( tabr1(1:ni, 1:nj),  tabr2(1:ni, 1:nj) )
-
-   call get_unit(k)
-
-   open( unit = k, file = "out/error_real.txt" )
-
-   NB_THREADS_FFT = omp_get_max_threads()
-
-   call tab_init_fftw3_real( long = ni, larg = nj, plan_flag = FFTW_MEASURE )
-
-   !$OMP PARALLEL DEFAULT(SHARED) NUM_THREADS(NB_THREADS_FFT)
-
-   !$OMP DO SCHEDULE (STATIC, NB_ITER/NB_THREADS_FFT) PRIVATE(tab, tabr1, tabr2, tab2)
-   do i = 1, nb_iter
-
-      call random_number( harvest = tab(1:ni, 1:nj) )
-
-      tab(1:ni, 1:nj) = tab(1:ni, 1:nj) + 1._R8
-
-      tabr1(1:ni, 1:nj) = tab(1:ni, 1:nj)
-
-      call tab_calc_fftw3_real_fwd( tab_in = tabr1, tab_ou = tab2, long = ni, larg = nj )
-      call tab_calc_fftw3_real_bwd( tab_in = tab2, tab_ou = tabr2, long = ni, larg = nj )
-      error = 100*maxval( abs( (tab(1:ni, 1:nj) - tabr2(1:ni, 1:nj)) / tab(1:ni, 1:nj) ) )
-
-      write(k,*) error
-
+   write(*, *) '============ CENTER => CORNER ================='
+   call trans_center2corner( tab_in = array_in, tab_out = array_out, long = nx, larg = ny)
+   do i = 1, nx
+      write(*, '('//snx//'10I1)') ( int(array_out(i, j)), j = 1, ny )
    enddo
-   !$OMP END DO
 
-   !$OMP END PARALLEL
+   write(*, *) '============== INITIAL ARRAY =================='
+   array_in = array_out
+   do i = 1, nx
+      write(*, '('//snx//'10I1)') ( int(array_in(i, j)), j = 1, ny )
+   enddo
 
-   call tab_end_fftw3_real()
+   write(*, *) '============ CORNER => CENTER ================='
+   call trans_corner2center( tab_in = array_in, tab_out = array_out, long = nx, larg = ny)
+   do i = 1, nx
+      write(*, '('//snx//'10I1)') ( int(array_out(i, j)), j = 1, ny )
+   enddo
 
-   close(k)
-   deallocate( tab, tabr1, tabr2, tab2 )
+   call progress_bar_terminal(val = 0, max_val = 100, init = .true.)
+   do i = 10, 100, 10
+      call sleep(1)
+      call progress_bar_terminal(val = i, max_val = 100, init = .false.)
+   enddo
 
 stop
-contains
-
-   !=========================================================================================
-   subroutine read_surf(nom_fic, tab_s, nx, ny)
-   !! Subroutine that opens a surface file ```.dat```
-   implicit none
-   character(len=*), intent(in )                               :: nom_fic  !! *file name*
-   integer(kind=I4), intent(in )                               :: nx       !! *number of pixels along x*
-   integer(kind=I4), intent(in )                               :: ny       !! *number of pixels along y*
-   real   (kind=R8), intent(out), dimension(:,:), allocatable  :: tab_s    !! *height array*
-
-      integer(kind=I4) :: i, j, k
-      real(kind=R8)    :: x, y
-
-      allocate( tab_s(1:nx, 1:ny) )
-
-      call get_unit(k)
-
-      open( unit = k, file = trim(nom_fic), status = 'old')
-
-         do i = 1, nx
-            do j = 1, ny
-               read(k, *) x, y, tab_s(i, j)
-            enddo
-         enddo
-
-      close(k)
-
-   return
-   endsubroutine read_surf
-
-
-   !=========================================================================================
-   subroutine save_surf(nom_fic, tab_s, nx, ny)
-   !! Subroutine that saves a surface file ```.dat```
-   implicit none
-   character(len=*), intent(in)                          :: nom_fic  !! *file name*
-   integer(kind=I4), intent(in)                          :: nx       !! *number of pixels along x*
-   integer(kind=I4), intent(in)                          :: ny       !! *number of pixels along y*
-   real   (kind=R8), intent(in), dimension(1:nx, 1:ny)   :: tab_s    !! *height array*
-
-      integer(kind=I4) :: i, j, k
-
-      call get_unit(k)
-
-      open( unit = k, file = trim(nom_fic), status = 'unknown')
-
-         do i = 1, nx
-            do j = 1, ny
-               write(k, *) i, j, tab_s(i, j)
-            enddo
-         enddo
-
-      close(k)
-
-   return
-   endsubroutine save_surf
-
-endprogram test_fftw3
-
+endprogram test_data_arch
