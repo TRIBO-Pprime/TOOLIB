@@ -341,7 +341,7 @@ contains
 
    !=========================================================================================
    !< @note
-   !<   Subroutine that transforms forward or bacward a double complex array. For speed reasons
+   !<   Subroutine that transforms forward or backward a double complex array. For speed reasons
    !<   FFTW will always work on the same memory area, until the plans are destroyed of course.
    !<    *several FFT on single thread each*
    !< @endnote
