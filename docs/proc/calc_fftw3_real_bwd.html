@@ -80,7 +80,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.0% of total for procedures.">23 statements</a>
+                 title=" 0.0% of total for procedures.">21 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -170,7 +170,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-tab_in~10"></span>
+              <span class="anchor" id="variable-tab_in~3"></span>
               complex(kind=R8),
             </td>
 <td>intent(in),</td>
@@ -200,7 +200,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-long~17"></span>
+              <span class="anchor" id="variable-long~8"></span>
               integer(kind=I4),
             </td>
 <td>intent(in)</td>
@@ -215,7 +215,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-larg~16"></span>
+              <span class="anchor" id="variable-larg~8"></span>
               integer(kind=I4),
             </td>
 <td>intent(in)</td>
@@ -728,16 +728,12 @@ large graphs.</div>
 
 <span class="w">      </span><span class="k">endif</span>
 
-<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">any</span><span class="p">(</span><span class="w"> </span><span class="n">FFT_DIM</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="p">[</span><span class="nb">long</span><span class="p">,</span><span class="w"> </span><span class="n">larg</span><span class="p">]</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">any</span><span class="p">(</span><span class="w"> </span><span class="n">FFT_DIM</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="p">[</span><span class="nb">long</span><span class="p">,</span><span class="w"> </span><span class="n">larg</span><span class="p">]</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">SINGL_FFTW_ALLOCATED</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">end_fftw3</span><span class="p">()</span>
 
-<span class="k">         if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="n">FFT_DIM</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">end_fftw3</span><span class="p">()</span>
+<span class="w">      </span><span class="k">call </span><span class="n">fftw_plan_with_nthreads</span><span class="p">(</span><span class="n">nthreads</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">omp_get_num_procs</span><span class="p">())</span>
+<span class="w">      </span><span class="k">call </span><span class="n">init_fftw3_real</span><span class="p">(</span><span class="nb">long</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">long</span><span class="p">,</span><span class="w"> </span><span class="n">larg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">larg</span><span class="p">,</span><span class="w"> </span><span class="n">plan_flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">plan_flag</span><span class="p">)</span>
 
-<span class="w">         </span><span class="k">call </span><span class="n">fftw_plan_with_nthreads</span><span class="p">(</span><span class="n">nthreads</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">omp_get_num_procs</span><span class="p">())</span>
-<span class="w">         </span><span class="k">call </span><span class="n">init_fftw3_real</span><span class="p">(</span><span class="nb">long</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">long</span><span class="p">,</span><span class="w"> </span><span class="n">larg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">larg</span><span class="p">,</span><span class="w"> </span><span class="n">plan_flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">plan_flag</span><span class="p">)</span>
-
-<span class="w">      </span><span class="k">endif</span>
-
-<span class="k">      </span><span class="n">cmp_b_i</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">long</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">larg</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab_in</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">long</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">larg</span><span class="p">)</span>
+<span class="w">      </span><span class="n">cmp_b_i</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">long</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">larg</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tab_in</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">long</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">larg</span><span class="p">)</span>
 
 <span class="w">      </span><span class="k">call </span><span class="n">fftw_execute_dft_c2r</span><span class="p">(</span><span class="n">plan_b</span><span class="p">,</span><span class="w"> </span><span class="n">cmp_b_i</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">long</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">larg</span><span class="p">),</span><span class="w"> </span><span class="n">rea_b_o</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">long</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">larg</span><span class="p">))</span>
 
@@ -761,14 +757,14 @@ large graphs.</div>
           <div class="col">
             <p>
               TOOLIB
- was developed by Arthur Francisco<br>              &copy; 2024 
+ was developed by Arthur Francisco<br>              &copy; 2025 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-12-27 08:19              </p>
+ on 2025-09-30 16:02 +0200             </p>
           </div>
         </div>
         <br>

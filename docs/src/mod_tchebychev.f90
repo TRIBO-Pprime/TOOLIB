@@ -479,7 +479,7 @@ contains
       character(len=128) :: string
 
       if (nvarx==0 .and. nvary==0) then
-         tab_out(1:long1, 1:long2) = 0._R8
+         tab_out(1:long1, 1:long2) = sum( tab_in(1:long1, 1:long2) ) / (long1 * long2)
          return
       endif
 
