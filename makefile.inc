@@ -1,4 +1,4 @@
-FORT = gfortran
+FORT = gfortran-12
 
 OPTC = O2
 

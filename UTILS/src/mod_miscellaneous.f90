@@ -166,12 +166,18 @@ contains
    real   (kind=R8), intent(in ), dimension(1:long, 1:larg) :: tab_in   !! *2D array to transform*
    real   (kind=R8), intent(out), dimension(1:long, 1:larg) :: tab_out  !! *transformed 2D array*
 
-      integer(kind=I4) :: i, j
+      integer(kind=I4) :: i, j, ii, jj
+
+      ii = 0
+      jj = 0
+
+      if ( long == 2 * (long/2) ) ii = 1
+      if ( larg == 2 * (larg/2) ) jj = 1
 
       do j = 1, larg
          do i = 1, long
-            tab_out(i, j) = tab_in( mod( i + long/2 - 1, long ) + 1, &  !
-                                    mod( j + larg/2 - 1, larg ) + 1 )
+            tab_out(i, j) = tab_in( mod( i + long/2 - ii, long ) + 1, &  !
+                                    mod( j + larg/2 - ii, larg ) + 1 )
          enddo
       enddo
 
@@ -188,12 +194,18 @@ contains
    complex(kind=R8), intent(in ), dimension(1:long, 1:larg) :: tab_in   !! *2D array to transform*
    complex(kind=R8), intent(out), dimension(1:long, 1:larg) :: tab_out  !! *transformed 2D array*
 
-      integer(kind=I4) :: i, j
+      integer(kind=I4) :: i, j, ii, jj
+
+      ii = 0
+      jj = 0
+
+      if ( long == 2 * (long/2) ) ii = 1
+      if ( larg == 2 * (larg/2) ) jj = 1
 
       do j = 1, larg
          do i = 1, long
-            tab_out(i, j) = tab_in( mod( i + long/2 - 1, long ) + 1, &  !
-                                    mod( j + larg/2 - 1, larg ) + 1 )
+            tab_out(i, j) = tab_in( mod( i + long/2 - ii, long ) + 1, &  !
+                                    mod( j + larg/2 - ii, larg ) + 1 )
          enddo
       enddo
 

@@ -114,6 +114,7 @@ contains
       call make_plan_fftw3(long, larg)
 
       SINGL_FFTW_ALLOCATED = .true.
+
       FFT_DIM(1:2) = [long, larg]
 
    return
@@ -220,14 +221,10 @@ contains
    complex(kind=R8), dimension(1:long, 1:larg), intent(in ) :: tab_in   !! *array to transform*
    complex(kind=R8), dimension(1:long, 1:larg), intent(out) :: tab_ou   !! *transformed array*
 
-      if ( any( FFT_DIM(1:2) /= [long, larg] ) ) then
+      if ( any( FFT_DIM(1:2) /= [long, larg] .and. SINGL_FFTW_ALLOCATED ) ) call end_fftw3()
 
-         if ( sum(FFT_DIM(1:2)) /= 0 ) call end_fftw3()
-
-         call fftw_plan_with_nthreads(nthreads = omp_get_num_procs())
-         call init_fftw3(long = long, larg = larg)
-
-      endif
+      call fftw_plan_with_nthreads(nthreads = omp_get_num_procs())
+      call init_fftw3(long = long, larg = larg)
 
       select case(sens)
 
@@ -274,14 +271,10 @@ contains
 
       endif
 
-      if ( any( FFT_DIM(1:2) /= [long, larg] ) ) then
+      if ( any( FFT_DIM(1:2) /= [long, larg] .and. SINGL_FFTW_ALLOCATED ) ) call end_fftw3()
 
-         if ( sum(FFT_DIM(1:2)) /= 0 ) call end_fftw3()
-
-         call fftw_plan_with_nthreads(nthreads = omp_get_num_procs())
-         call init_fftw3_real(long = long, larg = larg, plan_flag = plan_flag)
-
-      endif
+      call fftw_plan_with_nthreads(nthreads = omp_get_num_procs())
+      call init_fftw3_real(long = long, larg = larg, plan_flag = plan_flag)
 
       rea_f_i(1:long, 1:larg) = tab_in(1:long, 1:larg)
 
@@ -320,14 +313,10 @@ contains
 
       endif
 
-      if ( any( FFT_DIM(1:2) /= [long, larg] ) ) then
+      if ( any( FFT_DIM(1:2) /= [long, larg] .and. SINGL_FFTW_ALLOCATED ) ) call end_fftw3()
 
-         if ( sum(FFT_DIM(1:2)) /= 0 ) call end_fftw3()
-
-         call fftw_plan_with_nthreads(nthreads = omp_get_num_procs())
-         call init_fftw3_real(long = long, larg = larg, plan_flag = plan_flag)
-
-      endif
+      call fftw_plan_with_nthreads(nthreads = omp_get_num_procs())
+      call init_fftw3_real(long = long, larg = larg, plan_flag = plan_flag)
 
       cmp_b_i(1:long, 1:larg) = tab_in(1:long, 1:larg)
 
@@ -1060,48 +1049,5 @@ contains
 
    return
    endsubroutine apod
-
-!~    subroutine sample_grid(w, h, wf, hf, tab_in, tab_ou)
-!~    implicit none
-!~    integer(kind=I4), intent(in) :: w   !! *input surface width*
-!~    integer(kind=I4), intent(in) :: h   !! *input surface height*
-!~    integer(kind=I4), intent(in) :: wf  !! *output surface width*
-!~    integer(kind=I4), intent(in) :: hf  !! *output surface height*
-!~    real   (kind=R8), dimension(1:wf, 1:hf), intent( in) :: tab_in  !! *input surface*
-!~    real   (kind=R8), dimension(1:w , 1:hf), intent(out) :: tab_ou  !! *output surface*
-
-!~       integer(kind=I4) :: iw, ih, iwf, ihf
-!~       real   (kind=R8) :: dw, udw, dh, udh, h1, h2, h3, h4, hh
-
-!~       do iw = 1, w
-
-!~          iwf = floor( real( wf * (iw-1), kind = R8) / w ) + 1
-!~          dw  =        real( wf * (iw-1), kind = R8) / w   + 1 - iwf
-!~          udw = 1._R8 - dw
-
-!~          do ih = 1, h
-
-!~             ihf = floor( real( hf * (ih-1), kind = R8) / h ) + 1
-!~             dh  =        real( hf * (ih-1), kind = R8) / h   + 1 - ihf
-!~             udh = 1._R8 - dh
-
-!~             h1 = tab_in(iwf    , ihf    )
-!~             h2 = tab_in(iwf + 1, ihf    )
-!~             h3 = tab_in(iwf + 1, ihf + 1)
-!~             h4 = tab_in(iwf    , ihf + 1)
-
-!~             hh = h1 * udw * udh + &  !
-!~                  h2 *  dw * udh + &  !
-!~                  h3 *  dw *  dh + &  !
-!~                  h4 * udw *  dh
-
-!~             tab_ou(iw, ih) = hh
-
-!~          enddo
-
-!~       enddo
-
-!~    return
-!~    endsubroutine sample_grid
 
 endmodule fftw3
